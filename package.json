@@ -27,6 +27,7 @@
     "react-dom": "^16.6.3"
   },
   "devDependencies": {
+    "@sudoo/tslint-config": "^1.0.0",
     "@types/chai": "^4.1.7",
     "@types/chance": "^1.0.1",
     "@types/enzyme": "^3.1.15",
