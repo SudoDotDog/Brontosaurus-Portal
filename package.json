@@ -23,8 +23,10 @@
   },
   "homepage": "https://github.com/SudoDotDog/Brontosaurus-Portal#readme",
   "dependencies": {
+    "@sudoo/redux": "^0.1.0",
     "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "react-redux": "^6.0.0"
   },
   "devDependencies": {
     "@sudoo/tslint-config": "^1.0.0",
@@ -38,6 +40,7 @@
     "@types/node-sass": "^3.10.32",
     "@types/react": "^16.7.13",
     "@types/react-dom": "^16.0.11",
+    "@types/react-redux": "^6.0.11",
     "@types/webpack": "^4.4.20",
     "awesome-typescript-loader": "^5.2.1",
     "chai": "^4.2.0",
