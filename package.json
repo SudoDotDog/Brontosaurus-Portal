@@ -68,7 +68,6 @@
       ".tsx"
     ],
     "include": [
-      "script/**/*.ts",
       "src/**/*.ts",
       "src/**/*.tsx"
     ],
@@ -79,8 +78,7 @@
     ],
     "report-dir": "coverage",
     "require": [
-      "./test/tshook.js",
-      "./test/mock.ts"
+      "./test/tshook.js"
     ],
     "sourceMap": true
   }
