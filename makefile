@@ -1,5 +1,5 @@
 # Paths
-webpack_build := webpack/webpack.build.js
+webpack_build := webpack/webpack.config.js
 webpack_dev := webpack/webpack.dev.js
 
 # NPX functions
@@ -18,11 +18,11 @@ endif
 main: run
 
 run:
-	@echo "[INFO] Starting center renderer development"
+	@echo "[INFO] Starting development"
 	@$(webpack_dev_server) --config $(webpack_dev)
 
 build:
-	@echo "[INFO] Starting center renderer production build"
+	@echo "[INFO] Starting build"
 	@$(webpack) --config $(webpack_build)
 
 tests:
