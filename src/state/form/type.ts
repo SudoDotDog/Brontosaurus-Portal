@@ -13,7 +13,7 @@ export interface IFormStore {
     readonly password: string;
 }
 
-export interface ISetFormUserPassReducerAction extends Action<ACTIONS> {
+export interface ISetFormUserPassReducerAction extends Action<ACTIONS.SET_USERNAME_AND_PASSWORD> {
 
     readonly username: string;
     readonly password: string;

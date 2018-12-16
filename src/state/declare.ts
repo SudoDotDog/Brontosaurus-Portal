@@ -5,14 +5,20 @@
  */
 
 import { IFormStore } from "./form/type";
+import { IStatusStore } from "./status/type";
 
 export interface IStore {
 
     readonly form: IFormStore;
+    readonly status: IStatusStore;
 }
 
 export enum ACTIONS {
 
     // form
     SET_USERNAME_AND_PASSWORD = 'SET_USERNAME_AND_PASSWORD',
+
+    // status
+    SET_LOADING = 'SET_LOADING',
+    SET_ERROR = 'SET_ERROR',
 }
