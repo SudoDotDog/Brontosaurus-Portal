@@ -12,9 +12,9 @@
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@sudoo/bark/-/bark-1.2.1.tgz#622e75a36388af50539e0896563bd15163e059e6"
 
-"@sudoo/redux@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@sudoo/redux/-/redux-0.1.0.tgz#b99c21e035e9d8c5ea867a16dd5c7424306050c2"
+"@sudoo/redux@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@sudoo/redux/-/redux-0.1.1.tgz#b42d69aadff319efbd648e120d68cd7938ce6d52"
   dependencies:
     "@sudoo/bark" "^1.2.1"
     redux "^4.0.1"

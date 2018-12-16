@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/SudoDotDog/Brontosaurus-Portal#readme",
   "dependencies": {
-    "@sudoo/redux": "^0.1.0",
+    "@sudoo/redux": "^0.1.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-redux": "^6.0.0"
