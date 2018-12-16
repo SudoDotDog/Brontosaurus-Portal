@@ -32,6 +32,6 @@ export const setFormUser = (username: string, password: string): ISetFormUserPas
 
 export const getDefaultFormStore = (): IFormStore => ({
 
-    username: 'test',
-    password: 'test',
+    username: '',
+    password: '',
 });
