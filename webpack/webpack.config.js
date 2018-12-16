@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
  * @namespace Webpack
- * @description Scepter Renderer Production
+ * @description Production
  */
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
