@@ -13,7 +13,7 @@ const reduceUsername: Reducer<IStore, ISetFormUsernameReducerAction> = (state: I
     ...state as IStore,
     form: {
 
-        ...state.form,
+        ...(state as IStore).form,
         username: action.username,
     },
 });
@@ -23,7 +23,7 @@ const reducePassword: Reducer<IStore, ISetFormPasswordReducerAction> = (state: I
     ...state as IStore,
     form: {
 
-        ...state.form,
+        ...(state as IStore).form,
         password: action.password,
     },
 });

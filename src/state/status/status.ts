@@ -13,7 +13,7 @@ const reduceLoadingStatus: Reducer<IStore, ISetLoadingReducerAction> = (state: I
     ...state as IStore,
     status: {
 
-        ...state.status,
+        ...(state as IStore).status,
         loading: action.loading,
     },
 });
@@ -23,7 +23,7 @@ const reduceErrorStatus: Reducer<IStore, ISetErrorReducerAction> = (state: IStor
     ...state as IStore,
     status: {
 
-        ...state.status,
+        ...(state as IStore).status,
         error: action.error,
     },
 });
