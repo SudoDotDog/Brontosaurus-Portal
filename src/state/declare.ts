@@ -16,7 +16,8 @@ export interface IStore {
 export enum ACTIONS {
 
     // form
-    SET_USERNAME_AND_PASSWORD = 'SET_USERNAME_AND_PASSWORD',
+    SET_USERNAME = 'SET_USERNAME',
+    SET_PASSWORD = 'SET_PASSWORD',
 
     // status
     SET_LOADING = 'SET_LOADING',

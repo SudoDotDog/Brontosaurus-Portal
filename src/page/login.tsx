@@ -7,14 +7,15 @@
 import * as React from "react";
 import { connect, ConnectedComponentClass } from "react-redux";
 import { IStore } from "../state/declare";
-import { setFormUser } from "../state/form/form";
+import { setPassword, setUsername } from "../state/form/form";
 
 type LoginProp = {
 
     username: string;
     password: string;
 
-    setFormUser: (username: string, password: string) => void;
+    setUsername: (username: string) => void;
+    setPassword: (password: string) => void;
 };
 
 const mapStates = ({ form }: IStore): Partial<LoginProp> => ({
@@ -25,7 +26,8 @@ const mapStates = ({ form }: IStore): Partial<LoginProp> => ({
 
 const mapDispatches: Partial<LoginProp> = {
 
-    setFormUser,
+    setUsername,
+    setPassword,
 };
 
 export const LoginBase: React.SFC<LoginProp> = (props: LoginProp) => {
@@ -33,7 +35,7 @@ export const LoginBase: React.SFC<LoginProp> = (props: LoginProp) => {
     console.log(props);
 
     return (<div>{props.password}
-        <button onClick={() => props.setFormUser('1', '2')} />
+        <button onClick={() => props.setPassword('1')} />
     </div>);
 };
 
