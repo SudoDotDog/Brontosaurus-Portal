@@ -23,7 +23,7 @@ export const formReducers = {
     [ACTIONS.SET_USERNAME_AND_PASSWORD]: reduceUsernameAndPassword,
 };
 
-export const expendDetails = (username: string, password: string): ISetFormUserPassReducerAction => ({
+export const setFormUser = (username: string, password: string): ISetFormUserPassReducerAction => ({
 
     type: ACTIONS.SET_USERNAME_AND_PASSWORD,
     username,
@@ -32,6 +32,6 @@ export const expendDetails = (username: string, password: string): ISetFormUserP
 
 export const getDefaultFormStore = (): IFormStore => ({
 
-    username: '',
-    password: '',
+    username: 'test',
+    password: 'test',
 });
