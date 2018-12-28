@@ -6,6 +6,7 @@
 
 import * as React from "react";
 import { connect, ConnectedComponentClass } from "react-redux";
+import * as StyleLogin from "../../style/page/login.sass";
 import { IStore } from "../state/declare";
 import { setPassword, setUsername } from "../state/form/form";
 
@@ -32,7 +33,7 @@ const mapDispatches: Partial<LoginProp> = {
 
 export const LoginBase: React.SFC<LoginProp> = (props: LoginProp) => {
 
-    console.log(props);
+    console.log(StyleLogin);
 
     return (<div>
         {props.password}
