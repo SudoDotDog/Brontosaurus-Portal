@@ -34,8 +34,12 @@ export const LoginBase: React.SFC<LoginProp> = (props: LoginProp) => {
 
     console.log(props);
 
-    return (<div>{props.password}
-        <button onClick={() => props.setPassword('1')} />
+    return (<div>
+        {props.password}
+        <button onClick={() => {
+            console.log(props);
+            props.setPassword('1');
+        }}>123</button>
     </div>);
 };
 

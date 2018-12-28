@@ -31,7 +31,7 @@ const reducePassword: Reducer<IStore, ISetFormPasswordReducerAction> = (state: I
 export const formReducers = {
 
     [ACTIONS.SET_USERNAME]: reduceUsername,
-    [ACTIONS.SET_USERNAME]: reducePassword,
+    [ACTIONS.SET_PASSWORD]: reducePassword,
 };
 
 export const setUsername = (username: string): ISetFormUsernameReducerAction => ({

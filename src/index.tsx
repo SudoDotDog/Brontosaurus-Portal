@@ -13,6 +13,7 @@ import Entry from "./entry";
 import { getStore } from "./state/store";
 
 declare const module: any;
+declare const require: any;
 
 const render: (App: any) => void = (App: any): void => {
 
