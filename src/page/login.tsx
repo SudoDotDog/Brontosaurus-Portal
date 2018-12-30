@@ -36,6 +36,10 @@ export const LoginBase: React.SFC<LoginProp> = (props: LoginProp) => {
     console.log(StyleLogin);
 
     return (<div>
+        <div>
+            <div></div>
+            <input onChange={(event) => props.setUsername(event.target.value)} />
+        </div>
         {props.password}
         <button onClick={() => {
             console.log(props);
