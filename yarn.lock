@@ -23,9 +23,9 @@
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@sudoo/tslint-config/-/tslint-config-1.0.1.tgz#027c46d40048f91b0886cfa77eefcacac9752164"
 
-"@sudoo/webpack-react@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@sudoo/webpack-react/-/webpack-react-1.0.1.tgz#6302c35a847075d171ea03fc98b0a4017ad2ff2c"
+"@sudoo/webpack-react@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@sudoo/webpack-react/-/webpack-react-1.1.0.tgz#1dcfb167608bc3f57d73063d742e1123d65edc35"
   dependencies:
     awesome-typescript-loader "^5.2.1"
     css-loader "^1.0.1"
