@@ -4,6 +4,9 @@
  * @description Hello
  */
 
+import { NeonButton } from "@sudoo/neon/button";
+import { SIZE } from "@sudoo/neon/common/declare";
+import { NeonInput } from "@sudoo/neon/input";
 import * as React from "react";
 import { connect, ConnectedComponentClass } from "react-redux";
 import * as StyleLogin from "../../style/page/login.sass";
@@ -36,15 +39,21 @@ export const LoginBase: React.SFC<LoginProp> = (props: LoginProp) => {
     console.log(StyleLogin);
 
     return (<div>
-        <div>
-            <div></div>
-            <input onChange={(event) => props.setUsername(event.target.value)} />
-        </div>
-        {props.password}
-        <button onClick={() => {
-            console.log(props);
-            props.setPassword('1');
-        }}>123</button>
+        <NeonInput
+            label="Username"
+            onChange={(value) => props.setUsername(value)} />
+        <NeonInput
+            type="password"
+            label="Password"
+            onChange={(value) => props.setPassword(value)} />
+        <NeonButton
+            size={SIZE.FULL}
+            onClick={() => {
+                console.log(props);
+                props.setPassword('1');
+            }}>
+            Login
+        </NeonButton>
     </div>);
 };
 
