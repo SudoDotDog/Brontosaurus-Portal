@@ -1,12 +1,12 @@
 /**
  * @author WMXPY
- * @namespace Portal
- * @description Hello
+ * @namespace Page
+ * @description Index
  */
 
 import { NeonButton } from "@sudoo/neon/button";
-import { SIZE } from "@sudoo/neon/common/declare";
-import { NeonInput } from "@sudoo/neon/input";
+import { MARGIN, SIZE } from "@sudoo/neon/declare";
+import { INPUT_TYPE, NeonInput } from "@sudoo/neon/input";
 import * as React from "react";
 import { connect, ConnectedComponentClass } from "react-redux";
 import * as StyleLogin from "../../style/page/login.sass";
@@ -41,13 +41,16 @@ export const LoginBase: React.SFC<LoginProp> = (props: LoginProp) => {
     return (<div>
         <NeonInput
             label="Username"
+            margin={MARGIN.SMALL}
             onChange={(value) => props.setUsername(value)} />
         <NeonInput
-            type="password"
+            type={INPUT_TYPE.PASSWORD}
             label="Password"
+            margin={MARGIN.SMALL}
             onChange={(value) => props.setPassword(value)} />
         <NeonButton
             size={SIZE.FULL}
+            margin={MARGIN.SMALL}
             onClick={() => {
                 console.log(props);
                 props.setPassword('1');

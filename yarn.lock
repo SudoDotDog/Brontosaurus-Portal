@@ -12,10 +12,10 @@
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@sudoo/bark/-/bark-1.2.1.tgz#622e75a36388af50539e0896563bd15163e059e6"
 
-"@sudoo/neon@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@sudoo/neon/-/neon-0.0.1.tgz#25bb6ab2f8c25eb6a613107d0e4b926e7e5c2ca9"
-  integrity sha512-GKvW93WEEv8K3CLZkuZ1fkIAMu+/0xTIJ0m7+5uBoFJGCVx8EOBCyliBe/Fk9zM3BfdKN8Js/qjRADn+iQe5VA==
+"@sudoo/neon@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@sudoo/neon/-/neon-0.0.3.tgz#e5a8e665999c087ab115edbd9f05ee5d50a88b42"
+  integrity sha512-T7FBAy2QehRLF5Wg8S4yQqJ0Qmeyeiuc5ehj6EIDBowwZtJGEIrpCzj+569fzIb10HiDO3aQdB0NAq/uAKCLLA==
   dependencies:
     jss "^10.0.0-alpha.4"
     jss-preset-default "^10.0.0-alpha.4"
@@ -4592,6 +4592,7 @@ regenerate@^1.2.1:
 regenerator-runtime@^0.12.0:
   version "0.12.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.12.1.tgz#fa1a71544764c036f8c49b13a08b2594c9f8a0de"
+  integrity sha512-odxIc1/vDlo4iZcfXqRYFj0vpXFNoGdKMAUieAlFYO6m/nl5e9KR/beGf41z4a1FI+aQgtjhuaSlDxQ0hmkrHg==
 
 regex-not@^1.0.0, regex-not@^1.0.2:
   version "1.0.2"
@@ -5287,6 +5288,7 @@ svgo@^1.0.0:
 symbol-observable@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
+  integrity sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==
 
 tapable@^1.0.0, tapable@^1.1.0:
   version "1.1.1"
