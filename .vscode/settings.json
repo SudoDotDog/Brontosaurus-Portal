@@ -3,7 +3,8 @@
         "Sudoo",
         "devtool",
         "ifeq",
-        "setx"
+        "setx",
+        "triforce"
     ],
     "tslint.configFile": "typescript/tslint.json"
 }

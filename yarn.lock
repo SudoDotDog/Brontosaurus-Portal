@@ -12,13 +12,13 @@
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@sudoo/bark/-/bark-1.2.1.tgz#622e75a36388af50539e0896563bd15163e059e6"
 
-"@sudoo/neon@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@sudoo/neon/-/neon-0.0.3.tgz#e5a8e665999c087ab115edbd9f05ee5d50a88b42"
-  integrity sha512-T7FBAy2QehRLF5Wg8S4yQqJ0Qmeyeiuc5ehj6EIDBowwZtJGEIrpCzj+569fzIb10HiDO3aQdB0NAq/uAKCLLA==
+"@sudoo/neon@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@sudoo/neon/-/neon-0.0.4.tgz#af231546d156eea3692bd364cdfcc9bfce306354"
+  integrity sha512-7h4STHmfiL2I2mXHsKYedWTxmamA4rTdILqMRVlT5NGoBa7Ue9fj/V01XlZ/WSNDdiEtVG8rpMD4colk/go38g==
   dependencies:
-    jss "^10.0.0-alpha.4"
-    jss-preset-default "^10.0.0-alpha.4"
+    jss "^10.0.0-alpha.6"
+    jss-preset-default "^10.0.0-alpha.6"
 
 "@sudoo/redux@^0.1.1":
   version "0.1.1"
@@ -27,9 +27,26 @@
     "@sudoo/bark" "^1.2.1"
     redux "^4.0.1"
 
-"@sudoo/tslint-config@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@sudoo/tslint-config/-/tslint-config-1.0.1.tgz#027c46d40048f91b0886cfa77eefcacac9752164"
+"@sudoo/triforce@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@sudoo/triforce/-/triforce-1.1.0.tgz#955011d7e4b87490babc2f7c3f4938a94e183eb1"
+  integrity sha512-U5qR0Nh39Ibrp1FRD/aGr1SVl9c2Fmd7vlAFWyhW0ur7KVNDrUScRG3YH244hwo4kyx6XvdeAM/g1bVE0y8iiw==
+  dependencies:
+    "@sudoo/tslint-config" "^1.1.0"
+    "@types/chai" "^4.1.7"
+    "@types/chance" "^1.0.1"
+    "@types/mocha" "^5.2.5"
+    chai "^4.2.0"
+    chance "^1.0.18"
+    mocha "^5.2.0"
+    ts-node "^7.0.1"
+    tslint "^5.12.0"
+    typescript "^3.2.2"
+
+"@sudoo/tslint-config@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@sudoo/tslint-config/-/tslint-config-1.1.0.tgz#f8712fb5a5d26e531af911d25d4c5ce3618c9198"
+  integrity sha512-nYvQthhovGpRSNz8YKTDy64ICJjINlDCJ0umqXifwZUwNAv9TEIpM4K5zsoBmLowMgg0XCZ2cyUV0DBAjqg26Q==
 
 "@sudoo/webpack-react@^1.1.0":
   version "1.1.0"
@@ -2975,7 +2992,7 @@ jss-plugin-vendor-prefixer@^10.0.0-alpha.7:
     "@babel/runtime" "^7.0.0"
     css-vendor "^1.1.0"
 
-jss-preset-default@^10.0.0-alpha.4:
+jss-preset-default@^10.0.0-alpha.6:
   version "10.0.0-alpha.7"
   resolved "https://registry.yarnpkg.com/jss-preset-default/-/jss-preset-default-10.0.0-alpha.7.tgz#f5f04edd7f19c73f82ea028681b4c0d96ceeecce"
   integrity sha512-3hmuOW/5b2J2h5x0zSOOBl4dp5/9PFeX8h6xm13cNVG63sXcR1dGrddX2Q7jUWXmLeP8uQCBTaH2FcmRM+OmtA==
@@ -2994,7 +3011,7 @@ jss-preset-default@^10.0.0-alpha.4:
     jss-plugin-template "^10.0.0-alpha.7"
     jss-plugin-vendor-prefixer "^10.0.0-alpha.7"
 
-jss@^10.0.0-alpha.4:
+jss@^10.0.0-alpha.6:
   version "10.0.0-alpha.7"
   resolved "https://registry.yarnpkg.com/jss/-/jss-10.0.0-alpha.7.tgz#ee9909f3a97c9370fa120b50929a79b2caed8536"
   integrity sha512-nxCfzcL9KzJEpxmSfozCzj5xgRvINF/g1ryHH/sgHeHcleFvY6mzo9D1VuhkUYF1mdEpcoprAjdqFYlsi8gRsQ==
