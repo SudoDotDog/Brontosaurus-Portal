@@ -12,10 +12,10 @@
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@sudoo/bark/-/bark-1.2.1.tgz#622e75a36388af50539e0896563bd15163e059e6"
 
-"@sudoo/neon@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@sudoo/neon/-/neon-0.0.4.tgz#af231546d156eea3692bd364cdfcc9bfce306354"
-  integrity sha512-7h4STHmfiL2I2mXHsKYedWTxmamA4rTdILqMRVlT5NGoBa7Ue9fj/V01XlZ/WSNDdiEtVG8rpMD4colk/go38g==
+"@sudoo/neon@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@sudoo/neon/-/neon-0.0.5.tgz#7cb08f869ad1fca1fe0ebe5e4436d475372d8794"
+  integrity sha512-YkYnvoR3NPoyAKzUn5wYXNV4MvntglGdz4UtfuUn7MH59KI6k7oVqykUpW3h+gT1Bn0emBgmmcgQ+gRmOsOqxg==
   dependencies:
     jss "^10.0.0-alpha.6"
     jss-preset-default "^10.0.0-alpha.6"
