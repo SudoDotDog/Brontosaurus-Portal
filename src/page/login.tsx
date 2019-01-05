@@ -110,7 +110,7 @@ export class LoginBase extends React.Component<LoginProp, {}> {
         try {
             await login(this.props.username, this.props.password, 'BRONTOSAURUS_RED');
         } catch (err) {
-            console.log(err, 2);
+            throw err;
         }
     }
 }

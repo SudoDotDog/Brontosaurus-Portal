@@ -6,28 +6,24 @@
 
 export const login = async (username: string, password: string, applicationKey: string): Promise<string> => {
 
-    try {
-        const data = await fetch('http://localhost:8080/retrieve', {
-            method: "POST",
-            mode: "cors",
-            cache: "no-cache",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            redirect: "error", // manual, *follow, error
-            referrer: "no-referrer",
-            body: JSON.stringify({
-                username,
-                password,
-                applicationKey,
-            }),
-        }).then((response) => response.json());
+    const payload: string = JSON.stringify({
+        username,
+        password,
+        applicationKey,
+    });
 
-        console.log(data);
-        return '';
-    } catch (err) {
-        console.log(err);
-    }
+    console.log(payload);
 
+    const data = await fetch('http://localhost:8080/retrieve', {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        mode: "cors",
+        body: payload,
+    });
+
+    console.log(1, await data.text());
     return '';
 };
