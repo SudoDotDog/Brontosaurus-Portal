@@ -8,7 +8,7 @@ import { NeonButton } from "@sudoo/neon/button";
 import { MARGIN, SIZE } from "@sudoo/neon/declare";
 import { INPUT_TYPE, NeonInput } from "@sudoo/neon/input";
 import { NeonPaper } from "@sudoo/neon/paper";
-import { NeonSpinner } from "@sudoo/neon/spinner";
+import { NeonIndicator } from "@sudoo/neon/spinner";
 import * as React from "react";
 import { connect, ConnectedComponentClass } from "react-redux";
 import * as StyleLogin from "../../style/page/login.sass";
@@ -77,37 +77,29 @@ export class LoginBase extends React.Component<LoginProp, {}> {
             <NeonPaper style={{
                 marginTop: '10rem',
             }}>
-
                 <img src={this.props.target.logo} className={StyleLogin.logoImage} />
                 <div>{this.props.target.application}</div>
-                {
-                    this.props.isLoading ?
-                        <div style={{
-                            margin: 'auto',
-                            width: '6rem',
-                            marginTop: '2rem',
-                            marginBottom: '2rem',
-                        }}><NeonSpinner loading /></div> :
-                        <div>
-                            <NeonInput
-                                label="Username"
-                                margin={MARGIN.SMALL}
-                                value={this.props.username}
-                                onChange={(value) => this.props.setUsername(value)} />
-                            <NeonInput
-                                type={INPUT_TYPE.PASSWORD}
-                                label="Password"
-                                margin={MARGIN.SMALL}
-                                value={this.props.password}
-                                onChange={(value) => this.props.setPassword(value)} />
-                            <NeonButton
-                                size={SIZE.FULL}
-                                margin={MARGIN.SMALL}
-                                onClick={this._login}>
-                                Login
+                <NeonIndicator loading={this.props.isLoading}>
+                    <div>
+                        <NeonInput
+                            label="Username"
+                            margin={MARGIN.SMALL}
+                            value={this.props.username}
+                            onChange={(value) => this.props.setUsername(value)} />
+                        <NeonInput
+                            type={INPUT_TYPE.PASSWORD}
+                            label="Password"
+                            margin={MARGIN.SMALL}
+                            value={this.props.password}
+                            onChange={(value) => this.props.setPassword(value)} />
+                        <NeonButton
+                            size={SIZE.FULL}
+                            margin={MARGIN.SMALL}
+                            onClick={this._login}>
+                            Login
                         </NeonButton>
-                        </div>
-                }
+                    </div>
+                </NeonIndicator>
             </NeonPaper>
         </div>);
     }
@@ -126,6 +118,7 @@ export class LoginBase extends React.Component<LoginProp, {}> {
         } catch (err) {
 
             this.props.clearLoading();
+            throw err;
         }
     }
 }

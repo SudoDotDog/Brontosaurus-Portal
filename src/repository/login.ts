@@ -20,7 +20,7 @@ export const login = async (username: string, password: string): Promise<LoginRe
         applicationKey: portal.applicationKey,
     });
 
-    const data: Response = await fetch('http://localhost:8080/retrieve', {
+    const data: LoginResponse = await fetch('http://localhost:8080/retrieve', {
         method: "POST",
         headers: {
             'Accept': 'application/json',
@@ -28,8 +28,10 @@ export const login = async (username: string, password: string): Promise<LoginRe
         },
         mode: "cors",
         body: payload,
+    }).then((response: Response) => {
+
+        return response.json();
     });
 
-    const json: LoginResponse = await data.json();
-    return json;
+    return null as any;
 };
