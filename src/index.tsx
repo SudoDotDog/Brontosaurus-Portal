@@ -10,10 +10,13 @@ import { AppContainer } from "react-hot-loader";
 import { Provider } from "react-redux";
 import '../style/common/global.sass';
 import Entry from "./entry";
+import { Portal } from "./portal/portal";
 import { getStore } from "./state/store";
 
 declare const module: any;
 declare const require: any;
+
+Portal.register();
 
 const render: (App: any) => void = (App: any): void => {
 

@@ -4,17 +4,23 @@
  * @description Login
  */
 
-export const login = async (username: string, password: string, applicationKey: string): Promise<string> => {
+import { Portal } from "../portal/portal";
+
+export type LoginResponse = {
+    token: string;
+};
+
+export const login = async (username: string, password: string): Promise<LoginResponse> => {
+
+    const portal: Portal = Portal.instance;
 
     const payload: string = JSON.stringify({
         username,
         password,
-        applicationKey,
+        applicationKey: portal.applicationKey,
     });
 
-    console.log(payload);
-
-    const data = await fetch('http://localhost:8080/retrieve', {
+    const data: Response = await fetch('http://localhost:8080/retrieve', {
         method: "POST",
         headers: {
             'Accept': 'application/json',
@@ -24,6 +30,6 @@ export const login = async (username: string, password: string, applicationKey: 
         body: payload,
     });
 
-    console.log(1, await data.text());
-    return '';
+    const json: LoginResponse = await data.json();
+    return json;
 };

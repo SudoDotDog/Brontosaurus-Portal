@@ -12,21 +12,26 @@ import { NeonSpinner } from "@sudoo/neon/spinner";
 import * as React from "react";
 import { connect, ConnectedComponentClass } from "react-redux";
 import * as StyleLogin from "../../style/page/login.sass";
-import { login } from "../repository/login";
+import { Portal } from "../portal/portal";
+import { login, LoginResponse } from "../repository/login";
 import { IStore } from "../state/declare";
 import { setPassword, setUsername } from "../state/form/form";
 import { ITarget } from "../state/info/type";
-import { startLoading } from "../state/status/status";
+import { clearError, clearLoading, startError, startLoading } from "../state/status/status";
 
 type LoginProp = {
 
     readonly username: string;
     readonly password: string;
     readonly isLoading: boolean;
+    readonly error: string | null;
 
     readonly setUsername: (username: string) => void;
     readonly setPassword: (password: string) => void;
     readonly startLoading: (message: string) => void;
+    readonly startError: (message: string) => void;
+    readonly clearLoading: () => void;
+    readonly clearError: () => void;
 
     readonly target: ITarget;
 };
@@ -37,6 +42,7 @@ const mapStates = ({ form, info, status }: IStore): Partial<LoginProp> => ({
     password: form.password,
 
     isLoading: Boolean(status.loading),
+    error: status.error,
 
     target: info.target,
 });
@@ -47,6 +53,9 @@ const mapDispatches: Partial<LoginProp> = {
     setPassword,
 
     startLoading,
+    clearLoading,
+    startError,
+    clearError,
 };
 
 export class LoginBase extends React.Component<LoginProp, {}> {
@@ -108,9 +117,15 @@ export class LoginBase extends React.Component<LoginProp, {}> {
         this.props.startLoading('test');
 
         try {
-            await login(this.props.username, this.props.password, 'BRONTOSAURUS_RED');
+            const response: LoginResponse = await login(this.props.username, this.props.password);
+            const token: string = response.token;
+
+            const portal: Portal = Portal.instance;
+
+            window.location.href = portal.callbackPath + '?token=' + token;
         } catch (err) {
-            throw err;
+
+            this.props.clearLoading();
         }
     }
 }
