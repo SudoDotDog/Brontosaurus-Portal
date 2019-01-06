@@ -80,6 +80,7 @@ export class LoginBase extends React.Component<LoginProp, {}> {
             }}>
                 <img src={this.props.target.logo} className={StyleLogin.logoImage} />
                 <div>{this.props.target.application}</div>
+
                 <NeonIndicator loading={this.props.isLoading}>
 
                     {this.props.error ? <NeonFlag
@@ -103,7 +104,8 @@ export class LoginBase extends React.Component<LoginProp, {}> {
                         margin={MARGIN.SMALL}
                         onClick={this._login}>
                         Login
-                        </NeonButton>
+                    </NeonButton>
+
                 </NeonIndicator>
             </NeonPaper>
         </div>);
