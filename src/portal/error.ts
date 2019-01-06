@@ -4,11 +4,7 @@
  * @description Error
  */
 
-export type ErrorInfo = {
-
-    short: string;
-    long: string;
-};
+import { ErrorInfo } from "../state/status/type";
 
 const errorMap: Record<string, ErrorInfo> = {
 

@@ -6,7 +6,7 @@
 
 import { Reducer } from '@sudoo/redux';
 import { ACTIONS, IStore } from '../declare';
-import { ISetErrorReducerAction, ISetLoadingReducerAction, IStatusStore } from './type';
+import { ErrorInfo, ISetErrorReducerAction, ISetLoadingReducerAction, IStatusStore } from './type';
 
 const reduceLoadingStatus: Reducer<IStore, ISetLoadingReducerAction> = (state: IStore | undefined, action: ISetLoadingReducerAction): IStore => ({
 
@@ -46,10 +46,10 @@ export const clearLoading = (): ISetLoadingReducerAction => ({
     loading: null,
 });
 
-export const startError = (message: string): ISetErrorReducerAction => ({
+export const startError = (info: ErrorInfo): ISetErrorReducerAction => ({
 
     type: ACTIONS.SET_ERROR,
-    error: message,
+    error: info,
 });
 
 export const clearError = (): ISetErrorReducerAction => ({

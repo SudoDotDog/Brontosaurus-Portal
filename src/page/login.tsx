@@ -13,24 +13,26 @@ import { NeonIndicator } from "@sudoo/neon/spinner";
 import * as React from "react";
 import { connect, ConnectedComponentClass } from "react-redux";
 import * as StyleLogin from "../../style/page/login.sass";
+import { wrapMap } from "../portal/error";
 import { Portal } from "../portal/portal";
 import { login } from "../repository/login";
 import { IStore } from "../state/declare";
 import { setPassword, setUsername } from "../state/form/form";
 import { ITarget } from "../state/info/type";
 import { clearError, clearLoading, startError, startLoading } from "../state/status/status";
+import { ErrorInfo } from "../state/status/type";
 
 type LoginProp = {
 
     readonly username: string;
     readonly password: string;
     readonly isLoading: boolean;
-    readonly error: string | null;
+    readonly error: ErrorInfo | null;
 
     readonly setUsername: (username: string) => void;
     readonly setPassword: (password: string) => void;
     readonly startLoading: (message: string) => void;
-    readonly startError: (message: string) => void;
+    readonly startError: (info: ErrorInfo) => void;
     readonly clearLoading: () => void;
     readonly clearError: () => void;
 
@@ -85,8 +87,9 @@ export class LoginBase extends React.Component<LoginProp, {}> {
 
                     {this.props.error ? <NeonFlag
                         margin={MARGIN.SMALL}
+                        info={this.props.error.long}
                         type={FLAG_TYPE.ERROR}>
-                        {this.props.error}
+                        {this.props.error.short}
                     </NeonFlag> : void 0}
                     <NeonInput
                         label="Username"
@@ -123,10 +126,11 @@ export class LoginBase extends React.Component<LoginProp, {}> {
             window.location.href = portal.callbackPath + '?token=' + token;
         } catch (err) {
 
-            const error = err.message;
+            const error: string = err.message;
             this.props.clearLoading();
 
-            this.props.startError(error);
+            const info: ErrorInfo = wrapMap(error);
+            this.props.startError(info);
         }
     }
 }
