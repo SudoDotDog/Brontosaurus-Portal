@@ -6,6 +6,7 @@
 
 import { NeonButton } from "@sudoo/neon/button";
 import { MARGIN, SIZE } from "@sudoo/neon/declare";
+import { FLAG_TYPE, NeonFlag } from "@sudoo/neon/flag";
 import { INPUT_TYPE, NeonInput } from "@sudoo/neon/input";
 import { NeonPaper } from "@sudoo/neon/paper";
 import { NeonIndicator } from "@sudoo/neon/spinner";
@@ -13,7 +14,7 @@ import * as React from "react";
 import { connect, ConnectedComponentClass } from "react-redux";
 import * as StyleLogin from "../../style/page/login.sass";
 import { Portal } from "../portal/portal";
-import { login, LoginResponse } from "../repository/login";
+import { login } from "../repository/login";
 import { IStore } from "../state/declare";
 import { setPassword, setUsername } from "../state/form/form";
 import { ITarget } from "../state/info/type";
@@ -80,25 +81,29 @@ export class LoginBase extends React.Component<LoginProp, {}> {
                 <img src={this.props.target.logo} className={StyleLogin.logoImage} />
                 <div>{this.props.target.application}</div>
                 <NeonIndicator loading={this.props.isLoading}>
-                    <div>
-                        <NeonInput
-                            label="Username"
-                            margin={MARGIN.SMALL}
-                            value={this.props.username}
-                            onChange={(value) => this.props.setUsername(value)} />
-                        <NeonInput
-                            type={INPUT_TYPE.PASSWORD}
-                            label="Password"
-                            margin={MARGIN.SMALL}
-                            value={this.props.password}
-                            onChange={(value) => this.props.setPassword(value)} />
-                        <NeonButton
-                            size={SIZE.FULL}
-                            margin={MARGIN.SMALL}
-                            onClick={this._login}>
-                            Login
+
+                    {this.props.error ? <NeonFlag
+                        margin={MARGIN.SMALL}
+                        type={FLAG_TYPE.ERROR}>
+                        {this.props.error}
+                    </NeonFlag> : void 0}
+                    <NeonInput
+                        label="Username"
+                        margin={MARGIN.SMALL}
+                        value={this.props.username}
+                        onChange={(value) => this.props.setUsername(value)} />
+                    <NeonInput
+                        type={INPUT_TYPE.PASSWORD}
+                        label="Password"
+                        margin={MARGIN.SMALL}
+                        value={this.props.password}
+                        onChange={(value) => this.props.setPassword(value)} />
+                    <NeonButton
+                        size={SIZE.FULL}
+                        margin={MARGIN.SMALL}
+                        onClick={this._login}>
+                        Login
                         </NeonButton>
-                    </div>
                 </NeonIndicator>
             </NeonPaper>
         </div>);
@@ -109,16 +114,17 @@ export class LoginBase extends React.Component<LoginProp, {}> {
         this.props.startLoading('test');
 
         try {
-            const response: LoginResponse = await login(this.props.username, this.props.password);
-            const token: string = response.token;
 
+            const token: string = await login(this.props.username, this.props.password);
             const portal: Portal = Portal.instance;
 
             window.location.href = portal.callbackPath + '?token=' + token;
         } catch (err) {
 
+            const error = err.message;
             this.props.clearLoading();
-            throw err;
+
+            this.props.startError(error);
         }
     }
 }

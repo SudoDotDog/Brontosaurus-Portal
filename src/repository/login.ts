@@ -6,11 +6,7 @@
 
 import { Portal } from "../portal/portal";
 
-export type LoginResponse = {
-    token: string;
-};
-
-export const login = async (username: string, password: string): Promise<LoginResponse> => {
+export const login = async (username: string, password: string): Promise<string> => {
 
     const portal: Portal = Portal.instance;
 
@@ -20,7 +16,7 @@ export const login = async (username: string, password: string): Promise<LoginRe
         applicationKey: portal.applicationKey,
     });
 
-    const data: LoginResponse = await fetch('http://localhost:8080/retrieve', {
+    const response: Response = await fetch('http://localhost:8080/retrieve', {
         method: "POST",
         headers: {
             'Accept': 'application/json',
@@ -28,10 +24,13 @@ export const login = async (username: string, password: string): Promise<LoginRe
         },
         mode: "cors",
         body: payload,
-    }).then((response: Response) => {
-
-        return response.json();
     });
 
-    return null as any;
+    const data = await response.json();
+
+    if (response.ok) {
+        return data.token;
+    }
+
+    throw new Error(data);
 };

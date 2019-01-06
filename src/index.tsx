@@ -21,11 +21,13 @@ Portal.register();
 const render: (App: any) => void = (App: any): void => {
 
     ReactDOM.render(
-        (<Provider store={getStore()}>
+        (
             <AppContainer>
-                <App />
+                <Provider store={getStore()}>
+                    <App />
+                </Provider>
             </AppContainer>
-        </Provider>),
+        ),
         document.getElementById("container"));
 };
 
