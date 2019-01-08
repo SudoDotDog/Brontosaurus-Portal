@@ -10,7 +10,7 @@ import { ACTIONS } from "../declare";
 export type ErrorInfo = {
 
     short: string;
-    long: string;
+    long?: string;
 };
 
 export interface IStatusStore {

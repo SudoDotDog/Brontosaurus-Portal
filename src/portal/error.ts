@@ -8,7 +8,9 @@ import { ErrorInfo } from "../state/status/type";
 
 const errorMap: Record<string, ErrorInfo> = {
 
-
+    "Failed to fetch": {
+        short: 'Cannot connect to the server',
+    },
 };
 
 export const wrapMap = (message: string): ErrorInfo => {
@@ -19,6 +21,8 @@ export const wrapMap = (message: string): ErrorInfo => {
 
         return instance;
     }
+
+    console.log(message);
 
     return {
         short: "Unknown Error",
