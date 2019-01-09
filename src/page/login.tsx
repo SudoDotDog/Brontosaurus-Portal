@@ -6,13 +6,13 @@
 
 import { NeonButton } from "@sudoo/neon/button";
 import { MARGIN, SIZE } from "@sudoo/neon/declare";
-import { FLAG_TYPE, NeonFlag } from "@sudoo/neon/flag";
 import { INPUT_TYPE, NeonInput } from "@sudoo/neon/input";
 import { NeonPaper } from "@sudoo/neon/paper";
 import { NeonIndicator } from "@sudoo/neon/spinner";
 import * as React from "react";
 import { connect, ConnectedComponentClass } from "react-redux";
 import * as StyleLogin from "../../style/page/login.sass";
+import { ErrorFlag } from "../components/flag";
 import { wrapMap } from "../portal/error";
 import { Portal } from "../portal/portal";
 import { login } from "../repository/login";
@@ -85,12 +85,7 @@ export class LoginBase extends React.Component<LoginProp, {}> {
 
                 <NeonIndicator loading={this.props.isLoading}>
 
-                    {this.props.error ? <NeonFlag
-                        margin={MARGIN.SMALL}
-                        info={this.props.error.long}
-                        type={FLAG_TYPE.ERROR}>
-                        {this.props.error.short}
-                    </NeonFlag> : void 0}
+                    <ErrorFlag error={this.props.error} />
                     <NeonInput
                         label="Username"
                         margin={MARGIN.SMALL}
