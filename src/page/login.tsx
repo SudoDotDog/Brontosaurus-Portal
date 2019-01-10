@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
  * @namespace Page
- * @description Index
+ * @description Login
  */
 
 import { NeonButton } from "@sudoo/neon/button";
@@ -68,10 +68,6 @@ export class LoginBase extends React.Component<LoginProp, {}> {
         super(props);
 
         this._login = this._login.bind(this);
-    }
-
-    public componentDidMount() {
-        document.body.style.backgroundImage = `url('${this.props.target.image}')`;
     }
 
     public render(): JSX.Element {

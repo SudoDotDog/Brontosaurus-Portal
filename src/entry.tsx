@@ -6,12 +6,17 @@
 
 import * as React from "react";
 import { ConnectedLogin } from "./page/login";
+import { ConnectedTarget } from "./page/target";
 
 export class Entry extends React.Component {
 
     public render(): JSX.Element {
 
-        return (<ConnectedLogin />);
+        return (
+            <ConnectedTarget>
+                <ConnectedLogin />
+            </ConnectedTarget>
+        );
     }
 }
 
