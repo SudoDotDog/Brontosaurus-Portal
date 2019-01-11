@@ -8,7 +8,7 @@ import { Portal } from "../portal/portal";
 
 export type ApplicationRepositoryResponse = {
     readonly avatar: string;
-    readonly key: string;
+    readonly background: string;
     readonly name: string;
 };
 
@@ -35,7 +35,7 @@ export const application = async (): Promise<ApplicationRepositoryResponse> => {
     if (response.ok) {
         return {
             avatar: data.avatar,
-            key: data.key,
+            background: data.background,
             name: data.name,
         };
     }

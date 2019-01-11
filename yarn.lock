@@ -25,6 +25,26 @@
     jss "^10.0.0-alpha.7"
     jss-preset-default "^10.0.0-alpha.7"
 
+"@sudoo/react-force-dev@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@sudoo/react-force-dev/-/react-force-dev-1.1.0.tgz#c2991ac3d899798cf5922bd1f274bd4f4781c189"
+  integrity sha512-gC3rF7865BLyd1C3r/KWZ4x9I1GsJyWsIBez+bcWiLpz2vPSfLJK6FXs6XbiD3fS23DmqLBWvR87i3+2LNCQpQ==
+  dependencies:
+    "@types/enzyme" "^3.1.15"
+    "@types/enzyme-adapter-react-16" "^1.0.3"
+    "@types/react" "^16.7.18"
+    "@types/react-dom" "^16.0.11"
+    enzyme "^3.8.0"
+    enzyme-adapter-react-16 "^1.7.1"
+
+"@sudoo/react-force@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@sudoo/react-force/-/react-force-1.1.0.tgz#92a4b7c984b7cb95849139e587dd8bae67bf9e21"
+  integrity sha512-ljAYD71SuE7LyB1YvlXd62r7JoKarHChjMmvTgGHraZpUPgsy/jg8a6gU6a1bDw7gXMmA1FS8uyrKJYIUayswg==
+  dependencies:
+    react "^16.7.0"
+    react-dom "^16.7.0"
+
 "@sudoo/redux@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@sudoo/redux/-/redux-1.0.0.tgz#eee376a737959e458bfd38a761d30bbd91baa92f"

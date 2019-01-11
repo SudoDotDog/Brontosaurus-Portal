@@ -60,7 +60,7 @@ export class TargetBase extends React.Component<TargetProp, {}> {
             const info: ApplicationRepositoryResponse = await application();
             this.props.setTarget({
                 logo: info.avatar,
-                image: this.props.target.image,
+                image: info.background,
                 application: info.name,
             });
             document.body.style.backgroundImage = `url('${this.props.target.image}')`;
