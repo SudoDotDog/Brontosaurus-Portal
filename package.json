@@ -34,9 +34,7 @@
     "@sudoo/react-force-dev": "^1.1.0",
     "@sudoo/webpack-react": "^1.2.0",
     "@types/node": "^10.12.18",
-    "@types/node-sass": "^3.10.32",
     "@types/react-redux": "^6.0.11",
-    "node-sass": "^4.11.0",
     "react-hot-loader": "^4.6.3"
   },
   "nyc": {
