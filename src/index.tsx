@@ -4,14 +4,14 @@
  * @description Index
  */
 
+import { SudooProvider } from "@sudoo/redux";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
-import { Provider } from "react-redux";
 import '../style/common/global.sass';
 import Entry from "./entry";
 import { Portal } from "./portal/portal";
-import { getStore } from "./state/store";
+import { redux } from "./state/store";
 
 declare const module: any;
 declare const require: any;
@@ -23,9 +23,9 @@ const render: (App: any) => void = (App: any): void => {
     ReactDOM.render(
         (
             <AppContainer>
-                <Provider store={getStore()}>
+                <SudooProvider redux={redux}>
                     <App />
-                </Provider>
+                </SudooProvider>
             </AppContainer>
         ),
         document.getElementById("container"));

@@ -32,8 +32,8 @@ export const setTarget = (target: ITarget): ISetTargetReducerAction => ({
 export const getDefaultInfoStore = (): IInfoStore => ({
 
     target: {
-        image: 'http://blog.legalsolutions.thomsonreuters.com/wp-content/uploads//2014/11/meeting-boardroom-professionals.jpg',
-        logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Logo_TV_2015.svg/1200px-Logo_TV_2015.svg.png',
-        application: 'Test application',
+        image: '',
+        logo: '',
+        application: '',
     },
 });

@@ -4,8 +4,8 @@
  * @description Target
  */
 
+import { Connector } from "@sudoo/redux";
 import * as React from "react";
-import { connect, ConnectedComponentClass } from "react-redux";
 import { wrapMap } from "../portal/error";
 import { application, ApplicationRepositoryResponse } from "../repository/application";
 import { IStore } from "../state/declare";
@@ -26,18 +26,17 @@ type TargetProp = {
     readonly children: any;
 };
 
-const mapStates = ({ info }: IStore): Partial<TargetProp> => ({
-    target: info.target,
-});
+const connector = Connector.create<IStore, TargetProp>()
+    .connectStates(({ info }: IStore): Partial<TargetProp> => ({
 
-const mapDispatches: Partial<TargetProp> = {
-    setTarget,
-
-    startLoading,
-    clearLoading,
-    startError,
-    clearError,
-};
+        target: info.target,
+    })).connectActions({
+        setTarget,
+        startLoading,
+        clearLoading,
+        startError,
+        clearError,
+    });
 
 export class TargetBase extends React.Component<TargetProp, {}> {
 
@@ -77,4 +76,4 @@ export class TargetBase extends React.Component<TargetProp, {}> {
     }
 }
 
-export const ConnectedTarget: ConnectedComponentClass<typeof TargetBase, any> = connect(mapStates, mapDispatches as any)(TargetBase);
+export const ConnectedTarget: React.ComponentType<{}> = connector.connect(TargetBase);

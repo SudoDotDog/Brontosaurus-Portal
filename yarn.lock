@@ -8,19 +8,15 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@sudoo/bark@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@sudoo/bark/-/bark-1.2.1.tgz#622e75a36388af50539e0896563bd15163e059e6"
-
 "@sudoo/bark@^1.2.2":
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/@sudoo/bark/-/bark-1.2.2.tgz#c42c63eeb1b5908dcfad25cab442a9407d4f32ac"
   integrity sha512-Hauvvdbr+AxnFrke0KPwW4lmdGFPLlsL1utaKRUmCTsqKd6HIVrowgLhZNGsWI+D31uTeDyP8rjIUBXHeyzQcA==
 
-"@sudoo/neon@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@sudoo/neon/-/neon-1.0.1.tgz#7cd14c8d53b11d99cee4129052b6d2f8647c96f0"
-  integrity sha512-XiNzu6znhSEhxiXVPy0rQe2BprB/1i9YbL+z53+CRyRwUinVXsGk4682ayYAf6AcIqOoF7MtnxNKMKrQWr0yNA==
+"@sudoo/neon@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@sudoo/neon/-/neon-1.2.0.tgz#2da5b86651f0bb9366c2c2d663c7bbf4d8dce30f"
+  integrity sha512-Ag5kxrDE/E43i4ktClgOPfeX0x6DZGlGAboJrg+D3yR2JD4as2aaPg9zZyBl67gUf1KJk7I4pHfdoGwkOItLVg==
   dependencies:
     jss "^10.0.0-alpha.7"
     jss-preset-default "^10.0.0-alpha.7"
@@ -45,12 +41,13 @@
     react "^16.7.0"
     react-dom "^16.7.0"
 
-"@sudoo/redux@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@sudoo/redux/-/redux-1.0.0.tgz#eee376a737959e458bfd38a761d30bbd91baa92f"
-  integrity sha512-pG3YtswepolKNLWXiccaY9op6DlGacSOb1ESF7Gump17c1wGGGwOKTC+kpPERUjIeJcy+6vBKIDNttZMi3yJhw==
+"@sudoo/redux@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@sudoo/redux/-/redux-1.3.0.tgz#0c2114799886938410b47bb0ed0f0720aa862c93"
+  integrity sha512-ClknAj/fKvOQu69Xj8QynYWWIKpgo/TdRgJLf2dzqI1/QMA+exP3ifDJiNqbtXCC9i7KqK84F845m2uhbHV+7Q==
   dependencies:
-    "@sudoo/bark" "^1.2.1"
+    "@sudoo/bark" "^1.2.2"
+    react-redux "^6.0.0"
     redux "^4.0.1"
 
 "@sudoo/triforce@^1.1.0":
@@ -74,10 +71,10 @@
   resolved "https://registry.yarnpkg.com/@sudoo/tslint-config/-/tslint-config-1.1.0.tgz#f8712fb5a5d26e531af911d25d4c5ce3618c9198"
   integrity sha512-nYvQthhovGpRSNz8YKTDy64ICJjINlDCJ0umqXifwZUwNAv9TEIpM4K5zsoBmLowMgg0XCZ2cyUV0DBAjqg26Q==
 
-"@sudoo/webpack-react@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@sudoo/webpack-react/-/webpack-react-1.2.0.tgz#54c9f2ef35c14c5097ea4fe0123edbf270c81753"
-  integrity sha512-jqIMKeANYqI4sMQxH33N8EOZ7U0vivw7Jmo86h6iwyO0OCQ8sKdITmmbAkJhN+uXN7owYS0v6pLQ7VP/sE0tMw==
+"@sudoo/webpack-react@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@sudoo/webpack-react/-/webpack-react-1.2.2.tgz#2bd40653355b398ca94cb7698211938182735c95"
+  integrity sha512-9JlFmdi1/n1yTFQevHKwl8hFmNaS01EwSFgK+mwCxUEHATZtmp/dFze4VtyyNFsWPXzZAi0a1I0UShTIQ4hHVw==
   dependencies:
     awesome-typescript-loader "^5.2.1"
     css-loader "^1.0.1"
@@ -139,13 +136,6 @@
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.0.11.tgz#bd10ccb0d9260343f4b9a49d4f7a8330a5c1f081"
   dependencies:
     "@types/react" "*"
-
-"@types/react-redux@^6.0.11":
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-6.0.11.tgz#d872254bbcba42465195a5475f40b22502b0407d"
-  dependencies:
-    "@types/react" "*"
-    redux "^4.0.0"
 
 "@types/react@*", "@types/react@^16.7.18":
   version "16.7.18"
@@ -4616,7 +4606,7 @@ redent@^1.0.0:
     indent-string "^2.1.0"
     strip-indent "^1.0.1"
 
-redux@^4.0.0, redux@^4.0.1:
+redux@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.1.tgz#436cae6cc40fbe4727689d7c8fae44808f1bfef5"
   dependencies:

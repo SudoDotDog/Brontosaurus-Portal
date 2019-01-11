@@ -17,9 +17,9 @@ export const PortalStore: IStore = {
     info: getDefaultInfoStore(),
 };
 
-export const getStore = (): Store<IStore> =>
+
+export const redux: SudooRedux<IStore, ACTIONS> =
     SudooRedux.create<IStore, ACTIONS>(PortalStore)
         .reducers(formReducers)
         .reducers(statusReducers)
-        .reducers(infoReducers)
-        .createStore();
+        .reducers(infoReducers);
