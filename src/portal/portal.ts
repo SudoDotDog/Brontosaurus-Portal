@@ -20,6 +20,7 @@ export class Portal {
 
         if (applicationKey && callbackPath) {
             this._instance = new Portal(false).setParams(applicationKey, callbackPath);
+            window.history.replaceState({}, document.title, url.origin);
         } else {
             this._instance = new Portal(true);
         }

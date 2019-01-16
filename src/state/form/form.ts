@@ -48,6 +48,6 @@ export const setPassword = (password: string): ISetFormPasswordReducerAction => 
 
 export const getDefaultFormStore = (): IFormStore => ({
 
-    username: 'hello',
-    password: 'world',
+    username: '',
+    password: '',
 });
