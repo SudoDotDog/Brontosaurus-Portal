@@ -31,6 +31,7 @@ const connector = Connector.create<IStore, TargetProp>()
 
         target: info.target,
     })).connectActions({
+
         setTarget,
         startLoading,
         clearLoading,
@@ -52,7 +53,7 @@ export class TargetBase extends React.Component<TargetProp, {}> {
 
     private async _application() {
 
-        this.props.startLoading('test');
+        this.props.startLoading('Fetch');
 
         try {
 
@@ -62,9 +63,11 @@ export class TargetBase extends React.Component<TargetProp, {}> {
                 image: info.background,
                 application: info.name,
             });
-            document.body.style.backgroundImage = `url('${this.props.target.image}')`;
-            this.props.clearLoading();
 
+            if (info.background) {
+                document.body.style.backgroundImage = `url('${info.background}')`;
+            }
+            this.props.clearLoading();
         } catch (err) {
 
             const error: string = err.message;

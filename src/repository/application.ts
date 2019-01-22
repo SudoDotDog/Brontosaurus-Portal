@@ -20,7 +20,7 @@ export const application = async (): Promise<ApplicationRepositoryResponse> => {
         applicationKey: portal.applicationKey,
     });
 
-    const response: Response = await fetch('http://localhost:8080/application', {
+    const response: Response = await fetch('/application', {
         method: "POST",
         headers: {
             'Accept': 'application/json',

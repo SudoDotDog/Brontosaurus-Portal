@@ -16,7 +16,7 @@ export const login = async (username: string, password: string): Promise<string>
         applicationKey: portal.applicationKey,
     });
 
-    const response: Response = await fetch('http://localhost:8080/retrieve', {
+    const response: Response = await fetch('/retrieve', {
         method: "POST",
         headers: {
             'Accept': 'application/json',
