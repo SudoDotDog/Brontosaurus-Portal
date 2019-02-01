@@ -13,11 +13,17 @@
   resolved "https://registry.yarnpkg.com/@sudoo/bark/-/bark-1.3.0.tgz#329e21a16ac5f0c3ca9a8a998fddd3439970c6d3"
   integrity sha512-uklP6HOO+EW/YREedQ3g2YaPjKGhatsAk74Lk2r5P0aLHVcS0kR0f2YWJkddW44/J0mVfUxhUs7SR/CGVtK0nQ==
 
-"@sudoo/neon@^1.10.0":
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/@sudoo/neon/-/neon-1.10.0.tgz#64658f13db23141ab5496b57eba55f729d56dc45"
-  integrity sha512-jkznm0S3X1k7KQb8SOEQz5gJ5evkhD3GqufYrIgvu9zUPvmPcMuHqoHSF0QLivASaxR4T5aHOVp4TFVCrPKMZw==
+"@sudoo/bark@^2.0.1":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@sudoo/bark/-/bark-2.1.0.tgz#0e061a7736eb90891fc732c89bb328aa40eadfc8"
+  integrity sha512-2JfmCgbc8IQRiKeCeCIlnZHlRzvZVUe5Arj2TDM5tfvhTL+XbEFv/14Fschgm2Oc0O72JTCULtmYTirdrPO6ew==
+
+"@sudoo/neon@^1.10.3":
+  version "1.10.3"
+  resolved "https://registry.yarnpkg.com/@sudoo/neon/-/neon-1.10.3.tgz#b9c92564663a82ea7982b960d0b9a6e6d4c7d5a8"
+  integrity sha512-InaWp9/zztXsujU2kyQUj06WfJXU2R4EV0mEY1lwLngOwEyMxaRzzqSQumL5nQor7HHqJypPsxCuHDFKdGd+Pw==
   dependencies:
+    "@sudoo/bark" "^2.0.1"
     jss "^10.0.0-alpha.9"
     jss-preset-default "^10.0.0-alpha.9"
 
