@@ -16,9 +16,9 @@
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@sudoo/bark/-/bark-2.1.0.tgz#0e061a7736eb90891fc732c89bb328aa40eadfc8"
 
-"@sudoo/neon@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@sudoo/neon/-/neon-2.0.1.tgz#7a20579bf6b1a6a8f3e758437939a175691ae33e"
+"@sudoo/neon@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@sudoo/neon/-/neon-2.1.0.tgz#65a469abeea26aa2b8d568efa14b3f7e0fa3f471"
   dependencies:
     "@sudoo/bark" "^2.1.0"
     jss "^10.0.0-alpha.10"
