@@ -1,14 +1,10 @@
 /**
  * @author WMXPY
  * @namespace Portal
- * @description Index
+ * @description Portal
  */
 
-export enum PORTAL_MODE {
-    REDIRECT = "REDIRECT",
-    IFRAME = "IFRAME",
-    ERROR = "ERROR",
-}
+import { PORTAL_MODE, postParentMessage } from "./util";
 
 export class Portal {
 
@@ -93,12 +89,7 @@ export class Portal {
 
         if (this._mode === PORTAL_MODE.IFRAME) {
 
-            if (window.parent) {
-                window.parent.postMessage({
-                    type: 'Brontosaurus',
-                    status: 'Succeed',
-                    token,
-                }, '*');
+            if (postParentMessage(token)) {
                 return;
             }
         }
