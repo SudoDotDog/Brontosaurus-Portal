@@ -4,8 +4,8 @@
  * @description Flag
  */
 
-import { MARGIN } from "@sudoo/neon/declare";
-import { FLAG_TYPE, NeonFlag } from "@sudoo/neon/flag";
+import { MARGIN, SIGNAL } from "@sudoo/neon/declare";
+import { NeonFlag } from "@sudoo/neon/flag";
 import * as React from "react";
 import { ErrorInfo } from "../state/status/type";
 
@@ -23,7 +23,7 @@ export const ErrorFlag: React.SFC<ErrorFlagProp> = (props: ErrorFlagProp) => {
                 margin={MARGIN.SMALL}
                 info={props.error.long}
 
-                type={FLAG_TYPE.ERROR}>
+                type={SIGNAL.ERROR}>
                 {props.error.short}
             </NeonFlag>
         );

@@ -4,6 +4,12 @@
  * @description Index
  */
 
+export enum PORTAL_MODE {
+    REDIRECT = "REDIRECT",
+    IFRAME = "IFRAME",
+    ERROR = "ERROR",
+}
+
 export class Portal {
 
     public static register(): void {
@@ -19,10 +25,15 @@ export class Portal {
         const callbackPath: string | null = url.searchParams.get("cb");
 
         if (applicationKey && callbackPath) {
-            this._instance = new Portal(false).setParams(applicationKey, callbackPath);
+
+            if (callbackPath === 'IFRAME') {
+                this._instance = new Portal(PORTAL_MODE.IFRAME).setParams(applicationKey, callbackPath);
+            } else {
+                this._instance = new Portal(PORTAL_MODE.REDIRECT).setParams(applicationKey, callbackPath);
+            }
             window.history.replaceState({}, document.title, url.origin);
         } else {
-            this._instance = new Portal(true);
+            this._instance = new Portal(PORTAL_MODE.ERROR);
         }
     }
 
@@ -36,16 +47,22 @@ export class Portal {
         return this._instance;
     }
 
+    public static flush(token: string): void {
+
+        this.instance.flush(token);
+        return;
+    }
+
     private static _instance: Portal | undefined;
 
-    private readonly _isErrored: boolean;
+    private readonly _mode: PORTAL_MODE;
 
     private _applicationKey: string | null;
     private _callbackPath: string | null;
 
-    private constructor(isErrored: boolean) {
+    private constructor(mode: PORTAL_MODE) {
 
-        this._isErrored = isErrored;
+        this._mode = mode;
 
         this._applicationKey = null;
         this._callbackPath = null;
@@ -53,7 +70,7 @@ export class Portal {
 
     public get isErrored(): boolean {
 
-        return this._isErrored;
+        return this._mode === PORTAL_MODE.ERROR;
     }
 
     public get applicationKey(): string {
@@ -70,6 +87,29 @@ export class Portal {
             return this._callbackPath;
         }
         throw new Error("[Brontosaurus-Portal] Not found");
+    }
+
+    public flush(token: string): void {
+
+        if (this._mode === PORTAL_MODE.IFRAME) {
+
+            if (window.parent) {
+                window.parent.postMessage({
+                    type: 'Brontosaurus',
+                    status: 'Succeed',
+                    token,
+                }, '*');
+                return;
+            }
+        }
+
+        if (this._mode === PORTAL_MODE.REDIRECT) {
+
+            window.location.href = this.callbackPath + '?token=' + token;
+            return;
+        }
+
+        throw new Error("[Brontosaurus-Portal] Not valid");
     }
 
     private setParams(applicationKey: string, callbackPath: string): Portal {

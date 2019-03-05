@@ -90,9 +90,7 @@ export class LoginBase extends React.Component<LoginProp, {}> {
         try {
 
             const token: string = await login(username, password);
-            const portal: Portal = Portal.instance;
-
-            window.location.href = portal.callbackPath + '?token=' + token;
+            Portal.flush(token);
         } catch (err) {
 
             const error: string = err.message;
