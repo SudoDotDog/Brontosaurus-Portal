@@ -60,30 +60,53 @@ export class LoginBase extends React.Component<LoginProp, {}> {
 
     public render(): JSX.Element {
 
-        return (<div className={StyleLogin.login}>
-            <NeonPaper style={{
-                marginTop: '10rem',
-            }}>
-                <img src={this.props.target.logo} className={StyleLogin.logoImage} />
-
-                {this.props.target.application &&
-                    <NeonTitle
-                        align={ALIGN.LEFT}
-                        margin={MARGIN.SMALL}>
-                        SignIn: {this.props.target.application}
-                    </NeonTitle>}
-
+        return (<div className={StyleLogin.wrapper}>
+            <NeonPaper className={StyleLogin.login}>
+                {this._renderLogo()}
+                {this._renderTitle()}
                 <NeonIndicator loading={this.props.isLoading}>
-
                     <ErrorFlag error={this.props.error} />
-                    {this.props.target.application && <ConnectedForm login={this._login} />}
-
+                    {this._renderForm()}
                 </NeonIndicator>
             </NeonPaper>
         </div>);
     }
 
-    private async _login(username: string, password: string) {
+    private _renderLogo(): React.ReactNode {
+
+        if (!this.props.target.application) {
+            return null;
+        }
+
+        return (<img
+            src={this.props.target.logo}
+            className={StyleLogin.logoImage}
+        />);
+    }
+
+    private _renderTitle(): React.ReactNode {
+
+        if (!this.props.target.application) {
+            return null;
+        }
+
+        return (<NeonTitle
+            align={ALIGN.LEFT}
+            margin={MARGIN.SMALL}>
+            SignIn: {this.props.target.application}
+        </NeonTitle>);
+    }
+
+    private _renderForm(): React.ReactNode {
+
+        if (!this.props.target.application) {
+            return null;
+        }
+
+        return (<ConnectedForm login={this._login} />);
+    }
+
+    private async _login(username: string, password: string): Promise<void> {
 
         this.props.startLoading('test');
 
