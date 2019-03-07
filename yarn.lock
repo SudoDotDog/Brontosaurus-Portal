@@ -14,10 +14,10 @@
   resolved "https://registry.yarnpkg.com/@sudoo/bark/-/bark-2.1.0.tgz#0e061a7736eb90891fc732c89bb328aa40eadfc8"
   integrity sha512-2JfmCgbc8IQRiKeCeCIlnZHlRzvZVUe5Arj2TDM5tfvhTL+XbEFv/14Fschgm2Oc0O72JTCULtmYTirdrPO6ew==
 
-"@sudoo/neon@^2.8.1":
-  version "2.8.1"
-  resolved "https://registry.yarnpkg.com/@sudoo/neon/-/neon-2.8.1.tgz#dbc3cc00f58ba320704e7335403dc1b6aa74aa06"
-  integrity sha512-IcohtVhS2tgGxQiJLhtC6EMfMloAVJQJvxHM2jcj7rHdJjM9FXvLY+fTid2ATVyqjfxZnIoOM0Gz5TLCmoHcWg==
+"@sudoo/neon@^2.9.0":
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/@sudoo/neon/-/neon-2.9.0.tgz#73b3a0dbc6f8a0721a91cf644b598780882fd729"
+  integrity sha512-DnBByYmjK0Ne9xbNZarYImieSwbiBXFmGciLrqaAEU175GsBovZEvmilTMZHND0zknJ/XoTjya594NczCXvGDw==
   dependencies:
     "@sudoo/bark" "^2.1.0"
     jss "^10.0.0-alpha.12"
