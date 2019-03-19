@@ -13,18 +13,23 @@ import { IStore } from "../state/declare";
 import { setPassword, setUsername } from "../state/form/form";
 
 type FormProp = {
-
-    readonly username: string;
-    readonly password: string;
-
-    readonly setUsername: (username: string) => void;
-    readonly setPassword: (password: string) => void;
-
     readonly login: (username: string, password: string) => void;
 };
 
-const connector = Connector.create<IStore, FormProp>()
-    .connectStates(({ form }: IStore): Partial<FormProp> => ({
+type FormConnectedState = {
+    readonly username: string;
+    readonly password: string;
+};
+
+type FormConnectedAction = {
+    readonly setUsername: (username: string) => void;
+    readonly setPassword: (password: string) => void;
+};
+
+type ConnectProps = FormProp & FormConnectedState & FormConnectedAction;
+
+const connector = Connector.create<IStore, FormConnectedState, FormConnectedAction>()
+    .connectStates(({ form }: IStore) => ({
 
         username: form.username,
         password: form.password,
@@ -34,7 +39,7 @@ const connector = Connector.create<IStore, FormProp>()
         setPassword,
     });
 
-export const FormBase = (props: FormProp) =>
+export const FormBase: React.FC<ConnectProps> = (props: ConnectProps) =>
     (<React.Fragment>
         <NeonInput
             label="Username"

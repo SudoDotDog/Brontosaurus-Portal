@@ -4,7 +4,7 @@
  * @description Index
  */
 
-import { SudooProvider } from "@sudoo/redux";
+import { ReduxProvider } from "@sudoo/redux";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
@@ -23,9 +23,9 @@ const render: (App: any) => void = (App: any): void => {
     ReactDOM.render(
         (
             <AppContainer>
-                <SudooProvider redux={redux}>
+                <ReduxProvider redux={redux}>
                     <App />
-                </SudooProvider>
+                </ReduxProvider>
             </AppContainer>
         ),
         document.getElementById("container"));

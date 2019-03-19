@@ -21,21 +21,23 @@ import { clearError, clearLoading, startError, startLoading } from "../state/sta
 import { ErrorInfo } from "../state/status/type";
 import { ConnectedForm } from "./form";
 
-type LoginProp = {
-
+type ConnectedLoginStates = {
     readonly isLoading: boolean;
     readonly error: ErrorInfo | null;
+    readonly target: ITarget;
+};
 
+type ConnectedLoginActions = {
     readonly startLoading: (message: string) => void;
     readonly startError: (info: ErrorInfo) => void;
     readonly clearLoading: () => void;
     readonly clearError: () => void;
-
-    readonly target: ITarget;
 };
 
-const connector = Connector.create<IStore, LoginProp>()
-    .connectStates(({ info, status }: IStore): Partial<LoginProp> => ({
+type ConnectedProps = ConnectedLoginStates & ConnectedLoginActions;
+
+const connector = Connector.create<IStore, ConnectedLoginStates, ConnectedLoginActions>()
+    .connectStates(({ info, status }: IStore) => ({
 
         isLoading: Boolean(status.loading),
         error: status.error,
@@ -49,9 +51,9 @@ const connector = Connector.create<IStore, LoginProp>()
         clearError,
     });
 
-export class LoginBase extends React.Component<LoginProp, {}> {
+export class LoginBase extends React.Component<ConnectedProps> {
 
-    public constructor(props: LoginProp) {
+    public constructor(props: ConnectedProps) {
 
         super(props);
 

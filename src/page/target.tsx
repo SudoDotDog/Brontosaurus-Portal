@@ -15,23 +15,27 @@ import { clearError, clearLoading, startError, startLoading } from "../state/sta
 import { ErrorInfo } from "../state/status/type";
 
 type TargetProp = {
+    readonly children: any;
+};
 
+type ConnectedTargetStates = {
+    readonly target: ITarget;
+};
+
+type ConnectedTargetActions = {
     readonly setTarget: (target: ITarget) => void;
     readonly startLoading: (message: string) => void;
     readonly startError: (info: ErrorInfo) => void;
     readonly clearLoading: () => void;
     readonly clearError: () => void;
-
-    readonly target: ITarget;
-    readonly children: any;
 };
 
-const connector = Connector.create<IStore, TargetProp>()
-    .connectStates(({ info }: IStore): Partial<TargetProp> => ({
+type ConnectedTargetProps = TargetProp & ConnectedTargetStates & ConnectedTargetActions;
 
+const connector = Connector.create<IStore, ConnectedTargetStates, ConnectedTargetActions>()
+    .connectStates(({ info }: IStore) => ({
         target: info.target,
     })).connectActions({
-
         setTarget,
         startLoading,
         clearLoading,
@@ -39,7 +43,7 @@ const connector = Connector.create<IStore, TargetProp>()
         clearError,
     });
 
-export class TargetBase extends React.Component<TargetProp, {}> {
+export class TargetBase extends React.Component<ConnectedTargetProps> {
 
     public componentDidMount() {
 

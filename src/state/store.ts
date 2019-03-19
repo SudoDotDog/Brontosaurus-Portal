@@ -4,7 +4,7 @@
  * @description Store
  */
 
-import { Store, SudooRedux } from '@sudoo/redux';
+import { Redux } from '@sudoo/redux';
 import { ACTIONS, IStore } from './declare';
 import { formReducers, getDefaultFormStore } from './form/form';
 import { getDefaultInfoStore, infoReducers } from './info/info';
@@ -18,8 +18,8 @@ export const PortalStore: IStore = {
 };
 
 
-export const redux: SudooRedux<IStore, ACTIONS> =
-    SudooRedux.create<IStore, ACTIONS>(PortalStore)
+export const redux: Redux<IStore, ACTIONS> =
+    Redux.create<IStore, ACTIONS>(PortalStore)
         .reducers(formReducers)
         .reducers(statusReducers)
         .reducers(infoReducers);
