@@ -23,17 +23,19 @@
     jss "^10.0.0-alpha.12"
     jss-preset-default "^10.0.0-alpha.12"
 
-"@sudoo/react-force-dev@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@sudoo/react-force-dev/-/react-force-dev-1.4.0.tgz#e40812f0815c5554dd1cdbf94afed39f3b5998b5"
-  integrity sha512-7yr62hnW7eEoNxfEsplreTQ20mm0V/9gDABVc4jbGBG7u6zhMwwxm74Tv7KisiubJit3Zy8Bd6FGEGZ893Qigw==
+"@sudoo/react-force-dev@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@sudoo/react-force-dev/-/react-force-dev-1.5.0.tgz#d3a34b053865be8d90b9b06cac24a38536bda635"
+  integrity sha512-8SQ9PaJNr4GpGllnEPZKEAz9bflI1w4SnWfVUd5MZLGYY6x/O0f2e1/KA446qfVjvAw5qMeUgDsYrmJ8RETS8A==
   dependencies:
     "@types/enzyme" "3.9.0"
     "@types/enzyme-adapter-react-16" "1.0.5"
     "@types/react" "16.8.8"
     "@types/react-dom" "16.8.2"
+    "@types/react-router-dom" "^4.3.2"
     enzyme "3.9.0"
     enzyme-adapter-react-16 "1.11.2"
+    react-hot-loader "^4.8.4"
 
 "@sudoo/react-force@^1.4.0":
   version "1.4.0"
@@ -133,6 +135,11 @@
     "@types/cheerio" "*"
     "@types/react" "*"
 
+"@types/history@*":
+  version "4.7.2"
+  resolved "https://registry.yarnpkg.com/@types/history/-/history-4.7.2.tgz#0e670ea254d559241b6eeb3894f8754991e73220"
+  integrity sha512-ui3WwXmjTaY73fOQ3/m3nnajU/Orhi6cEu5rzX+BrAAJxa3eITXZ5ch9suPqtM03OWhAHhPSyBGCN4UKoxO20Q==
+
 "@types/mocha@^5.2.6":
   version "5.2.6"
   resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-5.2.6.tgz#b8622d50557dd155e9f2f634b7d68fd38de5e94b"
@@ -158,6 +165,23 @@
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.8.2.tgz#9bd7d33f908b243ff0692846ef36c81d4941ad12"
   integrity sha512-MX7n1wq3G/De15RGAAqnmidzhr2Y9O/ClxPxyqaNg96pGyeXUYPSvujgzEVpLo9oIP4Wn1UETl+rxTN02KEpBw==
   dependencies:
+    "@types/react" "*"
+
+"@types/react-router-dom@^4.3.2":
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/@types/react-router-dom/-/react-router-dom-4.3.2.tgz#52c17c3682597638f31c17c42620403dc5c2a3f5"
+  integrity sha512-biesHodFxPgDxku2m08XwPeAfUYBcxAnrQG7pwFikuA3L2e3u2OKAb+Sb16bJuU3L5CTHd+Ivap+ke4mmGsHqQ==
+  dependencies:
+    "@types/history" "*"
+    "@types/react" "*"
+    "@types/react-router" "*"
+
+"@types/react-router@*":
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/@types/react-router/-/react-router-4.4.5.tgz#1166997dc7eef2917b5ebce890ebecb32ee5c1b3"
+  integrity sha512-12+VOu1+xiC8RPc9yrgHCyLI79VswjtuqeS2gPrMcywH6tkc8rGIUhs4LaL3AJPqo5d+RPnfRpNKiJ7MK2Qhcg==
+  dependencies:
+    "@types/history" "*"
     "@types/react" "*"
 
 "@types/react@*", "@types/react@16.8.8":
