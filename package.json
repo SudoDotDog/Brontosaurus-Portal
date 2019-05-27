@@ -1,12 +1,8 @@
 {
   "name": "@brontosaurus/portal",
-  "version": "1.0.0",
   "description": ":monkey_face: Portal",
   "directories": {
     "doc": "docs"
-  },
-  "scripts": {
-    "test": "mocha"
   },
   "repository": {
     "type": "git",
