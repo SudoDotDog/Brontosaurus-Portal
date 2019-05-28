@@ -10,6 +10,7 @@ import { NeonIndicator } from "@sudoo/neon/spinner";
 import { NeonTitle } from "@sudoo/neon/typography";
 import { Connector } from "@sudoo/redux";
 import * as React from "react";
+import * as StyleFrom from "../../style/page/form.sass";
 import * as StyleLogin from "../../style/page/login.sass";
 import { ErrorFlag } from "../components/flag";
 import { wrapMap } from "../portal/error";
@@ -22,12 +23,14 @@ import { ErrorInfo } from "../state/status/type";
 import { ConnectedForm } from "./form";
 
 type ConnectedLoginStates = {
+
     readonly isLoading: boolean;
     readonly error: ErrorInfo | null;
     readonly target: ITarget;
 };
 
 type ConnectedLoginActions = {
+
     readonly startLoading: (message: string) => void;
     readonly startError: (info: ErrorInfo) => void;
     readonly clearLoading: () => void;
@@ -95,6 +98,7 @@ export class LoginBase extends React.Component<ConnectedProps> {
         }
 
         return (<NeonTitle
+            className={StyleFrom.marginOverride}
             align={ALIGN.LEFT}
             margin={MARGIN.SMALL}>
             SignIn: {this.props.target.application}

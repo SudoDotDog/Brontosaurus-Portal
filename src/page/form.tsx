@@ -9,6 +9,7 @@ import { MARGIN, SIZE, WIDTH } from "@sudoo/neon/declare";
 import { INPUT_TYPE, NeonInput } from "@sudoo/neon/input";
 import { Connector } from "@sudoo/redux";
 import * as React from "react";
+import * as StyleFrom from "../../style/page/form.sass";
 import { IStore } from "../state/declare";
 import { setPassword, setUsername } from "../state/form/form";
 
@@ -46,12 +47,14 @@ export const FormBase: React.FC<ConnectProps> = (props: ConnectProps) => {
 
     return (<React.Fragment>
         <NeonInput
+            className={StyleFrom.marginOverride}
             label="Username"
             margin={MARGIN.SMALL}
             value={props.username}
             onEnter={login}
             onChange={(value) => props.setUsername(value)} />
         <NeonInput
+            className={StyleFrom.marginOverride}
             type={INPUT_TYPE.PASSWORD}
             label="Password"
             margin={MARGIN.SMALL}
@@ -59,6 +62,7 @@ export const FormBase: React.FC<ConnectProps> = (props: ConnectProps) => {
             onEnter={login}
             onChange={(value) => props.setPassword(value)} />
         <NeonButton
+            className={StyleFrom.marginOverride}
             size={SIZE.MEDIUM}
             width={WIDTH.FULL}
             margin={MARGIN.SMALL}
