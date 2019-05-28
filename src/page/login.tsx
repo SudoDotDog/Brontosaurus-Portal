@@ -66,7 +66,7 @@ export class LoginBase extends React.Component<ConnectedProps> {
     public render(): JSX.Element {
 
         return (<div className={StyleLogin.wrapper}>
-            <NeonPaper className={StyleLogin.login}>
+            <NeonPaper className={[StyleLogin.login, StyleFrom.borderOverride].join(' ')}>
                 {this._renderLogo()}
                 {this._renderTitle()}
                 <NeonIndicator loading={this.props.isLoading}>
