@@ -81,7 +81,9 @@ export class LoginBase extends React.Component<ConnectedProps> {
         }
 
         return (<div
-            style={{ backgroundImage: this.props.target.logo }}
+            style={{
+                backgroundImage: `url('${this.props.target.logo}')`,
+            }}
             className={StyleLogin.logoImage}
         />);
     }
