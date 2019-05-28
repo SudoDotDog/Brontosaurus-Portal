@@ -112,7 +112,7 @@ export class LoginBase extends React.Component<ConnectedProps> {
 
     private async _login(username: string, password: string): Promise<void> {
 
-        this.props.startLoading('test');
+        this.props.startLoading('Login');
 
         try {
 

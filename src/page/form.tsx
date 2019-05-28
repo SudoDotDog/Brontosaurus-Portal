@@ -39,26 +39,33 @@ const connector = Connector.create<IStore, FormConnectedState, FormConnectedActi
         setPassword,
     });
 
-export const FormBase: React.FC<ConnectProps> = (props: ConnectProps) =>
-    (<React.Fragment>
+export const FormBase: React.FC<ConnectProps> = (props: ConnectProps) => {
+
+    const login: () => void = () =>
+        props.login(props.username, props.password);
+
+    return (<React.Fragment>
         <NeonInput
             label="Username"
             margin={MARGIN.SMALL}
             value={props.username}
+            onEnter={login}
             onChange={(value) => props.setUsername(value)} />
         <NeonInput
             type={INPUT_TYPE.PASSWORD}
             label="Password"
             margin={MARGIN.SMALL}
             value={props.password}
+            onEnter={login}
             onChange={(value) => props.setPassword(value)} />
         <NeonButton
             size={SIZE.MEDIUM}
             width={WIDTH.FULL}
             margin={MARGIN.SMALL}
-            onClick={() => props.login(props.username, props.password)}>
+            onClick={login}>
             SignIn
         </NeonButton>
     </React.Fragment>);
+};
 
 export const ConnectedForm: React.ComponentType<Pick<FormProp, 'login'>> = connector.connect(FormBase);
