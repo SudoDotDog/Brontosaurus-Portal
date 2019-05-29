@@ -114,7 +114,7 @@ export class LoginBase extends React.Component<ConnectedProps> {
 
     private _renderLogo(): React.ReactNode {
 
-        if (!this.props.target.image) {
+        if (!this.props.target.logo) {
             return null;
         }
 
