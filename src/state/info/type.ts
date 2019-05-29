@@ -9,9 +9,10 @@ import { ACTIONS } from "../declare";
 
 export interface ITarget {
 
-    readonly logo: string;
-    readonly image: string;
     readonly application: string;
+    readonly logo?: string;
+    readonly image?: string;
+    readonly help?: string;
 }
 
 export interface IInfoStore {

@@ -72,7 +72,21 @@ export class LoginBase extends React.Component<ConnectedProps> {
                     <ErrorFlag error={this.props.error} />
                     {this._renderForm()}
                 </NeonIndicator>
+                {this._renderHelp()}
             </NeonPaper>
+        </div>);
+    }
+
+    private _renderHelp(): React.ReactNode {
+
+        if (!this.props.target.help) {
+            return null;
+        }
+
+        return (<div className={StyleForm.help}>
+            <a href={this.props.target.help}>
+                Need help signing in?
+            </a>
         </div>);
     }
 

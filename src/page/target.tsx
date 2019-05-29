@@ -7,7 +7,7 @@
 import { Connector } from "@sudoo/redux";
 import * as React from "react";
 import { wrapMap } from "../portal/error";
-import { application, ApplicationRepositoryResponse } from "../repository/application";
+import { application } from "../repository/application";
 import { IStore } from "../state/declare";
 import { setTarget } from "../state/info/info";
 import { ITarget } from "../state/info/type";
@@ -61,15 +61,11 @@ export class TargetBase extends React.Component<ConnectedTargetProps> {
 
         try {
 
-            const info: ApplicationRepositoryResponse = await application();
-            this.props.setTarget({
-                logo: info.avatar,
-                image: info.background,
-                application: info.name,
-            });
+            const info: ITarget = await application();
+            this.props.setTarget(info);
 
-            if (info.background) {
-                document.body.style.backgroundImage = `url('${info.background}')`;
+            if (info.image) {
+                document.body.style.backgroundImage = `url('${info.image}')`;
             }
             this.props.clearLoading();
         } catch (err) {
