@@ -4,15 +4,14 @@
  * @description Login
  */
 
-import { ALIGN, MARGIN } from "@sudoo/neon/declare";
 import { NeonPaper } from "@sudoo/neon/paper";
 import { NeonIndicator } from "@sudoo/neon/spinner";
-import { NeonTitle } from "@sudoo/neon/typography";
 import { Connector } from "@sudoo/redux";
 import * as React from "react";
-import * as StyleFrom from "../../style/page/form.sass";
+import * as StyleForm from "../../style/page/form.sass";
 import * as StyleLogin from "../../style/page/login.sass";
 import { ErrorFlag } from "../components/flag";
+import { Title } from "../components/title";
 import { wrapMap } from "../portal/error";
 import { Portal } from "../portal/portal";
 import { login } from "../repository/login";
@@ -66,7 +65,7 @@ export class LoginBase extends React.Component<ConnectedProps> {
     public render(): JSX.Element {
 
         return (<div className={StyleLogin.wrapper}>
-            <NeonPaper className={[StyleLogin.login, StyleFrom.borderOverride].join(' ')}>
+            <NeonPaper className={[StyleLogin.login, StyleForm.borderOverride].join(' ')}>
                 {this._renderLogo()}
                 {this._renderTitle()}
                 <NeonIndicator loading={this.props.isLoading}>
@@ -97,12 +96,7 @@ export class LoginBase extends React.Component<ConnectedProps> {
             return null;
         }
 
-        return (<NeonTitle
-            className={StyleFrom.marginOverride}
-            align={ALIGN.LEFT}
-            margin={MARGIN.SMALL}>
-            SignIn: {this.props.target.application}
-        </NeonTitle>);
+        return (<Title applicationName={this.props.target.application} />);
     }
 
     private _renderForm(): React.ReactNode {
