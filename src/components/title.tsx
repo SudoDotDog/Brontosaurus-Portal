@@ -16,7 +16,7 @@ export const Title: React.FC<TitleProp> = (props: TitleProp) => {
 
     return (
         <div className={StyleForm.title}>
-            <div className={StyleForm.upper}>SignIn</div>
+            <div className={StyleForm.upper}>Sign in to</div>
             <div className={StyleForm.lower}>{props.applicationName}</div>
         </div>
     );
