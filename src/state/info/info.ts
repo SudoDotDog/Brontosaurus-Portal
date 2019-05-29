@@ -32,8 +32,6 @@ export const setTarget = (target: ITarget): ISetTargetReducerAction => ({
 export const getDefaultInfoStore = (): IInfoStore => ({
 
     target: {
-        image: '',
-        logo: '',
         application: '',
     },
 });

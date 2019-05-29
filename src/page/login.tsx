@@ -64,16 +64,35 @@ export class LoginBase extends React.Component<ConnectedProps> {
 
     public render(): JSX.Element {
 
-        return (<div className={StyleLogin.wrapper}>
-            <NeonPaper className={[StyleLogin.login, StyleForm.borderOverride].join(' ')}>
-                {this._renderLogo()}
-                {this._renderTitle()}
-                <NeonIndicator loading={this.props.isLoading}>
-                    <ErrorFlag error={this.props.error} />
-                    {this._renderForm()}
-                </NeonIndicator>
-                {this._renderHelp()}
-            </NeonPaper>
+        return (<React.Fragment>
+            <div className={StyleLogin.wrapper}>
+                <NeonPaper className={[StyleLogin.login, StyleForm.borderOverride].join(' ')}>
+                    {this._renderLogo()}
+                    {this._renderTitle()}
+                    <NeonIndicator loading={this.props.isLoading}>
+                        <ErrorFlag error={this.props.error} />
+                        {this._renderForm()}
+                    </NeonIndicator>
+                    {this._renderHelp()}
+                </NeonPaper>
+            </div>
+            {this._renderPrivacy()}
+        </React.Fragment>);
+    }
+
+    private _renderPrivacy(): React.ReactNode {
+
+        if (!this.props.target.privacy) {
+            return null;
+        }
+
+        return (<div className={StyleLogin.privacy}>
+            <a
+                className={StyleForm.link}
+                href={this.props.target.privacy}
+            >
+                Privacy Policy
+            </a>
         </div>);
     }
 
@@ -84,7 +103,10 @@ export class LoginBase extends React.Component<ConnectedProps> {
         }
 
         return (<div className={StyleForm.help}>
-            <a href={this.props.target.help}>
+            <a
+                className={StyleForm.link}
+                href={this.props.target.help}
+            >
                 Need help signing in?
             </a>
         </div>);
@@ -92,7 +114,7 @@ export class LoginBase extends React.Component<ConnectedProps> {
 
     private _renderLogo(): React.ReactNode {
 
-        if (!this.props.target.application) {
+        if (!this.props.target.image) {
             return null;
         }
 

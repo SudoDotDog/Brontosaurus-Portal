@@ -13,6 +13,7 @@ export interface ITarget {
     readonly logo?: string;
     readonly image?: string;
     readonly help?: string;
+    readonly privacy?: string;
 }
 
 export interface IInfoStore {

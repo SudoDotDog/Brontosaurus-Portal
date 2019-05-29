@@ -5,14 +5,9 @@
  */
 
 import { Portal } from "../portal/portal";
+import { ITarget } from "../state/info/type";
 
-export type ApplicationRepositoryResponse = {
-    readonly avatar: string;
-    readonly background: string;
-    readonly name: string;
-};
-
-export const application = async (): Promise<ApplicationRepositoryResponse> => {
+export const application = async (): Promise<ITarget> => {
 
     const portal: Portal = Portal.instance;
 
@@ -34,9 +29,11 @@ export const application = async (): Promise<ApplicationRepositoryResponse> => {
 
     if (response.ok) {
         return {
-            avatar: data.avatar,
-            background: data.background,
-            name: data.name,
+            logo: data.avatar,
+            image: data.background,
+            application: data.name,
+            help: data.help,
+            privacy: data.privacy,
         };
     }
 
