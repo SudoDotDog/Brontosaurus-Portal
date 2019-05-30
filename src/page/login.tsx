@@ -19,6 +19,7 @@ import { IStore } from "../state/declare";
 import { TargetInfo } from "../state/info/type";
 import { clearError, clearLoading, startError, startLoading } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
+import { combineClasses } from "../util/style";
 import { ConnectedForm } from "./form";
 
 type ConnectedLoginStates = {
@@ -67,7 +68,7 @@ export class LoginBase extends React.Component<ConnectedProps> {
         return (<div className={StyleLogin.page}>
             <div className={StyleLogin.wrapper}>
                 <div className={StyleLogin.inner}>
-                    <NeonPaper className={[StyleLogin.login, StyleForm.borderOverride].join(' ')}>
+                    <NeonPaper className={combineClasses(StyleLogin.login, StyleForm.borderOverride)}>
                         <NeonIndicator className={StyleLogin.indicator} loading={this.props.isLoading}>
                             {this._renderLogo()}
                             {this._renderTitle()}

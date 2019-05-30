@@ -6,6 +6,7 @@
 
 import * as React from "react";
 import * as StyleForm from "../../style/page/form.sass";
+import { combineClasses } from "../util/style";
 
 type TitleProp = {
 
@@ -16,7 +17,7 @@ export const Title: React.FC<TitleProp> = (props: TitleProp) => {
 
     return (
         <div className={StyleForm.title}>
-            <div className={StyleForm.upper}>Sign in to</div>
+            <div className={combineClasses(StyleForm.upper, StyleForm.selectOverride)}>Sign in to</div>
             <div className={StyleForm.lower}>{props.applicationName}</div>
         </div>
     );

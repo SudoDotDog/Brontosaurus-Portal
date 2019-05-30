@@ -12,6 +12,7 @@ import * as React from "react";
 import * as StyleForm from "../../style/page/form.sass";
 import { IStore } from "../state/declare";
 import { setPassword, setUsername } from "../state/form/form";
+import { combineClasses } from "../util/style";
 
 type FormProp = {
 
@@ -50,14 +51,14 @@ export const FormBase: React.FC<ConnectProps> = (props: ConnectProps) => {
 
     return (<React.Fragment>
         <NeonInput
-            className={StyleForm.marginOverride}
+            className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
             label="Username"
             margin={MARGIN.SMALL}
             value={props.username}
             onEnter={login}
             onChange={(value) => props.setUsername(value)} />
         <NeonInput
-            className={StyleForm.marginOverride}
+            className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
             type={INPUT_TYPE.PASSWORD}
             label="Password"
             margin={MARGIN.SMALL}
@@ -65,7 +66,7 @@ export const FormBase: React.FC<ConnectProps> = (props: ConnectProps) => {
             onEnter={login}
             onChange={(value) => props.setPassword(value)} />
         <NeonButton
-            className={StyleForm.marginOverride}
+            className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
             size={SIZE.MEDIUM}
             width={WIDTH.FULL}
             margin={MARGIN.SMALL}

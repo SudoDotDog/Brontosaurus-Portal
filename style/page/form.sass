@@ -21,6 +21,10 @@
         box-shadow: none !important
         border-width: 0 !important
 
+.select-override
+    user-select: none
+    -webkit-user-select: none
+
 .title
     margin-top: 0.5rem
     margin-bottom: 0.5rem
@@ -31,10 +35,11 @@
     padding-bottom: 0.1rem
 
     .upper
-        font-weight: bold
         font-size: 1rem
         margin-bottom: 0.1rem
+        color: $darkGray
     .lower
+        font-weight: bold
         font-size: 2rem
 
 .help
