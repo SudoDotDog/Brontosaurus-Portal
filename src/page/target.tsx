@@ -15,14 +15,17 @@ import { clearError, clearLoading, startError, startLoading } from "../state/sta
 import { ErrorInfo } from "../state/status/type";
 
 type TargetProp = {
+
     readonly children: any;
 };
 
 type ConnectedTargetStates = {
+
     readonly target: ITarget;
 };
 
 type ConnectedTargetActions = {
+
     readonly setTarget: (target: ITarget) => void;
     readonly startLoading: (message: string) => void;
     readonly startError: (info: ErrorInfo) => void;

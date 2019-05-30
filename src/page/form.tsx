@@ -14,15 +14,18 @@ import { IStore } from "../state/declare";
 import { setPassword, setUsername } from "../state/form/form";
 
 type FormProp = {
+
     readonly login: (username: string, password: string) => void;
 };
 
 type FormConnectedState = {
+
     readonly username: string;
     readonly password: string;
 };
 
 type FormConnectedAction = {
+
     readonly setUsername: (username: string) => void;
     readonly setPassword: (password: string) => void;
 };

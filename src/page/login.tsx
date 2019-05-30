@@ -68,13 +68,13 @@ export class LoginBase extends React.Component<ConnectedProps> {
             <div className={StyleLogin.wrapper}>
                 <div className={StyleLogin.inner}>
                     <NeonPaper className={[StyleLogin.login, StyleForm.borderOverride].join(' ')}>
-                        {this._renderLogo()}
-                        {this._renderTitle()}
-                        <NeonIndicator loading={this.props.isLoading}>
-                            <ErrorFlag error={this.props.error} />
+                        <NeonIndicator className={StyleLogin.indicator} loading={this.props.isLoading}>
+                            {this._renderLogo()}
+                            {this._renderTitle()}
+                            {this._renderFlag()}
                             {this._renderForm()}
+                            {this._renderHelp()}
                         </NeonIndicator>
-                        {this._renderHelp()}
                     </NeonPaper>
                 </div>
             </div>
@@ -95,7 +95,7 @@ export class LoginBase extends React.Component<ConnectedProps> {
                     href={this.props.target.privacy}
                 >
                     Privacy Policy
-            </a>
+                </a>
             </div>
         </div>);
     }
@@ -137,6 +137,11 @@ export class LoginBase extends React.Component<ConnectedProps> {
         }
 
         return (<Title applicationName={this.props.target.application} />);
+    }
+
+    private _renderFlag(): React.ReactNode {
+
+        return (<ErrorFlag error={this.props.error} />);
     }
 
     private _renderForm(): React.ReactNode {
