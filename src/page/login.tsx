@@ -11,7 +11,7 @@ import * as React from "react";
 import * as StyleForm from "../../style/page/form.sass";
 import * as StyleLogin from "../../style/page/login.sass";
 import { ErrorFlag } from "../components/flag";
-import { Language } from "../components/language";
+import { ConnectedLanguage } from "../components/language";
 import { Title } from "../components/title";
 import { wrapMap } from "../portal/error";
 import { Portal } from "../portal/portal";
@@ -92,7 +92,7 @@ export class LoginBase extends React.Component<ConnectedProps> {
 
         return (<div className={StyleLogin.footer}>
             <div className={StyleLogin.languageText}>
-                <Language />
+                <ConnectedLanguage />
             </div>
             {this.props.target.privacy &&
                 <div className={StyleLogin.privacyText}>

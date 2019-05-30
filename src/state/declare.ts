@@ -6,12 +6,14 @@
 
 import { IFormStore } from "./form/type";
 import { IInfoStore } from "./info/type";
+import { PreferenceStore } from "./preference/type";
 import { IStatusStore } from "./status/type";
 
 export interface IStore {
 
     readonly form: IFormStore;
     readonly status: IStatusStore;
+    readonly preference: PreferenceStore;
     readonly info: IInfoStore;
 }
 
@@ -27,4 +29,7 @@ export enum ACTIONS {
 
     // info
     SET_TARGET = 'SET_TARGET',
+
+    // language
+    SET_LANGUAGE = 'SET_LANGUAGE',
 }
