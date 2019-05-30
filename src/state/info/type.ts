@@ -7,21 +7,21 @@
 import { Action } from "@sudoo/redux";
 import { ACTIONS } from "../declare";
 
-export interface ITarget {
+export type TargetInfo = {
 
-    readonly application: string;
-    readonly logo?: string;
-    readonly image?: string;
+    readonly name: string;
+    readonly avatar?: string;
+    readonly background?: string;
     readonly help?: string;
     readonly privacy?: string;
-}
+};
 
 export interface IInfoStore {
 
-    readonly target: ITarget;
+    readonly target: TargetInfo;
 }
 
 export interface ISetTargetReducerAction extends Action<ACTIONS.SET_TARGET> {
 
-    readonly target: ITarget;
+    readonly target: TargetInfo;
 }

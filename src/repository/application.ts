@@ -5,9 +5,9 @@
  */
 
 import { Portal } from "../portal/portal";
-import { ITarget } from "../state/info/type";
+import { TargetInfo } from "../state/info/type";
 
-export const application = async (): Promise<ITarget> => {
+export const application = async (): Promise<TargetInfo> => {
 
     const portal: Portal = Portal.instance;
 
@@ -29,9 +29,9 @@ export const application = async (): Promise<ITarget> => {
 
     if (response.ok) {
         return {
-            logo: data.avatar,
-            image: data.background,
-            application: data.name,
+            avatar: data.avatar,
+            background: data.background,
+            name: data.name,
             help: data.help,
             privacy: data.privacy,
         };

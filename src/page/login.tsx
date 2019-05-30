@@ -16,7 +16,7 @@ import { wrapMap } from "../portal/error";
 import { Portal } from "../portal/portal";
 import { login } from "../repository/login";
 import { IStore } from "../state/declare";
-import { ITarget } from "../state/info/type";
+import { TargetInfo } from "../state/info/type";
 import { clearError, clearLoading, startError, startLoading } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
 import { ConnectedForm } from "./form";
@@ -25,7 +25,7 @@ type ConnectedLoginStates = {
 
     readonly isLoading: boolean;
     readonly error: ErrorInfo | null;
-    readonly target: ITarget;
+    readonly target: TargetInfo;
 };
 
 type ConnectedLoginActions = {
@@ -118,13 +118,13 @@ export class LoginBase extends React.Component<ConnectedProps> {
 
     private _renderLogo(): React.ReactNode {
 
-        if (!this.props.target.logo) {
+        if (!this.props.target.avatar) {
             return null;
         }
 
         return (<div
             style={{
-                backgroundImage: `url('${this.props.target.logo}')`,
+                backgroundImage: `url('${this.props.target.avatar}')`,
             }}
             className={StyleLogin.logoImage}
         />);
@@ -132,11 +132,11 @@ export class LoginBase extends React.Component<ConnectedProps> {
 
     private _renderTitle(): React.ReactNode {
 
-        if (!this.props.target.application) {
+        if (!this.props.target.name) {
             return null;
         }
 
-        return (<Title applicationName={this.props.target.application} />);
+        return (<Title applicationName={this.props.target.name} />);
     }
 
     private _renderFlag(): React.ReactNode {
@@ -146,7 +146,7 @@ export class LoginBase extends React.Component<ConnectedProps> {
 
     private _renderForm(): React.ReactNode {
 
-        if (!this.props.target.application) {
+        if (!this.props.target.name) {
             return null;
         }
 

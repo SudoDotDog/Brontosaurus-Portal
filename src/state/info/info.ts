@@ -6,7 +6,7 @@
 
 import { Reducer } from '@sudoo/redux';
 import { ACTIONS, IStore } from '../declare';
-import { IInfoStore, ISetTargetReducerAction, ITarget } from './type';
+import { IInfoStore, ISetTargetReducerAction, TargetInfo } from './type';
 
 const reduceTarget: Reducer<IStore, ISetTargetReducerAction> = (state: IStore | undefined, action: ISetTargetReducerAction): IStore => ({
 
@@ -23,7 +23,7 @@ export const infoReducers = {
     [ACTIONS.SET_TARGET]: reduceTarget,
 };
 
-export const setTarget = (target: ITarget): ISetTargetReducerAction => ({
+export const setTarget = (target: TargetInfo): ISetTargetReducerAction => ({
 
     type: ACTIONS.SET_TARGET,
     target,
@@ -32,6 +32,6 @@ export const setTarget = (target: ITarget): ISetTargetReducerAction => ({
 export const getDefaultInfoStore = (): IInfoStore => ({
 
     target: {
-        application: '',
+        name: '',
     },
 });

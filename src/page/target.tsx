@@ -10,7 +10,7 @@ import { wrapMap } from "../portal/error";
 import { application } from "../repository/application";
 import { IStore } from "../state/declare";
 import { setTarget } from "../state/info/info";
-import { ITarget } from "../state/info/type";
+import { TargetInfo } from "../state/info/type";
 import { clearError, clearLoading, startError, startLoading } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
 
@@ -21,12 +21,12 @@ type TargetProp = {
 
 type ConnectedTargetStates = {
 
-    readonly target: ITarget;
+    readonly target: TargetInfo;
 };
 
 type ConnectedTargetActions = {
 
-    readonly setTarget: (target: ITarget) => void;
+    readonly setTarget: (target: TargetInfo) => void;
     readonly startLoading: (message: string) => void;
     readonly startError: (info: ErrorInfo) => void;
     readonly clearLoading: () => void;
@@ -64,11 +64,11 @@ export class TargetBase extends React.Component<ConnectedTargetProps> {
 
         try {
 
-            const info: ITarget = await application();
+            const info: TargetInfo = await application();
             this.props.setTarget(info);
 
-            if (info.image) {
-                document.body.style.backgroundImage = `url('${info.image}')`;
+            if (info.background) {
+                document.body.style.backgroundImage = `url('${info.background}')`;
             }
             this.props.clearLoading();
         } catch (err) {
