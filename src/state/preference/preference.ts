@@ -4,9 +4,10 @@
  * @description Reducer
  */
 
+import { LOCALE } from '@sudoo/internationalization';
 import { Reducer } from '@sudoo/redux';
 import { ACTIONS, IStore } from '../declare';
-import { ISetLanguageReducerAction, LANGUAGE, PreferenceStore } from './type';
+import { defaultLanguage, ISetLanguageReducerAction, PreferenceStore } from './type';
 
 const reduceLanguage: Reducer<IStore, ISetLanguageReducerAction> = (state: IStore | undefined, action: ISetLanguageReducerAction): IStore => {
 
@@ -27,7 +28,7 @@ export const preferenceReducers = {
     [ACTIONS.SET_LANGUAGE]: reduceLanguage,
 };
 
-export const setLanguage = (language: LANGUAGE): ISetLanguageReducerAction => ({
+export const setLanguage = (language: LOCALE): ISetLanguageReducerAction => ({
 
     type: ACTIONS.SET_LANGUAGE,
     language,
@@ -39,7 +40,7 @@ export const getDefaultPreference = (): PreferenceStore => {
 
     if (!item) {
         return {
-            language: LANGUAGE.UNITED_STATES_ENGLISH,
+            language: defaultLanguage,
         };
     }
 

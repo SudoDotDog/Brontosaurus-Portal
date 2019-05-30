@@ -4,12 +4,15 @@
  * @description Login
  */
 
+import { SudooFormat } from "@sudoo/internationalization";
 import { NeonButton } from "@sudoo/neon/button";
 import { MARGIN, SIZE, WIDTH } from "@sudoo/neon/declare";
 import { INPUT_TYPE, NeonInput } from "@sudoo/neon/input";
 import { Connector } from "@sudoo/redux";
 import * as React from "react";
 import * as StyleForm from "../../style/page/form.sass";
+import { intl } from "../i18n/intl";
+import { PROFILE } from "../i18n/profile";
 import { IStore } from "../state/declare";
 import { setPassword, setUsername } from "../state/form/form";
 import { combineClasses } from "../util/style";
@@ -21,6 +24,7 @@ type FormProp = {
 
 type FormConnectedState = {
 
+    readonly language: SudooFormat;
     readonly username: string;
     readonly password: string;
 };
@@ -34,8 +38,9 @@ type FormConnectedAction = {
 type ConnectProps = FormProp & FormConnectedState & FormConnectedAction;
 
 const connector = Connector.create<IStore, FormConnectedState, FormConnectedAction>()
-    .connectStates(({ form }: IStore) => ({
+    .connectStates(({ form, preference }: IStore) => ({
 
+        language: intl.format(preference.language),
         username: form.username,
         password: form.password,
     })).connectActions({
@@ -52,7 +57,7 @@ export const FormBase: React.FC<ConnectProps> = (props: ConnectProps) => {
     return (<React.Fragment>
         <NeonInput
             className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
-            label="Username"
+            label={props.language.get(PROFILE.USERNAME)}
             margin={MARGIN.SMALL}
             value={props.username}
             onEnter={login}
@@ -60,7 +65,7 @@ export const FormBase: React.FC<ConnectProps> = (props: ConnectProps) => {
         <NeonInput
             className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
             type={INPUT_TYPE.PASSWORD}
-            label="Password"
+            label={props.language.get(PROFILE.PASSWORD)}
             margin={MARGIN.SMALL}
             value={props.password}
             onEnter={login}
@@ -71,7 +76,7 @@ export const FormBase: React.FC<ConnectProps> = (props: ConnectProps) => {
             width={WIDTH.FULL}
             margin={MARGIN.SMALL}
             onClick={login}>
-            SignIn
+            {props.language.get(PROFILE.SIGN_IN)}
         </NeonButton>
     </React.Fragment>);
 };

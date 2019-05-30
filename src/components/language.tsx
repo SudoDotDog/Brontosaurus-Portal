@@ -4,22 +4,22 @@
  * @description Language
  */
 
+import { LOCALE } from "@sudoo/internationalization";
 import { Connector } from "@sudoo/redux";
 import * as React from "react";
 import * as StyleForm from "../../style/page/form.sass";
 import { IStore } from "../state/declare";
 import { setLanguage } from "../state/preference/preference";
-import { LANGUAGE } from "../state/preference/type";
 import { combineClasses } from "../util/style";
 
 type ConnectedLanguageStates = {
 
-    readonly language: LANGUAGE;
+    readonly language: LOCALE;
 };
 
 type ConnectedLanguageActions = {
 
-    readonly setLanguage: (language: LANGUAGE) => void;
+    readonly setLanguage: (language: LOCALE) => void;
 };
 
 type ConnectedProps = ConnectedLanguageStates & ConnectedLanguageActions;
@@ -38,12 +38,12 @@ export const LanguageBase: React.FC<ConnectedProps> = (props: ConnectedProps) =>
     return (
         <select
             value={props.language}
-            onChange={(next: React.ChangeEvent<HTMLSelectElement>) => props.setLanguage(next.target.value as LANGUAGE)}
+            onChange={(next: React.ChangeEvent<HTMLSelectElement>) => props.setLanguage(next.target.value as LOCALE)}
             className={combineClasses(StyleForm.link, StyleForm.language)}
         >
-            <option value={LANGUAGE.UNITED_STATES_ENGLISH}>English</option>
-            <option value={LANGUAGE.SIMPLIFY_CHINESE}>Chinese</option>
-            <option value={LANGUAGE.SPANISH_MEXICO}>Spanish</option>
+            <option value={LOCALE.ENGLISH_UNITED_STATES}>English</option>
+            <option value={LOCALE.CHINESE_SIMPLIFIED}>Chinese</option>
+            <option value={LOCALE.SPANISH_MEXICO}>Spanish</option>
         </select>
     );
 };

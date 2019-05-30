@@ -42,6 +42,13 @@
   resolved "https://registry.yarnpkg.com/@sudoo/bark/-/bark-2.6.4.tgz#e2232edfa76dcfc362cd16da662a36a57b3bd1f2"
   integrity sha512-kfRGRwG+KiUm4yl+PiE1mJs9/QPKQ3yrtdPN6LPbzfi7mNJ80ry28YGB709Od2qijA12nPN9zWnOCxd7qr1JAQ==
 
+"@sudoo/internationalization@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@sudoo/internationalization/-/internationalization-1.0.1.tgz#67b60b9e5561c5a03fe67a176cfeb7cc338d9f5d"
+  integrity sha512-fAPxuAiJ5iiuTWxxb6KFxbdsTlRBrNmzYUS/R+xNM9wPpDCead9autQ6l0JPa7Pvq5iOxgveDGOHggUuuL7cWQ==
+  dependencies:
+    "@sudoo/bark" "^2.6.4"
+
 "@sudoo/neon@^2.9.1":
   version "2.9.1"
   resolved "https://registry.yarnpkg.com/@sudoo/neon/-/neon-2.9.1.tgz#3b9ade6be51452d8632c44515a2d8b40e3047f77"

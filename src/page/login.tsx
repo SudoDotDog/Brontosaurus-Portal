@@ -4,6 +4,7 @@
  * @description Login
  */
 
+import { SudooFormat } from "@sudoo/internationalization";
 import { NeonPaper } from "@sudoo/neon/paper";
 import { NeonIndicator } from "@sudoo/neon/spinner";
 import { Connector } from "@sudoo/redux";
@@ -13,6 +14,8 @@ import * as StyleLogin from "../../style/page/login.sass";
 import { ErrorFlag } from "../components/flag";
 import { ConnectedLanguage } from "../components/language";
 import { Title } from "../components/title";
+import { intl } from "../i18n/intl";
+import { PROFILE } from "../i18n/profile";
 import { wrapMap } from "../portal/error";
 import { Portal } from "../portal/portal";
 import { login } from "../repository/login";
@@ -25,6 +28,7 @@ import { ConnectedForm } from "./form";
 
 type ConnectedLoginStates = {
 
+    readonly language: SudooFormat;
     readonly isLoading: boolean;
     readonly error: ErrorInfo | null;
     readonly target: TargetInfo;
@@ -41,11 +45,11 @@ type ConnectedLoginActions = {
 type ConnectedProps = ConnectedLoginStates & ConnectedLoginActions;
 
 const connector = Connector.create<IStore, ConnectedLoginStates, ConnectedLoginActions>()
-    .connectStates(({ info, status }: IStore) => ({
+    .connectStates(({ info, preference, status }: IStore) => ({
 
+        language: intl.format(preference.language),
         isLoading: Boolean(status.loading),
         error: status.error,
-
         target: info.target,
     })).connectActions({
 
@@ -86,10 +90,6 @@ export class LoginBase extends React.Component<ConnectedProps> {
 
     private _renderFooter(): React.ReactNode {
 
-        if (!this.props.target.privacy) {
-            return null;
-        }
-
         return (<div className={StyleLogin.footer}>
             <div className={StyleLogin.languageText}>
                 <ConnectedLanguage />
@@ -100,7 +100,7 @@ export class LoginBase extends React.Component<ConnectedProps> {
                         className={StyleForm.link}
                         href={this.props.target.privacy}
                     >
-                        Privacy Policy
+                        {this.props.language.get(PROFILE.PRIVACY_POLICY)}
                     </a>
                 </div>}
         </div>);
@@ -117,7 +117,7 @@ export class LoginBase extends React.Component<ConnectedProps> {
                 className={StyleForm.link}
                 href={this.props.target.help}
             >
-                Need help signing in?
+                {this.props.language.get(PROFILE.NEED_HELP)}
             </a>
         </div>);
     }
@@ -142,7 +142,10 @@ export class LoginBase extends React.Component<ConnectedProps> {
             return null;
         }
 
-        return (<Title applicationName={this.props.target.name} />);
+        return (<Title
+            text={this.props.language.get(PROFILE.SIGN_IN_TO)}
+            applicationName={this.props.target.name}
+        />);
     }
 
     private _renderFlag(): React.ReactNode {

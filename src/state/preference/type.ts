@@ -4,22 +4,18 @@
  * @description Type
  */
 
+import { LOCALE } from "@sudoo/internationalization";
 import { Action } from "@sudoo/redux";
 import { ACTIONS } from "../declare";
 
-export enum LANGUAGE {
-
-    SIMPLIFY_CHINESE = "ZH_CN",
-    UNITED_STATES_ENGLISH = "EN_US",
-    SPANISH_MEXICO = "ES_MX",
-}
+export const defaultLanguage: LOCALE = LOCALE.ENGLISH_UNITED_STATES;
 
 export type PreferenceStore = {
 
-    readonly language: LANGUAGE;
+    readonly language: LOCALE;
 };
 
 export interface ISetLanguageReducerAction extends Action<ACTIONS.SET_LANGUAGE> {
 
-    readonly language: LANGUAGE;
+    readonly language: LOCALE;
 }
