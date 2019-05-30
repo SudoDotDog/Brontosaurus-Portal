@@ -11,6 +11,7 @@ import * as React from "react";
 import * as StyleForm from "../../style/page/form.sass";
 import * as StyleLogin from "../../style/page/login.sass";
 import { ErrorFlag } from "../components/flag";
+import { Language } from "../components/language";
 import { Title } from "../components/title";
 import { wrapMap } from "../portal/error";
 import { Portal } from "../portal/portal";
@@ -79,25 +80,29 @@ export class LoginBase extends React.Component<ConnectedProps> {
                     </NeonPaper>
                 </div>
             </div>
-            {this._renderPrivacy()}
+            {this._renderFooter()}
         </div>);
     }
 
-    private _renderPrivacy(): React.ReactNode {
+    private _renderFooter(): React.ReactNode {
 
         if (!this.props.target.privacy) {
             return null;
         }
 
-        return (<div className={StyleLogin.privacy}>
-            <div className={StyleLogin.privacyText}>
-                <a
-                    className={StyleForm.link}
-                    href={this.props.target.privacy}
-                >
-                    Privacy Policy
-                </a>
+        return (<div className={StyleLogin.footer}>
+            <div className={StyleLogin.languageText}>
+                <Language />
             </div>
+            {this.props.target.privacy &&
+                <div className={StyleLogin.privacyText}>
+                    <a
+                        className={StyleForm.link}
+                        href={this.props.target.privacy}
+                    >
+                        Privacy Policy
+                    </a>
+                </div>}
         </div>);
     }
 

@@ -42,16 +42,26 @@
     background-repeat: no-repeat
     background-position: center
 
-.privacy
-    width: 100%
-    text-align: right
+.footer
     font-size: 0.9rem
-
-.privacy-text
     padding-bottom: 0.5rem
     padding-top: 0.5rem
-    padding-right: 5%
+    padding-left: 1rem
+    padding-right: 1rem
     background-color: rgba(255, 255, 255, 0.97)
+    
+    transition: 0.5s all
+    display: flex
+    flex-direction: row
 
     @media screen and (max-width: 30rem)
         background-color: rgba(255, 255, 255, 0.8)
+
+.language-text
+    flex: 1
+    align-self: flex-start
+
+.privacy-text
+    flex: 1
+    text-align: right
+    align-self: flex-end

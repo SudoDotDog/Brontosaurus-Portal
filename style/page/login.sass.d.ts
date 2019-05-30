@@ -4,5 +4,6 @@ export const inner: string;
 export const login: string;
 export const indicator: string;
 export const logoImage: string;
-export const privacy: string;
+export const footer: string;
+export const languageText: string;
 export const privacyText: string;
