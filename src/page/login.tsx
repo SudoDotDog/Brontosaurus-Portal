@@ -64,20 +64,22 @@ export class LoginBase extends React.Component<ConnectedProps> {
 
     public render(): JSX.Element {
 
-        return (<React.Fragment>
+        return (<div className={StyleLogin.page}>
             <div className={StyleLogin.wrapper}>
-                <NeonPaper className={[StyleLogin.login, StyleForm.borderOverride].join(' ')}>
-                    {this._renderLogo()}
-                    {this._renderTitle()}
-                    <NeonIndicator loading={this.props.isLoading}>
-                        <ErrorFlag error={this.props.error} />
-                        {this._renderForm()}
-                    </NeonIndicator>
-                    {this._renderHelp()}
-                </NeonPaper>
+                <div className={StyleLogin.inner}>
+                    <NeonPaper className={[StyleLogin.login, StyleForm.borderOverride].join(' ')}>
+                        {this._renderLogo()}
+                        {this._renderTitle()}
+                        <NeonIndicator loading={this.props.isLoading}>
+                            <ErrorFlag error={this.props.error} />
+                            {this._renderForm()}
+                        </NeonIndicator>
+                        {this._renderHelp()}
+                    </NeonPaper>
+                </div>
             </div>
             {this._renderPrivacy()}
-        </React.Fragment>);
+        </div>);
     }
 
     private _renderPrivacy(): React.ReactNode {
@@ -87,12 +89,14 @@ export class LoginBase extends React.Component<ConnectedProps> {
         }
 
         return (<div className={StyleLogin.privacy}>
-            <a
-                className={StyleForm.link}
-                href={this.props.target.privacy}
-            >
-                Privacy Policy
+            <div className={StyleLogin.privacyText}>
+                <a
+                    className={StyleForm.link}
+                    href={this.props.target.privacy}
+                >
+                    Privacy Policy
             </a>
+            </div>
         </div>);
     }
 
