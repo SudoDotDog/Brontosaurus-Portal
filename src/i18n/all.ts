@@ -33,6 +33,6 @@ export const Spanish: Record<PROFILE, string> = {
     [PROFILE.PRIVACY_POLICY]: "Política de privacidad",
     [PROFILE.SIGN_IN]: "Iniciar sesión",
     [PROFILE.SIGN_IN_TO]: "Iniciar sesión en",
-    [PROFILE.USERNAME]: "nombre de usuario",
+    [PROFILE.USERNAME]: "Usuario",
 };
 
