@@ -16,9 +16,29 @@ export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
     [PROFILE.USERNAME]: "Username",
 };
 
+export const RUSSIAN_RUSSIA: Record<PROFILE, string> = {
+
+    [PROFILE.NEED_HELP]: "Логин нуждается в помощи?",
+    [PROFILE.PASSWORD]: "Парола",
+    [PROFILE.PRIVACY_POLICY]: "Политика конфиденциальности",
+    [PROFILE.SIGN_IN]: "Войти",
+    [PROFILE.SIGN_IN_TO]: "Войти в",
+    [PROFILE.USERNAME]: "Потребителско име",
+};
+
+export const FRENCH_FRANCE: Record<PROFILE, string> = {
+
+    [PROFILE.NEED_HELP]: "Besoin d'aide pour vous connecter?",
+    [PROFILE.PASSWORD]: "Mot de passe",
+    [PROFILE.PRIVACY_POLICY]: "Politique de confidentialité",
+    [PROFILE.SIGN_IN]: "Se connecter",
+    [PROFILE.SIGN_IN_TO]: "Se connecter à",
+    [PROFILE.USERNAME]: "Identifiant",
+};
+
 export const JAPANESE_JAPAN: Record<PROFILE, string> = {
 
-    [PROFILE.NEED_HELP]: "ログインにはヘルプが必要?",
+    [PROFILE.NEED_HELP]: "ログインにはヘルプが必要？",
     [PROFILE.PASSWORD]: "パスワード",
     [PROFILE.PRIVACY_POLICY]: "プライバシーポリシー",
     [PROFILE.SIGN_IN]: "ログイン",
@@ -28,7 +48,7 @@ export const JAPANESE_JAPAN: Record<PROFILE, string> = {
 
 export const KOREAN_KOREA: Record<PROFILE, string> = {
 
-    [PROFILE.NEED_HELP]: "로그인에 문제가 발생했습니다?",
+    [PROFILE.NEED_HELP]: "로그인에 문제가 발생했습니다？",
     [PROFILE.PASSWORD]: "비밀번호",
     [PROFILE.PRIVACY_POLICY]: "개인 정보 보호 정책",
     [PROFILE.SIGN_IN]: "로그인",
@@ -65,4 +85,3 @@ export const SPANISH_MEXICO: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_TO]: "Iniciar sesión en",
     [PROFILE.USERNAME]: "Usuario",
 };
-
