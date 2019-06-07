@@ -41,9 +41,14 @@ export const LanguageBase: React.FC<ConnectedProps> = (props: ConnectedProps) =>
             onChange={(next: React.ChangeEvent<HTMLSelectElement>) => props.setLanguage(next.target.value as LOCALE)}
             className={combineClasses(StyleForm.link, StyleForm.language)}
         >
+            <option value={LOCALE.CHINESE_SIMPLIFIED}>简体中文</option>
+            <option value={LOCALE.CHINESE_TRADITIONAL}>繁體中文</option>
             <option value={LOCALE.ENGLISH_UNITED_STATES}>English</option>
-            <option value={LOCALE.CHINESE_SIMPLIFIED}>Chinese</option>
-            <option value={LOCALE.SPANISH_MEXICO}>Spanish</option>
+            <option value={LOCALE.FRENCH_FRANCE}>Français</option>
+            <option value={LOCALE.JAPANESE_JAPAN}>日本語</option>
+            <option value={LOCALE.KOREAN_KOREA}>한국어</option>
+            <option value={LOCALE.RUSSIAN_RUSSIA}>Български език</option>
+            <option value={LOCALE.SPANISH_SPAIN}>Español</option>
         </select>
     );
 };
