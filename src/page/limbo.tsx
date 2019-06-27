@@ -67,6 +67,8 @@ export class LimboBase extends React.Component<ConnectedProps, LimboStates> {
 
     public render(): JSX.Element {
 
+        const login: () => void = () => this._limbo(this.state.newPassword);
+
         return (
             <FormStructure>
                 <div className={StyleForm.title}>
@@ -78,13 +80,14 @@ export class LimboBase extends React.Component<ConnectedProps, LimboStates> {
                     label={this.props.language.get(PROFILE.NEW_PASSWORD)}
                     margin={MARGIN.SMALL}
                     value={this.state.newPassword}
+                    onEnter={login}
                     onChange={(value) => this.setState({ newPassword: value })} />
                 <NeonButton
                     className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
                     size={SIZE.MEDIUM}
                     width={WIDTH.FULL}
                     margin={MARGIN.SMALL}
-                    onClick={() => this._limbo(this.state.newPassword)}>
+                    onClick={login}>
                     {this.props.language.get(PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN)}
                 </NeonButton>
             </FormStructure>

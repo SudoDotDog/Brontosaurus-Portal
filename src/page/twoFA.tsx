@@ -67,6 +67,8 @@ export class TwoFABase extends React.Component<ConnectedProps, TwoFAStates> {
 
     public render(): JSX.Element {
 
+        const login: () => void = () => this._twoFA(this.state.code);
+
         return (
             <FormStructure>
                 <div className={StyleForm.title}>
@@ -77,13 +79,14 @@ export class TwoFABase extends React.Component<ConnectedProps, TwoFAStates> {
                     label={this.props.language.get(PROFILE.AUTH_CODE)}
                     margin={MARGIN.SMALL}
                     value={this.state.code}
+                    onEnter={login}
                     onChange={(value) => this.setState({ code: value })} />
                 <NeonButton
                     className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
                     size={SIZE.MEDIUM}
                     width={WIDTH.FULL}
                     margin={MARGIN.SMALL}
-                    onClick={() => this._twoFA(this.state.code)}>
+                    onClick={login}>
                     {this.props.language.get(PROFILE.AUTH_AND_SIGN_IN)}
                 </NeonButton>
             </FormStructure>
