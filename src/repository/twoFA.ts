@@ -1,28 +1,23 @@
 /**
  * @author WMXPY
  * @namespace Repository
- * @description Login
+ * @description TwoFA
  */
 
 import { Portal } from "../portal/portal";
 
-export type LoginResponse = {
-
-    readonly next: "limbo" | "twoFA" | "redirect";
-    readonly token: string | null;
-};
-
-export const login = async (username: string, password: string): Promise<LoginResponse> => {
+export const twoFARepository = async (username: string, password: string, code: string): Promise<string> => {
 
     const portal: Portal = Portal.instance;
 
     const payload: string = JSON.stringify({
         username,
         password,
+        code,
         applicationKey: portal.applicationKey,
     });
 
-    const response: Response = await fetch('/retrieve', {
+    const response: Response = await fetch('/twoFA', {
         method: "POST",
         headers: {
             'Accept': 'application/json',
@@ -40,23 +35,8 @@ export const login = async (username: string, password: string): Promise<LoginRe
 
     if (response.ok) {
 
-        if (data.limbo) {
-            return {
-                next: 'limbo',
-                token: null,
-            };
-        }
-        if (data.needTwoFA) {
-            return {
-                next: 'twoFA',
-                token: null,
-            };
-        }
-        if (data.token) {
-            return {
-                next: 'redirect',
-                token: data.token,
-            };
+        if (data.token && !data.limbo) {
+            return data.token;
         }
     }
 

@@ -5,8 +5,8 @@
  */
 
 import * as React from "react";
-import { ConnectedLogin } from "./page/login";
 import { ConnectedTarget } from "./page/target";
+import { ConnectedSwitch } from "./switch";
 
 export class Entry extends React.Component {
 
@@ -14,7 +14,7 @@ export class Entry extends React.Component {
 
         return (
             <ConnectedTarget>
-                <ConnectedLogin />
+                <ConnectedSwitch />
             </ConnectedTarget>
         );
     }
