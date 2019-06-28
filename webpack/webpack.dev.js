@@ -21,6 +21,9 @@ module.exports = SudooWebpack.create({
 
     APP_ENTRY_FILE_NAME: 'index.tsx',
 }, {
-    title: 'Brontosaurus',
-    mobile: true,
-}).development(8081);
+        defines: {
+            'process.env.TEST_SERVER_PATH': JSON.stringify(process.env.TEST_SERVER_PATH),
+        },
+        title: 'Brontosaurus',
+        mobile: true,
+    }).development(8081);

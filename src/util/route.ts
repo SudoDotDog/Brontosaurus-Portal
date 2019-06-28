@@ -6,7 +6,7 @@
 
 export const joinRoute = (route: string) => {
 
-    if (process && process.env && process.env.TEST_SERVER_PATH) {
+    if (process.env.TEST_SERVER_PATH) {
         const path: string = process.env.TEST_SERVER_PATH as string;
         return path + route;
     }
