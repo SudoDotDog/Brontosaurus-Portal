@@ -15,7 +15,7 @@ const errorMap: Record<string, ErrorInfo> = {
     },
     "4001": {
         short: PROFILE.USERNAME_PASSWORD_NOT_MATCH,
-        long: PROFILE.CONNECT_SERVICE,
+        long: PROFILE.USERNAME_PASSWORD_NOT_MATCH_DESCRIPTION,
     },
     "4002": {
         short: PROFILE.TWO_FA_NOT_MATCH,
@@ -23,7 +23,7 @@ const errorMap: Record<string, ErrorInfo> = {
     },
     "4003": {
         short: PROFILE.TOO_MANY_ATTEMPT,
-        long: PROFILE.CONNECT_SERVICE,
+        long: PROFILE.TOO_MANY_ATTEMPT_DESCRIPTION,
     },
     "4120": {
         short: PROFILE.INTERNAL_ERROR,
