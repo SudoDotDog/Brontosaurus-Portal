@@ -4,7 +4,7 @@
  * @description Portal
  */
 
-import { PORTAL_MODE, postParentMessage } from "./util";
+import { PORTAL_MODE, postCurrentMessage, postParentMessage } from "./util";
 
 export class Portal {
 
@@ -22,8 +22,12 @@ export class Portal {
 
         if (applicationKey && callbackPath) {
 
-            if (callbackPath === 'IFRAME') {
+            if (callbackPath.toUpperCase() === 'IFRAME') {
                 this._instance = new Portal(PORTAL_MODE.IFRAME).setParams(applicationKey, callbackPath);
+            } else if (callbackPath.toUpperCase() === 'POST') {
+                this._instance = new Portal(PORTAL_MODE.POST).setParams(applicationKey, callbackPath);
+            } else if (callbackPath.toUpperCase() === 'NONE') {
+                this._instance = new Portal(PORTAL_MODE.NONE).setParams(applicationKey, callbackPath);
             } else {
                 this._instance = new Portal(PORTAL_MODE.REDIRECT).setParams(applicationKey, callbackPath);
             }
@@ -90,6 +94,18 @@ export class Portal {
         if (this._mode === PORTAL_MODE.IFRAME) {
 
             if (postParentMessage(token)) {
+                return;
+            }
+        }
+
+        if (this._mode === PORTAL_MODE.NONE) {
+            console.log(token);
+            return;
+        }
+
+        if (this._mode === PORTAL_MODE.POST) {
+
+            if (postCurrentMessage(token)) {
                 return;
             }
         }

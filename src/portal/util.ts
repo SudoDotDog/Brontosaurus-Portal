@@ -7,6 +7,8 @@
 export enum PORTAL_MODE {
     REDIRECT = "REDIRECT",
     IFRAME = "IFRAME",
+    NONE = "NONE",
+    POST = "POST",
     ERROR = "ERROR",
 }
 
@@ -17,6 +19,22 @@ export enum STATUS {
 }
 
 export const applicationMessageName: string = 'BRONTOSAURUS';
+
+export const postCurrentMessage = (token: string): boolean => {
+
+    if (window.postMessage) {
+
+        window.postMessage({
+            type: applicationMessageName,
+            status: STATUS.SUCCEED,
+            token,
+        }, '*');
+
+        return true;
+    }
+
+    return false;
+};
 
 export const postParentMessage = (token: string): boolean => {
 
