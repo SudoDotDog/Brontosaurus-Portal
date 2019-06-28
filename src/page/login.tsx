@@ -86,20 +86,16 @@ export class LoginBase extends React.Component<ConnectedProps> {
             const action: LoginResponse = await login(username, password);
             if (action.next === 'redirect') {
                 Portal.flush(action.token as string);
-                return;
             }
-
             if (action.next === 'limbo') {
                 this.props.setPage(PAGE.LIMBO);
-                this.props.clearLoading();
-                return;
             }
-
             if (action.next === 'twoFA') {
                 this.props.setPage(PAGE.TWOFA);
-                this.props.clearLoading();
-                return;
             }
+
+            this.props.clearLoading();
+            this.props.clearError();
         } catch (err) {
 
 

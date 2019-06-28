@@ -35,7 +35,6 @@ export const wrapMap = (message: string): ErrorInfo => {
 
     const instance: ErrorInfo | undefined = errorMap[message.toString()];
 
-    console.log(message);
     if (instance) {
 
         return instance;
