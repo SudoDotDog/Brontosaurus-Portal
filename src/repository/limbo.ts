@@ -5,6 +5,7 @@
  */
 
 import { Portal } from "../portal/portal";
+import { joinRoute } from "../util/route";
 
 export const limboRepository = async (username: string, oldPassword: string, newPassword: string): Promise<string> => {
 
@@ -17,7 +18,7 @@ export const limboRepository = async (username: string, oldPassword: string, new
         applicationKey: portal.applicationKey,
     });
 
-    const response: Response = await fetch('/limbo', {
+    const response: Response = await fetch(joinRoute('/limbo'), {
         method: "POST",
         headers: {
             'Accept': 'application/json',

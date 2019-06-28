@@ -5,6 +5,7 @@
  */
 
 import { Portal } from "../portal/portal";
+import { joinRoute } from "../util/route";
 
 export const twoFARepository = async (username: string, password: string, code: string): Promise<string> => {
 
@@ -17,7 +18,7 @@ export const twoFARepository = async (username: string, password: string, code: 
         applicationKey: portal.applicationKey,
     });
 
-    const response: Response = await fetch('/twoFA', {
+    const response: Response = await fetch(joinRoute('/twoFA'), {
         method: "POST",
         headers: {
             'Accept': 'application/json',

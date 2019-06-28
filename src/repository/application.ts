@@ -6,6 +6,7 @@
 
 import { Portal } from "../portal/portal";
 import { TargetInfo } from "../state/info/type";
+import { joinRoute } from "../util/route";
 
 export const application = async (): Promise<TargetInfo> => {
 
@@ -15,7 +16,7 @@ export const application = async (): Promise<TargetInfo> => {
         applicationKey: portal.applicationKey,
     });
 
-    const response: Response = await fetch('/application', {
+    const response: Response = await fetch(joinRoute('/application'), {
         method: "POST",
         headers: {
             'Accept': 'application/json',

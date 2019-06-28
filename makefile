@@ -12,7 +12,7 @@ main: run
 
 run:
 	@echo "[INFO] Starting development"
-	@NODE_ENV=development $(webpack_dev_server) --config $(webpack_dev) --open
+	@NODE_ENV=development TEST_SERVER_PATH=$(TSP) $(webpack_dev_server) --config $(webpack_dev) --open
 
 build:
 	@echo "[INFO] Starting build"

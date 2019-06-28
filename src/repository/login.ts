@@ -5,6 +5,7 @@
  */
 
 import { Portal } from "../portal/portal";
+import { joinRoute } from "../util/route";
 
 export type LoginResponse = {
 
@@ -22,7 +23,7 @@ export const login = async (username: string, password: string): Promise<LoginRe
         applicationKey: portal.applicationKey,
     });
 
-    const response: Response = await fetch('/retrieve', {
+    const response: Response = await fetch(joinRoute('/retrieve'), {
         method: "POST",
         headers: {
             'Accept': 'application/json',
