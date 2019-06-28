@@ -5,12 +5,13 @@
  */
 
 import { Action } from "@sudoo/redux";
+import { PROFILE } from "../../i18n/profile";
 import { ACTIONS } from "../declare";
 
 export type ErrorInfo = {
 
-    short: string;
-    long?: string;
+    short: PROFILE;
+    long?: PROFILE;
 };
 
 export interface IStatusStore {

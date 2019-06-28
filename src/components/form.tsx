@@ -124,7 +124,15 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
 
     private _renderFlag(): React.ReactNode {
 
-        return (<ErrorFlag error={this.props.error} />);
+        const info: ErrorInfo = this.props.error || {
+            long: PROFILE.CONNECT_SERVICE,
+            short: PROFILE.INTERNAL_ERROR,
+        };
+        return (<ErrorFlag
+            show={Boolean(this.props.error)}
+            info={this.props.language.get(info.long as PROFILE)}
+            message={this.props.language.get(info.short as PROFILE)}
+        />);
     }
 }
 

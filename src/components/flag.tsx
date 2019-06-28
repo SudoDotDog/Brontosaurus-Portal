@@ -12,21 +12,22 @@ import { ErrorInfo } from "../state/status/type";
 
 type ErrorFlagProp = {
 
-    readonly error?: ErrorInfo | null;
+    readonly show: boolean;
+    readonly info?: string;
+    readonly message?: string;
 };
 
 export const ErrorFlag: React.FC<ErrorFlagProp> = (props: ErrorFlagProp) => {
 
-    if (props.error) {
+    if (props.show) {
 
         return (
             <NeonFlag
                 margin={MARGIN.SMALL}
-                info={props.error.long}
+                info={props.info}
                 className={StyleForm.marginOverride}
-
+                message={props.message}
                 type={SIGNAL.ERROR}>
-                {props.error.short}
             </NeonFlag>
         );
     }

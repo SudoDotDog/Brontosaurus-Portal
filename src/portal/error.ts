@@ -4,35 +4,45 @@
  * @description Error
  */
 
+import { PROFILE } from "../i18n/profile";
 import { ErrorInfo } from "../state/status/type";
 
 const errorMap: Record<string, ErrorInfo> = {
 
     "Failed to fetch": {
-        short: 'Cannot connect to the server',
+        short: PROFILE.FAILED_TO_FETCH,
+        long: PROFILE.FAILED_TO_FETCH_DESCRIPTION,
     },
     "4001": {
-        short: 'Username - Password not matched',
-        long: 'Connect service',
+        short: PROFILE.USERNAME_PASSWORD_NOT_MATCH,
+        long: PROFILE.CONNECT_SERVICE,
+    },
+    "4002": {
+        short: PROFILE.TWO_FA_NOT_MATCH,
+        long: PROFILE.TWO_FA_NOT_MATCH_DESCRIPTION,
+    },
+    "4003": {
+        short: PROFILE.TOO_MANY_ATTEMPT,
+        long: PROFILE.CONNECT_SERVICE,
     },
     "4120": {
-        short: 'Internal Error',
+        short: PROFILE.INTERNAL_ERROR,
+        long: PROFILE.INTERNAL_ERROR_DESCRIPTION,
     },
 };
 
 export const wrapMap = (message: string): ErrorInfo => {
 
-    const instance: ErrorInfo | undefined = errorMap[message];
+    const instance: ErrorInfo | undefined = errorMap[message.toString()];
 
+    console.log(message);
     if (instance) {
 
         return instance;
     }
 
-    console.log(message);
-
     return {
-        short: "Unknown Error",
-        long: "",
+        short: PROFILE.UNKNOWN_ERROR,
+        long: PROFILE.CONNECT_SERVICE,
     };
 };
