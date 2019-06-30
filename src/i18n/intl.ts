@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
  * @namespace I18N
- * @description INTL
+ * @description International
  */
 
 import { LOCALE, SudooInternationalization } from "@sudoo/internationalization";

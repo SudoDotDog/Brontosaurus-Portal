@@ -116,7 +116,7 @@ export class Portal {
             return;
         }
 
-        throw new Error("[Brontosaurus-Portal] Not valid");
+        throw new Error("[Brontosaurus-Portal] Not Valid");
     }
 
     private setParams(applicationKey: string, callbackPath: string): Portal {

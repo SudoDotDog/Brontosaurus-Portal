@@ -8,7 +8,6 @@ import { MARGIN, SIGNAL } from "@sudoo/neon/declare";
 import { NeonFlag } from "@sudoo/neon/flag";
 import * as React from "react";
 import * as StyleForm from "../../style/page/form.sass";
-import { ErrorInfo } from "../state/status/type";
 
 type ErrorFlagProp = {
 
