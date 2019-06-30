@@ -13,6 +13,10 @@ const errorMap: Record<string, ErrorInfo> = {
         short: PROFILE.FAILED_TO_FETCH,
         long: PROFILE.FAILED_TO_FETCH_DESCRIPTION,
     },
+    "4000": {
+        short: PROFILE.INACTIVE_ACCOUNT,
+        long: PROFILE.INACTIVE_ACCOUNT_DESCRIPTION,
+    },
     "4001": {
         short: PROFILE.USERNAME_PASSWORD_NOT_MATCH,
         long: PROFILE.USERNAME_PASSWORD_NOT_MATCH_DESCRIPTION,
