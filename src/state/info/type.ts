@@ -14,6 +14,9 @@ export type TargetInfo = {
     readonly background?: string;
     readonly help?: string;
     readonly privacy?: string;
+
+    readonly systemName?: string;
+    readonly accountName?: string;
 };
 
 export interface IInfoStore {

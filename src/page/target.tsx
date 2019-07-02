@@ -70,6 +70,10 @@ export class TargetBase extends React.Component<ConnectedTargetProps> {
             if (info.background) {
                 document.body.style.backgroundImage = `url('${info.background}')`;
             }
+            if (info.systemName) {
+                document.title = info.systemName;
+            }
+
             this.props.clearLoading();
         } catch (err) {
 

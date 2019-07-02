@@ -35,6 +35,9 @@ export const application = async (): Promise<TargetInfo> => {
             name: data.name,
             help: data.help,
             privacy: data.privacy,
+
+            systemName: data.systemName,
+            accountName: data.accountName,
         };
     }
 
