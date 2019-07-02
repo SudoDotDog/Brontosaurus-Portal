@@ -38,7 +38,7 @@ type ConnectedLoginActions = {
 type ConnectedProps = ConnectedLoginStates & ConnectedLoginActions;
 
 const connector = Connector.create<IStore, ConnectedLoginStates, ConnectedLoginActions>()
-    .connectStates(({ info, preference, status }: IStore) => ({
+    .connectStates(({ info, preference }: IStore) => ({
 
         language: intl.format(preference.language),
         target: info.target,

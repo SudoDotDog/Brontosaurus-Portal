@@ -10,7 +10,7 @@ import { combineClasses } from "../util/style";
 
 type TitleProp = {
 
-    readonly text: string;
+    readonly text: any;
     readonly applicationName: string;
 };
 

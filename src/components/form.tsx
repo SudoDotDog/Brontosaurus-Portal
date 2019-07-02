@@ -117,7 +117,7 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
         }
 
         return (<Title
-            text={this.props.language.get(PROFILE.SIGN_IN_TO)}
+            text={this._getLoginToText()}
             applicationName={this.props.target.name}
         />);
     }
@@ -133,6 +133,23 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
             info={this.props.language.get(info.long as PROFILE)}
             message={this.props.language.get(info.short as PROFILE)}
         />);
+    }
+
+    private _getLoginToText(): any {
+
+        if (this.props.target.accountName) {
+
+            const before: string = this.props.language.get(PROFILE.SIGN_IN_WITH_BEFORE);
+            const after: string = this.props.language.get(PROFILE.SIGN_IN_WITH_AFTER);
+
+            return (<span>
+                {before && before + " "}
+                <span style={{ fontWeight: 'bold' }}>{this.props.target.accountName}</span>
+                {after && after + " "}
+            </span>);
+        }
+
+        return this.props.language.get(PROFILE.SIGN_IN_TO);
     }
 }
 

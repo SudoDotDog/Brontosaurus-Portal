@@ -13,6 +13,8 @@ export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
     [PROFILE.PRIVACY_POLICY]: "Privacy Policy",
     [PROFILE.SIGN_IN]: "SignIn",
     [PROFILE.SIGN_IN_TO]: "Sign in to",
+    [PROFILE.SIGN_IN_WITH_BEFORE]: "Sign in with",
+    [PROFILE.SIGN_IN_WITH_AFTER]: "",
     [PROFILE.USERNAME]: "Username",
 
     [PROFILE.LIMBO_DESCRIPTION]: "You are signing in with a temporary password, please enter a new password and use it the next time you log in.",
@@ -46,6 +48,8 @@ export const RUSSIAN_RUSSIA: Record<PROFILE, string> = {
     [PROFILE.PRIVACY_POLICY]: "Политика конфиденциальности",
     [PROFILE.SIGN_IN]: "Войти",
     [PROFILE.SIGN_IN_TO]: "Войти в",
+    [PROFILE.SIGN_IN_WITH_BEFORE]: "Войти с помощью аккаунта",
+    [PROFILE.SIGN_IN_WITH_AFTER]: "",
     [PROFILE.USERNAME]: "Потребителско име",
 
     [PROFILE.LIMBO_DESCRIPTION]: "Вы входите с временным паролем, введите новый пароль и используйте его при следующем входе.",
@@ -79,6 +83,8 @@ export const FRENCH_FRANCE: Record<PROFILE, string> = {
     [PROFILE.PRIVACY_POLICY]: "Politique de confidentialité",
     [PROFILE.SIGN_IN]: "Se connecter",
     [PROFILE.SIGN_IN_TO]: "Se connecter à",
+    [PROFILE.SIGN_IN_WITH_BEFORE]: "Se connecter avec un compte",
+    [PROFILE.SIGN_IN_WITH_AFTER]: "",
     [PROFILE.USERNAME]: "Identifiant",
 
     [PROFILE.LIMBO_DESCRIPTION]: "Vous vous connectez avec un mot de passe temporaire, veuillez entrer un nouveau mot de passe et l'utiliser lors de votre prochaine connexion.",
@@ -112,6 +118,8 @@ export const JAPANESE_JAPAN: Record<PROFILE, string> = {
     [PROFILE.PRIVACY_POLICY]: "プライバシーポリシー",
     [PROFILE.SIGN_IN]: "ログイン",
     [PROFILE.SIGN_IN_TO]: "にログイン",
+    [PROFILE.SIGN_IN_WITH_BEFORE]: "",
+    [PROFILE.SIGN_IN_WITH_AFTER]: "でログイン",
     [PROFILE.USERNAME]: "ユーザー名",
 
     [PROFILE.LIMBO_DESCRIPTION]: "あなたは一時的なパスワードでログインしています。新しいパスワードを入力して、次回のログイン時にそれを使用してください。",
@@ -145,6 +153,8 @@ export const KOREAN_KOREA: Record<PROFILE, string> = {
     [PROFILE.PRIVACY_POLICY]: "개인 정보 보호 정책",
     [PROFILE.SIGN_IN]: "로그인",
     [PROFILE.SIGN_IN_TO]: "로그인",
+    [PROFILE.SIGN_IN_WITH_BEFORE]: "",
+    [PROFILE.SIGN_IN_WITH_AFTER]: "로 로그인",
     [PROFILE.USERNAME]: "사용자 아이디",
 
     [PROFILE.LIMBO_DESCRIPTION]: "임시 비밀번호로 로그인하는 중입니다. 다음에 로그인 할 때 새 비밀번호를 입력하여 사용하십시오.",
@@ -178,6 +188,8 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
     [PROFILE.PRIVACY_POLICY]: "隐私政策",
     [PROFILE.SIGN_IN]: "登录",
     [PROFILE.SIGN_IN_TO]: "登录至",
+    [PROFILE.SIGN_IN_WITH_BEFORE]: "使用",
+    [PROFILE.SIGN_IN_WITH_AFTER]: "登陆",
     [PROFILE.USERNAME]: "用户名",
 
     [PROFILE.LIMBO_DESCRIPTION]: "您正在使用临时密码登录，请输入新密码，并在下次登录时使用它。",
@@ -211,6 +223,8 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
     [PROFILE.PRIVACY_POLICY]: "隱私政策",
     [PROFILE.SIGN_IN]: "登入",
     [PROFILE.SIGN_IN_TO]: "登入到",
+    [PROFILE.SIGN_IN_WITH_BEFORE]: "使用",
+    [PROFILE.SIGN_IN_WITH_AFTER]: "登入",
     [PROFILE.USERNAME]: "使用者名稱",
 
     [PROFILE.LIMBO_DESCRIPTION]: "您正在使用臨時密鑰登入，請輸入新密鑰，並在下次登入時使用它。",
@@ -244,6 +258,8 @@ export const SPANISH_MEXICO: Record<PROFILE, string> = {
     [PROFILE.PRIVACY_POLICY]: "Política de privacidad",
     [PROFILE.SIGN_IN]: "Iniciar sesión",
     [PROFILE.SIGN_IN_TO]: "Iniciar sesión en",
+    [PROFILE.SIGN_IN_WITH_BEFORE]: "Inicia sesión con",
+    [PROFILE.SIGN_IN_WITH_AFTER]: "",
     [PROFILE.USERNAME]: "Usuario",
 
     [PROFILE.LIMBO_DESCRIPTION]: "Está iniciando sesión con una contraseña temporal, ingrese una nueva contraseña y úsela la próxima vez que inicie sesión.",
