@@ -32,17 +32,17 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@sudoo/bark@^2.1.0", "@sudoo/bark@^2.6.4", "@sudoo/bark@^2.7.1":
+"@sudoo/bark@^2.1.0", "@sudoo/bark@^2.7.1":
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/@sudoo/bark/-/bark-2.7.1.tgz#84b9db0be3aa7b4d6896ced81d9fa9aac96578ef"
   integrity sha512-0zBFbIQAtu3XNJkFPszdljYXXIPXzR63qypfTwFRupmu3gxgfBMtdPShbQebGuGG0KQEmXasGMBQVi2O0jWbbQ==
 
-"@sudoo/internationalization@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@sudoo/internationalization/-/internationalization-1.1.1.tgz#02866f129b9a783d233df599d36145848fe54191"
-  integrity sha512-BRNW3V6Fg4ijscF5YdDDHQQhVmXj5zHiWbQ2eWoPA1S0Irv4UaWXlJUBbVv7Y9dqFaLMb7sf89P9mCmxE5MM/A==
+"@sudoo/internationalization@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@sudoo/internationalization/-/internationalization-1.2.0.tgz#a3f777218f9424d1d7f7d5019c0d90ff48446a2e"
+  integrity sha512-EMzgpAdplfKB2rIv20CtxWEf+BpmwmbHR9/W+WFn4VdnkrmoFRisV8T8no3Rvs+UyUu5I2KC90WOX/xVH+zUxg==
   dependencies:
-    "@sudoo/bark" "^2.6.4"
+    "@sudoo/bark" "^2.7.1"
 
 "@sudoo/neon@^2.9.1":
   version "2.9.1"
