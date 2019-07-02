@@ -143,9 +143,9 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
             const after: string = this.props.language.get(PROFILE.SIGN_IN_WITH_AFTER);
 
             return (<span>
-                {before && before + " "}
+                {before && (before + " ")}
                 <span style={{ fontWeight: 'bold' }}>{this.props.target.accountName}</span>
-                {after && after + " "}
+                {after && (" " + after)}
             </span>);
         }
 
