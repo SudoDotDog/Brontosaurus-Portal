@@ -20,6 +20,7 @@ coverage
 # temp
 dist
 temp
+temp.txt
 
 # Mac OS
 .DS_Store

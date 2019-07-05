@@ -29,6 +29,14 @@ const errorMap: Record<string, ErrorInfo> = {
         short: PROFILE.TOO_MANY_ATTEMPT,
         long: PROFILE.TOO_MANY_ATTEMPT_DESCRIPTION,
     },
+    "4111": {
+        short: PROFILE.UNSAFE_PASSWORD,
+        long: PROFILE.UNSAFE_PASSWORD_DESCRIPTION,
+    },
+    "4113": {
+        short: PROFILE.WIRED_PASSWORD,
+        long: PROFILE.WIRED_PASSWORD_DESCRIPTION,
+    },
     "4120": {
         short: PROFILE.INTERNAL_ERROR,
         long: PROFILE.INTERNAL_ERROR_DESCRIPTION,
