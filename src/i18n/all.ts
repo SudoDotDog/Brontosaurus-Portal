@@ -21,7 +21,7 @@ export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
     [PROFILE.NEW_PASSWORD]: "New password",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "Save and SignIn",
 
-    [PROFILE.TWO_FA_DESCRIPTION]: "Two-factor authentication is enabled on your account, Open the two-factor authentication app on your device to view your authentication code.",
+    [PROFILE.TWO_FA_DESCRIPTION]: "Two-Factor authentication is enabled on your account, Open the Two-Factor authentication app on your device to view your authentication code.",
     [PROFILE.AUTH_CODE]: "Authentication code",
     [PROFILE.AUTH_AND_SIGN_IN]: "Verify and SignIn",
 
@@ -33,14 +33,14 @@ export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
     [PROFILE.INACTIVE_ACCOUNT_DESCRIPTION]: "This account has been disabled, Please contact your system administrator to restore this account.",
     [PROFILE.USERNAME_PASSWORD_NOT_MATCH]: "Username and password do not match",
     [PROFILE.USERNAME_PASSWORD_NOT_MATCH_DESCRIPTION]: 'Please try signing in again. Note that if you try too many times, your account may be locked. If you forget your password or this error persists, please contact your system administrator for more help.',
-    [PROFILE.TWO_FA_NOT_MATCH]: "Two-factor verification failed",
+    [PROFILE.TWO_FA_NOT_MATCH]: "Two-Factor verification failed",
     [PROFILE.TWO_FA_NOT_MATCH_DESCRIPTION]: "This may be due to a system delay, please try again later. If this error persists, please contact your system administrator for more help.",
     [PROFILE.TOO_MANY_ATTEMPT]: "Account is locked",
     [PROFILE.TOO_MANY_ATTEMPT_DESCRIPTION]: "Your account has been locked due to too many attempts, please contact your system administrator for more help.",
     [PROFILE.UNSAFE_PASSWORD]: "Week password",
     [PROFILE.UNSAFE_PASSWORD_DESCRIPTION]: "A strong password should be at least eight characters long and contain at least one English character and one numeric character.",
     [PROFILE.WIRED_PASSWORD]: "Unreasonable password",
-    [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "You use unreasonable special characters in your password. A reasonable password should only include English characters, numbers, and symbols on the keyboard.",
+    [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "You may have used special characters in your password. A reasonable password should only include English characters, numbers, and symbols on the keyboard.",
     [PROFILE.INTERNAL_ERROR]: "Internal Error",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "An internal error has occurred, usually not because of you. If this error persists, please contact your system administrator for more help.",
 };
@@ -79,7 +79,7 @@ export const RUSSIAN_RUSSIA: Record<PROFILE, string> = {
     [PROFILE.UNSAFE_PASSWORD]: "Слабый пароль",
     [PROFILE.UNSAFE_PASSWORD_DESCRIPTION]: "Надежный пароль должен содержать не менее восьми символов и содержать как минимум один английский символ и один цифровой символ.",
     [PROFILE.WIRED_PASSWORD]: "Неразумный пароль",
-    [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "Вы используете необоснованные специальные символы в своем пароле. Разумный пароль должен включать только английские символы, цифры и символы на клавиатуре.",
+    [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "Возможно, вы использовали специальные символы в вашем пароле. Разумный пароль должен включать только английские символы, цифры и символы на клавиатуре.",
     [PROFILE.INTERNAL_ERROR]: "Внутренняя ошибка",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "Произошла внутренняя ошибка, обычно не по вашей вине. Если эта ошибка не устранена, обратитесь за помощью к системному администратору.",
 };
@@ -118,7 +118,7 @@ export const FRENCH_FRANCE: Record<PROFILE, string> = {
     [PROFILE.UNSAFE_PASSWORD]: "Mot de passe faible",
     [PROFILE.UNSAFE_PASSWORD_DESCRIPTION]: "Un mot de passe fort doit comporter au moins huit caractères et au moins un caractère anglais et un caractère numérique.",
     [PROFILE.WIRED_PASSWORD]: "Mot de passe déraisonnable",
-    [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "Vous utilisez des mots spéciaux déraisonnables dans votre mot de passe, lequel ne doit contenir que des caractères anglais, des chiffres et des symboles du clavier.",
+    [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "Vous avez peut-être utilisé des caractères spéciaux dans votre mot de passe. Un mot de passe raisonnable ne doit contenir que des caractères anglais, des chiffres et des symboles sur le clavier.",
     [PROFILE.INTERNAL_ERROR]: "Erreur interne",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "Une erreur interne s'est produite, généralement pas à cause de vous. Si cette erreur persiste, contactez votre administrateur système pour obtenir de l'aide.",
 };
@@ -157,7 +157,7 @@ export const JAPANESE_JAPAN: Record<PROFILE, string> = {
     [PROFILE.UNSAFE_PASSWORD]: "弱いパスワード",
     [PROFILE.UNSAFE_PASSWORD_DESCRIPTION]: "強力なパスワードは8文字以上で、少なくとも1文字の英字と1文字の数字が含まれている必要があります。",
     [PROFILE.WIRED_PASSWORD]: "不当なパスワード",
-    [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "あなたのパスワードには不合理な特殊文字が使われていますが、妥当なパスワードには、キーボードの英字、数字、および記号だけを含めるべきです。",
+    [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "パスワードに特殊文字を使用した可能性がありますが、適切なパスワードには、キーボードの英字、数字、および記号のみを含める必要があります。",
     [PROFILE.INTERNAL_ERROR]: "内部エラー",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "このエラーが解決しない場合には、システム管理者に連絡してください。",
 };
@@ -196,7 +196,7 @@ export const KOREAN_KOREA: Record<PROFILE, string> = {
     [PROFILE.UNSAFE_PASSWORD]: "약한 암호",
     [PROFILE.UNSAFE_PASSWORD_DESCRIPTION]: "강력한 암호는 8 자 이상이어야하며 영문자와 숫자가 각각 하나 이상이어야합니다.",
     [PROFILE.WIRED_PASSWORD]: "부당한 암호",
-    [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "합당한 암호는 영문자, 숫자 및 기호 만 키보드에 포함해야합니다.",
+    [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "암호에 특수 문자를 사용했을 수 있습니다. 합리적인 암호는 영문자, 숫자 및 기호 만 키보드에 포함해야합니다.",
     [PROFILE.INTERNAL_ERROR]: "내부 오류",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "일반적으로 사용자가 아닌 내부 오류가 발생했습니다.이 오류가 계속 발생하면 시스템 관리자에게 도움을 요청하십시오.",
 };
@@ -235,7 +235,7 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
     [PROFILE.UNSAFE_PASSWORD]: "密码太弱",
     [PROFILE.UNSAFE_PASSWORD_DESCRIPTION]: "一个强密码应该至少八个字符长，并包含至少一个英文字符和一个数字字符。",
     [PROFILE.WIRED_PASSWORD]: "密码不合理",
-    [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "您可能在密码中使用了不可理的特殊字符，合理的密码应该只包括英文字符，数字和键盘上的符号。",
+    [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "您可能在密码中使用了特殊字符，合理的密码应该只包括英文字符，数字和键盘上的符号。",
     [PROFILE.INTERNAL_ERROR]: "内部错误",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "发生了内部错误，这通常不是因为您，如果这个错误持续出现，请联系系统管理员来获得更多帮助。",
 };
@@ -274,7 +274,7 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
     [PROFILE.UNSAFE_PASSWORD]: "密鑰太弱",
     [PROFILE.UNSAFE_PASSWORD_DESCRIPTION]: "一個強密鑰應該至少八個字符長，並包含至少一個英文字符和一個數字字符。",
     [PROFILE.WIRED_PASSWORD]: "密鑰不合理",
-    [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "您在密鑰中使用了不可理的特殊字符，合理的密鑰應該只包括英文字符，數字和鍵盤上的符號。",
+    [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "您可能在密鑰中使用了特殊字符，合理的密鑰應該只包括英文字符，數字和鍵盤上的符號。",
     [PROFILE.INTERNAL_ERROR]: "內部錯誤",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "發生了內部錯誤，這通常不是因為您，如果這個錯誤持續出現，請聯繫系統管理員來獲得更多幫助。",
 };
@@ -313,7 +313,7 @@ export const SPANISH_MEXICO: Record<PROFILE, string> = {
     [PROFILE.UNSAFE_PASSWORD]: "Contraseña débil",
     [PROFILE.UNSAFE_PASSWORD_DESCRIPTION]: "Una contraseña segura debe tener al menos ocho caracteres y contener al menos un carácter en inglés y un carácter numérico.",
     [PROFILE.WIRED_PASSWORD]: "Contraseña irrazonable",
-    [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "Utiliza caracteres especiales irrazonables en su contraseña. Una contraseña razonable solo debe incluir caracteres en inglés, números y símbolos en el teclado.",
+    [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "Es posible que haya usado caracteres especiales en su contraseña. Una contraseña razonable solo debe incluir caracteres en inglés, números y símbolos en el teclado.",
     [PROFILE.INTERNAL_ERROR]: "Error interno",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "Se ha producido un error interno, generalmente no debido a usted. Si este error persiste, comuníquese con el administrador del sistema para obtener más ayuda.",
 };
