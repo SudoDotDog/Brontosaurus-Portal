@@ -55,48 +55,80 @@ const connector = Connector.create<IStore, FormConnectedState, FormConnectedActi
         setPassword,
     });
 
-export const FormBase: React.FC<ConnectProps> = (props: ConnectProps) => {
+export class FormBase extends React.Component<ConnectProps> {
 
-    const login: () => void = () =>
-        props.login(props.username, props.password);
+    private _usernameRef: HTMLInputElement | null = null;
+    private _passwordRef: HTMLInputElement | null = null;
 
-    return (<React.Fragment>
-        <NeonInput
-            autoCapitalize={false}
-            autoComplete={false}
-            autoCorrect={false}
-            className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
-            label={props.language.get(PROFILE.USERNAME)}
-            margin={MARGIN.SMALL}
-            value={props.username}
-            onEnter={login}
-            onChange={(value) => props.setUsername(value)} />
-        <NeonInput
-            autoCapitalize={false}
-            autoComplete={false}
-            autoCorrect={false}
-            className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
-            type={INPUT_TYPE.PASSWORD}
-            label={props.language.get(PROFILE.PASSWORD)}
-            margin={MARGIN.SMALL}
-            value={props.password}
-            onEnter={login}
-            onChange={(value) => props.setPassword(value)} />
-        <NeonCheckbox
-            value={props.saveUsername}
-            onChange={(next: boolean) => props.setSaveUsername(next)}
-        >
-            Save Username
-        </NeonCheckbox>
-        <NeonButton
-            className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
-            size={SIZE.MEDIUM}
-            width={WIDTH.FULL}
-            margin={MARGIN.SMALL}
-            onClick={login}>
-            {props.language.get(PROFILE.SIGN_IN)}
-        </NeonButton>
-    </React.Fragment>);
-};
+    public constructor(props: ConnectProps) {
+
+        super(props);
+
+        this._login = this._login.bind(this);
+    }
+
+    public componentDidMount() {
+
+        setTimeout(() => {
+            if (!this._passwordRef || !this._usernameRef) {
+                return;
+            }
+
+            if (this.props.saveUsername) {
+                this._passwordRef.focus();
+            } else {
+                this._usernameRef.focus();
+            }
+        }, 50);
+    }
+
+    public render() {
+
+        return (<React.Fragment>
+            <NeonInput
+                autoCapitalize={false}
+                autoComplete={false}
+                autoCorrect={false}
+                inputRef={(ref: HTMLInputElement) => this._usernameRef = ref}
+                className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
+                label={this.props.language.get(PROFILE.USERNAME)}
+                margin={MARGIN.SMALL}
+                value={this.props.username}
+                onEnter={this._login}
+                onChange={(value) => this.props.setUsername(value)} />
+            <NeonInput
+                autoCapitalize={false}
+                autoComplete={false}
+                autoCorrect={false}
+                inputRef={(ref: HTMLInputElement) => this._passwordRef = ref}
+                className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
+                type={INPUT_TYPE.PASSWORD}
+                label={this.props.language.get(PROFILE.PASSWORD)}
+                margin={MARGIN.SMALL}
+                value={this.props.password}
+                onEnter={this._login}
+                onChange={(value) => this.props.setPassword(value)} />
+            <NeonCheckbox
+                value={this.props.saveUsername}
+                onChange={(next: boolean) => this.props.setSaveUsername(next)}
+            >
+                Save Username
+            </NeonCheckbox>
+            <NeonButton
+                className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
+                size={SIZE.MEDIUM}
+                width={WIDTH.FULL}
+                margin={MARGIN.SMALL}
+                onClick={this._login}>
+                {this.props.language.get(PROFILE.SIGN_IN)}
+            </NeonButton>
+        </React.Fragment>);
+    }
+
+    private _login() {
+
+        this.props.login(this.props.username, this.props.password);
+    }
+}
 
 export const ConnectedForm: React.ComponentType<Pick<FormProp, 'login'>> = connector.connect(FormBase);
