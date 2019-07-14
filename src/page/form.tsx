@@ -8,6 +8,7 @@ import { SudooFormat } from "@sudoo/internationalization";
 import { NeonButton } from "@sudoo/neon/button";
 import { MARGIN, SIZE, WIDTH } from "@sudoo/neon/declare";
 import { INPUT_TYPE, NeonInput } from "@sudoo/neon/input";
+import { NeonCheckbox } from "@sudoo/neon/radio";
 import { Connector } from "@sudoo/redux";
 import * as React from "react";
 import * as StyleForm from "../../style/page/form.sass";
@@ -15,6 +16,7 @@ import { intl } from "../i18n/intl";
 import { PROFILE } from "../i18n/profile";
 import { IStore } from "../state/declare";
 import { setPassword, setUsername } from "../state/form/form";
+import { setSaveUsername } from "../state/preference/preference";
 import { combineClasses } from "../util/style";
 
 type FormProp = {
@@ -25,12 +27,14 @@ type FormProp = {
 type FormConnectedState = {
 
     readonly language: SudooFormat;
+    readonly saveUsername: boolean;
     readonly username: string;
     readonly password: string;
 };
 
 type FormConnectedAction = {
 
+    readonly setSaveUsername: (saveUsername: boolean) => void;
     readonly setUsername: (username: string) => void;
     readonly setPassword: (password: string) => void;
 };
@@ -41,10 +45,12 @@ const connector = Connector.create<IStore, FormConnectedState, FormConnectedActi
     .connectStates(({ form, preference }: IStore) => ({
 
         language: intl.format(preference.language),
+        saveUsername: preference.saveUsername,
         username: form.username,
         password: form.password,
     })).connectActions({
 
+        setSaveUsername,
         setUsername,
         setPassword,
     });
@@ -76,6 +82,12 @@ export const FormBase: React.FC<ConnectProps> = (props: ConnectProps) => {
             value={props.password}
             onEnter={login}
             onChange={(value) => props.setPassword(value)} />
+        <NeonCheckbox
+            value={props.saveUsername}
+            onChange={(next: boolean) => props.setSaveUsername(next)}
+        >
+            Save Username
+        </NeonCheckbox>
         <NeonButton
             className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
             size={SIZE.MEDIUM}

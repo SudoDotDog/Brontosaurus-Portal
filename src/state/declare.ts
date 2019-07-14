@@ -32,8 +32,9 @@ export enum ACTIONS {
     // info
     SET_TARGET = 'SET_TARGET',
 
-    // language
+    // preference
     SET_LANGUAGE = 'SET_LANGUAGE',
+    SET_SAVE_USERNAME = 'SET_SAVE_USERNAME',
 
     // page
     SET_PAGE = 'SET_PAGE',

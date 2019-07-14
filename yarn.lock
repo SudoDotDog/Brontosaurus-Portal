@@ -37,10 +37,10 @@
   dependencies:
     "@sudoo/bark" "^2.7.1"
 
-"@sudoo/neon@^2.9.3":
-  version "2.9.3"
-  resolved "https://registry.yarnpkg.com/@sudoo/neon/-/neon-2.9.3.tgz#d40aff3d9295ac61765dbce7a239a98eb53299eb"
-  integrity sha512-Xfncms1DqHxjwNrDHpskA7AM2U3m5exXkIeaEc/Vv1pNXgNiEEeWbp5c6LgfbmV4G+j5r3ahMNK2Wi32JquXUA==
+"@sudoo/neon@^2.10.1":
+  version "2.10.1"
+  resolved "https://registry.yarnpkg.com/@sudoo/neon/-/neon-2.10.1.tgz#117a0f60e0109ae6c27f5f2b989287dc73378ec6"
+  integrity sha512-qnBQEOMWRkJDHsTw+gwHX4oTOJGNzBp0DGghNvn6DM78XGTgKeoz9A7kBnUGSU2U/Ypz09N6pZn1zkj/5weJ0w==
   dependencies:
     "@sudoo/bark" "^2.7.1"
     jss "^10.0.0-alpha.17"
