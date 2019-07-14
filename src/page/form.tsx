@@ -56,6 +56,9 @@ export const FormBase: React.FC<ConnectProps> = (props: ConnectProps) => {
 
     return (<React.Fragment>
         <NeonInput
+            autoCapitalize={false}
+            autoComplete={false}
+            autoCorrect={false}
             className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
             label={props.language.get(PROFILE.USERNAME)}
             margin={MARGIN.SMALL}
@@ -63,6 +66,9 @@ export const FormBase: React.FC<ConnectProps> = (props: ConnectProps) => {
             onEnter={login}
             onChange={(value) => props.setUsername(value)} />
         <NeonInput
+            autoCapitalize={false}
+            autoComplete={false}
+            autoCorrect={false}
             className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
             type={INPUT_TYPE.PASSWORD}
             label={props.language.get(PROFILE.PASSWORD)}
