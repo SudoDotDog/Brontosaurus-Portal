@@ -24,11 +24,11 @@ export const postCurrentMessage = (token: string): boolean => {
 
     if (window.postMessage) {
 
-        window.postMessage({
+        window.postMessage(JSON.stringify({
             type: applicationMessageName,
             status: STATUS.SUCCEED,
             token,
-        }, '*');
+        }), '*');
 
         return true;
     }
@@ -40,11 +40,11 @@ export const postParentMessage = (token: string): boolean => {
 
     if (window.parent && window.parent.postMessage) {
 
-        window.parent.postMessage({
+        window.parent.postMessage(JSON.stringify({
             type: applicationMessageName,
             status: STATUS.SUCCEED,
             token,
-        }, '*');
+        }), '*');
 
         return true;
     }
