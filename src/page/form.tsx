@@ -120,7 +120,7 @@ export class FormBase extends React.Component<ConnectProps> {
                 value={this.props.saveUsername}
                 onChange={(next: boolean) => this.props.setSaveUsername(next)}
             >
-                Save Username
+                {this.props.language.get(PROFILE.SAVE_USERNAME)}
             </NeonCheckbox>
             <NeonButton
                 className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}

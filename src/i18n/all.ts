@@ -16,6 +16,7 @@ export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_BEFORE]: "Sign in with",
     [PROFILE.SIGN_IN_WITH_AFTER]: "",
     [PROFILE.USERNAME]: "Username",
+    [PROFILE.SAVE_USERNAME]: "Remember Username",
 
     [PROFILE.LIMBO_DESCRIPTION]: "You are signing in with a temporary password, please enter a new password and use it the next time you log in.",
     [PROFILE.NEW_PASSWORD]: "New password",
@@ -55,6 +56,7 @@ export const RUSSIAN_RUSSIA: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_BEFORE]: "Войти с помощью аккаунта",
     [PROFILE.SIGN_IN_WITH_AFTER]: "",
     [PROFILE.USERNAME]: "Потребителско име",
+    [PROFILE.SAVE_USERNAME]: "Запомнить имя пользователя",
 
     [PROFILE.LIMBO_DESCRIPTION]: "Вы входите с временным паролем, введите новый пароль и используйте его при следующем входе.",
     [PROFILE.NEW_PASSWORD]: "Новый пароль",
@@ -94,6 +96,7 @@ export const FRENCH_FRANCE: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_BEFORE]: "Se connecter avec un compte",
     [PROFILE.SIGN_IN_WITH_AFTER]: "",
     [PROFILE.USERNAME]: "Identifiant",
+    [PROFILE.SAVE_USERNAME]: "Se souvenir du nom d'utilisateur",
 
     [PROFILE.LIMBO_DESCRIPTION]: "Vous vous connectez avec un mot de passe temporaire, veuillez entrer un nouveau mot de passe et l'utiliser lors de votre prochaine connexion.",
     [PROFILE.NEW_PASSWORD]: "Nouveau mot de passe",
@@ -133,6 +136,7 @@ export const JAPANESE_JAPAN: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_BEFORE]: "",
     [PROFILE.SIGN_IN_WITH_AFTER]: "でログイン",
     [PROFILE.USERNAME]: "ユーザー名",
+    [PROFILE.SAVE_USERNAME]: "ユーザー名を記憶",
 
     [PROFILE.LIMBO_DESCRIPTION]: "あなたは一時的なパスワードでログインしています。新しいパスワードを入力して、次回のログイン時にそれを使用してください。",
     [PROFILE.NEW_PASSWORD]: "新しいパスワード",
@@ -172,6 +176,7 @@ export const KOREAN_KOREA: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_BEFORE]: "",
     [PROFILE.SIGN_IN_WITH_AFTER]: "로 로그인",
     [PROFILE.USERNAME]: "사용자 아이디",
+    [PROFILE.SAVE_USERNAME]: "사용자 이름 기억하기",
 
     [PROFILE.LIMBO_DESCRIPTION]: "임시 비밀번호로 로그인하는 중입니다. 다음에 로그인 할 때 새 비밀번호를 입력하여 사용하십시오.",
     [PROFILE.NEW_PASSWORD]: "새 비밀번호",
@@ -211,6 +216,7 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_BEFORE]: "使用",
     [PROFILE.SIGN_IN_WITH_AFTER]: "登陆",
     [PROFILE.USERNAME]: "用户名",
+    [PROFILE.SAVE_USERNAME]: "记住用户名",
 
     [PROFILE.LIMBO_DESCRIPTION]: "您正在使用临时密码登录，请输入新密码，并在下次登录时使用它。",
     [PROFILE.NEW_PASSWORD]: "新密码",
@@ -250,6 +256,7 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_BEFORE]: "使用",
     [PROFILE.SIGN_IN_WITH_AFTER]: "登入",
     [PROFILE.USERNAME]: "使用者名稱",
+    [PROFILE.SAVE_USERNAME]: "記住使用者名稱",
 
     [PROFILE.LIMBO_DESCRIPTION]: "您正在使用臨時密鑰登入，請輸入新密鑰，並在下次登入時使用它。",
     [PROFILE.NEW_PASSWORD]: "新密鑰",
@@ -265,7 +272,7 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
     [PROFILE.FAILED_TO_FETCH_DESCRIPTION]: "這通常是因為您的網絡環境較差，請稍後重試，如果這個錯誤持續出現，請聯繫系統管理員來獲得更多幫助。",
     [PROFILE.INACTIVE_ACCOUNT]: "帳號已停用",
     [PROFILE.INACTIVE_ACCOUNT_DESCRIPTION]: "此帳號已被停用，請與系統管理員聯繫以恢復此帳號。",
-    [PROFILE.USERNAME_PASSWORD_NOT_MATCH]: "用戶名和密鑰不匹配",
+    [PROFILE.USERNAME_PASSWORD_NOT_MATCH]: "使用者名稱和密鑰不匹配",
     [PROFILE.USERNAME_PASSWORD_NOT_MATCH_DESCRIPTION]: "請嘗試重新登錄，注意，如果嘗試次數過多您的賬戶可能會被鎖定，如果您忘記了密鑰或者這個錯誤持續出現，請聯繫系統管理員來獲得更多幫助。",
     [PROFILE.TWO_FA_NOT_MATCH]: "雙因素驗證失敗",
     [PROFILE.TWO_FA_NOT_MATCH_DESCRIPTION]: "這可能是由於系統延遲，請稍後重試，如果這個錯誤持續出現，請聯繫系統管理員來獲得更多幫助。",
@@ -289,6 +296,7 @@ export const SPANISH_MEXICO: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_BEFORE]: "Inicia sesión con",
     [PROFILE.SIGN_IN_WITH_AFTER]: "",
     [PROFILE.USERNAME]: "Usuario",
+    [PROFILE.SAVE_USERNAME]: "Recordar el nombre de usuario",
 
     [PROFILE.LIMBO_DESCRIPTION]: "Está iniciando sesión con una contraseña temporal, ingrese una nueva contraseña y úsela la próxima vez que inicie sesión.",
     [PROFILE.NEW_PASSWORD]: "Nueva contraseña",
