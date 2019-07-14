@@ -14,6 +14,7 @@ import * as React from "react";
 import * as StyleForm from "../../style/page/form.sass";
 import { intl } from "../i18n/intl";
 import { PROFILE } from "../i18n/profile";
+import { clearUsername, readUsername } from "../portal/save";
 import { IStore } from "../state/declare";
 import { setPassword, setUsername } from "../state/form/form";
 import { setSaveUsername } from "../state/preference/preference";
@@ -70,16 +71,23 @@ export class FormBase extends React.Component<ConnectProps> {
     public componentDidMount() {
 
         setTimeout(() => {
+
             if (!this._passwordRef || !this._usernameRef) {
                 return;
             }
 
             if (this.props.saveUsername) {
-                this._passwordRef.focus();
-            } else {
-                this._usernameRef.focus();
+                const username: string | null = readUsername();
+                if (username) {
+                    this.props.setUsername(username);
+                    this._passwordRef.focus();
+                    return;
+                }
             }
-        }, 50);
+
+            clearUsername();
+            this._usernameRef.focus();
+        }, 100);
     }
 
     public render() {

@@ -11,6 +11,7 @@ import { FormStructure } from "../components/form";
 import { intl } from "../i18n/intl";
 import { wrapMap } from "../portal/error";
 import { Portal } from "../portal/portal";
+import { saveUsername } from "../portal/save";
 import { login, LoginResponse } from "../repository/login";
 import { IStore } from "../state/declare";
 import { TargetInfo } from "../state/info/type";
@@ -22,6 +23,7 @@ import { ConnectedForm } from "./form";
 
 type ConnectedLoginStates = {
 
+    readonly saveUsername: boolean;
     readonly language: SudooFormat;
     readonly target: TargetInfo;
 };
@@ -40,6 +42,7 @@ type ConnectedProps = ConnectedLoginStates & ConnectedLoginActions;
 const connector = Connector.create<IStore, ConnectedLoginStates, ConnectedLoginActions>()
     .connectStates(({ info, preference }: IStore) => ({
 
+        saveUsername: preference.saveUsername,
         language: intl.format(preference.language),
         target: info.target,
     })).connectActions({
@@ -85,6 +88,9 @@ export class LoginBase extends React.Component<ConnectedProps> {
 
             const action: LoginResponse = await login(username, password);
             if (action.next === 'redirect') {
+                if (this.props.saveUsername) {
+                    saveUsername(username);
+                }
                 Portal.flush(action.token as string);
             }
             if (action.next === 'limbo') {
