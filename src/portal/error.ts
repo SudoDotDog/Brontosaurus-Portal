@@ -7,6 +7,23 @@
 import { PROFILE } from "../i18n/profile";
 import { ErrorInfo } from "../state/status/type";
 
+export const emptyUsernameInfo: ErrorInfo = {
+    short: PROFILE.EMPTY_USERNAME,
+    long: PROFILE.EMPTY_USERNAME_DESCRIPTION,
+};
+
+export const emptyPasswordInfo: ErrorInfo = {
+
+    short: PROFILE.EMPTY_PASSWORD,
+    long: PROFILE.EMPTY_PASSWORD_DESCRIPTION,
+};
+
+export const wrongTwoFAInfo: ErrorInfo = {
+
+    short: PROFILE.WRONG_TWO_FA_PATTERN,
+    long: PROFILE.WRONG_TWO_FA_PATTERN_DESCRIPTION,
+};
+
 const errorMap: Record<string, ErrorInfo> = {
 
     "Failed to fetch": {

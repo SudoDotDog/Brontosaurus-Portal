@@ -14,7 +14,7 @@ import * as StyleForm from "../../style/page/form.sass";
 import { FormStructure } from "../components/form";
 import { intl } from "../i18n/intl";
 import { PROFILE } from "../i18n/profile";
-import { wrapMap } from "../portal/error";
+import { wrapMap, wrongTwoFAInfo } from "../portal/error";
 import { Portal } from "../portal/portal";
 import { twoFARepository } from "../repository/twoFA";
 import { IStore } from "../state/declare";
@@ -96,6 +96,12 @@ export class TwoFABase extends React.Component<ConnectedProps, TwoFAStates> {
     private async _twoFA(code: string): Promise<void> {
 
         this.props.startLoading('Login');
+
+        if (!/^[0-9]{6}$/.test(code)) {
+            this.props.clearLoading();
+            this.props.startError(wrongTwoFAInfo);
+            return;
+        }
 
         try {
 

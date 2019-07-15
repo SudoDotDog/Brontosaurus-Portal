@@ -42,9 +42,17 @@ export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
     [PROFILE.UNSAFE_PASSWORD_DESCRIPTION]: "A strong password should be at least eight characters long and contain at least one English character and one numeric character.",
     [PROFILE.WIRED_PASSWORD]: "Unreasonable password",
     [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "You may have used special characters in your password. A reasonable password should only include English characters, numbers, and symbols on the keyboard.",
+    [PROFILE.EMPTY_USERNAME]: "Empty Username",
+    [PROFILE.EMPTY_USERNAME_DESCRIPTION]: "You have not enter a username. A valid username should be at least two in length and contain no spaces or special symbols.",
+    [PROFILE.EMPTY_PASSWORD]: "Empty Password",
+    [PROFILE.EMPTY_PASSWORD_DESCRIPTION]: "You have not entered a password. A valid password should be at least eight in length and contain only English letters, numbers, symbols and spaces.",
+    [PROFILE.WRONG_TWO_FA_PATTERN]: "Invalid authentication code format",
+    [PROFILE.WRONG_TWO_FA_PATTERN_DESCRIPTION]: "The authentication code you used for two-factor authentication is not in the correct format. A valid authentication code should be a numeric string of length six.",
     [PROFILE.INTERNAL_ERROR]: "Internal Error",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "An internal error has occurred, usually not because of you. If this error persists, please contact your system administrator for more help.",
 };
+
+/* spell-checker: disable */
 
 export const RUSSIAN_RUSSIA: Record<PROFILE, string> = {
 
@@ -82,9 +90,19 @@ export const RUSSIAN_RUSSIA: Record<PROFILE, string> = {
     [PROFILE.UNSAFE_PASSWORD_DESCRIPTION]: "Надежный пароль должен содержать не менее восьми символов и содержать как минимум один английский символ и один цифровой символ.",
     [PROFILE.WIRED_PASSWORD]: "Неразумный пароль",
     [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "Возможно, вы использовали специальные символы в вашем пароле. Разумный пароль должен включать только английские символы, цифры и символы на клавиатуре.",
+    [PROFILE.EMPTY_USERNAME]: "Пустое имя пользователя",
+    [PROFILE.EMPTY_USERNAME_DESCRIPTION]: "Вы не ввели имя пользователя. Допустимое имя пользователя должно быть длиной не менее двух и не должно содержать пробелов или специальных символов.",
+    [PROFILE.EMPTY_PASSWORD]: "Пустой пароль",
+    [PROFILE.EMPTY_PASSWORD_DESCRIPTION]: "Вы не ввели пароль. Действительный пароль должен быть не менее восьми и содержать только английские буквы, цифры, символы и пробелы.",
+    [PROFILE.WRONG_TWO_FA_PATTERN]: "Неверный формат кода аутентификации",
+    [PROFILE.WRONG_TWO_FA_PATTERN_DESCRIPTION]: "Код аутентификации, который вы использовали для двухфакторной аутентификации, имеет неправильный формат. Действительный код аутентификации должен быть числовой строкой длиной шесть.",
     [PROFILE.INTERNAL_ERROR]: "Внутренняя ошибка",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "Произошла внутренняя ошибка, обычно не по вашей вине. Если эта ошибка не устранена, обратитесь за помощью к системному администратору.",
 };
+
+/* spell-checker: enable */
+
+/* spell-checker: disable */
 
 export const FRENCH_FRANCE: Record<PROFILE, string> = {
 
@@ -122,9 +140,17 @@ export const FRENCH_FRANCE: Record<PROFILE, string> = {
     [PROFILE.UNSAFE_PASSWORD_DESCRIPTION]: "Un mot de passe fort doit comporter au moins huit caractères et au moins un caractère anglais et un caractère numérique.",
     [PROFILE.WIRED_PASSWORD]: "Mot de passe déraisonnable",
     [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "Vous avez peut-être utilisé des caractères spéciaux dans votre mot de passe. Un mot de passe raisonnable ne doit contenir que des caractères anglais, des chiffres et des symboles sur le clavier.",
+    [PROFILE.EMPTY_USERNAME]: "Le nom d'utilisateur est vide",
+    [PROFILE.EMPTY_USERNAME_DESCRIPTION]: "Vous n'avez pas entré de nom d'utilisateur. Un nom d'utilisateur valide doit être au moins deux et ne pas contenir d'espaces ni de symboles spéciaux.",
+    [PROFILE.EMPTY_PASSWORD]: "Le mot de passe est vide",
+    [PROFILE.EMPTY_PASSWORD_DESCRIPTION]: "Vous n'avez pas entré de mot de passe. Un mot de passe valide doit être au moins huit et contenir uniquement des lettres anglaises, des chiffres, des symboles et des espaces.",
+    [PROFILE.WRONG_TWO_FA_PATTERN]: "Mauvais format de code d'authentification",
+    [PROFILE.WRONG_TWO_FA_PATTERN_DESCRIPTION]: "Le code d’authentification que vous avez utilisé pour l’authentification à deux facteurs n’est pas au format correct; un code d’authentification valide doit être une chaîne numérique de longueur six.",
     [PROFILE.INTERNAL_ERROR]: "Erreur interne",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "Une erreur interne s'est produite, généralement pas à cause de vous. Si cette erreur persiste, contactez votre administrateur système pour obtenir de l'aide.",
 };
+
+/* spell-checker: enable */
 
 export const JAPANESE_JAPAN: Record<PROFILE, string> = {
 
@@ -162,6 +188,12 @@ export const JAPANESE_JAPAN: Record<PROFILE, string> = {
     [PROFILE.UNSAFE_PASSWORD_DESCRIPTION]: "強力なパスワードは8文字以上で、少なくとも1文字の英字と1文字の数字が含まれている必要があります。",
     [PROFILE.WIRED_PASSWORD]: "不当なパスワード",
     [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "パスワードに特殊文字を使用した可能性がありますが、適切なパスワードには、キーボードの英字、数字、および記号のみを含める必要があります。",
+    [PROFILE.EMPTY_USERNAME]: "空のユーザー名",
+    [PROFILE.EMPTY_USERNAME_DESCRIPTION]: "ユーザー名を入力していません。有効なユーザー名は2文字以上で、スペースや特殊記号を含めないでください。",
+    [PROFILE.EMPTY_PASSWORD]: "空のパスワード",
+    [PROFILE.EMPTY_PASSWORD_DESCRIPTION]: "パスワードを入力しませんでした。有効なパスワードは8文字以上で、英字、数字、記号、およびスペースのみを含める必要があります。",
+    [PROFILE.WRONG_TWO_FA_PATTERN]: "認証コードの形式が無効です",
+    [PROFILE.WRONG_TWO_FA_PATTERN_DESCRIPTION]: "2要素認証に使用した認証コードが正しい形式ではありません有効な認証コードは、長さ6の数値ストリングです。",
     [PROFILE.INTERNAL_ERROR]: "内部エラー",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "このエラーが解決しない場合には、システム管理者に連絡してください。",
 };
@@ -202,6 +234,12 @@ export const KOREAN_KOREA: Record<PROFILE, string> = {
     [PROFILE.UNSAFE_PASSWORD_DESCRIPTION]: "강력한 암호는 8 자 이상이어야하며 영문자와 숫자가 각각 하나 이상이어야합니다.",
     [PROFILE.WIRED_PASSWORD]: "부당한 암호",
     [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "암호에 특수 문자를 사용했을 수 있습니다. 합리적인 암호는 영문자, 숫자 및 기호 만 키보드에 포함해야합니다.",
+    [PROFILE.EMPTY_USERNAME]: "사용자 이름이 비어 있습니다",
+    [PROFILE.EMPTY_USERNAME_DESCRIPTION]: "사용자 이름을 입력하지 않았습니다. 올바른 사용자 이름은 길이가 2 자 이상이어야하며 공백이나 특수 기호가 없어야합니다.",
+    [PROFILE.EMPTY_PASSWORD]: "비밀번호가 비어 있습니다",
+    [PROFILE.EMPTY_PASSWORD_DESCRIPTION]: "암호를 입력하지 않았습니다. 유효한 암호는 길이가 8 자 이상이어야하며 영문자, 숫자, 기호 및 공백 만 포함해야합니다.",
+    [PROFILE.WRONG_TWO_FA_PATTERN]: "인증 코드 형식 오류",
+    [PROFILE.WRONG_TWO_FA_PATTERN_DESCRIPTION]: "이중 인증에 사용 된 인증 코드의 형식이 올바르지 않습니다. 유효한 인증 코드는 길이가 6 인 숫자 문자열이어야합니다.",
     [PROFILE.INTERNAL_ERROR]: "내부 오류",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "일반적으로 사용자가 아닌 내부 오류가 발생했습니다.이 오류가 계속 발생하면 시스템 관리자에게 도움을 요청하십시오.",
 };
@@ -242,6 +280,12 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
     [PROFILE.UNSAFE_PASSWORD_DESCRIPTION]: "一个强密码应该至少八个字符长，并包含至少一个英文字符和一个数字字符。",
     [PROFILE.WIRED_PASSWORD]: "密码不合理",
     [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "您可能在密码中使用了特殊字符，合理的密码应该只包括英文字符，数字和键盘上的符号。",
+    [PROFILE.EMPTY_USERNAME]: "用户名为空",
+    [PROFILE.EMPTY_USERNAME_DESCRIPTION]: "您没有输入用户名，一个合法的用户名应该长度至少为二，并且不包含空格和特殊符号。",
+    [PROFILE.EMPTY_PASSWORD]: "密码为空",
+    [PROFILE.EMPTY_PASSWORD_DESCRIPTION]: "您没有输入密码，一个合法的密码应该长度至少为八，并且只包含英文字母，数字，符号和空格。",
+    [PROFILE.WRONG_TWO_FA_PATTERN]: "身份验证代码格式错误",
+    [PROFILE.WRONG_TWO_FA_PATTERN_DESCRIPTION]: "您用于双因素验证的身份验证代码格式不正确，一个合法的身份验证代码应该是一个长度为六的数字字符串。",
     [PROFILE.INTERNAL_ERROR]: "内部错误",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "发生了内部错误，这通常不是因为您，如果这个错误持续出现，请联系系统管理员来获得更多帮助。",
 };
@@ -282,9 +326,17 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
     [PROFILE.UNSAFE_PASSWORD_DESCRIPTION]: "一個強密鑰應該至少八個字符長，並包含至少一個英文字符和一個數字字符。",
     [PROFILE.WIRED_PASSWORD]: "密鑰不合理",
     [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "您可能在密鑰中使用了特殊字符，合理的密鑰應該只包括英文字符，數字和鍵盤上的符號。",
+    [PROFILE.EMPTY_USERNAME]: "使用者名稱為空",
+    [PROFILE.EMPTY_USERNAME_DESCRIPTION]: "您沒有輸入使用者名稱，一個合法的使用者名稱應該長度至少為二，並且不包含空格和特殊符號。",
+    [PROFILE.EMPTY_PASSWORD]: "密鑰為空",
+    [PROFILE.EMPTY_PASSWORD_DESCRIPTION]: "您沒有輸入密鑰，一個合法的密鑰應該長度至少為八，並且只包含英文字母，數字，符號和空格。",
+    [PROFILE.WRONG_TWO_FA_PATTERN]: "身份驗證代碼格式錯誤",
+    [PROFILE.WRONG_TWO_FA_PATTERN_DESCRIPTION]: "您用於雙因素驗證的身份驗證代碼格式不正確，一個合法的身份驗證代碼應該是一個長度為六的數字字符串。",
     [PROFILE.INTERNAL_ERROR]: "內部錯誤",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "發生了內部錯誤，這通常不是因為您，如果這個錯誤持續出現，請聯繫系統管理員來獲得更多幫助。",
 };
+
+/* spell-checker: disable */
 
 export const SPANISH_MEXICO: Record<PROFILE, string> = {
 
@@ -322,6 +374,14 @@ export const SPANISH_MEXICO: Record<PROFILE, string> = {
     [PROFILE.UNSAFE_PASSWORD_DESCRIPTION]: "Una contraseña segura debe tener al menos ocho caracteres y contener al menos un carácter en inglés y un carácter numérico.",
     [PROFILE.WIRED_PASSWORD]: "Contraseña irrazonable",
     [PROFILE.WIRED_PASSWORD_DESCRIPTION]: "Es posible que haya usado caracteres especiales en su contraseña. Una contraseña razonable solo debe incluir caracteres en inglés, números y símbolos en el teclado.",
+    [PROFILE.EMPTY_USERNAME]: "Nombre de usuario vacío",
+    [PROFILE.EMPTY_USERNAME_DESCRIPTION]: "No ingresó un nombre de usuario. Un nombre de usuario válido debe tener al menos dos de longitud y no debe contener espacios ni símbolos especiales.",
+    [PROFILE.EMPTY_PASSWORD]: "Contraseña vacía",
+    [PROFILE.EMPTY_PASSWORD_DESCRIPTION]: "No ha introducido una contraseña. Una contraseña válida debe tener una longitud de al menos ocho y contener solo letras, números, símbolos y espacios en inglés.",
+    [PROFILE.WRONG_TWO_FA_PATTERN]: "Formato de código de autenticación no válido",
+    [PROFILE.WRONG_TWO_FA_PATTERN_DESCRIPTION]: "El código de autenticación que usó para la autenticación de dos factores no tiene el formato correcto. Un código de autenticación válido debe ser una cadena numérica de longitud seis.",
     [PROFILE.INTERNAL_ERROR]: "Error interno",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "Se ha producido un error interno, generalmente no debido a usted. Si este error persiste, comuníquese con el administrador del sistema para obtener más ayuda.",
 };
+
+/* spell-checker: enable */

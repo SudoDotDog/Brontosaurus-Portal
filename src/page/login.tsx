@@ -9,7 +9,7 @@ import { Connector } from "@sudoo/redux";
 import * as React from "react";
 import { FormStructure } from "../components/form";
 import { intl } from "../i18n/intl";
-import { wrapMap } from "../portal/error";
+import { emptyPasswordInfo, emptyUsernameInfo, wrapMap } from "../portal/error";
 import { Portal } from "../portal/portal";
 import { saveUsername } from "../portal/save";
 import { login, LoginResponse } from "../repository/login";
@@ -83,6 +83,18 @@ export class LoginBase extends React.Component<ConnectedProps> {
     private async _login(username: string, password: string): Promise<void> {
 
         this.props.startLoading('Login');
+
+        if (username.length === 0) {
+            this.props.clearLoading();
+            this.props.startError(emptyUsernameInfo);
+            return;
+        }
+
+        if (password.length === 0) {
+            this.props.clearLoading();
+            this.props.startError(emptyPasswordInfo);
+            return;
+        }
 
         try {
 
