@@ -7,7 +7,7 @@
 import { SudooFormat } from "@sudoo/internationalization";
 import { NeonButton } from "@sudoo/neon/button";
 import { MARGIN, SIZE, WIDTH } from "@sudoo/neon/declare";
-import { NeonInput } from "@sudoo/neon/input";
+import { INPUT_TYPE, NeonInput } from "@sudoo/neon/input";
 import { Connector } from "@sudoo/redux";
 import * as React from "react";
 import * as StyleForm from "../../style/page/form.sass";
@@ -65,6 +65,19 @@ export class TwoFABase extends React.Component<ConnectedProps, TwoFAStates> {
         code: '',
     };
 
+    private _twoFARef: HTMLInputElement | null = null;
+
+    public componentDidMount() {
+
+        setTimeout(() => {
+
+            if (!this._twoFARef) {
+                return;
+            }
+            this._twoFARef.focus();
+        }, 100);
+    }
+
     public render(): JSX.Element {
 
         const login: () => void = () => this._twoFA(this.state.code);
@@ -75,6 +88,11 @@ export class TwoFABase extends React.Component<ConnectedProps, TwoFAStates> {
                     {this.props.language.get(PROFILE.TWO_FA_DESCRIPTION)}
                 </div>
                 <NeonInput
+                    autoCapitalize={false}
+                    autoComplete={false}
+                    autoCorrect={false}
+                    inputRef={(ref: HTMLInputElement) => this._twoFARef = ref}
+                    type={INPUT_TYPE.NUMBER}
                     className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
                     label={this.props.language.get(PROFILE.AUTH_CODE)}
                     margin={MARGIN.SMALL}

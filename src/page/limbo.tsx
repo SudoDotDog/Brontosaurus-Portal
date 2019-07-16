@@ -65,6 +65,19 @@ export class LimboBase extends React.Component<ConnectedProps, LimboStates> {
         newPassword: '',
     };
 
+    private _passwordRef: HTMLInputElement | null = null;
+
+    public componentDidMount() {
+
+        setTimeout(() => {
+
+            if (!this._passwordRef) {
+                return;
+            }
+            this._passwordRef.focus();
+        }, 100);
+    }
+
     public render(): JSX.Element {
 
         const login: () => void = () => this._limbo(this.state.newPassword);
@@ -75,6 +88,10 @@ export class LimboBase extends React.Component<ConnectedProps, LimboStates> {
                     {this.props.language.get(PROFILE.LIMBO_DESCRIPTION)}
                 </div>
                 <NeonInput
+                    autoCapitalize={false}
+                    autoComplete={false}
+                    autoCorrect={false}
+                    inputRef={(ref: HTMLInputElement) => this._passwordRef = ref}
                     className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
                     type={INPUT_TYPE.PASSWORD}
                     label={this.props.language.get(PROFILE.NEW_PASSWORD)}
