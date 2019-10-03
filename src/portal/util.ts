@@ -22,6 +22,17 @@ export const applicationMessageName: string = 'BRONTOSAURUS';
 
 export const postCurrentMessage = (token: string): boolean => {
 
+    if ((window as any).ReactNativeWebView && (window as any).ReactNativeWebView.postMessage) {
+
+        (window as any).ReactNativeWebView.postMessage(JSON.stringify({
+            type: applicationMessageName,
+            status: STATUS.SUCCEED,
+            token,
+        }), '*');
+
+        return true;
+    }
+
     if (window.postMessage) {
 
         window.postMessage(JSON.stringify({
