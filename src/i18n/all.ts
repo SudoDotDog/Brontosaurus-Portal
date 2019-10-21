@@ -48,6 +48,8 @@ export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
     [PROFILE.EMPTY_PASSWORD_DESCRIPTION]: "You have not entered a password. A valid password should be at least eight in length and contain only English letters, numbers, symbols and spaces.",
     [PROFILE.WRONG_TWO_FA_PATTERN]: "Invalid authentication code format",
     [PROFILE.WRONG_TWO_FA_PATTERN_DESCRIPTION]: "The authentication code you used for two-factor authentication is not in the correct format. A valid authentication code should be a numeric string of length six.",
+    [PROFILE.APPLICATION_GROUP_NOT_FULFILLED]: "Insufficient group",
+    [PROFILE.APPLICATION_GROUP_NOT_FULFILLED_DESCRIPTION]: "You may need sufficient group to use the application you want to log in to, please contact your system administrator for more help.",
     [PROFILE.INTERNAL_ERROR]: "Internal Error",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "An internal error has occurred, usually not because of you. If this error persists, please contact your system administrator for more help.",
 };
@@ -96,6 +98,8 @@ export const RUSSIAN_RUSSIA: Record<PROFILE, string> = {
     [PROFILE.EMPTY_PASSWORD_DESCRIPTION]: "Вы не ввели пароль. Действительный пароль должен быть не менее восьми и содержать только английские буквы, цифры, символы и пробелы.",
     [PROFILE.WRONG_TWO_FA_PATTERN]: "Неверный формат кода аутентификации",
     [PROFILE.WRONG_TWO_FA_PATTERN_DESCRIPTION]: "Код аутентификации, который вы использовали для двухфакторной аутентификации, имеет неправильный формат. Действительный код аутентификации должен быть числовой строкой длиной шесть.",
+    [PROFILE.APPLICATION_GROUP_NOT_FULFILLED]: "Недостаточно разрешений",
+    [PROFILE.APPLICATION_GROUP_NOT_FULFILLED_DESCRIPTION]: "Вам может потребоваться достаточные разрешения для использования приложения, в которое вы хотите войти, обратитесь к системному администратору за дополнительной помощью.",
     [PROFILE.INTERNAL_ERROR]: "Внутренняя ошибка",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "Произошла внутренняя ошибка, обычно не по вашей вине. Если эта ошибка не устранена, обратитесь за помощью к системному администратору.",
 };
@@ -146,6 +150,8 @@ export const FRENCH_FRANCE: Record<PROFILE, string> = {
     [PROFILE.EMPTY_PASSWORD_DESCRIPTION]: "Vous n'avez pas entré de mot de passe. Un mot de passe valide doit être au moins huit et contenir uniquement des lettres anglaises, des chiffres, des symboles et des espaces.",
     [PROFILE.WRONG_TWO_FA_PATTERN]: "Mauvais format de code d'authentification",
     [PROFILE.WRONG_TWO_FA_PATTERN_DESCRIPTION]: "Le code d’authentification que vous avez utilisé pour l’authentification à deux facteurs n’est pas au format correct; un code d’authentification valide doit être une chaîne numérique de longueur six.",
+    [PROFILE.APPLICATION_GROUP_NOT_FULFILLED]: "Groupe insuffisantes",
+    [PROFILE.APPLICATION_GROUP_NOT_FULFILLED_DESCRIPTION]: "Vous aurez peut-être besoin d'autorisations suffisantes pour utiliser l'application à laquelle vous souhaitez vous connecter. Veuillez contacter votre administrateur système pour obtenir de l'aide.",
     [PROFILE.INTERNAL_ERROR]: "Erreur interne",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "Une erreur interne s'est produite, généralement pas à cause de vous. Si cette erreur persiste, contactez votre administrateur système pour obtenir de l'aide.",
 };
@@ -194,6 +200,8 @@ export const JAPANESE_JAPAN: Record<PROFILE, string> = {
     [PROFILE.EMPTY_PASSWORD_DESCRIPTION]: "パスワードを入力しませんでした。有効なパスワードは8文字以上で、英字、数字、記号、およびスペースのみを含める必要があります。",
     [PROFILE.WRONG_TWO_FA_PATTERN]: "認証コードの形式が無効です",
     [PROFILE.WRONG_TWO_FA_PATTERN_DESCRIPTION]: "2要素認証に使用した認証コードが正しい形式ではありません有効な認証コードは、長さ6の数値ストリングです。",
+    [PROFILE.APPLICATION_GROUP_NOT_FULFILLED]: "権限が不十分です",
+    [PROFILE.APPLICATION_GROUP_NOT_FULFILLED_DESCRIPTION]: "ログインするアプリケーションを使用するのに十分な権限が必要な場合があります。詳細については、システム管理者に連絡してください。",
     [PROFILE.INTERNAL_ERROR]: "内部エラー",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "このエラーが解決しない場合には、システム管理者に連絡してください。",
 };
@@ -240,6 +248,8 @@ export const KOREAN_KOREA: Record<PROFILE, string> = {
     [PROFILE.EMPTY_PASSWORD_DESCRIPTION]: "암호를 입력하지 않았습니다. 유효한 암호는 길이가 8 자 이상이어야하며 영문자, 숫자, 기호 및 공백 만 포함해야합니다.",
     [PROFILE.WRONG_TWO_FA_PATTERN]: "인증 코드 형식 오류",
     [PROFILE.WRONG_TWO_FA_PATTERN_DESCRIPTION]: "이중 인증에 사용 된 인증 코드의 형식이 올바르지 않습니다. 유효한 인증 코드는 길이가 6 인 숫자 문자열이어야합니다.",
+    [PROFILE.APPLICATION_GROUP_NOT_FULFILLED]: "권한이 충분하지 않습니다",
+    [PROFILE.APPLICATION_GROUP_NOT_FULFILLED_DESCRIPTION]: "로그인하려는 응용 프로그램을 사용하려면 충분한 권한이 필요할 수 있습니다. 자세한 내용은 시스템 관리자에게 문의하십시오.",
     [PROFILE.INTERNAL_ERROR]: "내부 오류",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "일반적으로 사용자가 아닌 내부 오류가 발생했습니다.이 오류가 계속 발생하면 시스템 관리자에게 도움을 요청하십시오.",
 };
@@ -286,6 +296,8 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
     [PROFILE.EMPTY_PASSWORD_DESCRIPTION]: "您没有输入密码，一个合法的密码应该长度至少为八，并且只包含英文字母，数字，符号和空格。",
     [PROFILE.WRONG_TWO_FA_PATTERN]: "身份验证代码格式错误",
     [PROFILE.WRONG_TWO_FA_PATTERN_DESCRIPTION]: "您用于双因素验证的身份验证代码格式不正确，一个合法的身份验证代码应该是一个长度为六的数字字符串。",
+    [PROFILE.APPLICATION_GROUP_NOT_FULFILLED]: "权限组不足",
+    [PROFILE.APPLICATION_GROUP_NOT_FULFILLED_DESCRIPTION]: "您可能需要足够的权限来使用您想要登陆的应用程序, 请联系系统管理员来获得更多帮助",
     [PROFILE.INTERNAL_ERROR]: "内部错误",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "发生了内部错误，这通常不是因为您，如果这个错误持续出现，请联系系统管理员来获得更多帮助。",
 };
@@ -332,6 +344,8 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
     [PROFILE.EMPTY_PASSWORD_DESCRIPTION]: "您沒有輸入密鑰，一個合法的密鑰應該長度至少為八，並且只包含英文字母，數字，符號和空格。",
     [PROFILE.WRONG_TWO_FA_PATTERN]: "身份驗證代碼格式錯誤",
     [PROFILE.WRONG_TWO_FA_PATTERN_DESCRIPTION]: "您用於雙因素驗證的身份驗證代碼格式不正確，一個合法的身份驗證代碼應該是一個長度為六的數字字符串。",
+    [PROFILE.APPLICATION_GROUP_NOT_FULFILLED]: "權限組不足",
+    [PROFILE.APPLICATION_GROUP_NOT_FULFILLED_DESCRIPTION]: "您可能需要足夠的權限來使用您想要登陸的應用程序, 請聯繫系統管理員來獲得更多幫助。",
     [PROFILE.INTERNAL_ERROR]: "內部錯誤",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "發生了內部錯誤，這通常不是因為您，如果這個錯誤持續出現，請聯繫系統管理員來獲得更多幫助。",
 };
@@ -380,6 +394,8 @@ export const SPANISH_MEXICO: Record<PROFILE, string> = {
     [PROFILE.EMPTY_PASSWORD_DESCRIPTION]: "No ha introducido una contraseña. Una contraseña válida debe tener una longitud de al menos ocho y contener solo letras, números, símbolos y espacios en inglés.",
     [PROFILE.WRONG_TWO_FA_PATTERN]: "Formato de código de autenticación no válido",
     [PROFILE.WRONG_TWO_FA_PATTERN_DESCRIPTION]: "El código de autenticación que usó para la autenticación de dos factores no tiene el formato correcto. Un código de autenticación válido debe ser una cadena numérica de longitud seis.",
+    [PROFILE.APPLICATION_GROUP_NOT_FULFILLED]: "Grupo insuficientes",
+    [PROFILE.APPLICATION_GROUP_NOT_FULFILLED_DESCRIPTION]: "Es posible que necesite permisos suficientes para usar la aplicación en la que desea iniciar sesión, comuníquese con el administrador del sistema para obtener más ayuda.",
     [PROFILE.INTERNAL_ERROR]: "Error interno",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "Se ha producido un error interno, generalmente no debido a usted. Si este error persiste, comuníquese con el administrador del sistema para obtener más ayuda.",
 };

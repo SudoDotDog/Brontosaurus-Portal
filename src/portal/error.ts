@@ -58,6 +58,10 @@ const errorMap: Record<string, ErrorInfo> = {
         short: PROFILE.INTERNAL_ERROR,
         long: PROFILE.INTERNAL_ERROR_DESCRIPTION,
     },
+    "4121": {
+        short: PROFILE.APPLICATION_GROUP_NOT_FULFILLED,
+        long: PROFILE.APPLICATION_GROUP_NOT_FULFILLED_DESCRIPTION,
+    },
 };
 
 export const wrapMap = (message: string): ErrorInfo => {
