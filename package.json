@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@sudoo/react-force-dev": "^1.6.0",
-    "@sudoo/triforce": "^1.8.3",
+    "@sudoo/triforce": "^1.8.4",
     "@sudoo/webpack-react": "^2.2.14"
   },
   "nyc": {
