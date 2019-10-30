@@ -46,6 +46,10 @@ const errorMap: Record<string, ErrorInfo> = {
         short: PROFILE.TOO_MANY_ATTEMPT,
         long: PROFILE.TOO_MANY_ATTEMPT_DESCRIPTION,
     },
+    "4108": {
+        short: PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS,
+        long: PROFILE.APPLICATION_GROUP_NOT_FULFILLED_DESCRIPTION,
+    },
     "4111": {
         short: PROFILE.UNSAFE_PASSWORD,
         long: PROFILE.UNSAFE_PASSWORD_DESCRIPTION,
