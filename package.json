@@ -25,7 +25,7 @@
     "@sudoo/redux": "^1.5.0"
   },
   "devDependencies": {
-    "@sudoo/react-force-dev": "^1.6.2",
+    "@sudoo/react-force-dev": "^1.6.4",
     "@sudoo/triforce": "^2.0.4",
     "@sudoo/webpack-react": "^2.4.0"
   },
