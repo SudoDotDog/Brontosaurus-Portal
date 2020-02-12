@@ -69,10 +69,21 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
 
     public render(): JSX.Element {
 
-        return (<FormStructure>
+        return (<FormStructure showHelpCenter>
             <Subtitle
-                text="123"
-            />
+                text={this.props.language.get(PROFILE.RESET_PASSWORD_DESCRIPTION)}
+            >
+                <div className={StyleForm.help}>
+                    <a
+                        className={StyleForm.link}
+                        onClick={() => {
+                            window.location.href = this.props.target.help as any;
+                        }}
+                    >
+                        {this.props.language.get(PROFILE.GO_TO_HELP_CENTER)}
+                    </a>
+                </div>
+            </Subtitle>
             <NeonInput
                 autoCapitalize={false}
                 autoComplete={false}
@@ -89,7 +100,7 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
                 autoCorrect={false}
                 type={INPUT_TYPE.EMAIL}
                 className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
-                label={this.props.language.get(PROFILE.PASSWORD)}
+                label={this.props.language.get(PROFILE.EMAIL)}
                 margin={MARGIN.SMALL}
                 value={this.state.email}
                 onChange={(value: string) => this.setState({ email: value })}
@@ -101,14 +112,14 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
                 margin={MARGIN.SMALL}
                 onClick={this._sendResetEmail}
             >
-                {this.props.language.get(PROFILE.SIGN_IN)}
+                {this.props.language.get(PROFILE.SEND_RESET_PASSWORD_EMAIL)}
             </NeonButton>
         </FormStructure>);
     }
 
     private _sendResetEmail() {
 
-
+        return;
     }
 }
 

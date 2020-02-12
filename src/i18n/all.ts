@@ -9,6 +9,7 @@ import { PROFILE } from "./profile";
 export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
 
     [PROFILE.NEED_HELP]: "Need help signing in?",
+    [PROFILE.GO_TO_HELP_CENTER]: "Access Help center",
     [PROFILE.PASSWORD]: "Password",
     [PROFILE.PRIVACY_POLICY]: "Privacy Policy",
     [PROFILE.SIGN_IN]: "SignIn",
@@ -17,8 +18,11 @@ export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_AFTER]: "",
     [PROFILE.USERNAME]: "Username",
     [PROFILE.SAVE_USERNAME]: "Remember Username",
+    [PROFILE.EMAIL]: "Email Address",
+    [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "Send Temporary Password",
 
     [PROFILE.LIMBO_DESCRIPTION]: "You are signing in with a temporary password, please enter a new password and use it the next time you log in.",
+    [PROFILE.RESET_PASSWORD_DESCRIPTION]: "We apologize for your account login issue. You can click the link below to access our help center, or enter your username and email address to reset your password.",
     [PROFILE.NEW_PASSWORD]: "New password",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "Save and SignIn",
 
@@ -61,6 +65,7 @@ export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
 export const RUSSIAN_RUSSIA: Record<PROFILE, string> = {
 
     [PROFILE.NEED_HELP]: "Логин нуждается в помощи?",
+    [PROFILE.GO_TO_HELP_CENTER]: "PLACEHOLDER",
     [PROFILE.PASSWORD]: "Парола",
     [PROFILE.PRIVACY_POLICY]: "Политика конфиденциальности",
     [PROFILE.SIGN_IN]: "Войти",
@@ -69,8 +74,11 @@ export const RUSSIAN_RUSSIA: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_AFTER]: "",
     [PROFILE.USERNAME]: "Потребителско име",
     [PROFILE.SAVE_USERNAME]: "Запомнить имя пользователя",
+    [PROFILE.EMAIL]: "Email Address",
+    [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "Send Temporary Password",
 
     [PROFILE.LIMBO_DESCRIPTION]: "Вы входите с временным паролем, введите новый пароль и используйте его при следующем входе.",
+    [PROFILE.RESET_PASSWORD_DESCRIPTION]: "PLACEHOLDER",
     [PROFILE.NEW_PASSWORD]: "Новый пароль",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "Сохранить и войти",
 
@@ -115,6 +123,7 @@ export const RUSSIAN_RUSSIA: Record<PROFILE, string> = {
 export const FRENCH_FRANCE: Record<PROFILE, string> = {
 
     [PROFILE.NEED_HELP]: "Besoin d'aide pour vous connecter?",
+    [PROFILE.GO_TO_HELP_CENTER]: "PLACEHOLDER",
     [PROFILE.PASSWORD]: "Mot de passe",
     [PROFILE.PRIVACY_POLICY]: "Politique de confidentialité",
     [PROFILE.SIGN_IN]: "Se connecter",
@@ -123,8 +132,11 @@ export const FRENCH_FRANCE: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_AFTER]: "",
     [PROFILE.USERNAME]: "Identifiant",
     [PROFILE.SAVE_USERNAME]: "Se souvenir du nom d'utilisateur",
+    [PROFILE.EMAIL]: "Email Address",
+    [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "Send Temporary Password",
 
     [PROFILE.LIMBO_DESCRIPTION]: "Vous vous connectez avec un mot de passe temporaire, veuillez entrer un nouveau mot de passe et l'utiliser lors de votre prochaine connexion.",
+    [PROFILE.RESET_PASSWORD_DESCRIPTION]: "PLACEHOLDER",
     [PROFILE.NEW_PASSWORD]: "Nouveau mot de passe",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "Enregistrer et se connecter",
 
@@ -167,6 +179,7 @@ export const FRENCH_FRANCE: Record<PROFILE, string> = {
 export const JAPANESE_JAPAN: Record<PROFILE, string> = {
 
     [PROFILE.NEED_HELP]: "ログインにはヘルプが必要？",
+    [PROFILE.GO_TO_HELP_CENTER]: "PLACEHOLDER",
     [PROFILE.PASSWORD]: "パスワード",
     [PROFILE.PRIVACY_POLICY]: "プライバシーポリシー",
     [PROFILE.SIGN_IN]: "ログイン",
@@ -175,8 +188,11 @@ export const JAPANESE_JAPAN: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_AFTER]: "でログイン",
     [PROFILE.USERNAME]: "ユーザー名",
     [PROFILE.SAVE_USERNAME]: "ユーザー名を記憶",
+    [PROFILE.EMAIL]: "Email Address",
+    [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "Send Temporary Password",
 
     [PROFILE.LIMBO_DESCRIPTION]: "あなたは一時的なパスワードでログインしています。新しいパスワードを入力して、次回のログイン時にそれを使用してください。",
+    [PROFILE.RESET_PASSWORD_DESCRIPTION]: "PLACEHOLDER",
     [PROFILE.NEW_PASSWORD]: "新しいパスワード",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "保存してサインイン",
 
@@ -217,6 +233,7 @@ export const JAPANESE_JAPAN: Record<PROFILE, string> = {
 export const KOREAN_KOREA: Record<PROFILE, string> = {
 
     [PROFILE.NEED_HELP]: "로그인에 문제가 발생했습니다？",
+    [PROFILE.GO_TO_HELP_CENTER]: "PLACEHOLDER",
     [PROFILE.PASSWORD]: "비밀번호",
     [PROFILE.PRIVACY_POLICY]: "개인 정보 보호 정책",
     [PROFILE.SIGN_IN]: "로그인",
@@ -225,8 +242,11 @@ export const KOREAN_KOREA: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_AFTER]: "로 로그인",
     [PROFILE.USERNAME]: "사용자 아이디",
     [PROFILE.SAVE_USERNAME]: "사용자 이름 기억하기",
+    [PROFILE.EMAIL]: "Email Address",
+    [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "Send Temporary Password",
 
     [PROFILE.LIMBO_DESCRIPTION]: "임시 비밀번호로 로그인하는 중입니다. 다음에 로그인 할 때 새 비밀번호를 입력하여 사용하십시오.",
+    [PROFILE.RESET_PASSWORD_DESCRIPTION]: "PLACEHOLDER",
     [PROFILE.NEW_PASSWORD]: "새 비밀번호",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "저장 및 로그인",
 
@@ -267,6 +287,7 @@ export const KOREAN_KOREA: Record<PROFILE, string> = {
 export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
 
     [PROFILE.NEED_HELP]: "登录需要帮助？",
+    [PROFILE.GO_TO_HELP_CENTER]: "PLACEHOLDER",
     [PROFILE.PASSWORD]: "密码",
     [PROFILE.PRIVACY_POLICY]: "隐私政策",
     [PROFILE.SIGN_IN]: "登录",
@@ -275,8 +296,11 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_AFTER]: "登陆",
     [PROFILE.USERNAME]: "用户名",
     [PROFILE.SAVE_USERNAME]: "记住用户名",
+    [PROFILE.EMAIL]: "Email Address",
+    [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "Send Temporary Password",
 
     [PROFILE.LIMBO_DESCRIPTION]: "您正在使用临时密码登录，请输入新密码，并在下次登录时使用它。",
+    [PROFILE.RESET_PASSWORD_DESCRIPTION]: "PLACEHOLDER",
     [PROFILE.NEW_PASSWORD]: "新密码",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "保存并登录",
 
@@ -317,6 +341,7 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
 export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
 
     [PROFILE.NEED_HELP]: "登入遇到問題？",
+    [PROFILE.GO_TO_HELP_CENTER]: "PLACEHOLDER",
     [PROFILE.PASSWORD]: "密鑰",
     [PROFILE.PRIVACY_POLICY]: "隱私政策",
     [PROFILE.SIGN_IN]: "登入",
@@ -325,8 +350,11 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_AFTER]: "登入",
     [PROFILE.USERNAME]: "使用者名稱",
     [PROFILE.SAVE_USERNAME]: "記住使用者名稱",
+    [PROFILE.EMAIL]: "Email Address",
+    [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "Send Temporary Password",
 
     [PROFILE.LIMBO_DESCRIPTION]: "您正在使用臨時密鑰登入，請輸入新密鑰，並在下次登入時使用它。",
+    [PROFILE.RESET_PASSWORD_DESCRIPTION]: "PLACEHOLDER",
     [PROFILE.NEW_PASSWORD]: "新密鑰",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "保存並登入",
 
@@ -369,6 +397,7 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
 export const SPANISH_MEXICO: Record<PROFILE, string> = {
 
     [PROFILE.NEED_HELP]: "¿Necesitas ayuda para iniciar sesión?",
+    [PROFILE.GO_TO_HELP_CENTER]: "PLACEHOLDER",
     [PROFILE.PASSWORD]: "Contraseña",
     [PROFILE.PRIVACY_POLICY]: "Política de privacidad",
     [PROFILE.SIGN_IN]: "Iniciar sesión",
@@ -377,8 +406,11 @@ export const SPANISH_MEXICO: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_AFTER]: "",
     [PROFILE.USERNAME]: "Usuario",
     [PROFILE.SAVE_USERNAME]: "Recordar el nombre de usuario",
+    [PROFILE.EMAIL]: "Email Address",
+    [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "Send Temporary Password",
 
     [PROFILE.LIMBO_DESCRIPTION]: "Está iniciando sesión con una contraseña temporal, ingrese una nueva contraseña y úsela la próxima vez que inicie sesión.",
+    [PROFILE.RESET_PASSWORD_DESCRIPTION]: "PLACEHOLDER",
     [PROFILE.NEW_PASSWORD]: "Nueva contraseña",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "Salvar y Iniciar",
 

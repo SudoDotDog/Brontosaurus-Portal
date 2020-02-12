@@ -10,6 +10,7 @@ import * as StyleForm from "../../style/page/form.sass";
 type SubtitleProp = {
 
     readonly text: any;
+    readonly children?: any;
 };
 
 export const Subtitle: React.FC<SubtitleProp> = (props: SubtitleProp) => {
@@ -17,6 +18,7 @@ export const Subtitle: React.FC<SubtitleProp> = (props: SubtitleProp) => {
     return (
         <div className={StyleForm.title}>
             <div>{props.text}</div>
+            {props.children}
         </div>
     );
 };

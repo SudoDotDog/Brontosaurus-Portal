@@ -39,6 +39,7 @@ type ConnectedFormActions = {
 export type FromStructureProps = {
 
     readonly showHelp?: boolean;
+    readonly showHelpCenter?: boolean;
 };
 
 type ConnectedProps = ConnectedFormStates & ConnectedFormActions & FromStructureProps;
@@ -69,6 +70,7 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
                             {this._renderFlag()}
                             {this.props.children}
                             {this._renderHelp()}
+                            {this._renderHelpCenter()}
                         </NeonIndicator>
                     </NeonPaper>
                 </div>
@@ -113,6 +115,28 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
                 }}
             >
                 {this.props.language.get(PROFILE.NEED_HELP)}
+            </a>
+        </div>);
+    }
+
+    private _renderHelpCenter(): React.ReactNode {
+
+        if (!this.props.showHelpCenter) {
+            return null;
+        }
+
+        if (!this.props.target.help) {
+            return null;
+        }
+
+        return (<div className={StyleForm.help}>
+            <a
+                className={StyleForm.link}
+                onClick={() => {
+                    window.location.href = this.props.target.help as any;
+                }}
+            >
+                {this.props.language.get(PROFILE.GO_TO_HELP_CENTER)}
             </a>
         </div>);
     }
