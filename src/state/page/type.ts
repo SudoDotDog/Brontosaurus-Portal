@@ -14,6 +14,7 @@ export enum PAGE {
     TWOFA = "TWOFA",
     HELP = "HELP",
     RESET_PASSWORD_TEMPORARY = "RESET_PASSWORD_TEMPORARY",
+    RESET_PASSWORD_RESET = "RESET_PASSWORD_RESET",
 }
 
 export interface IPageStore {

@@ -123,6 +123,7 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps, 
 
     private _verifyTemporaryPassword() {
 
+        this.props.setPage(PAGE.RESET_PASSWORD_RESET);
         return;
     }
 }

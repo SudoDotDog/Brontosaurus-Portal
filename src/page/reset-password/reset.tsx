@@ -80,21 +80,10 @@ export class ResetPasswordResetBase extends React.Component<ConnectedProps, Rese
     public render(): JSX.Element {
 
         return (
-            <FormStructure showHelpCenter>
+            <FormStructure>
                 <Subtitle
-                    text={this.props.language.get(PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION)}
-                >
-                    <div className={StyleForm.help}>
-                        <a
-                            className={StyleForm.link}
-                            onClick={() => {
-                                window.location.href = this.props.target.help as any;
-                            }}
-                        >
-                            {this.props.language.get(PROFILE.GO_TO_HELP_CENTER)}
-                        </a>
-                    </div>
-                </Subtitle>
+                    text={this.props.language.get(PROFILE.RESET_DESCRIPTION)}
+                />
                 <NeonInput
                     autoCapitalize={false}
                     autoComplete={false}
@@ -102,7 +91,7 @@ export class ResetPasswordResetBase extends React.Component<ConnectedProps, Rese
                     inputRef={(ref: HTMLInputElement) => this._passwordRef = ref}
                     type={INPUT_TYPE.PASSWORD}
                     className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
-                    label={this.props.language.get(PROFILE.TEMPORARY_PASSWORD)}
+                    label={this.props.language.get(PROFILE.NEW_PASSWORD)}
                     margin={MARGIN.SMALL}
                     value={this.state.password}
                     onEnter={this._resetPassword}
@@ -115,7 +104,7 @@ export class ResetPasswordResetBase extends React.Component<ConnectedProps, Rese
                     margin={MARGIN.SMALL}
                     onClick={this._resetPassword}
                 >
-                    {this.props.language.get(PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON)}
+                    {this.props.language.get(PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN)}
                 </NeonButton>
             </FormStructure>
         );
