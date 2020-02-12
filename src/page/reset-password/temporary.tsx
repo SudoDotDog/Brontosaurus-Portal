@@ -7,7 +7,7 @@
 import { SudooFormat } from "@sudoo/internationalization";
 import { NeonButton } from "@sudoo/neon/button";
 import { MARGIN, SIZE, WIDTH } from "@sudoo/neon/declare";
-import { NeonInput } from "@sudoo/neon/input";
+import { INPUT_TYPE, NeonInput } from "@sudoo/neon/input";
 import { Connector } from "@sudoo/redux";
 import * as React from "react";
 import * as StyleForm from "../../../style/page/form.sass";
@@ -68,7 +68,7 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps, 
         return (
             <FormStructure showHelpCenter>
                 <Subtitle
-                    text={this.props.language.get(PROFILE.RESET_PASSWORD_DESCRIPTION)}
+                    text={this.props.language.get(PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION)}
                 >
                     <div className={StyleForm.help}>
                         <a
@@ -85,10 +85,12 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps, 
                     autoCapitalize={false}
                     autoComplete={false}
                     autoCorrect={false}
+                    type={INPUT_TYPE.PASSWORD}
                     className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
-                    label={this.props.language.get(PROFILE.USERNAME)}
+                    label={this.props.language.get(PROFILE.TEMPORARY_PASSWORD)}
                     margin={MARGIN.SMALL}
                     value={this.state.password}
+                    onEnter={this._verifyTemporaryPassword}
                     onChange={(value: string) => this.setState({ password: value })}
                 />
                 <NeonButton
@@ -98,7 +100,7 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps, 
                     margin={MARGIN.SMALL}
                     onClick={this._verifyTemporaryPassword}
                 >
-                    {this.props.language.get(PROFILE.SEND_RESET_PASSWORD_EMAIL)}
+                    {this.props.language.get(PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON)}
                 </NeonButton>
             </FormStructure>
         );

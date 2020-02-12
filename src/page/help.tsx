@@ -72,7 +72,7 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
         return (
             <FormStructure showHelpCenter>
                 <Subtitle
-                    text={this.props.language.get(PROFILE.RESET_PASSWORD_DESCRIPTION)}
+                    text={this.props.language.get(PROFILE.HELP_DESCRIPTION)}
                 >
                     <div className={StyleForm.help}>
                         <a
@@ -104,6 +104,7 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
                     label={this.props.language.get(PROFILE.EMAIL)}
                     margin={MARGIN.SMALL}
                     value={this.state.email}
+                    onEnter={this._sendResetEmail}
                     onChange={(value: string) => this.setState({ email: value })}
                 />
                 <NeonButton
