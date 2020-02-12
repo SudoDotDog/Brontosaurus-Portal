@@ -66,7 +66,7 @@ export class LoginBase extends React.Component<ConnectedProps> {
     public render(): JSX.Element {
 
         return (
-            <FormStructure>
+            <FormStructure showHelp>
                 {this._renderForm()}
             </FormStructure>
         );

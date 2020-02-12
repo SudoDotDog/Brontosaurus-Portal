@@ -23,7 +23,7 @@ import { PAGE } from "../state/page/type";
 import { ErrorInfo } from "../state/status/type";
 import { combineClasses } from "../util/style";
 
-type ConnectedLoginStates = {
+type ConnectedFormStates = {
 
     readonly language: SudooFormat;
     readonly isLoading: boolean;
@@ -31,14 +31,19 @@ type ConnectedLoginStates = {
     readonly target: TargetInfo;
 };
 
-type ConnectedLoginActions = {
+type ConnectedFormActions = {
 
     readonly setPage: (page: PAGE) => void;
 };
 
-type ConnectedProps = ConnectedLoginStates & ConnectedLoginActions;
+export type FromStructureProps = {
 
-const connector = Connector.create<IStore, ConnectedLoginStates, ConnectedLoginActions>()
+    readonly showHelp?: boolean;
+};
+
+type ConnectedProps = ConnectedFormStates & ConnectedFormActions & FromStructureProps;
+
+const connector = Connector.create<IStore, ConnectedFormStates, ConnectedFormActions>()
     .connectStates(({ info, preference, status }: IStore) => ({
 
         language: intl.format(preference.language),
@@ -91,6 +96,10 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
     }
 
     private _renderHelp(): React.ReactNode {
+
+        if (!this.props.showHelp) {
+            return null;
+        }
 
         if (!this.props.target.name) {
             return null;
@@ -165,4 +174,4 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
     }
 }
 
-export const FormStructure: React.ComponentType<{}> = connector.connect(FormStructureBase);
+export const FormStructure: React.ComponentType<FromStructureProps> = connector.connect(FormStructureBase);
