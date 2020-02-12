@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
  * @namespace Page_Reset_Password
- * @description Temporary
+ * @description Reset
  */
 
 import { SudooFormat } from "@sudoo/internationalization";
@@ -22,25 +22,25 @@ import { PAGE } from "../../state/page/type";
 import { FOCUS_DELAY } from "../../util/magic";
 import { combineClasses } from "../../util/style";
 
-type ConnectedResetPasswordTemporaryStates = {
+type ConnectedResetPasswordResetStates = {
 
     readonly language: SudooFormat;
     readonly target: TargetInfo;
 };
 
-type ResetPasswordTemporaryStates = {
+type ResetPasswordResetStates = {
 
     readonly password: string;
 };
 
-type ConnectedResetPasswordTemporaryActions = {
+type ConnectedResetPasswordResetActions = {
 
     readonly setPage: (page: PAGE) => void;
 };
 
-type ConnectedProps = ConnectedResetPasswordTemporaryStates & ConnectedResetPasswordTemporaryActions;
+type ConnectedProps = ConnectedResetPasswordResetStates & ConnectedResetPasswordResetActions;
 
-const connector = Connector.create<IStore, ConnectedResetPasswordTemporaryStates, ConnectedResetPasswordTemporaryActions>()
+const connector = Connector.create<IStore, ConnectedResetPasswordResetStates, ConnectedResetPasswordResetActions>()
     .connectStates(({ info, preference }: IStore) => ({
 
         language: intl.format(preference.language),
@@ -50,9 +50,9 @@ const connector = Connector.create<IStore, ConnectedResetPasswordTemporaryStates
         setPage,
     });
 
-export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps, ResetPasswordTemporaryStates> {
+export class ResetPasswordResetBase extends React.Component<ConnectedProps, ResetPasswordResetStates> {
 
-    public readonly state: ResetPasswordTemporaryStates = {
+    public readonly state: ResetPasswordResetStates = {
 
         password: '',
     };
@@ -63,7 +63,7 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps, 
 
         super(props);
 
-        this._verifyTemporaryPassword = this._verifyTemporaryPassword.bind(this);
+        this._resetPassword = this._resetPassword.bind(this);
     }
 
     public componentDidMount() {
@@ -105,7 +105,7 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps, 
                     label={this.props.language.get(PROFILE.TEMPORARY_PASSWORD)}
                     margin={MARGIN.SMALL}
                     value={this.state.password}
-                    onEnter={this._verifyTemporaryPassword}
+                    onEnter={this._resetPassword}
                     onChange={(value: string) => this.setState({ password: value })}
                 />
                 <NeonButton
@@ -113,7 +113,7 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps, 
                     size={SIZE.MEDIUM}
                     width={WIDTH.FULL}
                     margin={MARGIN.SMALL}
-                    onClick={this._verifyTemporaryPassword}
+                    onClick={this._resetPassword}
                 >
                     {this.props.language.get(PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON)}
                 </NeonButton>
@@ -121,10 +121,10 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps, 
         );
     }
 
-    private _verifyTemporaryPassword() {
+    private _resetPassword() {
 
         return;
     }
 }
 
-export const ConnectedResetPasswordTemporary: React.ComponentType<{}> = connector.connect(ResetPasswordTemporaryBase);
+export const ConnectedResetPasswordReset: React.ComponentType<{}> = connector.connect(ResetPasswordResetBase);
