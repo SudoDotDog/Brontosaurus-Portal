@@ -15,11 +15,14 @@ import { FormStructure } from "../../components/form";
 import { Subtitle } from "../../components/subtitle";
 import { intl } from "../../i18n/intl";
 import { PROFILE } from "../../i18n/profile";
+import { wrapMap } from "../../portal/error";
 import { resetResetRepository } from "../../repository/reset/reset";
 import { IStore } from "../../state/declare";
 import { TargetInfo } from "../../state/info/type";
 import { setPage } from "../../state/page/page";
 import { PAGE } from "../../state/page/type";
+import { clearError, clearLoading, startError, startLoading } from "../../state/status/status";
+import { ErrorInfo } from "../../state/status/type";
 import { FOCUS_DELAY } from "../../util/magic";
 import { combineClasses } from "../../util/style";
 
@@ -38,6 +41,10 @@ type ResetPasswordTemporaryStates = {
 type ConnectedResetPasswordTemporaryActions = {
 
     readonly setPage: (page: PAGE) => void;
+    readonly startLoading: (message: string) => void;
+    readonly startError: (info: ErrorInfo) => void;
+    readonly clearLoading: () => void;
+    readonly clearError: () => void;
 };
 
 type ConnectedProps = ConnectedResetPasswordTemporaryStates & ConnectedResetPasswordTemporaryActions;
@@ -51,6 +58,10 @@ const connector = Connector.create<IStore, ConnectedResetPasswordTemporaryStates
     })).connectActions({
 
         setPage,
+        startLoading,
+        clearLoading,
+        startError,
+        clearError,
     });
 
 export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps, ResetPasswordTemporaryStates> {
@@ -71,6 +82,7 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps, 
 
     public componentDidMount() {
 
+        this.props.clearError();
         setTimeout(() => {
 
             if (!this._passwordRef) {
@@ -126,9 +138,20 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps, 
 
     private async _verifyTemporaryPassword() {
 
-        this.props.setPage(PAGE.RESET_PASSWORD_RESET);
-        const username: string = await resetResetRepository(this.props.username, this.state.password);
-        console.log(username);
+        try {
+
+            this.props.startLoading('Reset Reset');
+            await resetResetRepository(this.props.username, this.state.password);
+            this.props.clearLoading();
+            this.props.setPage(PAGE.RESET_PASSWORD_RESET);
+        } catch (err) {
+
+            const error: string = err.message;
+            this.props.clearLoading();
+
+            const info: ErrorInfo = wrapMap(error);
+            this.props.startError(info);
+        }
         return;
     }
 }

@@ -15,10 +15,13 @@ import { FormStructure } from "../../components/form";
 import { Subtitle } from "../../components/subtitle";
 import { intl } from "../../i18n/intl";
 import { PROFILE } from "../../i18n/profile";
+import { wrapMap } from "../../portal/error";
 import { IStore } from "../../state/declare";
 import { TargetInfo } from "../../state/info/type";
 import { setPage } from "../../state/page/page";
 import { PAGE } from "../../state/page/type";
+import { clearError, clearLoading, startError, startLoading } from "../../state/status/status";
+import { ErrorInfo } from "../../state/status/type";
 import { FOCUS_DELAY } from "../../util/magic";
 import { combineClasses } from "../../util/style";
 
@@ -36,6 +39,10 @@ type ResetPasswordResetStates = {
 type ConnectedResetPasswordResetActions = {
 
     readonly setPage: (page: PAGE) => void;
+    readonly startLoading: (message: string) => void;
+    readonly startError: (info: ErrorInfo) => void;
+    readonly clearLoading: () => void;
+    readonly clearError: () => void;
 };
 
 type ConnectedProps = ConnectedResetPasswordResetStates & ConnectedResetPasswordResetActions;
@@ -48,6 +55,10 @@ const connector = Connector.create<IStore, ConnectedResetPasswordResetStates, Co
     })).connectActions({
 
         setPage,
+        startLoading,
+        clearLoading,
+        startError,
+        clearError,
     });
 
 export class ResetPasswordResetBase extends React.Component<ConnectedProps, ResetPasswordResetStates> {
@@ -68,6 +79,7 @@ export class ResetPasswordResetBase extends React.Component<ConnectedProps, Rese
 
     public componentDidMount() {
 
+        this.props.clearError();
         setTimeout(() => {
 
             if (!this._passwordRef) {
@@ -111,7 +123,20 @@ export class ResetPasswordResetBase extends React.Component<ConnectedProps, Rese
     }
 
     private _resetPassword() {
+        try {
 
+            this.props.startLoading('Reset Login');
+            // TODO: Route
+            this.props.clearLoading();
+            this.props.setPage(PAGE.RESET_PASSWORD_RESET);
+        } catch (err) {
+
+            const error: string = err.message;
+            this.props.clearLoading();
+
+            const info: ErrorInfo = wrapMap(error);
+            this.props.startError(info);
+        }
         return;
     }
 }
