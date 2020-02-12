@@ -15,6 +15,7 @@ import { FormStructure } from "../../components/form";
 import { Subtitle } from "../../components/subtitle";
 import { intl } from "../../i18n/intl";
 import { PROFILE } from "../../i18n/profile";
+import { resetResetRepository } from "../../repository/reset/reset";
 import { IStore } from "../../state/declare";
 import { TargetInfo } from "../../state/info/type";
 import { setPage } from "../../state/page/page";
@@ -24,6 +25,7 @@ import { combineClasses } from "../../util/style";
 
 type ConnectedResetPasswordTemporaryStates = {
 
+    readonly username: string;
     readonly language: SudooFormat;
     readonly target: TargetInfo;
 };
@@ -41,8 +43,9 @@ type ConnectedResetPasswordTemporaryActions = {
 type ConnectedProps = ConnectedResetPasswordTemporaryStates & ConnectedResetPasswordTemporaryActions;
 
 const connector = Connector.create<IStore, ConnectedResetPasswordTemporaryStates, ConnectedResetPasswordTemporaryActions>()
-    .connectStates(({ info, preference }: IStore) => ({
+    .connectStates(({ info, preference, form }: IStore) => ({
 
+        username: form.username,
         language: intl.format(preference.language),
         target: info.target,
     })).connectActions({
@@ -121,9 +124,11 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps, 
         );
     }
 
-    private _verifyTemporaryPassword() {
+    private async _verifyTemporaryPassword() {
 
         this.props.setPage(PAGE.RESET_PASSWORD_RESET);
+        const username: string = await resetResetRepository(this.props.username, this.state.password);
+        console.log(username);
         return;
     }
 }
