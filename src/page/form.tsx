@@ -18,6 +18,7 @@ import { clearUsername, readUsername } from "../portal/save";
 import { IStore } from "../state/declare";
 import { setPassword, setUsername } from "../state/form/form";
 import { setSaveUsername } from "../state/preference/preference";
+import { FOCUS_DELAY } from "../util/magic";
 import { combineClasses } from "../util/style";
 
 type FormProp = {
@@ -87,7 +88,7 @@ export class FormBase extends React.Component<ConnectProps> {
 
             clearUsername();
             this._usernameRef.focus();
-        }, 100);
+        }, FOCUS_DELAY);
     }
 
     public render() {

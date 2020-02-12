@@ -20,6 +20,7 @@ import { twoFARepository } from "../repository/twoFA";
 import { IStore } from "../state/declare";
 import { clearError, clearLoading, startError, startLoading } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
+import { FOCUS_DELAY } from "../util/magic";
 import { combineClasses } from "../util/style";
 
 type TwoFAStates = {
@@ -75,7 +76,7 @@ export class TwoFABase extends React.Component<ConnectedProps, TwoFAStates> {
                 return;
             }
             this._twoFARef.focus();
-        }, 100);
+        }, FOCUS_DELAY);
     }
 
     public render(): JSX.Element {
