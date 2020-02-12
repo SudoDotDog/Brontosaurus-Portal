@@ -131,7 +131,7 @@ export const FRENCH_FRANCE: Record<PROFILE, string> = {
     [PROFILE.NEED_HELP]: "Besoin d'aide pour vous connecter?",
     [PROFILE.GO_TO_HELP_CENTER]: "Visitez le centre d'aide",
     [PROFILE.PASSWORD]: "Mot de passe",
-    [PROFILE.TEMPORARY_PASSWORD]: "PLACEHOLDER",
+    [PROFILE.TEMPORARY_PASSWORD]: "Mot de passe Temporaire",
     [PROFILE.PRIVACY_POLICY]: "Politique de confidentialité",
     [PROFILE.SIGN_IN]: "Se connecter",
     [PROFILE.SIGN_IN_TO]: "Se connecter à",
@@ -141,11 +141,11 @@ export const FRENCH_FRANCE: Record<PROFILE, string> = {
     [PROFILE.SAVE_USERNAME]: "Se souvenir du nom d'utilisateur",
     [PROFILE.EMAIL]: "E-mail Adresse",
     [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "Envoyer un mot de Passe Temporaire",
-    [PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON]: "PLACEHOLDER",
+    [PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON]: "Vérifier le mot de passe Temporaire",
 
     [PROFILE.LIMBO_DESCRIPTION]: "Vous vous connectez avec un mot de passe temporaire, veuillez entrer un nouveau mot de passe et l'utiliser lors de votre prochaine connexion.",
     [PROFILE.HELP_DESCRIPTION]: "Nous vous prions de nous excuser pour les problèmes de connexion à votre compte. Vous pouvez cliquer sur le lien ci-dessous pour accéder à notre centre d'aide ou saisir votre nom d'utilisateur et votre adresse e-mail pour réinitialiser votre mot de passe.",
-    [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION]: "PLACEHOLDER",
+    [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION]: "Si l'adresse e-mail et le nom d'utilisateur que vous avez saisis correspondent, vous recevrez un e-mail avec un mot de passe temporaire. Si vous ne trouvez pas l'e-mail correspondant, veuillez vérifier votre courrier indésirable ou cliquez sur le lien ci-dessous pour visiter notre centre d'aide.",
     [PROFILE.NEW_PASSWORD]: "Nouveau mot de passe",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "Enregistrer et se connecter",
 
