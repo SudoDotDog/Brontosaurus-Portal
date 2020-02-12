@@ -15,11 +15,15 @@ import { FormStructure } from "../components/form";
 import { Subtitle } from "../components/subtitle";
 import { intl } from "../i18n/intl";
 import { PROFILE } from "../i18n/profile";
+import { wrapMap } from "../portal/error";
 import { resetTemporaryRepository } from "../repository/reset/temporary";
 import { IStore } from "../state/declare";
+import { setUsername } from "../state/form/form";
 import { TargetInfo } from "../state/info/type";
 import { setPage } from "../state/page/page";
 import { PAGE } from "../state/page/type";
+import { clearError, clearLoading, startError, startLoading } from "../state/status/status";
+import { ErrorInfo } from "../state/status/type";
 import { combineClasses } from "../util/style";
 
 type ConnectedHelpStates = {
@@ -31,13 +35,17 @@ type ConnectedHelpStates = {
 
 type HelpStates = {
 
-    readonly username: string;
     readonly email: string;
 };
 
 type ConnectedHelpActions = {
 
     readonly setPage: (page: PAGE) => void;
+    readonly setUsername: (username: string) => void;
+    readonly startLoading: (message: string) => void;
+    readonly startError: (info: ErrorInfo) => void;
+    readonly clearLoading: () => void;
+    readonly clearError: () => void;
 };
 
 type ConnectedProps = ConnectedHelpStates & ConnectedHelpActions;
@@ -51,13 +59,17 @@ const connector = Connector.create<IStore, ConnectedHelpStates, ConnectedHelpAct
     })).connectActions({
 
         setPage,
+        setUsername,
+        startLoading,
+        clearLoading,
+        startError,
+        clearError,
     });
 
 export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
 
     public readonly state: HelpStates = {
 
-        username: this.props.username,
         email: '',
     };
 
@@ -66,6 +78,11 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
         super(props);
 
         this._sendResetEmail = this._sendResetEmail.bind(this);
+    }
+
+    public componentDidMount() {
+
+        this.props.clearError();
     }
 
     public render(): JSX.Element {
@@ -93,8 +110,8 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
                     className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
                     label={this.props.language.get(PROFILE.USERNAME)}
                     margin={MARGIN.SMALL}
-                    value={this.state.username}
-                    onChange={(value: string) => this.setState({ username: value })}
+                    value={this.props.username}
+                    onChange={(value: string) => this.props.setUsername(value)}
                 />
                 <NeonInput
                     autoCapitalize={false}
@@ -123,9 +140,20 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
 
     private async _sendResetEmail() {
 
-        this.props.setPage(PAGE.RESET_PASSWORD_TEMPORARY);
-        const result: any = await resetTemporaryRepository(this.state.username, this.state.email);
-        console.log(result);
+        try {
+
+            this.props.startLoading('Reset Temporary');
+            await resetTemporaryRepository(this.props.username, this.state.email);
+            this.props.clearLoading();
+            this.props.setPage(PAGE.RESET_PASSWORD_TEMPORARY);
+        } catch (err) {
+
+            const error: string = err.message;
+            this.props.clearLoading();
+
+            const info: ErrorInfo = wrapMap(error);
+            this.props.startError(info);
+        }
         return;
     }
 }
