@@ -60,23 +60,25 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
 
     public render(): JSX.Element {
 
-        return (<div className={StyleLogin.page}>
-            <div className={StyleLogin.wrapper}>
-                <div className={StyleLogin.inner}>
-                    <NeonPaper className={combineClasses(StyleLogin.login, StyleForm.borderOverride)}>
-                        <NeonIndicator className={StyleLogin.indicator} loading={this.props.isLoading}>
-                            {this._renderLogo()}
-                            {this._renderTitle()}
-                            {this._renderFlag()}
-                            {this.props.children}
-                            {this._renderHelp()}
-                            {this._renderHelpCenter()}
-                        </NeonIndicator>
-                    </NeonPaper>
+        return (
+            <div className={StyleLogin.page}>
+                <div className={StyleLogin.wrapper}>
+                    <div className={StyleLogin.inner}>
+                        <NeonPaper className={combineClasses(StyleLogin.login, StyleForm.borderOverride)}>
+                            <NeonIndicator className={StyleLogin.indicator} loading={this.props.isLoading}>
+                                {this._renderLogo()}
+                                {this._renderTitle()}
+                                {this._renderFlag()}
+                                {this.props.children}
+                                {this._renderHelp()}
+                                {this._renderHelpCenter()}
+                            </NeonIndicator>
+                        </NeonPaper>
+                    </div>
                 </div>
+                {this._renderFooter()}
             </div>
-            {this._renderFooter()}
-        </div>);
+        );
     }
 
     private _renderFooter(): React.ReactNode {

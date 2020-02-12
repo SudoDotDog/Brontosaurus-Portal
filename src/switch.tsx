@@ -9,6 +9,7 @@ import * as React from "react";
 import { ConnectedHelp } from "./page/help";
 import { ConnectedLimbo } from "./page/limbo";
 import { ConnectedLogin } from "./page/login";
+import { ConnectedResetPasswordTemporary } from "./page/reset-password/temporary";
 import { ConnectedTwoFA } from "./page/twoFA";
 import { IStore } from "./state/declare";
 import { PAGE } from "./state/page/type";
@@ -40,6 +41,8 @@ export class Switch extends React.Component<ConnectedSwitchProps> {
                 return (<ConnectedTwoFA />);
             case PAGE.HELP:
                 return (<ConnectedHelp />);
+            case PAGE.RESET_PASSWORD_TEMPORARY:
+                return (<ConnectedResetPasswordTemporary />);
         }
         return null;
     }

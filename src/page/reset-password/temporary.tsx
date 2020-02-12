@@ -1,50 +1,47 @@
 /**
  * @author WMXPY
- * @namespace Page
- * @description Help
+ * @namespace Page_Reset_Password
+ * @description Temporary
  */
 
 import { SudooFormat } from "@sudoo/internationalization";
 import { NeonButton } from "@sudoo/neon/button";
 import { MARGIN, SIZE, WIDTH } from "@sudoo/neon/declare";
-import { INPUT_TYPE, NeonInput } from "@sudoo/neon/input";
+import { NeonInput } from "@sudoo/neon/input";
 import { Connector } from "@sudoo/redux";
 import * as React from "react";
-import * as StyleForm from "../../style/page/form.sass";
-import { FormStructure } from "../components/form";
-import { Subtitle } from "../components/subtitle";
-import { intl } from "../i18n/intl";
-import { PROFILE } from "../i18n/profile";
-import { IStore } from "../state/declare";
-import { TargetInfo } from "../state/info/type";
-import { setPage } from "../state/page/page";
-import { PAGE } from "../state/page/type";
-import { combineClasses } from "../util/style";
+import * as StyleForm from "../../../style/page/form.sass";
+import { FormStructure } from "../../components/form";
+import { Subtitle } from "../../components/subtitle";
+import { intl } from "../../i18n/intl";
+import { PROFILE } from "../../i18n/profile";
+import { IStore } from "../../state/declare";
+import { TargetInfo } from "../../state/info/type";
+import { setPage } from "../../state/page/page";
+import { PAGE } from "../../state/page/type";
+import { combineClasses } from "../../util/style";
 
-type ConnectedHelpStates = {
+type ConnectedResetPasswordTemporaryStates = {
 
-    readonly username: string;
     readonly language: SudooFormat;
     readonly target: TargetInfo;
 };
 
-type HelpStates = {
+type ResetPasswordTemporaryStates = {
 
-    readonly username: string;
-    readonly email: string;
+    readonly password: string;
 };
 
-type ConnectedHelpActions = {
+type ConnectedResetPasswordTemporaryActions = {
 
     readonly setPage: (page: PAGE) => void;
 };
 
-type ConnectedProps = ConnectedHelpStates & ConnectedHelpActions;
+type ConnectedProps = ConnectedResetPasswordTemporaryStates & ConnectedResetPasswordTemporaryActions;
 
-const connector = Connector.create<IStore, ConnectedHelpStates, ConnectedHelpActions>()
-    .connectStates(({ info, preference, form }: IStore) => ({
+const connector = Connector.create<IStore, ConnectedResetPasswordTemporaryStates, ConnectedResetPasswordTemporaryActions>()
+    .connectStates(({ info, preference }: IStore) => ({
 
-        username: form.username,
         language: intl.format(preference.language),
         target: info.target,
     })).connectActions({
@@ -52,19 +49,18 @@ const connector = Connector.create<IStore, ConnectedHelpStates, ConnectedHelpAct
         setPage,
     });
 
-export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
+export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps, ResetPasswordTemporaryStates> {
 
-    public readonly state: HelpStates = {
+    public readonly state: ResetPasswordTemporaryStates = {
 
-        username: this.props.username,
-        email: '',
+        password: '',
     };
 
     public constructor(props: ConnectedProps) {
 
         super(props);
 
-        this._sendResetEmail = this._sendResetEmail.bind(this);
+        this._verifyTemporaryPassword = this._verifyTemporaryPassword.bind(this);
     }
 
     public render(): JSX.Element {
@@ -92,26 +88,15 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
                     className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
                     label={this.props.language.get(PROFILE.USERNAME)}
                     margin={MARGIN.SMALL}
-                    value={this.state.username}
-                    onChange={(value: string) => this.setState({ username: value })}
-                />
-                <NeonInput
-                    autoCapitalize={false}
-                    autoComplete={false}
-                    autoCorrect={false}
-                    type={INPUT_TYPE.EMAIL}
-                    className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
-                    label={this.props.language.get(PROFILE.EMAIL)}
-                    margin={MARGIN.SMALL}
-                    value={this.state.email}
-                    onChange={(value: string) => this.setState({ email: value })}
+                    value={this.state.password}
+                    onChange={(value: string) => this.setState({ password: value })}
                 />
                 <NeonButton
                     className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
                     size={SIZE.MEDIUM}
                     width={WIDTH.FULL}
                     margin={MARGIN.SMALL}
-                    onClick={this._sendResetEmail}
+                    onClick={this._verifyTemporaryPassword}
                 >
                     {this.props.language.get(PROFILE.SEND_RESET_PASSWORD_EMAIL)}
                 </NeonButton>
@@ -119,11 +104,10 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
         );
     }
 
-    private _sendResetEmail() {
+    private _verifyTemporaryPassword() {
 
-        this.props.setPage(PAGE.RESET_PASSWORD_TEMPORARY);
         return;
     }
 }
 
-export const ConnectedHelp: React.ComponentType<{}> = connector.connect(HelpBase);
+export const ConnectedResetPasswordTemporary: React.ComponentType<{}> = connector.connect(ResetPasswordTemporaryBase);
