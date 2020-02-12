@@ -18,6 +18,8 @@ import { intl } from "../i18n/intl";
 import { PROFILE } from "../i18n/profile";
 import { IStore } from "../state/declare";
 import { TargetInfo } from "../state/info/type";
+import { setPage } from "../state/page/page";
+import { PAGE } from "../state/page/type";
 import { ErrorInfo } from "../state/status/type";
 import { combineClasses } from "../util/style";
 
@@ -29,16 +31,24 @@ type ConnectedLoginStates = {
     readonly target: TargetInfo;
 };
 
-type ConnectedProps = ConnectedLoginStates;
+type ConnectedLoginActions = {
 
-const connector = Connector.create<IStore, ConnectedLoginStates>()
+    readonly setPage: (page: PAGE) => void;
+};
+
+type ConnectedProps = ConnectedLoginStates & ConnectedLoginActions;
+
+const connector = Connector.create<IStore, ConnectedLoginStates, ConnectedLoginActions>()
     .connectStates(({ info, preference, status }: IStore) => ({
 
         language: intl.format(preference.language),
         isLoading: Boolean(status.loading),
         error: status.error,
         target: info.target,
-    }));
+    })).connectActions({
+
+        setPage,
+    });
 
 export class FormStructureBase extends React.Component<ConnectedProps> {
 
@@ -82,14 +92,16 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
 
     private _renderHelp(): React.ReactNode {
 
-        if (!this.props.target.help) {
+        if (!this.props.target.name) {
             return null;
         }
 
         return (<div className={StyleForm.help}>
             <a
                 className={StyleForm.link}
-                href={this.props.target.help}
+                onClick={() => {
+                    this.props.setPage(PAGE.HELP);
+                }}
             >
                 {this.props.language.get(PROFILE.NEED_HELP)}
             </a>

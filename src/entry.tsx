@@ -20,4 +20,5 @@ export class Entry extends React.Component {
     }
 }
 
+// tslint:disable-next-line: no-default-export
 export default Entry;

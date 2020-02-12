@@ -6,6 +6,7 @@
 
 import { Connector } from "@sudoo/redux";
 import * as React from "react";
+import { ConnectedHelp } from "./page/help";
 import { ConnectedLimbo } from "./page/limbo";
 import { ConnectedLogin } from "./page/login";
 import { ConnectedTwoFA } from "./page/twoFA";
@@ -37,6 +38,8 @@ export class Switch extends React.Component<ConnectedSwitchProps> {
                 return (<ConnectedLimbo />);
             case PAGE.TWOFA:
                 return (<ConnectedTwoFA />);
+            case PAGE.HELP:
+                return (<ConnectedHelp />);
         }
         return null;
     }

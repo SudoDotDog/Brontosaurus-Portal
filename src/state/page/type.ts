@@ -12,6 +12,7 @@ export enum PAGE {
     LOGIN = "LOGIN",
     LIMBO = "LIMBO",
     TWOFA = "TWOFA",
+    HELP = "HELP",
 }
 
 export interface IPageStore {
