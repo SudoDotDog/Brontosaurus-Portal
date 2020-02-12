@@ -15,6 +15,7 @@ import { FormStructure } from "../components/form";
 import { Subtitle } from "../components/subtitle";
 import { intl } from "../i18n/intl";
 import { PROFILE } from "../i18n/profile";
+import { resetTemporaryRepository } from "../repository/reset/temporary";
 import { IStore } from "../state/declare";
 import { TargetInfo } from "../state/info/type";
 import { setPage } from "../state/page/page";
@@ -120,9 +121,11 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
         );
     }
 
-    private _sendResetEmail() {
+    private async _sendResetEmail() {
 
         this.props.setPage(PAGE.RESET_PASSWORD_TEMPORARY);
+        const result: any = await resetTemporaryRepository(this.state.username, this.state.email);
+        console.log(result);
         return;
     }
 }
