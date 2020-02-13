@@ -87,7 +87,10 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
     private _renderContents() {
 
         if (this.props.target.timeout) {
-            return (<div>123</div>);
+            return (<div className={StyleForm.timeoutContainer}>
+                <div className={StyleForm.timeoutTitle}>{this.props.language.get(PROFILE.TIMEOUT_TITLE)}</div>
+                <div>{this.props.language.get(PROFILE.TIMEOUT_DESCRIPTION)}</div>
+            </div>);
         }
 
         return (<React.Fragment>

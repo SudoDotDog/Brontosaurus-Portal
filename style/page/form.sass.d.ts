@@ -7,3 +7,5 @@ export const upper: string;
 export const lower: string;
 export const help: string;
 export const link: string;
+export const timeoutContainer: string;
+export const timeoutTitle: string;

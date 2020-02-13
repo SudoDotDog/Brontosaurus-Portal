@@ -36,6 +36,9 @@ export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
     [PROFILE.AUTH_CODE]: "Authentication code",
     [PROFILE.AUTH_AND_SIGN_IN]: "Verify and SignIn",
 
+    [PROFILE.TIMEOUT_TITLE]: "Session Expired",
+    [PROFILE.TIMEOUT_DESCRIPTION]: "Oops, your session with the server was not created or has expired. This may be because you refreshed your browser or the redirect request was unauthorized. You can re-enter the previous page to try to rebuild the session. If this problem persists, please contact us directly.",
+
     [PROFILE.CONNECT_SERVICE]: "If this error persists, please contact your system administrator for more help.",
     [PROFILE.UNKNOWN_ERROR]: "Unknown Error",
     [PROFILE.FAILED_TO_FETCH]: "Unable to connect authentication server",
@@ -105,6 +108,9 @@ export const RUSSIAN_RUSSIA: Record<PROFILE, string> = {
     [PROFILE.TWO_FA_DESCRIPTION]: "В вашем аккаунте включена двухфакторная аутентификация, Откройте приложение двухфакторной аутентификации на своем устройстве, чтобы просмотреть код аутентификации.",
     [PROFILE.AUTH_CODE]: "Код аутентификации",
     [PROFILE.AUTH_AND_SIGN_IN]: "Подтвердите и войдите",
+
+    [PROFILE.TIMEOUT_TITLE]: "Сессия истекла",
+    [PROFILE.TIMEOUT_DESCRIPTION]: "К сожалению, ваш сеанс с сервером не был создан или истек. Это может быть связано с тем, что вы обновили свой браузер или запрос на перенаправление не был авторизован. Вы можете повторно войти на предыдущую страницу, чтобы попытаться восстановить сеанс. Если проблема не устранена, свяжитесь с нами напрямую.",
 
     [PROFILE.CONNECT_SERVICE]: "Если эта ошибка повторяется, обратитесь за помощью к системному администратору.",
     [PROFILE.UNKNOWN_ERROR]: "Неизвестная ошибка",
@@ -178,6 +184,9 @@ export const FRENCH_FRANCE: Record<PROFILE, string> = {
     [PROFILE.AUTH_CODE]: "Code d'identification",
     [PROFILE.AUTH_AND_SIGN_IN]: "3Vérifier et se connecter",
 
+    [PROFILE.TIMEOUT_TITLE]: "La session a expiré",
+    [PROFILE.TIMEOUT_DESCRIPTION]: "Oups, votre session avec le serveur n'a pas été créée ou a expiré. Cela peut être dû au fait que vous avez actualisé votre navigateur ou que la demande de redirection n'a pas été autorisée. Vous pouvez ressaisir la page précédente pour essayer de reconstruire la session. Si ce problème persiste, veuillez nous contacter directement.",
+
     [PROFILE.CONNECT_SERVICE]: "Si cette erreur persiste, veuillez contacter votre administrateur système pour obtenir de l'aide.",
     [PROFILE.UNKNOWN_ERROR]: "Erreur inconnue",
     [PROFILE.FAILED_TO_FETCH]: "Impossible de se connecter au serveur d'authentification",
@@ -248,6 +257,9 @@ export const JAPANESE_JAPAN: Record<PROFILE, string> = {
     [PROFILE.AUTH_CODE]: "認証コード",
     [PROFILE.AUTH_AND_SIGN_IN]: "確認してサインイン",
 
+    [PROFILE.TIMEOUT_TITLE]: "セッションの有効期限が切れ",
+    [PROFILE.TIMEOUT_DESCRIPTION]: "サーバーとのセッションが作成されていないか、有効期限が切れています。 これは、ブラウザを更新したか、リダイレクトリクエストが許可されていない可能性があります。 前のページに再入力して、セッションの再構築を試みることができます。 この問題が解決しない場合は、直接お問い合わせください。",
+
     [PROFILE.CONNECT_SERVICE]: "このエラーが解決しない場合は、システム管理者に連絡してください。",
     [PROFILE.UNKNOWN_ERROR]: "不明なエラー",
     [PROFILE.FAILED_TO_FETCH]: "認証サーバーに接続できません",
@@ -315,6 +327,9 @@ export const KOREAN_KOREA: Record<PROFILE, string> = {
     [PROFILE.TWO_FA_DESCRIPTION]: "귀하의 계정에서 이중 인증이 활성화되어 있고, 기기에서 2 단계 인증 앱을 열어 인증 코드를 확인합니다.",
     [PROFILE.AUTH_CODE]: "인증 코드",
     [PROFILE.AUTH_AND_SIGN_IN]: "확인 및 로그인",
+
+    [PROFILE.TIMEOUT_TITLE]: "세션 만료",
+    [PROFILE.TIMEOUT_DESCRIPTION]: "서버와의 세션이 생성되지 않았거나 만료되었습니다. 브라우저를 새로 고치거나 리디렉션 요청이 승인되지 않았기 때문일 수 있습니다. 이전 페이지를 다시 입력하여 세션을 다시 빌드 할 수 있습니다. 이 문제가 지속되면 직접 문의하십시오.",
 
     [PROFILE.CONNECT_SERVICE]: "이 오류가 계속되면 시스템 관리자에게 문의하여 도움을 받으십시오.",
     [PROFILE.UNKNOWN_ERROR]: "알 수없는 오류",
@@ -384,6 +399,9 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
     [PROFILE.AUTH_CODE]: "身份验证代码",
     [PROFILE.AUTH_AND_SIGN_IN]: "验证并登录",
 
+    [PROFILE.TIMEOUT_TITLE]: "会话已过期",
+    [PROFILE.TIMEOUT_DESCRIPTION]: "糟糕，您和服务器的会话没有创建或者已经过期，这可能是因为您刷新了浏览器，或者跳转请求未经授权。您可以重新进入刚才的页面来尝试重建会话。如果此问题一直重复出现，请我们直接联系。",
+
     [PROFILE.CONNECT_SERVICE]: "如果这个错误持续出现，请联系系统管理员来获得更多帮助。",
     [PROFILE.UNKNOWN_ERROR]: "未知的错误",
     [PROFILE.FAILED_TO_FETCH]: "无法连接验证服务器",
@@ -451,6 +469,9 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
     [PROFILE.TWO_FA_DESCRIPTION]: "您的帳戶已啟用雙因素身份驗證，在您的設備上打開雙因素身份驗證應用以查看您的身份驗證代碼。",
     [PROFILE.AUTH_CODE]: "身份驗證代碼",
     [PROFILE.AUTH_AND_SIGN_IN]: "驗證並登入",
+
+    [PROFILE.TIMEOUT_TITLE]: "會話已過期",
+    [PROFILE.TIMEOUT_DESCRIPTION]: "糟糕，您和服務器的會話沒有創建或已經過期，這可能是因為您刷新了瀏覽器，或者替換請求重新授權。您可以重新進入剛才的頁面來嘗試重建會話。如果此問題一直重複出現， 請我們直接聯繫。",
 
     [PROFILE.CONNECT_SERVICE]: "如果這個錯誤持續出現，請聯繫系統管理員來獲得更多幫助。",
     [PROFILE.UNKNOWN_ERROR]: "未知的錯誤",
@@ -521,6 +542,9 @@ export const SPANISH_MEXICO: Record<PROFILE, string> = {
     [PROFILE.TWO_FA_DESCRIPTION]: "La autenticación de dos factores está habilitada en su cuenta, Abra la aplicación de autenticación de dos factores en su dispositivo para ver su código de autenticación.",
     [PROFILE.AUTH_CODE]: "Código de autenticación",
     [PROFILE.AUTH_AND_SIGN_IN]: "Verificar y Iniciar",
+
+    [PROFILE.TIMEOUT_TITLE]: "Sesión expirada",
+    [PROFILE.TIMEOUT_DESCRIPTION]: "Vaya, tu sesión con el servidor no se creó o ha expirado. Esto puede deberse a que actualizó su navegador o la solicitud de redireccionamiento no estaba autorizada. Puede volver a ingresar a la página anterior para intentar reconstruir la sesión. Si este problema persiste, contáctenos directamente.",
 
     [PROFILE.CONNECT_SERVICE]: "Si este error persiste, póngase en contacto con el administrador del sistema para obtener más ayuda.",
     [PROFILE.UNKNOWN_ERROR]: "Error desconocido",
