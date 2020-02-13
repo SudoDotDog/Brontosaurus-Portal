@@ -66,6 +66,10 @@ const errorMap: Record<string, ErrorInfo> = {
         short: PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS,
         long: PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS_DESCRIPTION,
     },
+    "4109": {
+        short: PROFILE.USERNAME_TOKEN_NOT_MATCH,
+        long: PROFILE.USERNAME_TOKEN_NOT_MATCH_DESCRIPTION,
+    },
     "4111": {
         short: PROFILE.UNSAFE_PASSWORD,
         long: PROFILE.UNSAFE_PASSWORD_DESCRIPTION,

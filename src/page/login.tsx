@@ -17,7 +17,7 @@ import { IStore } from "../state/declare";
 import { TargetInfo } from "../state/info/type";
 import { setPage } from "../state/page/page";
 import { PAGE } from "../state/page/type";
-import { clearError, clearLoading, startError, startLoading } from "../state/status/status";
+import { clearError, clearLoading, clearSucceed, startError, startLoading } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
 import { ConnectedForm } from "./form";
 
@@ -35,6 +35,7 @@ type ConnectedLoginActions = {
     readonly startError: (info: ErrorInfo) => void;
     readonly clearLoading: () => void;
     readonly clearError: () => void;
+    readonly clearSucceed: () => void;
 };
 
 type ConnectedProps = ConnectedLoginStates & ConnectedLoginActions;
@@ -52,6 +53,7 @@ const connector = Connector.create<IStore, ConnectedLoginStates, ConnectedLoginA
         clearLoading,
         startError,
         clearError,
+        clearSucceed,
     });
 
 export class LoginBase extends React.Component<ConnectedProps> {
@@ -115,6 +117,7 @@ export class LoginBase extends React.Component<ConnectedProps> {
 
             this.props.clearLoading();
             this.props.clearError();
+            this.props.clearSucceed();
         } catch (err) {
 
 
