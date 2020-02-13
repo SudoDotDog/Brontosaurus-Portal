@@ -15,7 +15,7 @@ import { FormStructure } from "../../components/form";
 import { Subtitle } from "../../components/subtitle";
 import { intl } from "../../i18n/intl";
 import { PROFILE } from "../../i18n/profile";
-import { resetPasswordSucceedInfo, wrapMap } from "../../portal/error";
+import { emptyPasswordInfo, resetPasswordSucceedInfo, wrapMap } from "../../portal/error";
 import { resetFinishRepository } from "../../repository/reset/finish";
 import { IStore } from "../../state/declare";
 import { TargetInfo } from "../../state/info/type";
@@ -47,7 +47,7 @@ type ConnectedResetPasswordResetActions = {
     readonly startSucceed: (info: ErrorInfo) => void;
     readonly clearLoading: () => void;
     readonly clearError: () => void;
-    readonly clearSucceed: (info: ErrorInfo) => void;
+    readonly clearSucceed: () => void;
 };
 
 type ConnectedProps = ConnectedResetPasswordResetStates & ConnectedResetPasswordResetActions;
@@ -89,6 +89,7 @@ export class ResetPasswordResetBase extends React.Component<ConnectedProps, Rese
     public componentDidMount() {
 
         this.props.clearError();
+        this.props.clearSucceed();
         setTimeout(() => {
 
             if (!this._passwordRef) {
@@ -135,6 +136,12 @@ export class ResetPasswordResetBase extends React.Component<ConnectedProps, Rese
 
         this.props.clearError();
         this.props.startLoading('Reset Login');
+
+        if (this.state.password.length === 0) {
+            this.props.clearLoading();
+            this.props.startError(emptyPasswordInfo);
+            return;
+        }
 
         try {
 

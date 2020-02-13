@@ -20,6 +20,7 @@ import { IStore } from "../state/declare";
 import { TargetInfo } from "../state/info/type";
 import { setPage } from "../state/page/page";
 import { PAGE } from "../state/page/type";
+import { clearError, clearSucceed } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
 import { combineClasses } from "../util/style";
 
@@ -35,6 +36,8 @@ type ConnectedFormStates = {
 type ConnectedFormActions = {
 
     readonly setPage: (page: PAGE) => void;
+    readonly clearError: () => void;
+    readonly clearSucceed: () => void;
 };
 
 export type FromStructureProps = {
@@ -57,6 +60,8 @@ const connector = Connector.create<IStore, ConnectedFormStates, ConnectedFormAct
     })).connectActions({
 
         setPage,
+        clearError,
+        clearSucceed,
     });
 
 export class FormStructureBase extends React.Component<ConnectedProps> {
@@ -158,6 +163,8 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
             <a
                 className={StyleForm.link}
                 onClick={() => {
+                    this.props.clearError();
+                    this.props.clearSucceed();
                     this.props.setPage(PAGE.LOGIN);
                 }}
             >

@@ -22,7 +22,7 @@ import { setUsername } from "../state/form/form";
 import { TargetInfo } from "../state/info/type";
 import { setPage } from "../state/page/page";
 import { PAGE } from "../state/page/type";
-import { clearError, clearLoading, startError, startLoading } from "../state/status/status";
+import { clearError, clearLoading, clearSucceed, startError, startLoading } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
 import { combineClasses } from "../util/style";
 
@@ -46,6 +46,7 @@ type ConnectedHelpActions = {
     readonly startError: (info: ErrorInfo) => void;
     readonly clearLoading: () => void;
     readonly clearError: () => void;
+    readonly clearSucceed: () => void;
 };
 
 type ConnectedProps = ConnectedHelpStates & ConnectedHelpActions;
@@ -64,6 +65,7 @@ const connector = Connector.create<IStore, ConnectedHelpStates, ConnectedHelpAct
         clearLoading,
         startError,
         clearError,
+        clearSucceed,
     });
 
 export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
@@ -83,6 +85,7 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
     public componentDidMount() {
 
         this.props.clearError();
+        this.props.clearSucceed();
     }
 
     public render(): JSX.Element {

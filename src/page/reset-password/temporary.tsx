@@ -22,7 +22,7 @@ import { setResetToken } from "../../state/form/form";
 import { TargetInfo } from "../../state/info/type";
 import { setPage } from "../../state/page/page";
 import { PAGE } from "../../state/page/type";
-import { clearError, clearLoading, startError, startLoading } from "../../state/status/status";
+import { clearError, clearLoading, clearSucceed, startError, startLoading } from "../../state/status/status";
 import { ErrorInfo } from "../../state/status/type";
 import { FOCUS_DELAY } from "../../util/magic";
 import { combineClasses } from "../../util/style";
@@ -43,6 +43,7 @@ type ConnectedResetPasswordTemporaryActions = {
     readonly startError: (info: ErrorInfo) => void;
     readonly clearLoading: () => void;
     readonly clearError: () => void;
+    readonly clearSucceed: () => void;
 };
 
 type ConnectedProps = ConnectedResetPasswordTemporaryStates & ConnectedResetPasswordTemporaryActions;
@@ -62,6 +63,7 @@ const connector = Connector.create<IStore, ConnectedResetPasswordTemporaryStates
         clearLoading,
         startError,
         clearError,
+        clearSucceed,
     });
 
 export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps> {
@@ -78,6 +80,7 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps> 
     public componentDidMount() {
 
         this.props.clearError();
+        this.props.clearSucceed();
         setTimeout(() => {
 
             if (!this._passwordRef) {
