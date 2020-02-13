@@ -8,7 +8,7 @@ import { Portal } from "../portal/portal";
 import { TargetInfo } from "../state/info/type";
 import { joinRoute } from "../util/route";
 
-export const application = async (): Promise<TargetInfo> => {
+export const applicationRepository = async (): Promise<TargetInfo> => {
 
     const portal: Portal = Portal.instance;
 
@@ -30,6 +30,7 @@ export const application = async (): Promise<TargetInfo> => {
 
     if (response.ok) {
         return {
+            timeout: false,
             avatar: data.avatar,
             background: data.background,
             name: data.name,

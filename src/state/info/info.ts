@@ -32,6 +32,7 @@ export const setTarget = (target: TargetInfo): ISetTargetReducerAction => ({
 export const getDefaultInfoStore = (): IInfoStore => ({
 
     target: {
+        timeout: false,
         name: '',
     },
 });

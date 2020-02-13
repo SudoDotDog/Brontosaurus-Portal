@@ -7,7 +7,7 @@
 import { Connector } from "@sudoo/redux";
 import * as React from "react";
 import { wrapMap } from "../portal/error";
-import { application } from "../repository/application";
+import { applicationRepository } from "../repository/application";
 import { IStore } from "../state/declare";
 import { setTarget } from "../state/info/info";
 import { TargetInfo } from "../state/info/type";
@@ -64,7 +64,7 @@ export class TargetBase extends React.Component<ConnectedTargetProps> {
 
         try {
 
-            const info: TargetInfo = await application();
+            const info: TargetInfo = await applicationRepository();
             this.props.setTarget(info);
 
             if (info.background) {
@@ -80,8 +80,10 @@ export class TargetBase extends React.Component<ConnectedTargetProps> {
             const error: string = err.message;
             this.props.clearLoading();
 
-            const info: ErrorInfo = wrapMap(error);
-            this.props.startError(info);
+            this.props.setTarget({
+                timeout: true,
+                name: '',
+            });
         }
     }
 }

@@ -74,14 +74,7 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
                     <div className={StyleLogin.inner}>
                         <NeonPaper className={combineClasses(StyleLogin.login, StyleForm.borderOverride)}>
                             <NeonIndicator className={StyleLogin.indicator} loading={this.props.isLoading}>
-                                {this._renderLogo()}
-                                {this._renderTitle()}
-                                {this._renderSucceed()}
-                                {this._renderFlag()}
-                                {this.props.children}
-                                {this._renderHelp()}
-                                {this._renderHelpCenter()}
-                                {this._renderBackToLogin()}
+                                {this._renderContents()}
                             </NeonIndicator>
                         </NeonPaper>
                     </div>
@@ -89,6 +82,24 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
                 {this._renderFooter()}
             </div>
         );
+    }
+
+    private _renderContents() {
+
+        if (this.props.target.timeout) {
+            return (<div>123</div>);
+        }
+
+        return (<React.Fragment>
+            {this._renderLogo()}
+            {this._renderTitle()}
+            {this._renderSucceed()}
+            {this._renderFlag()}
+            {this.props.children}
+            {this._renderHelp()}
+            {this._renderHelpCenter()}
+            {this._renderBackToLogin()}
+        </React.Fragment>);
     }
 
     private _renderFooter(): React.ReactNode {
