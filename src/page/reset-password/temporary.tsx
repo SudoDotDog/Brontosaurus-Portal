@@ -15,7 +15,7 @@ import { FormStructure } from "../../components/form";
 import { Subtitle } from "../../components/subtitle";
 import { intl } from "../../i18n/intl";
 import { PROFILE } from "../../i18n/profile";
-import { wrapMap } from "../../portal/error";
+import { emptyResetTokenInfo, wrapMap } from "../../portal/error";
 import { resetResetRepository } from "../../repository/reset/reset";
 import { IStore } from "../../state/declare";
 import { setResetToken } from "../../state/form/form";
@@ -135,6 +135,12 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps> 
 
         this.props.clearError();
         this.props.startLoading('Reset Reset');
+
+        if (this.props.resetToken.length === 0) {
+            this.props.clearLoading();
+            this.props.startError(emptyResetTokenInfo);
+            return;
+        }
 
         try {
 

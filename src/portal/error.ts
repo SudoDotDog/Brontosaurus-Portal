@@ -23,6 +23,11 @@ export const emptyPasswordInfo: ErrorInfo = {
     long: PROFILE.EMPTY_PASSWORD_DESCRIPTION,
 };
 
+export const emptyResetTokenInfo: ErrorInfo = {
+    short: PROFILE.EMPTY_RESET_TOKEN,
+    long: PROFILE.EMPTY_RESET_TOKEN_DESCRIPTION,
+};
+
 export const wrongTwoFAInfo: ErrorInfo = {
 
     short: PROFILE.WRONG_TWO_FA_PATTERN,

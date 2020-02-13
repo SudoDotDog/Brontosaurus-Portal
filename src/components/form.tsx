@@ -212,7 +212,7 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
             short: PROFILE.INTERNAL_ERROR,
         };
         return (<SucceedFlag
-            show={Boolean(this.props.error)}
+            show={Boolean(this.props.succeed)}
             info={this.props.language.get(info.long as PROFILE)}
             message={this.props.language.get(info.short as PROFILE)}
         />);
