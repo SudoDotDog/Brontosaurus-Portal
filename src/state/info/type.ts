@@ -15,9 +15,13 @@ export type TargetInfo = {
     readonly background?: string;
     readonly help?: string;
     readonly privacy?: string;
+    readonly favicon?: string;
 
     readonly systemName?: string;
     readonly accountName?: string;
+
+    readonly indexPage?: string;
+    readonly entryPage?: string;
 };
 
 export interface IInfoStore {

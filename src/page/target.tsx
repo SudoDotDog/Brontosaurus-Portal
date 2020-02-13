@@ -6,12 +6,11 @@
 
 import { Connector } from "@sudoo/redux";
 import * as React from "react";
-import { wrapMap } from "../portal/error";
 import { applicationRepository } from "../repository/application";
 import { IStore } from "../state/declare";
 import { setTarget } from "../state/info/info";
 import { TargetInfo } from "../state/info/type";
-import { clearError, clearLoading, startError, startLoading } from "../state/status/status";
+import { clearLoading, startError, startLoading } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
 
 type TargetProp = {
@@ -30,7 +29,6 @@ type ConnectedTargetActions = {
     readonly startLoading: (message: string) => void;
     readonly startError: (info: ErrorInfo) => void;
     readonly clearLoading: () => void;
-    readonly clearError: () => void;
 };
 
 type ConnectedTargetProps = TargetProp & ConnectedTargetStates & ConnectedTargetActions;
@@ -43,7 +41,6 @@ const connector = Connector.create<IStore, ConnectedTargetStates, ConnectedTarge
         startLoading,
         clearLoading,
         startError,
-        clearError,
     });
 
 export class TargetBase extends React.Component<ConnectedTargetProps> {

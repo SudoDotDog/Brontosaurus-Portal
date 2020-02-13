@@ -23,6 +23,7 @@ import { PAGE } from "../state/page/type";
 import { clearError, clearSucceed } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
 import { combineClasses } from "../util/style";
+import { Timeout } from "./timeout";
 
 type ConnectedFormStates = {
 
@@ -87,10 +88,11 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
     private _renderContents() {
 
         if (this.props.target.timeout) {
-            return (<div className={StyleForm.timeoutContainer}>
-                <div className={StyleForm.timeoutTitle}>{this.props.language.get(PROFILE.TIMEOUT_TITLE)}</div>
-                <div>{this.props.language.get(PROFILE.TIMEOUT_DESCRIPTION)}</div>
-            </div>);
+            return (<React.Fragment>
+                {this._renderLogo()}
+                {this._renderFlag()}
+                <Timeout />
+            </React.Fragment>);
         }
 
         return (<React.Fragment>

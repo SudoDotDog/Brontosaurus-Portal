@@ -10,6 +10,8 @@ export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
 
     [PROFILE.NEED_HELP]: "Need help signing in?",
     [PROFILE.GO_TO_HELP_CENTER]: "Access Help center",
+    [PROFILE.GO_TO_INDEX_PAGE]: "PLACEHOLDER",
+    [PROFILE.GO_TO_ENTRY_PAGE]: "PLACEHOLDER",
     [PROFILE.BACK_TO_LOGIN]: "Back to login",
     [PROFILE.PASSWORD]: "Password",
     [PROFILE.TEMPORARY_PASSWORD]: "Temporary Password",
@@ -23,6 +25,9 @@ export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
     [PROFILE.EMAIL]: "Email Address",
     [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "Send Temporary Password",
     [PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON]: "Verify Temporary Password",
+
+    [PROFILE.YOU_CAN]: 'YOU_CAN',
+    [PROFILE.YOU_CAN_ALSO]: 'YOU_CAN_ALSO',
 
     [PROFILE.LIMBO_DESCRIPTION]: "You are signing in with a temporary password, please enter a new password and use it the next time you log in.",
     [PROFILE.HELP_DESCRIPTION]: "We apologize for your account login is sue. You can click the link below to access our help center, or enter your username and email address to reset your password.",
@@ -74,6 +79,8 @@ export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS_DESCRIPTION]: "The Application has no Portal access. Usually, that issue is not because of you. Please contact your system administrator for more help.",
     [PROFILE.RESET_PASSWORD_SUCCEED]: "Password reset successfully",
     [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "Great! Your password has been reset successfully. Please log in with the new password you just set.",
+    [PROFILE.SERVER_MIGHT_OFFLINE]: "PLACEHOLDER",
+    [PROFILE.SERVER_MIGHT_OFFLINE_DESCRIPTION]: "PLACEHOLDER",
     [PROFILE.INTERNAL_ERROR]: "Internal Error",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "An internal error has occurred, usually not because of you. If this error persists, please contact your system administrator for more help.",
 };
@@ -84,6 +91,8 @@ export const RUSSIAN_RUSSIA: Record<PROFILE, string> = {
 
     [PROFILE.NEED_HELP]: "Логин нуждается в помощи?",
     [PROFILE.GO_TO_HELP_CENTER]: "Посетите справочный центр",
+    [PROFILE.GO_TO_INDEX_PAGE]: "PLACEHOLDER",
+    [PROFILE.GO_TO_ENTRY_PAGE]: "PLACEHOLDER",
     [PROFILE.BACK_TO_LOGIN]: "Вернуться к входу",
     [PROFILE.PASSWORD]: "Парола",
     [PROFILE.TEMPORARY_PASSWORD]: "Временный Пароль",
@@ -97,6 +106,9 @@ export const RUSSIAN_RUSSIA: Record<PROFILE, string> = {
     [PROFILE.EMAIL]: "Адрес электронной почты",
     [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "Отправить Временный Пароль",
     [PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON]: "Подтвердите Временный Пароль",
+
+    [PROFILE.YOU_CAN]: 'YOU_CAN',
+    [PROFILE.YOU_CAN_ALSO]: 'YOU_CAN_ALSO',
 
     [PROFILE.LIMBO_DESCRIPTION]: "Вы входите с временным паролем, введите новый пароль и используйте его при следующем входе.",
     [PROFILE.HELP_DESCRIPTION]: "Мы приносим извинения за проблемы с входом в учетную запись. Вы можете нажать на ссылку ниже, чтобы получить доступ к нашему справочному центру, или вы можете ввести свое имя пользователя и адрес электронной почты, чтобы сбросить пароль.",
@@ -148,6 +160,8 @@ export const RUSSIAN_RUSSIA: Record<PROFILE, string> = {
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS_DESCRIPTION]: "Приложение не имеет доступа к порталу. Обычно эта проблема не из-за вас. Пожалуйста, обратитесь к системному администратору за дополнительной помощью.",
     [PROFILE.RESET_PASSWORD_SUCCEED]: "Пароль успешно сброшен",
     [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "Это здорово! Ваш пароль был успешно сброшен. Пожалуйста, войдите в систему с новым паролем, который вы только что установили.",
+    [PROFILE.SERVER_MIGHT_OFFLINE]: "PLACEHOLDER",
+    [PROFILE.SERVER_MIGHT_OFFLINE_DESCRIPTION]: "PLACEHOLDER",
     [PROFILE.INTERNAL_ERROR]: "Внутренняя ошибка",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "Произошла внутренняя ошибка, обычно не по вашей вине. Если эта ошибка не устранена, обратитесь за помощью к системному администратору.",
 };
@@ -160,6 +174,8 @@ export const FRENCH_FRANCE: Record<PROFILE, string> = {
 
     [PROFILE.NEED_HELP]: "Besoin d'aide pour vous connecter?",
     [PROFILE.GO_TO_HELP_CENTER]: "Visitez le centre d'aide",
+    [PROFILE.GO_TO_INDEX_PAGE]: "PLACEHOLDER",
+    [PROFILE.GO_TO_ENTRY_PAGE]: "PLACEHOLDER",
     [PROFILE.BACK_TO_LOGIN]: "Retour à la connexion",
     [PROFILE.PASSWORD]: "Mot de passe",
     [PROFILE.TEMPORARY_PASSWORD]: "Mot de passe Temporaire",
@@ -173,6 +189,9 @@ export const FRENCH_FRANCE: Record<PROFILE, string> = {
     [PROFILE.EMAIL]: "E-mail Adresse",
     [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "Envoyer un mot de Passe Temporaire",
     [PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON]: "Vérifier le mot de passe Temporaire",
+
+    [PROFILE.YOU_CAN]: 'YOU_CAN',
+    [PROFILE.YOU_CAN_ALSO]: 'YOU_CAN_ALSO',
 
     [PROFILE.LIMBO_DESCRIPTION]: "Vous vous connectez avec un mot de passe temporaire, veuillez entrer un nouveau mot de passe et l'utiliser lors de votre prochaine connexion.",
     [PROFILE.HELP_DESCRIPTION]: "Nous vous prions de nous excuser pour les problèmes de connexion à votre compte. Vous pouvez cliquer sur le lien ci-dessous pour accéder à notre centre d'aide ou saisir votre nom d'utilisateur et votre adresse e-mail pour réinitialiser votre mot de passe.",
@@ -224,6 +243,8 @@ export const FRENCH_FRANCE: Record<PROFILE, string> = {
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS_DESCRIPTION]: "L'application n'a pas d'accès au portail. Habituellement, ce problème n'est pas à cause de vous. Veuillez contacter votre administrateur système pour plus d'aide.",
     [PROFILE.RESET_PASSWORD_SUCCEED]: "Réinitialisation du mot de passe réussie",
     [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "C'est super! Votre mot de passe a bien été réinitialisé. Connectez-vous avec le nouveau mot de passe que vous venez de définir.",
+    [PROFILE.SERVER_MIGHT_OFFLINE]: "PLACEHOLDER",
+    [PROFILE.SERVER_MIGHT_OFFLINE_DESCRIPTION]: "PLACEHOLDER",
     [PROFILE.INTERNAL_ERROR]: "Erreur interne",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "Une erreur interne s'est produite, généralement pas à cause de vous. Si cette erreur persiste, contactez votre administrateur système pour obtenir de l'aide.",
 };
@@ -234,6 +255,8 @@ export const JAPANESE_JAPAN: Record<PROFILE, string> = {
 
     [PROFILE.NEED_HELP]: "ログインにはヘルプが必要？",
     [PROFILE.GO_TO_HELP_CENTER]: "ヘルプセンターをご覧ください",
+    [PROFILE.GO_TO_INDEX_PAGE]: "PLACEHOLDER",
+    [PROFILE.GO_TO_ENTRY_PAGE]: "PLACEHOLDER",
     [PROFILE.BACK_TO_LOGIN]: "ログインに戻る",
     [PROFILE.PASSWORD]: "パスワード",
     [PROFILE.TEMPORARY_PASSWORD]: "仮パスワード",
@@ -247,6 +270,9 @@ export const JAPANESE_JAPAN: Record<PROFILE, string> = {
     [PROFILE.EMAIL]: "メールアドレス",
     [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "仮パスワードを送信",
     [PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON]: "仮パスワードを確認する",
+
+    [PROFILE.YOU_CAN]: 'YOU_CAN',
+    [PROFILE.YOU_CAN_ALSO]: 'YOU_CAN_ALSO',
 
     [PROFILE.LIMBO_DESCRIPTION]: "あなたは一時的なパスワードでログインしています。新しいパスワードを入力して、次回のログイン時にそれを使用してください。",
     [PROFILE.HELP_DESCRIPTION]: "以下のリンクをクリックしてヘルプセンターにアクセスするか、ユーザー名とメールアドレスを入力してパスワードをリセットすることができます。",
@@ -298,6 +324,8 @@ export const JAPANESE_JAPAN: Record<PROFILE, string> = {
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS_DESCRIPTION]: "アプリケーションにはポータルへのアクセス権がありません。 通常、その問題はあなたのせいではありません。 詳細については、システム管理者にお問い合わせください。",
     [PROFILE.RESET_PASSWORD_SUCCEED]: "パスワードが正常にリセットされました",
     [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "いいね！ パスワードは正常にリセットされました。設定したばかりの新しいパスワードでログインしてください。",
+    [PROFILE.SERVER_MIGHT_OFFLINE]: "PLACEHOLDER",
+    [PROFILE.SERVER_MIGHT_OFFLINE_DESCRIPTION]: "PLACEHOLDER",
     [PROFILE.INTERNAL_ERROR]: "内部エラー",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "このエラーが解決しない場合には、システム管理者に連絡してください。",
 };
@@ -306,6 +334,8 @@ export const KOREAN_KOREA: Record<PROFILE, string> = {
 
     [PROFILE.NEED_HELP]: "로그인에 문제가 발생했습니다？",
     [PROFILE.GO_TO_HELP_CENTER]: "도움말 센터를 방문하십시오",
+    [PROFILE.GO_TO_INDEX_PAGE]: "PLACEHOLDER",
+    [PROFILE.GO_TO_ENTRY_PAGE]: "PLACEHOLDER",
     [PROFILE.BACK_TO_LOGIN]: "로그인으로 돌아 가기",
     [PROFILE.PASSWORD]: "비밀번호",
     [PROFILE.TEMPORARY_PASSWORD]: "임시 비밀번호",
@@ -319,6 +349,9 @@ export const KOREAN_KOREA: Record<PROFILE, string> = {
     [PROFILE.EMAIL]: "이메일 주소",
     [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "임시 비밀번호 보내기",
     [PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON]: "임시 비밀번호 확인",
+
+    [PROFILE.YOU_CAN]: 'YOU_CAN',
+    [PROFILE.YOU_CAN_ALSO]: 'YOU_CAN_ALSO',
 
     [PROFILE.LIMBO_DESCRIPTION]: "임시 비밀번호로 로그인하는 중입니다. 다음에 로그인 할 때 새 비밀번호를 입력하여 사용하십시오.",
     [PROFILE.HELP_DESCRIPTION]: "계정 로그인 문제에 대해 사과드립니다. 아래 링크를 클릭하여 도움말 센터에 액세스하거나 사용자 이름과 이메일 주소를 입력하여 비밀번호를 재설정 할 수 있습니다.",
@@ -370,6 +403,8 @@ export const KOREAN_KOREA: Record<PROFILE, string> = {
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS_DESCRIPTION]: "응용 프로그램에 포털 액세스 권한이 없습니다. 일반적으로 그 문제는 당신 때문이 아닙니다. 도움이 필요하면 시스템 관리자에게 문의하십시오.",
     [PROFILE.RESET_PASSWORD_SUCCEED]: "비밀번호 재설정 성공",
     [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "대단해! 비밀번호가 성공적으로 재설정되었습니다. 방금 설정 한 새 비밀번호로 로그인하십시오.",
+    [PROFILE.SERVER_MIGHT_OFFLINE]: "PLACEHOLDER",
+    [PROFILE.SERVER_MIGHT_OFFLINE_DESCRIPTION]: "PLACEHOLDER",
     [PROFILE.INTERNAL_ERROR]: "내부 오류",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "일반적으로 사용자가 아닌 내부 오류가 발생했습니다.이 오류가 계속 발생하면 시스템 관리자에게 도움을 요청하십시오.",
 };
@@ -378,6 +413,8 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
 
     [PROFILE.NEED_HELP]: "登录需要帮助？",
     [PROFILE.GO_TO_HELP_CENTER]: "访问帮助中心",
+    [PROFILE.GO_TO_INDEX_PAGE]: "PLACEHOLDER",
+    [PROFILE.GO_TO_ENTRY_PAGE]: "PLACEHOLDER",
     [PROFILE.BACK_TO_LOGIN]: "返回登录",
     [PROFILE.PASSWORD]: "密码",
     [PROFILE.TEMPORARY_PASSWORD]: "临时密码",
@@ -391,6 +428,9 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
     [PROFILE.EMAIL]: "电子邮箱地址",
     [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "发送临时密码到我的邮箱",
     [PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON]: "验证临时密码",
+
+    [PROFILE.YOU_CAN]: 'YOU_CAN',
+    [PROFILE.YOU_CAN_ALSO]: 'YOU_CAN_ALSO',
 
     [PROFILE.LIMBO_DESCRIPTION]: "您正在使用临时密码登录，请输入新密码，并在下次登录时使用它。",
     [PROFILE.HELP_DESCRIPTION]: "我们对您遇到账户登录问题感到歉意，您可以点击下方的链接访问我们的帮助中心，也可以输入您的用户名和电子邮箱地址来自助重置密码。",
@@ -442,6 +482,8 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS_DESCRIPTION]: "该应用程序没有玄关应用访问权限。通常该问题不是由于您的操作导致的。请与系统管理员联系以获取更多帮助。",
     [PROFILE.RESET_PASSWORD_SUCCEED]: "密码已重置成功",
     [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "太好了！您的密码已经重置成功，请您使用刚刚设置的新密码登录。",
+    [PROFILE.SERVER_MIGHT_OFFLINE]: "PLACEHOLDER",
+    [PROFILE.SERVER_MIGHT_OFFLINE_DESCRIPTION]: "PLACEHOLDER",
     [PROFILE.INTERNAL_ERROR]: "内部错误",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "发生了内部错误，这通常不是因为您，如果这个错误持续出现，请联系系统管理员来获得更多帮助。",
 };
@@ -450,6 +492,8 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
 
     [PROFILE.NEED_HELP]: "登入遇到問題？",
     [PROFILE.GO_TO_HELP_CENTER]: "訪問幫助中心",
+    [PROFILE.GO_TO_INDEX_PAGE]: "PLACEHOLDER",
+    [PROFILE.GO_TO_ENTRY_PAGE]: "PLACEHOLDER",
     [PROFILE.BACK_TO_LOGIN]: "返回登入",
     [PROFILE.PASSWORD]: "密鑰",
     [PROFILE.TEMPORARY_PASSWORD]: "臨時密鑰",
@@ -463,6 +507,9 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
     [PROFILE.EMAIL]: "電子郵箱地址",
     [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "發送臨時密鑰到我的郵箱",
     [PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON]: "驗證臨時密鑰",
+
+    [PROFILE.YOU_CAN]: 'YOU_CAN',
+    [PROFILE.YOU_CAN_ALSO]: 'YOU_CAN_ALSO',
 
     [PROFILE.LIMBO_DESCRIPTION]: "您正在使用臨時密鑰登入，請輸入新密鑰，並在下次登入時使用它。",
     [PROFILE.HELP_DESCRIPTION]: "我們對您遇到賬戶登入問題感到歉意，您可以點擊下方的鏈接訪問我們的幫助中心，也可以輸入您的用戶名和電子郵箱地址來自助重置密鑰。",
@@ -514,6 +561,8 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS_DESCRIPTION]: "該應用程序沒有玄關應用訪問權限。通常該問題不是由於您的操作導致的。請與系統管理員聯繫以獲取更多幫助。",
     [PROFILE.RESET_PASSWORD_SUCCEED]: "密鑰已重置成功",
     [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "太好了！您的密鑰已經重置成功，請您使用剛剛設置的新密鑰登錄。",
+    [PROFILE.SERVER_MIGHT_OFFLINE]: "PLACEHOLDER",
+    [PROFILE.SERVER_MIGHT_OFFLINE_DESCRIPTION]: "PLACEHOLDER",
     [PROFILE.INTERNAL_ERROR]: "內部錯誤",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "發生了內部錯誤，這通常不是因為您，如果這個錯誤持續出現，請聯繫系統管理員來獲得更多幫助。",
 };
@@ -524,6 +573,8 @@ export const SPANISH_MEXICO: Record<PROFILE, string> = {
 
     [PROFILE.NEED_HELP]: "¿Necesitas ayuda para iniciar sesión?",
     [PROFILE.GO_TO_HELP_CENTER]: "Visita el centro de ayuda",
+    [PROFILE.GO_TO_INDEX_PAGE]: "PLACEHOLDER",
+    [PROFILE.GO_TO_ENTRY_PAGE]: "PLACEHOLDER",
     [PROFILE.BACK_TO_LOGIN]: "Volver al inicio de sesión",
     [PROFILE.PASSWORD]: "Contraseña",
     [PROFILE.TEMPORARY_PASSWORD]: "Contraseña Temporal",
@@ -537,6 +588,9 @@ export const SPANISH_MEXICO: Record<PROFILE, string> = {
     [PROFILE.EMAIL]: "Dirección de correo electrónico",
     [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "Enviar contraseña temporal",
     [PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON]: "Verificar Contraseña Temporal",
+
+    [PROFILE.YOU_CAN]: 'YOU_CAN',
+    [PROFILE.YOU_CAN_ALSO]: 'YOU_CAN_ALSO',
 
     [PROFILE.LIMBO_DESCRIPTION]: "Está iniciando sesión con una contraseña temporal, ingrese una nueva contraseña y úsela la próxima vez que inicie sesión.",
     [PROFILE.HELP_DESCRIPTION]: "Le pedimos disculpas por el problema de inicio de sesión de su cuenta. Puede hacer clic en el enlace a continuación para acceder a nuestro centro de ayuda o ingresar su nombre de usuario y dirección de correo electrónico para restablecer su contraseña por su cuenta.",
@@ -588,6 +642,8 @@ export const SPANISH_MEXICO: Record<PROFILE, string> = {
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS_DESCRIPTION]: "La aplicación no tiene acceso al portal. Por lo general, ese problema no se debe a usted. Póngase en contacto con el administrador del sistema para obtener más ayuda.",
     [PROFILE.RESET_PASSWORD_SUCCEED]: "Restablecimiento de contraseña exitosamente",
     [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "Eso es genial! Su contraseña se ha restablecido correctamente. Inicie sesión con la nueva contraseña que acaba de establecer.",
+    [PROFILE.SERVER_MIGHT_OFFLINE]: "PLACEHOLDER",
+    [PROFILE.SERVER_MIGHT_OFFLINE_DESCRIPTION]: "PLACEHOLDER",
     [PROFILE.INTERNAL_ERROR]: "Error interno",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "Se ha producido un error interno, generalmente no debido a usted. Si este error persiste, comuníquese con el administrador del sistema para obtener más ayuda.",
 };

@@ -34,6 +34,12 @@ export const wrongTwoFAInfo: ErrorInfo = {
     long: PROFILE.WRONG_TWO_FA_PATTERN_DESCRIPTION,
 };
 
+export const serverMightOfflineInfo: ErrorInfo = {
+
+    short: PROFILE.SERVER_MIGHT_OFFLINE,
+    long: PROFILE.SERVER_MIGHT_OFFLINE_DESCRIPTION,
+};
+
 export const resetPasswordSucceedInfo: ErrorInfo = {
 
     short: PROFILE.RESET_PASSWORD_SUCCEED,
