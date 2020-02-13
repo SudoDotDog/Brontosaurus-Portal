@@ -88,7 +88,7 @@ export class TimeoutBase extends React.Component<ConnectedProps> {
 
         return (<div className={StyleForm.help}>
             <span>
-                {this.props.language.get(PROFILE.YOU_CAN)}
+                {this.props.language.get(PROFILE.YOU_CAN)} -&nbsp;
                 <a
                     className={StyleForm.link}
                     onClick={() => {
@@ -109,7 +109,7 @@ export class TimeoutBase extends React.Component<ConnectedProps> {
 
         return (<div className={StyleForm.help}>
             <span>
-                {this.props.language.get(PROFILE.YOU_CAN)}
+                {this.props.language.get(PROFILE.YOU_CAN)} -&nbsp;
                 <a
                     className={StyleForm.link}
                     onClick={() => {
@@ -130,7 +130,7 @@ export class TimeoutBase extends React.Component<ConnectedProps> {
 
         return (<div className={StyleForm.help}>
             <span>
-                {this.props.language.get(PROFILE.YOU_CAN_ALSO)}
+                {this.props.language.get(PROFILE.YOU_CAN_ALSO)} -&nbsp;
                 <a
                     className={StyleForm.link}
                     onClick={() => {
