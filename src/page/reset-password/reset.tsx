@@ -126,7 +126,7 @@ export class ResetPasswordResetBase extends React.Component<ConnectedProps, Rese
                     margin={MARGIN.SMALL}
                     onClick={this._resetPassword}
                 >
-                    {this.props.language.get(PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN)}
+                    {this.props.language.get(PROFILE.SAVE_NEW_PASSWORD_AND_CONTINUE)}
                 </NeonButton>
             </FormStructure>
         );

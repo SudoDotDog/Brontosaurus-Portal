@@ -29,6 +29,7 @@ export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
     [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION]: "If the email address and username you entered match, you will receive an email with a temporary password. If you can't find the corresponding email, please check your spam email or click on the link below to visit our help center.",
     [PROFILE.NEW_PASSWORD]: "New password",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "Save and SignIn",
+    [PROFILE.SAVE_NEW_PASSWORD_AND_CONTINUE]: "Save and Continue",
 
     [PROFILE.RESET_DESCRIPTION]: "You are signing in with a temporary password, please enter a new password and use it the next time you log in.",
 
@@ -101,7 +102,8 @@ export const RUSSIAN_RUSSIA: Record<PROFILE, string> = {
     [PROFILE.HELP_DESCRIPTION]: "Мы приносим извинения за проблемы с входом в учетную запись. Вы можете нажать на ссылку ниже, чтобы получить доступ к нашему справочному центру, или вы можете ввести свое имя пользователя и адрес электронной почты, чтобы сбросить пароль.",
     [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION]: "Если введенный вами адрес электронной почты и имя пользователя совпадают, вы получите электронное письмо с временным паролем. Если вы не можете найти соответствующий адрес электронной почты, проверьте почтовый ящик для спама или перейдите по ссылке ниже, чтобы посетить наш справочный центр.",
     [PROFILE.NEW_PASSWORD]: "Новый пароль",
-    [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "Сохранить и войти",
+    [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "Сохранить и Войти",
+    [PROFILE.SAVE_NEW_PASSWORD_AND_CONTINUE]: "Сохранить и Продолжить",
 
     [PROFILE.RESET_DESCRIPTION]: "Вы входите с временным паролем, введите новый пароль и используйте его при следующем входе.",
 
@@ -176,7 +178,8 @@ export const FRENCH_FRANCE: Record<PROFILE, string> = {
     [PROFILE.HELP_DESCRIPTION]: "Nous vous prions de nous excuser pour les problèmes de connexion à votre compte. Vous pouvez cliquer sur le lien ci-dessous pour accéder à notre centre d'aide ou saisir votre nom d'utilisateur et votre adresse e-mail pour réinitialiser votre mot de passe.",
     [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION]: "Si l'adresse e-mail et le nom d'utilisateur que vous avez saisis correspondent, vous recevrez un e-mail avec un mot de passe temporaire. Si vous ne trouvez pas l'e-mail correspondant, veuillez vérifier votre courrier indésirable ou cliquez sur le lien ci-dessous pour visiter notre centre d'aide.",
     [PROFILE.NEW_PASSWORD]: "Nouveau mot de passe",
-    [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "Enregistrer et se connecter",
+    [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "Enregistrer et se Connecter",
+    [PROFILE.SAVE_NEW_PASSWORD_AND_CONTINUE]: "Enregistrer et Continuer",
 
     [PROFILE.RESET_DESCRIPTION]: "Vous vous connectez avec un mot de passe temporaire, veuillez entrer un nouveau mot de passe et l'utiliser lors de votre prochaine connexion.",
 
@@ -250,6 +253,7 @@ export const JAPANESE_JAPAN: Record<PROFILE, string> = {
     [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION]: "入力したメールアドレスとユーザー名が一致する場合、一時的なパスワードが記載されたメールが届きます。 対応するメールが見つからない場合は、迷惑メールを確認するか、下のリンクをクリックしてヘルプセンターにアクセスしてください。",
     [PROFILE.NEW_PASSWORD]: "新しいパスワード",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "保存してサインイン",
+    [PROFILE.SAVE_NEW_PASSWORD_AND_CONTINUE]: "保存して続行",
 
     [PROFILE.RESET_DESCRIPTION]: "あなたは一時的なパスワードでログインしています。新しいパスワードを入力して、次回のログイン時にそれを使用してください。",
 
@@ -321,6 +325,7 @@ export const KOREAN_KOREA: Record<PROFILE, string> = {
     [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION]: "입력 한 이메일 주소와 사용자 이름이 일치하면 임시 비밀번호가 포함 된 이메일을 받게됩니다. 해당 이메일을 찾을 수없는 경우 스팸 메일 함을 확인하거나 아래 링크를 클릭하여 도움말 센터를 방문하십시오.",
     [PROFILE.NEW_PASSWORD]: "새 비밀번호",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "저장 및 로그인",
+    [PROFILE.SAVE_NEW_PASSWORD_AND_CONTINUE]: "저장하고 계속",
 
     [PROFILE.RESET_DESCRIPTION]: "임시 비밀번호로 로그인하는 중입니다. 다음에 로그인 할 때 새 비밀번호를 입력하여 사용하십시오.",
 
@@ -392,6 +397,7 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
     [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION]: "如果您输入的电子邮箱地址和用户名匹配，您将会收到一封包含临时密码的邮件。如果您无法找到对应的邮件，请检查垃圾邮件信箱，或者点击下方的链接访问我们的帮助中心。",
     [PROFILE.NEW_PASSWORD]: "新密码",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "保存并登录",
+    [PROFILE.SAVE_NEW_PASSWORD_AND_CONTINUE]: "保存并继续",
 
     [PROFILE.RESET_DESCRIPTION]: "您正在使用临时密码登录，请输入新密码，并在下次登录时使用它。",
 
@@ -463,6 +469,7 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
     [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION]: "如果您輸入的電子郵箱地址和用戶名匹配，您將會收到一封包含臨時密鑰的郵件。如果您無法找到對應的郵件，請檢查垃圾郵件信箱，或者點擊下方的鏈接訪問我們的幫助中心。",
     [PROFILE.NEW_PASSWORD]: "新密鑰",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "保存並登入",
+    [PROFILE.SAVE_NEW_PASSWORD_AND_CONTINUE]: "保存並繼續",
 
     [PROFILE.RESET_DESCRIPTION]: "您正在使用臨時密鑰登入，請輸入新密鑰，並在下次登入時使用它。",
 
@@ -536,6 +543,7 @@ export const SPANISH_MEXICO: Record<PROFILE, string> = {
     [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION]: "Si la dirección de correo electrónico y el nombre de usuario que ingresó coinciden, recibirá un correo electrónico con una contraseña temporal. Si no puede encontrar el correo electrónico correspondiente, verifique su correo no deseado o haga clic en el enlace a continuación para visitar nuestro centro de ayuda.",
     [PROFILE.NEW_PASSWORD]: "Nueva contraseña",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "Salvar y Iniciar",
+    [PROFILE.SAVE_NEW_PASSWORD_AND_CONTINUE]: "Guardar y Continuar",
 
     [PROFILE.RESET_DESCRIPTION]: "Está iniciando sesión con una contraseña temporal, ingrese una nueva contraseña y úsela la próxima vez que inicie sesión.",
 
