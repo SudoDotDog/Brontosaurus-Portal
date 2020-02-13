@@ -18,6 +18,7 @@ export interface IStatusStore {
 
     readonly loading: string | null;
     readonly error: ErrorInfo | null;
+    readonly succeed: ErrorInfo | null;
 }
 
 export interface ISetLoadingReducerAction extends Action<ACTIONS.SET_LOADING> {
@@ -28,4 +29,9 @@ export interface ISetLoadingReducerAction extends Action<ACTIONS.SET_LOADING> {
 export interface ISetErrorReducerAction extends Action<ACTIONS.SET_ERROR> {
 
     readonly error: ErrorInfo | null;
+}
+
+export interface ISetSucceedReducerAction extends Action<ACTIONS.SET_SUCCEED> {
+
+    readonly succeed: ErrorInfo | null;
 }

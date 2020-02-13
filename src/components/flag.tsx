@@ -33,3 +33,28 @@ export const ErrorFlag: React.FC<ErrorFlagProp> = (props: ErrorFlagProp) => {
 
     return null;
 };
+
+type SucceedFlagProp = {
+
+    readonly show: boolean;
+    readonly info?: string;
+    readonly message?: string;
+};
+
+export const SucceedFlag: React.FC<SucceedFlagProp> = (props: SucceedFlagProp) => {
+
+    if (props.show) {
+
+        return (
+            <NeonFlag
+                margin={MARGIN.SMALL}
+                info={props.info}
+                className={StyleForm.marginOverride}
+                message={props.message}
+                type={SIGNAL.SUCCEED}>
+            </NeonFlag>
+        );
+    }
+
+    return null;
+};

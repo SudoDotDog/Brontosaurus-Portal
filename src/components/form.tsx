@@ -11,7 +11,7 @@ import { Connector } from "@sudoo/redux";
 import * as React from "react";
 import * as StyleForm from "../../style/page/form.sass";
 import * as StyleLogin from "../../style/page/login.sass";
-import { ErrorFlag } from "../components/flag";
+import { ErrorFlag, SucceedFlag } from "../components/flag";
 import { ConnectedLanguage } from "../components/language";
 import { Title } from "../components/title";
 import { intl } from "../i18n/intl";
@@ -28,6 +28,7 @@ type ConnectedFormStates = {
     readonly language: SudooFormat;
     readonly isLoading: boolean;
     readonly error: ErrorInfo | null;
+    readonly succeed: ErrorInfo | null;
     readonly target: TargetInfo;
 };
 
@@ -51,6 +52,7 @@ const connector = Connector.create<IStore, ConnectedFormStates, ConnectedFormAct
         language: intl.format(preference.language),
         isLoading: Boolean(status.loading),
         error: status.error,
+        succeed: status.succeed,
         target: info.target,
     })).connectActions({
 
@@ -69,6 +71,7 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
                             <NeonIndicator className={StyleLogin.indicator} loading={this.props.isLoading}>
                                 {this._renderLogo()}
                                 {this._renderTitle()}
+                                {this._renderSucceed()}
                                 {this._renderFlag()}
                                 {this.props.children}
                                 {this._renderHelp()}
@@ -196,6 +199,19 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
             short: PROFILE.INTERNAL_ERROR,
         };
         return (<ErrorFlag
+            show={Boolean(this.props.error)}
+            info={this.props.language.get(info.long as PROFILE)}
+            message={this.props.language.get(info.short as PROFILE)}
+        />);
+    }
+
+    private _renderSucceed(): React.ReactNode {
+
+        const info: ErrorInfo = this.props.succeed || {
+            long: PROFILE.CONNECT_SERVICE,
+            short: PROFILE.INTERNAL_ERROR,
+        };
+        return (<SucceedFlag
             show={Boolean(this.props.error)}
             info={this.props.language.get(info.long as PROFILE)}
             message={this.props.language.get(info.short as PROFILE)}

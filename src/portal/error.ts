@@ -29,6 +29,12 @@ export const wrongTwoFAInfo: ErrorInfo = {
     long: PROFILE.WRONG_TWO_FA_PATTERN_DESCRIPTION,
 };
 
+export const resetPasswordSucceedInfo: ErrorInfo = {
+
+    short: PROFILE.RESET_PASSWORD_SUCCEED,
+    long: PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION,
+};
+
 const errorMap: Record<string, ErrorInfo> = {
 
     "Failed to fetch": {

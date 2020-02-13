@@ -15,13 +15,13 @@ import { FormStructure } from "../../components/form";
 import { Subtitle } from "../../components/subtitle";
 import { intl } from "../../i18n/intl";
 import { PROFILE } from "../../i18n/profile";
-import { wrapMap } from "../../portal/error";
+import { resetPasswordSucceedInfo, wrapMap } from "../../portal/error";
 import { resetFinishRepository } from "../../repository/reset/finish";
 import { IStore } from "../../state/declare";
 import { TargetInfo } from "../../state/info/type";
 import { setPage } from "../../state/page/page";
 import { PAGE } from "../../state/page/type";
-import { clearError, clearLoading, startError, startLoading } from "../../state/status/status";
+import { clearError, clearLoading, clearSucceed, startError, startLoading, startSucceed } from "../../state/status/status";
 import { ErrorInfo } from "../../state/status/type";
 import { FOCUS_DELAY } from "../../util/magic";
 import { combineClasses } from "../../util/style";
@@ -44,8 +44,10 @@ type ConnectedResetPasswordResetActions = {
     readonly setPage: (page: PAGE) => void;
     readonly startLoading: (message: string) => void;
     readonly startError: (info: ErrorInfo) => void;
+    readonly startSucceed: (info: ErrorInfo) => void;
     readonly clearLoading: () => void;
     readonly clearError: () => void;
+    readonly clearSucceed: (info: ErrorInfo) => void;
 };
 
 type ConnectedProps = ConnectedResetPasswordResetStates & ConnectedResetPasswordResetActions;
@@ -64,6 +66,8 @@ const connector = Connector.create<IStore, ConnectedResetPasswordResetStates, Co
         clearLoading,
         startError,
         clearError,
+        startSucceed,
+        clearSucceed,
     });
 
 export class ResetPasswordResetBase extends React.Component<ConnectedProps, ResetPasswordResetStates> {
@@ -136,7 +140,8 @@ export class ResetPasswordResetBase extends React.Component<ConnectedProps, Rese
 
             await resetFinishRepository(this.props.username, this.props.resetToken, this.state.password);
             this.props.clearLoading();
-            this.props.setPage(PAGE.RESET_PASSWORD_RESET);
+            this.props.startSucceed(resetPasswordSucceedInfo);
+            this.props.setPage(PAGE.LOGIN);
         } catch (err) {
 
             const error: string = err.message;

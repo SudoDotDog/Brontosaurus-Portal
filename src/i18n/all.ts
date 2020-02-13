@@ -64,6 +64,8 @@ export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
     [PROFILE.APPLICATION_GROUP_NOT_FULFILLED_DESCRIPTION]: "You may need sufficient group to use the application you want to log in to, please contact your system administrator for more help.",
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS]: "No Portal Access",
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS_DESCRIPTION]: "The Application has no Portal access. Usually, that issue is not because of you. Please contact your system administrator for more help.",
+    [PROFILE.RESET_PASSWORD_SUCCEED]: "RESET_PASSWORD_SUCCEED",
+    [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "RESET_PASSWORD_SUCCEED_DESCRIPTION",
     [PROFILE.INTERNAL_ERROR]: "Internal Error",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "An internal error has occurred, usually not because of you. If this error persists, please contact your system administrator for more help.",
 };
@@ -128,6 +130,8 @@ export const RUSSIAN_RUSSIA: Record<PROFILE, string> = {
     [PROFILE.APPLICATION_GROUP_NOT_FULFILLED_DESCRIPTION]: "Вам может потребоваться достаточные разрешения для использования приложения, в которое вы хотите войти, обратитесь к системному администратору за дополнительной помощью.",
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS]: "Нет доступа к порталу",
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS_DESCRIPTION]: "Приложение не имеет доступа к порталу. Обычно эта проблема не из-за вас. Пожалуйста, обратитесь к системному администратору за дополнительной помощью.",
+    [PROFILE.RESET_PASSWORD_SUCCEED]: "RESET_PASSWORD_SUCCEED",
+    [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "RESET_PASSWORD_SUCCEED_DESCRIPTION",
     [PROFILE.INTERNAL_ERROR]: "Внутренняя ошибка",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "Произошла внутренняя ошибка, обычно не по вашей вине. Если эта ошибка не устранена, обратитесь за помощью к системному администратору.",
 };
@@ -194,6 +198,8 @@ export const FRENCH_FRANCE: Record<PROFILE, string> = {
     [PROFILE.APPLICATION_GROUP_NOT_FULFILLED_DESCRIPTION]: "Vous aurez peut-être besoin d'autorisations suffisantes pour utiliser l'application à laquelle vous souhaitez vous connecter. Veuillez contacter votre administrateur système pour obtenir de l'aide.",
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS]: "Pas d'accès au portail",
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS_DESCRIPTION]: "L'application n'a pas d'accès au portail. Habituellement, ce problème n'est pas à cause de vous. Veuillez contacter votre administrateur système pour plus d'aide.",
+    [PROFILE.RESET_PASSWORD_SUCCEED]: "RESET_PASSWORD_SUCCEED",
+    [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "RESET_PASSWORD_SUCCEED_DESCRIPTION",
     [PROFILE.INTERNAL_ERROR]: "Erreur interne",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "Une erreur interne s'est produite, généralement pas à cause de vous. Si cette erreur persiste, contactez votre administrateur système pour obtenir de l'aide.",
 };
@@ -258,6 +264,8 @@ export const JAPANESE_JAPAN: Record<PROFILE, string> = {
     [PROFILE.APPLICATION_GROUP_NOT_FULFILLED_DESCRIPTION]: "ログインするアプリケーションを使用するのに十分な権限が必要な場合があります。詳細については、システム管理者に連絡してください。",
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS]: "ポータルアクセスなし",
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS_DESCRIPTION]: "アプリケーションにはポータルへのアクセス権がありません。 通常、その問題はあなたのせいではありません。 詳細については、システム管理者にお問い合わせください。",
+    [PROFILE.RESET_PASSWORD_SUCCEED]: "RESET_PASSWORD_SUCCEED",
+    [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "RESET_PASSWORD_SUCCEED_DESCRIPTION",
     [PROFILE.INTERNAL_ERROR]: "内部エラー",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "このエラーが解決しない場合には、システム管理者に連絡してください。",
 };
@@ -320,6 +328,8 @@ export const KOREAN_KOREA: Record<PROFILE, string> = {
     [PROFILE.APPLICATION_GROUP_NOT_FULFILLED_DESCRIPTION]: "로그인하려는 응용 프로그램을 사용하려면 충분한 권한이 필요할 수 있습니다. 자세한 내용은 시스템 관리자에게 문의하십시오.",
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS]: "포털 액세스 권한이 없음",
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS_DESCRIPTION]: "응용 프로그램에 포털 액세스 권한이 없습니다. 일반적으로 그 문제는 당신 때문이 아닙니다. 도움이 필요하면 시스템 관리자에게 문의하십시오.",
+    [PROFILE.RESET_PASSWORD_SUCCEED]: "RESET_PASSWORD_SUCCEED",
+    [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "RESET_PASSWORD_SUCCEED_DESCRIPTION",
     [PROFILE.INTERNAL_ERROR]: "내부 오류",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "일반적으로 사용자가 아닌 내부 오류가 발생했습니다.이 오류가 계속 발생하면 시스템 관리자에게 도움을 요청하십시오.",
 };
@@ -382,6 +392,8 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
     [PROFILE.APPLICATION_GROUP_NOT_FULFILLED_DESCRIPTION]: "您可能需要足够的权限来使用您想要登陆的应用程序, 请联系系统管理员来获得更多帮助",
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS]: "无法访问玄关",
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS_DESCRIPTION]: "该应用程序没有玄关应用访问权限。通常该问题不是由于您的操作导致的。请与系统管理员联系以获取更多帮助。",
+    [PROFILE.RESET_PASSWORD_SUCCEED]: "RESET_PASSWORD_SUCCEED",
+    [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "RESET_PASSWORD_SUCCEED_DESCRIPTION",
     [PROFILE.INTERNAL_ERROR]: "内部错误",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "发生了内部错误，这通常不是因为您，如果这个错误持续出现，请联系系统管理员来获得更多帮助。",
 };
@@ -444,6 +456,8 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
     [PROFILE.APPLICATION_GROUP_NOT_FULFILLED_DESCRIPTION]: "您可能需要足夠的權限來使用您想要登陸的應用程序, 請聯繫系統管理員來獲得更多幫助。",
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS]: "無法訪問玄關",
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS_DESCRIPTION]: "該應用程序沒有玄關應用訪問權限。通常該問題不是由於您的操作導致的。請與系統管理員聯繫以獲取更多幫助。",
+    [PROFILE.RESET_PASSWORD_SUCCEED]: "RESET_PASSWORD_SUCCEED",
+    [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "RESET_PASSWORD_SUCCEED_DESCRIPTION",
     [PROFILE.INTERNAL_ERROR]: "內部錯誤",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "發生了內部錯誤，這通常不是因為您，如果這個錯誤持續出現，請聯繫系統管理員來獲得更多幫助。",
 };
@@ -508,6 +522,8 @@ export const SPANISH_MEXICO: Record<PROFILE, string> = {
     [PROFILE.APPLICATION_GROUP_NOT_FULFILLED_DESCRIPTION]: "Es posible que necesite permisos suficientes para usar la aplicación en la que desea iniciar sesión, comuníquese con el administrador del sistema para obtener más ayuda.",
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS]: "Sin acceso al portal",
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS_DESCRIPTION]: "La aplicación no tiene acceso al portal. Por lo general, ese problema no se debe a usted. Póngase en contacto con el administrador del sistema para obtener más ayuda.",
+    [PROFILE.RESET_PASSWORD_SUCCEED]: "RESET_PASSWORD_SUCCEED",
+    [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "RESET_PASSWORD_SUCCEED_DESCRIPTION",
     [PROFILE.INTERNAL_ERROR]: "Error interno",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "Se ha producido un error interno, generalmente no debido a usted. Si este error persiste, comuníquese con el administrador del sistema para obtener más ayuda.",
 };

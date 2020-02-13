@@ -29,6 +29,7 @@ export enum ACTIONS {
     // status
     SET_LOADING = 'SET_LOADING',
     SET_ERROR = 'SET_ERROR',
+    SET_SUCCEED = 'SET_SUCCEED',
 
     // info
     SET_TARGET = 'SET_TARGET',
