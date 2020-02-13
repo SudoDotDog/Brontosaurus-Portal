@@ -114,6 +114,7 @@ export class TwoFABase extends React.Component<ConnectedProps, TwoFAStates> {
 
     private async _twoFA(code: string): Promise<void> {
 
+        this.props.clearError();
         this.props.startLoading('Login');
 
         if (!/^[0-9]{6}$/.test(code)) {

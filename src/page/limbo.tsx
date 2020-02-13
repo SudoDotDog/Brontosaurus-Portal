@@ -114,6 +114,7 @@ export class LimboBase extends React.Component<ConnectedProps, LimboStates> {
 
     private async _limbo(password: string): Promise<void> {
 
+        this.props.clearError();
         this.props.startLoading('Login');
 
         try {

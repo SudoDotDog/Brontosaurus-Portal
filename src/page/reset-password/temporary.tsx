@@ -90,7 +90,7 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps> 
     public render(): JSX.Element {
 
         return (
-            <FormStructure showHelpCenter>
+            <FormStructure showBackToLogin>
                 <Subtitle
                     text={this.props.language.get(PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION)}
                 >
@@ -133,9 +133,11 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps> 
 
     private async _verifyTemporaryPassword() {
 
+        this.props.clearError();
+        this.props.startLoading('Reset Reset');
+
         try {
 
-            this.props.startLoading('Reset Reset');
             await resetResetRepository(this.props.username, this.props.resetToken);
             this.props.clearLoading();
             this.props.setPage(PAGE.RESET_PASSWORD_RESET);

@@ -129,9 +129,11 @@ export class ResetPasswordResetBase extends React.Component<ConnectedProps, Rese
 
     private async _resetPassword() {
 
+        this.props.clearError();
+        this.props.startLoading('Reset Login');
+
         try {
 
-            this.props.startLoading('Reset Login');
             await resetFinishRepository(this.props.username, this.props.resetToken, this.state.password);
             this.props.clearLoading();
             this.props.setPage(PAGE.RESET_PASSWORD_RESET);

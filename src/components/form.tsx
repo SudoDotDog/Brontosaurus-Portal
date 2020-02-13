@@ -40,6 +40,7 @@ export type FromStructureProps = {
 
     readonly showHelp?: boolean;
     readonly showHelpCenter?: boolean;
+    readonly showBackToLogin?: boolean;
 };
 
 type ConnectedProps = ConnectedFormStates & ConnectedFormActions & FromStructureProps;
@@ -72,6 +73,7 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
                                 {this.props.children}
                                 {this._renderHelp()}
                                 {this._renderHelpCenter()}
+                                {this._renderBackToLogin()}
                             </NeonIndicator>
                         </NeonPaper>
                     </div>
@@ -139,6 +141,24 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
                 }}
             >
                 {this.props.language.get(PROFILE.GO_TO_HELP_CENTER)}
+            </a>
+        </div>);
+    }
+
+    private _renderBackToLogin(): React.ReactNode {
+
+        if (!this.props.showBackToLogin) {
+            return null;
+        }
+
+        return (<div className={StyleForm.help}>
+            <a
+                className={StyleForm.link}
+                onClick={() => {
+                    this.props.setPage(PAGE.LOGIN);
+                }}
+            >
+                {this.props.language.get(PROFILE.BACK_TO_LOGIN)}
             </a>
         </div>);
     }

@@ -15,7 +15,7 @@ import { FormStructure } from "../components/form";
 import { Subtitle } from "../components/subtitle";
 import { intl } from "../i18n/intl";
 import { PROFILE } from "../i18n/profile";
-import { wrapMap } from "../portal/error";
+import { emptyEmailInfo, emptyUsernameInfo, wrapMap } from "../portal/error";
 import { resetTemporaryRepository } from "../repository/reset/temporary";
 import { IStore } from "../state/declare";
 import { setUsername } from "../state/form/form";
@@ -88,7 +88,7 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
     public render(): JSX.Element {
 
         return (
-            <FormStructure showHelpCenter>
+            <FormStructure showBackToLogin>
                 <Subtitle
                     text={this.props.language.get(PROFILE.HELP_DESCRIPTION)}
                 >
@@ -140,9 +140,23 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
 
     private async _sendResetEmail() {
 
+        this.props.clearError();
+        this.props.startLoading('Reset Temporary');
+
+        if (this.props.username.length === 0) {
+            this.props.clearLoading();
+            this.props.startError(emptyUsernameInfo);
+            return;
+        }
+
+        if (this.state.email.length === 0) {
+            this.props.clearLoading();
+            this.props.startError(emptyEmailInfo);
+            return;
+        }
+
         try {
 
-            this.props.startLoading('Reset Temporary');
             await resetTemporaryRepository(this.props.username, this.state.email);
             this.props.clearLoading();
             this.props.setPage(PAGE.RESET_PASSWORD_TEMPORARY);

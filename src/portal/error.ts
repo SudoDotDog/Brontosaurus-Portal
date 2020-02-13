@@ -12,6 +12,11 @@ export const emptyUsernameInfo: ErrorInfo = {
     long: PROFILE.EMPTY_USERNAME_DESCRIPTION,
 };
 
+export const emptyEmailInfo: ErrorInfo = {
+    short: PROFILE.EMPTY_EMAIL,
+    long: PROFILE.EMPTY_EMAIL_DESCRIPTION,
+};
+
 export const emptyPasswordInfo: ErrorInfo = {
 
     short: PROFILE.EMPTY_PASSWORD,

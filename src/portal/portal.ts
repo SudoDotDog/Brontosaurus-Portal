@@ -22,8 +22,6 @@ export class Portal {
 
         if (applicationKey && callbackPath) {
 
-            console.log(callbackPath);
-
             if (callbackPath.toUpperCase().startsWith('IFRAME')) {
                 this._instance = new Portal(PORTAL_MODE.IFRAME).setParams(applicationKey, callbackPath);
             } else if (callbackPath.toUpperCase().startsWith('POST')) {
