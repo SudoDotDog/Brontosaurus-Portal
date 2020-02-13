@@ -16,6 +16,7 @@ import { Subtitle } from "../../components/subtitle";
 import { intl } from "../../i18n/intl";
 import { PROFILE } from "../../i18n/profile";
 import { wrapMap } from "../../portal/error";
+import { resetFinishRepository } from "../../repository/reset/finish";
 import { IStore } from "../../state/declare";
 import { TargetInfo } from "../../state/info/type";
 import { setPage } from "../../state/page/page";
@@ -27,6 +28,8 @@ import { combineClasses } from "../../util/style";
 
 type ConnectedResetPasswordResetStates = {
 
+    readonly username: string;
+    readonly resetToken: string;
     readonly language: SudooFormat;
     readonly target: TargetInfo;
 };
@@ -48,8 +51,10 @@ type ConnectedResetPasswordResetActions = {
 type ConnectedProps = ConnectedResetPasswordResetStates & ConnectedResetPasswordResetActions;
 
 const connector = Connector.create<IStore, ConnectedResetPasswordResetStates, ConnectedResetPasswordResetActions>()
-    .connectStates(({ info, preference }: IStore) => ({
+    .connectStates(({ info, preference, form }: IStore) => ({
 
+        username: form.username,
+        resetToken: form.resetToken,
         language: intl.format(preference.language),
         target: info.target,
     })).connectActions({
@@ -122,11 +127,12 @@ export class ResetPasswordResetBase extends React.Component<ConnectedProps, Rese
         );
     }
 
-    private _resetPassword() {
+    private async _resetPassword() {
+
         try {
 
             this.props.startLoading('Reset Login');
-            // TODO: Route
+            await resetFinishRepository(this.props.username, this.props.resetToken, this.state.password);
             this.props.clearLoading();
             this.props.setPage(PAGE.RESET_PASSWORD_RESET);
         } catch (err) {

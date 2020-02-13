@@ -22,11 +22,13 @@ export class Portal {
 
         if (applicationKey && callbackPath) {
 
-            if (callbackPath.toUpperCase() === 'IFRAME') {
+            console.log(callbackPath);
+
+            if (callbackPath.toUpperCase().startsWith('IFRAME')) {
                 this._instance = new Portal(PORTAL_MODE.IFRAME).setParams(applicationKey, callbackPath);
-            } else if (callbackPath.toUpperCase() === 'POST') {
+            } else if (callbackPath.toUpperCase().startsWith('POST')) {
                 this._instance = new Portal(PORTAL_MODE.POST).setParams(applicationKey, callbackPath);
-            } else if (callbackPath.toUpperCase() === 'NONE') {
+            } else if (callbackPath.toUpperCase().startsWith('NONE')) {
                 this._instance = new Portal(PORTAL_MODE.NONE).setParams(applicationKey, callbackPath);
             } else {
                 this._instance = new Portal(PORTAL_MODE.REDIRECT).setParams(applicationKey, callbackPath);

@@ -6,7 +6,7 @@
 
 import { Reducer } from '@sudoo/redux';
 import { ACTIONS, IStore } from '../declare';
-import { IFormStore, ISetFormPasswordReducerAction, ISetFormUsernameReducerAction } from './type';
+import { IFormStore, ISetFormPasswordReducerAction, ISetFormResetTokenReducerAction, ISetFormUsernameReducerAction } from './type';
 
 const reduceUsername: Reducer<IStore, ISetFormUsernameReducerAction> = (state: IStore | undefined, action: ISetFormUsernameReducerAction): IStore => ({
 
@@ -28,10 +28,21 @@ const reducePassword: Reducer<IStore, ISetFormPasswordReducerAction> = (state: I
     },
 });
 
+const reduceResetToken: Reducer<IStore, ISetFormResetTokenReducerAction> = (state: IStore | undefined, action: ISetFormResetTokenReducerAction): IStore => ({
+
+    ...state as IStore,
+    form: {
+
+        ...(state as IStore).form,
+        resetToken: action.resetToken,
+    },
+});
+
 export const formReducers = {
 
     [ACTIONS.SET_USERNAME]: reduceUsername,
     [ACTIONS.SET_PASSWORD]: reducePassword,
+    [ACTIONS.SET_RESET_TOKEN]: reduceResetToken,
 };
 
 export const setUsername = (username: string): ISetFormUsernameReducerAction => ({
@@ -46,8 +57,15 @@ export const setPassword = (password: string): ISetFormPasswordReducerAction => 
     password,
 });
 
+export const setResetToken = (resetToken: string): ISetFormResetTokenReducerAction => ({
+
+    type: ACTIONS.SET_RESET_TOKEN,
+    resetToken,
+});
+
 export const getDefaultFormStore = (): IFormStore => ({
 
     username: '',
     password: '',
+    resetToken: '',
 });

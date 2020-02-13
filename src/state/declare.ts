@@ -24,6 +24,7 @@ export enum ACTIONS {
     // form
     SET_USERNAME = 'SET_USERNAME',
     SET_PASSWORD = 'SET_PASSWORD',
+    SET_RESET_TOKEN = 'SET_RESET_TOKEN',
 
     // status
     SET_LOADING = 'SET_LOADING',

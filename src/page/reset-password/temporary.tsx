@@ -18,6 +18,7 @@ import { PROFILE } from "../../i18n/profile";
 import { wrapMap } from "../../portal/error";
 import { resetResetRepository } from "../../repository/reset/reset";
 import { IStore } from "../../state/declare";
+import { setResetToken } from "../../state/form/form";
 import { TargetInfo } from "../../state/info/type";
 import { setPage } from "../../state/page/page";
 import { PAGE } from "../../state/page/type";
@@ -29,18 +30,15 @@ import { combineClasses } from "../../util/style";
 type ConnectedResetPasswordTemporaryStates = {
 
     readonly username: string;
+    readonly resetToken: string;
     readonly language: SudooFormat;
     readonly target: TargetInfo;
-};
-
-type ResetPasswordTemporaryStates = {
-
-    readonly password: string;
 };
 
 type ConnectedResetPasswordTemporaryActions = {
 
     readonly setPage: (page: PAGE) => void;
+    readonly setResetToken: (resetToken: string) => void;
     readonly startLoading: (message: string) => void;
     readonly startError: (info: ErrorInfo) => void;
     readonly clearLoading: () => void;
@@ -53,23 +51,20 @@ const connector = Connector.create<IStore, ConnectedResetPasswordTemporaryStates
     .connectStates(({ info, preference, form }: IStore) => ({
 
         username: form.username,
+        resetToken: form.resetToken,
         language: intl.format(preference.language),
         target: info.target,
     })).connectActions({
 
         setPage,
+        setResetToken,
         startLoading,
         clearLoading,
         startError,
         clearError,
     });
 
-export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps, ResetPasswordTemporaryStates> {
-
-    public readonly state: ResetPasswordTemporaryStates = {
-
-        password: '',
-    };
+export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps> {
 
     private _passwordRef: HTMLInputElement | null = null;
 
@@ -119,9 +114,9 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps, 
                     className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
                     label={this.props.language.get(PROFILE.TEMPORARY_PASSWORD)}
                     margin={MARGIN.SMALL}
-                    value={this.state.password}
+                    value={this.props.resetToken}
                     onEnter={this._verifyTemporaryPassword}
-                    onChange={(value: string) => this.setState({ password: value })}
+                    onChange={(value: string) => this.props.setResetToken(value)}
                 />
                 <NeonButton
                     className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
@@ -141,7 +136,7 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps, 
         try {
 
             this.props.startLoading('Reset Reset');
-            await resetResetRepository(this.props.username, this.state.password);
+            await resetResetRepository(this.props.username, this.props.resetToken);
             this.props.clearLoading();
             this.props.setPage(PAGE.RESET_PASSWORD_RESET);
         } catch (err) {
