@@ -9,7 +9,7 @@ import { PROFILE } from "./profile";
 export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
 
     [PROFILE.NEED_HELP]: "Need help signing in?",
-    [PROFILE.GO_TO_HELP_CENTER]: "Access Help center",
+    [PROFILE.GO_TO_HELP_CENTER]: "Access our Help Center",
     [PROFILE.GO_TO_INDEX_PAGE]: "Go to our official website",
     [PROFILE.GO_TO_ENTRY_PAGE]: "Go to our login page",
     [PROFILE.BACK_TO_LOGIN]: "Back to login",
@@ -446,7 +446,7 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
     [PROFILE.AUTH_AND_SIGN_IN]: "验证并登录",
 
     [PROFILE.TIMEOUT_TITLE]: "会话已过期",
-    [PROFILE.TIMEOUT_DESCRIPTION]: "糟糕，您和服务器的会话没有创建或者已经过期，这可能是因为您刷新了浏览器，或者跳转请求未经授权。您可以重新进入刚才的页面来尝试重建会话。如果此问题一直重复出现，请我们直接联系。",
+    [PROFILE.TIMEOUT_DESCRIPTION]: "糟糕，您和服务器的会话没有创建或者已经过期，这可能是因为您刷新了浏览器，或者跳转请求未经授权。您可以重新进入刚才的页面来尝试重建会话。如果此问题一直重复出现，请与系统管理员联系以获取更多帮助。",
 
     [PROFILE.CONNECT_SERVICE]: "如果这个错误持续出现，请联系系统管理员来获得更多帮助。",
     [PROFILE.UNKNOWN_ERROR]: "未知的错误",
@@ -483,7 +483,7 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
     [PROFILE.RESET_PASSWORD_SUCCEED]: "密码已重置成功",
     [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "太好了！您的密码已经重置成功，请您使用刚刚设置的新密码登录。",
     [PROFILE.SERVER_MIGHT_OFFLINE]: "服务器未响应",
-    [PROFILE.SERVER_MIGHT_OFFLINE_DESCRIPTION]: "我们无法从支持服务器获得任何响应，这可能是暂时现象，如果此问题持续出现，请直接联系我们。",
+    [PROFILE.SERVER_MIGHT_OFFLINE_DESCRIPTION]: "我们无法从支持服务器获得任何响应，这可能是暂时现象，如果此问题持续出现，请联系系统管理员来获得更多帮助。",
     [PROFILE.INTERNAL_ERROR]: "内部错误",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "发生了内部错误，这通常不是因为您，如果这个错误持续出现，请联系系统管理员来获得更多帮助。",
 };
@@ -525,7 +525,7 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
     [PROFILE.AUTH_AND_SIGN_IN]: "驗證並登入",
 
     [PROFILE.TIMEOUT_TITLE]: "會話已過期",
-    [PROFILE.TIMEOUT_DESCRIPTION]: "糟糕，您和服務器的會話沒有創建或已經過期，這可能是因為您刷新了瀏覽器，或者替換請求重新授權。您可以重新進入剛才的頁面來嘗試重建會話。如果此問題一直重複出現， 請我們直接聯繫。",
+    [PROFILE.TIMEOUT_DESCRIPTION]: "糟糕，您和服務器的會話沒有創建或已經過期，這可能是因為您刷新了瀏覽器，或者替換請求重新授權。您可以重新進入剛才的頁面來嘗試重建會話。如果此問題一直重複出現， 請聯繫系統管理員來獲得更多幫助。",
 
     [PROFILE.CONNECT_SERVICE]: "如果這個錯誤持續出現，請聯繫系統管理員來獲得更多幫助。",
     [PROFILE.UNKNOWN_ERROR]: "未知的錯誤",
@@ -562,7 +562,7 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
     [PROFILE.RESET_PASSWORD_SUCCEED]: "密鑰已重置成功",
     [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "太好了！您的密鑰已經重置成功，請您使用剛剛設置的新密鑰登錄。",
     [PROFILE.SERVER_MIGHT_OFFLINE]: "服務器未響應",
-    [PROFILE.SERVER_MIGHT_OFFLINE_DESCRIPTION]: "我們無法從支持服務器獲得任何響應，這可能是暫時現象，如果此問題持續出現，請直接聯繫我們。",
+    [PROFILE.SERVER_MIGHT_OFFLINE_DESCRIPTION]: "我們無法從支持服務器獲得任何響應，這可能是暫時現象，如果此問題持續出現，請聯繫系統管理員來獲得更多幫助。",
     [PROFILE.INTERNAL_ERROR]: "內部錯誤",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "發生了內部錯誤，這通常不是因為您，如果這個錯誤持續出現，請聯繫系統管理員來獲得更多幫助。",
 };
