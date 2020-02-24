@@ -21,6 +21,11 @@ import { clearError, clearLoading, clearSucceed, startError, startLoading } from
 import { ErrorInfo } from "../state/status/type";
 import { ConnectedForm } from "./form";
 
+type LoginState = {
+
+    readonly changeRequired: boolean;
+};
+
 type ConnectedLoginStates = {
 
     readonly saveUsername: boolean;
@@ -56,7 +61,12 @@ const connector = Connector.create<IStore, ConnectedLoginStates, ConnectedLoginA
         clearSucceed,
     });
 
-export class LoginBase extends React.Component<ConnectedProps> {
+export class LoginBase extends React.Component<ConnectedProps, LoginState> {
+
+    public readonly state: LoginState = {
+
+        changeRequired: false,
+    };
 
     public constructor(props: ConnectedProps) {
 
@@ -79,7 +89,11 @@ export class LoginBase extends React.Component<ConnectedProps> {
             return null;
         }
 
-        return (<ConnectedForm login={this._login} />);
+        return (<ConnectedForm
+            login={this._login}
+            changeRequired={this.state.changeRequired}
+            onChange={() => this.setState({ changeRequired: false })}
+        />);
     }
 
     private async _login(username: string, password: string): Promise<void> {
@@ -126,6 +140,8 @@ export class LoginBase extends React.Component<ConnectedProps> {
 
             const info: ErrorInfo = wrapMap(error);
             this.props.startError(info);
+
+            this.setState({ changeRequired: true });
         }
     }
 }

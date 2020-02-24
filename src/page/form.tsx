@@ -24,6 +24,9 @@ import { combineClasses } from "../util/style";
 type FormProp = {
 
     readonly login: (username: string, password: string) => void;
+
+    readonly onChange: () => void;
+    readonly changeRequired: boolean;
 };
 
 type FormConnectedState = {
@@ -67,6 +70,8 @@ export class FormBase extends React.Component<ConnectProps> {
         super(props);
 
         this._login = this._login.bind(this);
+        this._setUsername = this._setUsername.bind(this);
+        this._setPassword = this._setPassword.bind(this);
     }
 
     public componentDidMount() {
@@ -105,7 +110,7 @@ export class FormBase extends React.Component<ConnectProps> {
                     margin={MARGIN.SMALL}
                     value={this.props.username}
                     onEnter={this._login}
-                    onChange={(value) => this.props.setUsername(value)} />
+                    onChange={this._setUsername} />
                 <NeonInput
                     autoCapitalize={false}
                     autoComplete={false}
@@ -117,7 +122,7 @@ export class FormBase extends React.Component<ConnectProps> {
                     margin={MARGIN.SMALL}
                     value={this.props.password}
                     onEnter={this._login}
-                    onChange={(value) => this.props.setPassword(value)} />
+                    onChange={this._setPassword} />
                 <NeonCheckbox
                     value={this.props.saveUsername}
                     onChange={(next: boolean) => this.props.setSaveUsername(next)}
@@ -126,6 +131,7 @@ export class FormBase extends React.Component<ConnectProps> {
                 </NeonCheckbox>
                 <NeonButton
                     className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
+                    disabled={this.props.changeRequired}
                     size={SIZE.MEDIUM}
                     width={WIDTH.FULL}
                     margin={MARGIN.SMALL}
@@ -136,10 +142,22 @@ export class FormBase extends React.Component<ConnectProps> {
         );
     }
 
+    private _setUsername(value: string) {
+
+        this.props.setUsername(value);
+        this.props.onChange();
+    }
+
+    private _setPassword(value: string) {
+
+        this.props.setPassword(value);
+        this.props.onChange();
+    }
+
     private _login() {
 
         this.props.login(this.props.username, this.props.password);
     }
 }
 
-export const ConnectedForm: React.ComponentType<Pick<FormProp, 'login'>> = connector.connect(FormBase);
+export const ConnectedForm: React.ComponentType<FormProp> = connector.connect(FormBase);
