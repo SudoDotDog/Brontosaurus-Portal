@@ -9,3 +9,4 @@ export const help: string;
 export const link: string;
 export const timeoutContainer: string;
 export const timeoutTitle: string;
+export const loginButton: string;

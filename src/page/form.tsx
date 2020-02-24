@@ -131,6 +131,7 @@ export class FormBase extends React.Component<ConnectProps> {
                 </NeonCheckbox>
                 <NeonButton
                     className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
+                    buttonClassName={StyleForm.loginButton}
                     disabled={this.props.changeRequired}
                     size={SIZE.MEDIUM}
                     width={WIDTH.FULL}
