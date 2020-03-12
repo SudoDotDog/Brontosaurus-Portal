@@ -96,7 +96,7 @@ export class LoginBase extends React.Component<ConnectedProps, LoginState> {
         />);
     }
 
-    private async _login(username: string, password: string): Promise<void> {
+    private async _login(username: string, namespace: string, password: string): Promise<void> {
 
         this.props.clearError();
         this.props.startLoading('Login');
@@ -115,7 +115,7 @@ export class LoginBase extends React.Component<ConnectedProps, LoginState> {
 
         try {
 
-            const action: LoginResponse = await login(username, password);
+            const action: LoginResponse = await login(username, namespace, password);
             if (action.next === 'redirect') {
                 if (this.props.saveUsername) {
                     saveUsername(username);

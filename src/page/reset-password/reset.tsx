@@ -29,6 +29,7 @@ import { combineClasses } from "../../util/style";
 type ConnectedResetPasswordResetStates = {
 
     readonly username: string;
+    readonly namespace: string;
     readonly resetToken: string;
     readonly language: SudooFormat;
     readonly target: TargetInfo;
@@ -56,6 +57,7 @@ const connector = Connector.create<IStore, ConnectedResetPasswordResetStates, Co
     .connectStates(({ info, preference, form }: IStore) => ({
 
         username: form.username,
+        namespace: form.namespace,
         resetToken: form.resetToken,
         language: intl.format(preference.language),
         target: info.target,
@@ -145,7 +147,7 @@ export class ResetPasswordResetBase extends React.Component<ConnectedProps, Rese
 
         try {
 
-            await resetFinishRepository(this.props.username, this.props.resetToken, this.state.password);
+            await resetFinishRepository(this.props.username, this.props.namespace, this.props.resetToken, this.state.password);
             this.props.clearLoading();
             this.props.startSucceed(resetPasswordSucceedInfo);
             this.props.setPage(PAGE.LOGIN);

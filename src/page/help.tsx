@@ -29,6 +29,7 @@ import { combineClasses } from "../util/style";
 type ConnectedHelpStates = {
 
     readonly username: string;
+    readonly namespace: string;
     readonly language: SudooFormat;
     readonly target: TargetInfo;
 };
@@ -55,6 +56,7 @@ const connector = Connector.create<IStore, ConnectedHelpStates, ConnectedHelpAct
     .connectStates(({ info, preference, form }: IStore) => ({
 
         username: form.username,
+        namespace: form.namespace,
         language: intl.format(preference.language),
         target: info.target,
     })).connectActions({
@@ -160,7 +162,7 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
 
         try {
 
-            await resetTemporaryRepository(this.props.username, this.state.email);
+            await resetTemporaryRepository(this.props.username, this.props.namespace, this.state.email);
             this.props.clearLoading();
             this.props.setPage(PAGE.RESET_PASSWORD_TEMPORARY);
         } catch (err) {

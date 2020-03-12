@@ -30,6 +30,7 @@ import { combineClasses } from "../../util/style";
 type ConnectedResetPasswordTemporaryStates = {
 
     readonly username: string;
+    readonly namespace: string;
     readonly resetToken: string;
     readonly language: SudooFormat;
     readonly target: TargetInfo;
@@ -52,6 +53,7 @@ const connector = Connector.create<IStore, ConnectedResetPasswordTemporaryStates
     .connectStates(({ info, preference, form }: IStore) => ({
 
         username: form.username,
+        namespace: form.namespace,
         resetToken: form.resetToken,
         language: intl.format(preference.language),
         target: info.target,
@@ -147,7 +149,7 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps> 
 
         try {
 
-            await resetResetRepository(this.props.username, this.props.resetToken);
+            await resetResetRepository(this.props.username, this.props.namespace, this.props.resetToken);
             this.props.clearLoading();
             this.props.setPage(PAGE.RESET_PASSWORD_RESET);
         } catch (err) {

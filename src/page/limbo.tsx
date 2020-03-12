@@ -31,6 +31,7 @@ type LimboStates = {
 type ConnectedLimboStates = {
 
     readonly username: string;
+    readonly namespace: string;
     readonly password: string;
     readonly language: SudooFormat;
 };
@@ -49,6 +50,7 @@ const connector = Connector.create<IStore, ConnectedLimboStates, ConnectedLimboA
     .connectStates(({ preference, form }: IStore) => ({
 
         username: form.username,
+        namespace: form.namespace,
         password: form.password,
         language: intl.format(preference.language),
     })).connectActions({
@@ -119,7 +121,7 @@ export class LimboBase extends React.Component<ConnectedProps, LimboStates> {
 
         try {
 
-            const token: string = await limboRepository(this.props.username, this.props.password, password);
+            const token: string = await limboRepository(this.props.username, this.props.namespace, this.props.password, password);
             Portal.flush(token);
         } catch (err) {
 

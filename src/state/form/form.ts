@@ -31,14 +31,19 @@ const reduceNamespace: Reducer<IStore, ISetFormNamespaceReducerAction> = (state:
 const reduceUsernameAndNamespace: Reducer<IStore, ISetFormUsernameAndNamespaceReducerAction> = (state: IStore | undefined, action: ISetFormUsernameAndNamespaceReducerAction): IStore => {
 
     const combined: string = action.combined;
+    const splited: string[] = combined.split('/');
+
+    if (splited.length !== 2) {
+        return state as IStore;
+    }
     return {
 
         ...state as IStore,
         form: {
 
             ...(state as IStore).form,
-            username: '',
-            namespace: '',
+            namespace: splited[0],
+            username: splited[1],
         },
     };
 };
@@ -67,6 +72,7 @@ export const formReducers = {
 
     [ACTIONS.SET_USERNAME]: reduceUsername,
     [ACTIONS.SET_NAMESPACE]: reduceNamespace,
+    [ACTIONS.SET_USERNAME_AND_NAMESPACE]: reduceUsernameAndNamespace,
     [ACTIONS.SET_PASSWORD]: reducePassword,
     [ACTIONS.SET_RESET_TOKEN]: reduceResetToken,
 };

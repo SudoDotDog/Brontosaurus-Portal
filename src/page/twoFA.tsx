@@ -31,6 +31,7 @@ type TwoFAStates = {
 type ConnectedTwoFAStates = {
 
     readonly username: string;
+    readonly namespace: string;
     readonly password: string;
     readonly language: SudooFormat;
 };
@@ -49,6 +50,7 @@ const connector = Connector.create<IStore, ConnectedTwoFAStates, ConnectedTwoFAA
     .connectStates(({ preference, form }: IStore) => ({
 
         username: form.username,
+        namespace: form.namespace,
         password: form.password,
         language: intl.format(preference.language),
     })).connectActions({
@@ -125,7 +127,7 @@ export class TwoFABase extends React.Component<ConnectedProps, TwoFAStates> {
 
         try {
 
-            const token: string = await twoFARepository(this.props.username, this.props.password, code);
+            const token: string = await twoFARepository(this.props.username, this.props.namespace, this.props.password, code);
             Portal.flush(token);
         } catch (err) {
 

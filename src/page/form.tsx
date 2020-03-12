@@ -16,14 +16,14 @@ import { intl } from "../i18n/intl";
 import { PROFILE } from "../i18n/profile";
 import { clearUsername, readUsername } from "../portal/save";
 import { IStore } from "../state/declare";
-import { setPassword, setUsername } from "../state/form/form";
+import { setPassword, setUsernameAndNamespace } from "../state/form/form";
 import { setSaveUsername } from "../state/preference/preference";
 import { FOCUS_DELAY } from "../util/magic";
 import { combineClasses } from "../util/style";
 
 type FormProp = {
 
-    readonly login: (username: string, password: string) => void;
+    readonly login: (username: string, namespace: string, password: string) => void;
 
     readonly onChange: () => void;
     readonly changeRequired: boolean;
@@ -34,13 +34,14 @@ type FormConnectedState = {
     readonly language: SudooFormat;
     readonly saveUsername: boolean;
     readonly username: string;
+    readonly namespace: string;
     readonly password: string;
 };
 
 type FormConnectedAction = {
 
     readonly setSaveUsername: (saveUsername: boolean) => void;
-    readonly setUsername: (username: string) => void;
+    readonly setUsernameAndNamespace: (combined: string) => void;
     readonly setPassword: (password: string) => void;
 };
 
@@ -52,17 +53,18 @@ const connector = Connector.create<IStore, FormConnectedState, FormConnectedActi
         language: intl.format(preference.language),
         saveUsername: preference.saveUsername,
         username: form.username,
+        namespace: form.namespace,
         password: form.password,
     })).connectActions({
 
         setSaveUsername,
-        setUsername,
+        setUsernameAndNamespace,
         setPassword,
     });
 
 export class FormBase extends React.Component<ConnectProps> {
 
-    private _usernameRef: HTMLInputElement | null = null;
+    private _combinedRef: HTMLInputElement | null = null;
     private _passwordRef: HTMLInputElement | null = null;
 
     public constructor(props: ConnectProps) {
@@ -70,7 +72,7 @@ export class FormBase extends React.Component<ConnectProps> {
         super(props);
 
         this._login = this._login.bind(this);
-        this._setUsername = this._setUsername.bind(this);
+        this._setCombined = this._setCombined.bind(this);
         this._setPassword = this._setPassword.bind(this);
     }
 
@@ -78,21 +80,21 @@ export class FormBase extends React.Component<ConnectProps> {
 
         setTimeout(() => {
 
-            if (!this._passwordRef || !this._usernameRef) {
+            if (!this._passwordRef || !this._combinedRef) {
                 return;
             }
 
             if (this.props.saveUsername) {
                 const username: string | null = readUsername();
                 if (username) {
-                    this.props.setUsername(username);
+                    this.props.setUsernameAndNamespace(username);
                     this._passwordRef.focus();
                     return;
                 }
             }
 
             clearUsername();
-            this._usernameRef.focus();
+            this._combinedRef.focus();
         }, FOCUS_DELAY);
     }
 
@@ -104,13 +106,13 @@ export class FormBase extends React.Component<ConnectProps> {
                     autoCapitalize={false}
                     autoComplete={false}
                     autoCorrect={false}
-                    inputRef={(ref: HTMLInputElement) => this._usernameRef = ref}
+                    inputRef={(ref: HTMLInputElement) => this._combinedRef = ref}
                     className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
                     label={this.props.language.get(PROFILE.USERNAME)}
                     margin={MARGIN.SMALL}
-                    value={this.props.username}
+                    value={this._getCombined()}
                     onEnter={this._login}
-                    onChange={this._setUsername} />
+                    onChange={this._setCombined} />
                 <NeonInput
                     autoCapitalize={false}
                     autoComplete={false}
@@ -143,9 +145,14 @@ export class FormBase extends React.Component<ConnectProps> {
         );
     }
 
-    private _setUsername(value: string) {
+    private _getCombined() {
 
-        this.props.setUsername(value);
+        return this.props.namespace + '/' + this.props.username;
+    }
+
+    private _setCombined(value: string) {
+
+        this.props.setUsernameAndNamespace(value);
         this.props.onChange();
     }
 
@@ -157,7 +164,7 @@ export class FormBase extends React.Component<ConnectProps> {
 
     private _login() {
 
-        this.props.login(this.props.username, this.props.password);
+        this.props.login(this.props.username, this.props.namespace, this.props.password);
     }
 }
 
