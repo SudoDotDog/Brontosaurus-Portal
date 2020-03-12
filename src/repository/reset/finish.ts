@@ -6,10 +6,11 @@
 
 import { joinRoute } from "../../util/route";
 
-export const resetFinishRepository = async (username: string, resetToken: string, newPassword: string): Promise<boolean> => {
+export const resetFinishRepository = async (username: string, namespace: string, resetToken: string, newPassword: string): Promise<boolean> => {
 
     const payload: string = JSON.stringify({
         username,
+        namespace,
         resetToken,
         newPassword,
     });

@@ -6,10 +6,11 @@
 
 import { joinRoute } from "../../util/route";
 
-export const resetTemporaryRepository = async (username: string, email: string): Promise<any> => {
+export const resetTemporaryRepository = async (username: string, namespace: string, email: string): Promise<any> => {
 
     const payload: string = JSON.stringify({
         username,
+        namespace,
         email,
     });
 
