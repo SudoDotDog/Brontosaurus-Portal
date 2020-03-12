@@ -6,7 +6,7 @@
 
 import { Reducer } from '@sudoo/redux';
 import { ACTIONS, IStore } from '../declare';
-import { IFormStore, ISetFormPasswordReducerAction, ISetFormResetTokenReducerAction, ISetFormUsernameReducerAction } from './type';
+import { BRONTOSAURUS_NAMESPACE, IFormStore, ISetFormNamespaceReducerAction, ISetFormPasswordReducerAction, ISetFormResetTokenReducerAction, ISetFormUsernameAndNamespaceReducerAction, ISetFormUsernameReducerAction } from './type';
 
 const reduceUsername: Reducer<IStore, ISetFormUsernameReducerAction> = (state: IStore | undefined, action: ISetFormUsernameReducerAction): IStore => ({
 
@@ -17,6 +17,31 @@ const reduceUsername: Reducer<IStore, ISetFormUsernameReducerAction> = (state: I
         username: action.username,
     },
 });
+
+const reduceNamespace: Reducer<IStore, ISetFormNamespaceReducerAction> = (state: IStore | undefined, action: ISetFormNamespaceReducerAction): IStore => ({
+
+    ...state as IStore,
+    form: {
+
+        ...(state as IStore).form,
+        namespace: action.namespace,
+    },
+});
+
+const reduceUsernameAndNamespace: Reducer<IStore, ISetFormUsernameAndNamespaceReducerAction> = (state: IStore | undefined, action: ISetFormUsernameAndNamespaceReducerAction): IStore => {
+
+    const combined: string = action.combined;
+    return {
+
+        ...state as IStore,
+        form: {
+
+            ...(state as IStore).form,
+            username: '',
+            namespace: '',
+        },
+    };
+};
 
 const reducePassword: Reducer<IStore, ISetFormPasswordReducerAction> = (state: IStore | undefined, action: ISetFormPasswordReducerAction): IStore => ({
 
@@ -41,6 +66,7 @@ const reduceResetToken: Reducer<IStore, ISetFormResetTokenReducerAction> = (stat
 export const formReducers = {
 
     [ACTIONS.SET_USERNAME]: reduceUsername,
+    [ACTIONS.SET_NAMESPACE]: reduceNamespace,
     [ACTIONS.SET_PASSWORD]: reducePassword,
     [ACTIONS.SET_RESET_TOKEN]: reduceResetToken,
 };
@@ -49,6 +75,18 @@ export const setUsername = (username: string): ISetFormUsernameReducerAction => 
 
     type: ACTIONS.SET_USERNAME,
     username,
+});
+
+export const setNamespace = (namespace: string): ISetFormNamespaceReducerAction => ({
+
+    type: ACTIONS.SET_NAMESPACE,
+    namespace,
+});
+
+export const setUsernameAndNamespace = (combined: string): ISetFormUsernameAndNamespaceReducerAction => ({
+
+    type: ACTIONS.SET_USERNAME_AND_NAMESPACE,
+    combined,
 });
 
 export const setPassword = (password: string): ISetFormPasswordReducerAction => ({
@@ -66,6 +104,7 @@ export const setResetToken = (resetToken: string): ISetFormResetTokenReducerActi
 export const getDefaultFormStore = (): IFormStore => ({
 
     username: '',
+    namespace: BRONTOSAURUS_NAMESPACE.DEFAULT,
     password: '',
     resetToken: '',
 });
