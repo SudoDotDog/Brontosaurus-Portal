@@ -17,6 +17,7 @@ import { PROFILE } from "../i18n/profile";
 import { clearUsername, readUsername } from "../portal/save";
 import { IStore } from "../state/declare";
 import { setPassword, setUsernameAndNamespace } from "../state/form/form";
+import { BRONTOSAURUS_NAMESPACE } from "../state/form/type";
 import { setSaveUsername } from "../state/preference/preference";
 import { FOCUS_DELAY } from "../util/magic";
 import { combineClasses } from "../util/style";
@@ -146,6 +147,10 @@ export class FormBase extends React.Component<ConnectProps> {
     }
 
     private _getCombined() {
+
+        if (this.props.namespace === BRONTOSAURUS_NAMESPACE.DEFAULT) {
+            return this.props.username;
+        }
 
         return this.props.namespace + '/' + this.props.username;
     }

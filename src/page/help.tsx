@@ -18,7 +18,8 @@ import { PROFILE } from "../i18n/profile";
 import { emptyEmailInfo, emptyUsernameInfo, wrapMap } from "../portal/error";
 import { resetTemporaryRepository } from "../repository/reset/temporary";
 import { IStore } from "../state/declare";
-import { setUsername } from "../state/form/form";
+import { setUsernameAndNamespace } from "../state/form/form";
+import { BRONTOSAURUS_NAMESPACE } from "../state/form/type";
 import { TargetInfo } from "../state/info/type";
 import { setPage } from "../state/page/page";
 import { PAGE } from "../state/page/type";
@@ -42,7 +43,7 @@ type HelpStates = {
 type ConnectedHelpActions = {
 
     readonly setPage: (page: PAGE) => void;
-    readonly setUsername: (username: string) => void;
+    readonly setUsernameAndNamespace: (combined: string) => void;
     readonly startLoading: (message: string) => void;
     readonly startError: (info: ErrorInfo) => void;
     readonly clearLoading: () => void;
@@ -62,7 +63,7 @@ const connector = Connector.create<IStore, ConnectedHelpStates, ConnectedHelpAct
     })).connectActions({
 
         setPage,
-        setUsername,
+        setUsernameAndNamespace,
         startLoading,
         clearLoading,
         startError,
@@ -115,8 +116,8 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
                     className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
                     label={this.props.language.get(PROFILE.USERNAME)}
                     margin={MARGIN.SMALL}
-                    value={this.props.username}
-                    onChange={(value: string) => this.props.setUsername(value)}
+                    value={this._getCombined()}
+                    onChange={(value: string) => this.props.setUsernameAndNamespace(value)}
                 />
                 <NeonInput
                     autoCapitalize={false}
@@ -141,6 +142,15 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
                 </NeonButton>
             </FormStructure>
         );
+    }
+
+    private _getCombined() {
+
+        if (this.props.namespace === BRONTOSAURUS_NAMESPACE.DEFAULT) {
+            return this.props.username;
+        }
+
+        return this.props.namespace + '/' + this.props.username;
     }
 
     private async _sendResetEmail() {

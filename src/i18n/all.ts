@@ -21,10 +21,14 @@ export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_BEFORE]: "Sign in with",
     [PROFILE.SIGN_IN_WITH_AFTER]: "",
     [PROFILE.USERNAME]: "Username",
+    [PROFILE.USERNAME_AND_NAMESPACE]: "Username and Namespace",
     [PROFILE.SAVE_USERNAME]: "Remember Username",
     [PROFILE.EMAIL]: "Email Address",
     [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "Send Temporary Password",
     [PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON]: "Verify Temporary Password",
+
+    [PROFILE.SIGNING_IN_WITH_NAMESPACE_BEFORE]: "Using",
+    [PROFILE.SIGNING_IN_WITH_NAMESPACE_AFTER]: "Namespace",
 
     [PROFILE.YOU_CAN]: 'You can',
     [PROFILE.YOU_CAN_ALSO]: 'You can also',
@@ -101,11 +105,15 @@ export const RUSSIAN_RUSSIA: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_TO]: "Войти в",
     [PROFILE.SIGN_IN_WITH_BEFORE]: "Войти с помощью аккаунта",
     [PROFILE.SIGN_IN_WITH_AFTER]: "",
-    [PROFILE.USERNAME]: "Потребителско име",
-    [PROFILE.SAVE_USERNAME]: "Запомнить имя пользователя",
-    [PROFILE.EMAIL]: "Адрес электронной почты",
+    [PROFILE.USERNAME]: "Потребителско Име",
+    [PROFILE.USERNAME_AND_NAMESPACE]: "Имя Пользователя и Пространства имен",
+    [PROFILE.SAVE_USERNAME]: "Запомнить имя Пользователя",
+    [PROFILE.EMAIL]: "Адрес электронной Почты",
     [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "Отправить Временный Пароль",
     [PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON]: "Подтвердите Временный Пароль",
+
+    [PROFILE.SIGNING_IN_WITH_NAMESPACE_BEFORE]: "Использование",
+    [PROFILE.SIGNING_IN_WITH_NAMESPACE_AFTER]: "Пространства имен",
 
     [PROFILE.YOU_CAN]: 'Вы можете',
     [PROFILE.YOU_CAN_ALSO]: 'Вы также можете',
@@ -185,10 +193,14 @@ export const FRENCH_FRANCE: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_BEFORE]: "Se connecter avec un compte",
     [PROFILE.SIGN_IN_WITH_AFTER]: "",
     [PROFILE.USERNAME]: "Identifiant",
+    [PROFILE.USERNAME_AND_NAMESPACE]: "Nom d'utilisateur et Espace de noms",
     [PROFILE.SAVE_USERNAME]: "Se souvenir du nom d'utilisateur",
     [PROFILE.EMAIL]: "E-mail Adresse",
     [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "Envoyer un mot de Passe Temporaire",
     [PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON]: "Vérifier le mot de passe Temporaire",
+
+    [PROFILE.SIGNING_IN_WITH_NAMESPACE_BEFORE]: "En cours d'utilisation",
+    [PROFILE.SIGNING_IN_WITH_NAMESPACE_AFTER]: "Espace de noms",
 
     [PROFILE.YOU_CAN]: 'Vous pouvez',
     [PROFILE.YOU_CAN_ALSO]: 'Vous pouvez aussi',
@@ -266,10 +278,14 @@ export const JAPANESE_JAPAN: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_BEFORE]: "",
     [PROFILE.SIGN_IN_WITH_AFTER]: "でログイン",
     [PROFILE.USERNAME]: "ユーザー名",
+    [PROFILE.USERNAME_AND_NAMESPACE]: "ユーザー名と名前空間",
     [PROFILE.SAVE_USERNAME]: "ユーザー名を記憶",
     [PROFILE.EMAIL]: "メールアドレス",
     [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "仮パスワードを送信",
     [PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON]: "仮パスワードを確認する",
+
+    [PROFILE.SIGNING_IN_WITH_NAMESPACE_BEFORE]: "使用します",
+    [PROFILE.SIGNING_IN_WITH_NAMESPACE_AFTER]: "名前空間",
 
     [PROFILE.YOU_CAN]: 'できる',
     [PROFILE.YOU_CAN_ALSO]: 'あなたもできます',
@@ -345,10 +361,14 @@ export const KOREAN_KOREA: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_BEFORE]: "",
     [PROFILE.SIGN_IN_WITH_AFTER]: "로 로그인",
     [PROFILE.USERNAME]: "사용자 아이디",
+    [PROFILE.USERNAME_AND_NAMESPACE]: "사용자 이름과 네임 스페이스",
     [PROFILE.SAVE_USERNAME]: "사용자 이름 기억하기",
     [PROFILE.EMAIL]: "이메일 주소",
     [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "임시 비밀번호 보내기",
     [PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON]: "임시 비밀번호 확인",
+
+    [PROFILE.SIGNING_IN_WITH_NAMESPACE_BEFORE]: "사용 중입니다",
+    [PROFILE.SIGNING_IN_WITH_NAMESPACE_AFTER]: "네임 스페이스",
 
     [PROFILE.YOU_CAN]: '당신은 할 수 있습니다',
     [PROFILE.YOU_CAN_ALSO]: '당신은 또한 할 수 있습니다',
@@ -424,10 +444,14 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_BEFORE]: "使用",
     [PROFILE.SIGN_IN_WITH_AFTER]: "登陆",
     [PROFILE.USERNAME]: "用户名",
+    [PROFILE.USERNAME_AND_NAMESPACE]: "用户名和命名空间",
     [PROFILE.SAVE_USERNAME]: "记住用户名",
     [PROFILE.EMAIL]: "电子邮箱地址",
     [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "发送临时密码到我的邮箱",
     [PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON]: "验证临时密码",
+
+    [PROFILE.SIGNING_IN_WITH_NAMESPACE_BEFORE]: "正在使用",
+    [PROFILE.SIGNING_IN_WITH_NAMESPACE_AFTER]: "的命名空间",
 
     [PROFILE.YOU_CAN]: '您可以',
     [PROFILE.YOU_CAN_ALSO]: '您还可以',
@@ -503,10 +527,14 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_BEFORE]: "使用",
     [PROFILE.SIGN_IN_WITH_AFTER]: "登入",
     [PROFILE.USERNAME]: "使用者名稱",
+    [PROFILE.USERNAME_AND_NAMESPACE]: "用戶名和命名空間",
     [PROFILE.SAVE_USERNAME]: "記住使用者名稱",
     [PROFILE.EMAIL]: "電子郵箱地址",
     [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "發送臨時密鑰到我的郵箱",
     [PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON]: "驗證臨時密鑰",
+
+    [PROFILE.SIGNING_IN_WITH_NAMESPACE_BEFORE]: "正在使用",
+    [PROFILE.SIGNING_IN_WITH_NAMESPACE_AFTER]: "的命名空間",
 
     [PROFILE.YOU_CAN]: '您可以',
     [PROFILE.YOU_CAN_ALSO]: '您還可以',
@@ -584,10 +612,14 @@ export const SPANISH_MEXICO: Record<PROFILE, string> = {
     [PROFILE.SIGN_IN_WITH_BEFORE]: "Inicia sesión con",
     [PROFILE.SIGN_IN_WITH_AFTER]: "",
     [PROFILE.USERNAME]: "Usuario",
+    [PROFILE.USERNAME_AND_NAMESPACE]: "Nombre de usuario y Espacio de nombres",
     [PROFILE.SAVE_USERNAME]: "Recordar el nombre de usuario",
     [PROFILE.EMAIL]: "Dirección de correo electrónico",
     [PROFILE.SEND_RESET_PASSWORD_EMAIL]: "Enviar contraseña temporal",
     [PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON]: "Verificar Contraseña Temporal",
+
+    [PROFILE.SIGNING_IN_WITH_NAMESPACE_BEFORE]: "En uso",
+    [PROFILE.SIGNING_IN_WITH_NAMESPACE_AFTER]: "Espacio de nombres",
 
     [PROFILE.YOU_CAN]: 'Usted puede',
     [PROFILE.YOU_CAN_ALSO]: 'Tambien puedes',

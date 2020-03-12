@@ -30,18 +30,41 @@ const reduceNamespace: Reducer<IStore, ISetFormNamespaceReducerAction> = (state:
 
 const reduceUsernameAndNamespace: Reducer<IStore, ISetFormUsernameAndNamespaceReducerAction> = (state: IStore | undefined, action: ISetFormUsernameAndNamespaceReducerAction): IStore => {
 
+    if (!state) {
+        return state as any as IStore;
+    }
+
     const combined: string = action.combined;
     const splited: string[] = combined.split('/');
 
+    if (splited.length === 1) {
+
+        if (state.form.namespace === BRONTOSAURUS_NAMESPACE.DEFAULT) {
+            return {
+                ...state,
+                form: {
+                    ...(state).form,
+                    username: combined,
+                },
+            };
+        }
+        return {
+            ...state,
+            form: {
+                ...(state).form,
+                namespace: BRONTOSAURUS_NAMESPACE.DEFAULT,
+                username: combined,
+            },
+        };
+    }
+
     if (splited.length !== 2) {
-        return state as IStore;
+        return state;
     }
     return {
-
-        ...state as IStore,
+        ...state,
         form: {
-
-            ...(state as IStore).form,
+            ...(state).form,
             namespace: splited[0],
             username: splited[1],
         },

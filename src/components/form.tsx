@@ -17,15 +17,19 @@ import { Title } from "../components/title";
 import { intl } from "../i18n/intl";
 import { PROFILE } from "../i18n/profile";
 import { IStore } from "../state/declare";
+import { BRONTOSAURUS_NAMESPACE } from "../state/form/type";
 import { TargetInfo } from "../state/info/type";
 import { setPage } from "../state/page/page";
 import { PAGE } from "../state/page/type";
 import { clearError, clearSucceed } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
 import { combineClasses } from "../util/style";
+import { Subtitle } from "./subtitle";
 import { Timeout } from "./timeout";
 
 type ConnectedFormStates = {
+
+    readonly namespace: string;
 
     readonly language: SudooFormat;
     readonly isLoading: boolean;
@@ -51,7 +55,9 @@ export type FromStructureProps = {
 type ConnectedProps = ConnectedFormStates & ConnectedFormActions & FromStructureProps;
 
 const connector = Connector.create<IStore, ConnectedFormStates, ConnectedFormActions>()
-    .connectStates(({ info, preference, status }: IStore) => ({
+    .connectStates(({ form, info, preference, status }: IStore) => ({
+
+        namespace: form.namespace,
 
         language: intl.format(preference.language),
         isLoading: Boolean(status.loading),
@@ -209,8 +215,11 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
             return null;
         }
 
+
+
         return (<Title
             text={this._getLoginToText()}
+            namespaceText={this._getNamespaceText()}
             applicationName={this.props.target.name}
         />);
     }
@@ -256,6 +265,23 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
         }
 
         return this.props.language.get(PROFILE.SIGN_IN_TO);
+    }
+
+    private _getNamespaceText(): any {
+
+        if (this.props.namespace !== BRONTOSAURUS_NAMESPACE.DEFAULT) {
+
+            const before: string = this.props.language.get(PROFILE.SIGNING_IN_WITH_NAMESPACE_BEFORE);
+            const after: string = this.props.language.get(PROFILE.SIGNING_IN_WITH_NAMESPACE_AFTER);
+
+            return (<span>
+                {before && (before + " ")}
+                <span style={{ fontWeight: 'bold' }}>{this.props.namespace}</span>
+                {after && (" " + after)}
+            </span>);
+        }
+
+        return null;
     }
 }
 
