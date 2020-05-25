@@ -6,6 +6,16 @@
 
 import { Portal } from "../portal/portal";
 import { joinRoute } from "../util/route";
+import { BaseAttemptBody } from "./declare";
+
+export type TwoFARouteBody = {
+
+    readonly username: string;
+    readonly namespace: string;
+    readonly password: string;
+    readonly code: string;
+    readonly applicationKey: string;
+} & BaseAttemptBody;
 
 export const twoFARepository = async (
     username: string,
@@ -15,14 +25,17 @@ export const twoFARepository = async (
 ): Promise<string> => {
 
     const portal: Portal = Portal.instance;
-
-    const payload: string = JSON.stringify({
+    const body: TwoFARouteBody = {
         username,
         namespace,
         password,
         code,
         applicationKey: portal.applicationKey,
-    });
+        platform: 'WEB',
+        target: portal.callbackPath,
+    };
+
+    const payload: string = JSON.stringify(body);
 
     const response: Response = await fetch(joinRoute('/twoFA'), {
         method: "POST",
