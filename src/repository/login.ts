@@ -6,6 +6,15 @@
 
 import { Portal } from "../portal/portal";
 import { joinRoute } from "../util/route";
+import { BaseAttemptBody, extendAttemptBody } from "./declare";
+
+export type LoginBody = {
+
+    readonly username: string;
+    readonly namespace: string;
+    readonly password: string;
+    readonly applicationKey: string;
+} & BaseAttemptBody;
 
 export type LoginResponse = {
 
@@ -20,13 +29,14 @@ export const login = async (
 ): Promise<LoginResponse> => {
 
     const portal: Portal = Portal.instance;
-
-    const payload: string = JSON.stringify({
+    const body: LoginBody = extendAttemptBody(portal, {
         username,
         namespace,
         password,
         applicationKey: portal.applicationKey,
     });
+
+    const payload: string = JSON.stringify(body);
 
     const response: Response = await fetch(joinRoute('/retrieve'), {
         method: "POST",

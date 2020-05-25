@@ -8,7 +8,7 @@ import { Portal } from "../portal/portal";
 import { joinRoute } from "../util/route";
 import { BaseAttemptBody } from "./declare";
 
-export type TwoFARouteBody = {
+export type TwoFABody = {
 
     readonly username: string;
     readonly namespace: string;
@@ -25,7 +25,7 @@ export const twoFARepository = async (
 ): Promise<string> => {
 
     const portal: Portal = Portal.instance;
-    const body: TwoFARouteBody = {
+    const body: TwoFABody = {
         username,
         namespace,
         password,
