@@ -7,7 +7,12 @@
 import { Portal } from "../portal/portal";
 import { joinRoute } from "../util/route";
 
-export const twoFARepository = async (username: string, namespace: string, password: string, code: string): Promise<string> => {
+export const twoFARepository = async (
+    username: string,
+    namespace: string,
+    password: string,
+    code: string,
+): Promise<string> => {
 
     const portal: Portal = Portal.instance;
 

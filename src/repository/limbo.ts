@@ -7,7 +7,12 @@
 import { Portal } from "../portal/portal";
 import { joinRoute } from "../util/route";
 
-export const limboRepository = async (username: string, namespace: string, oldPassword: string, newPassword: string): Promise<string> => {
+export const limboRepository = async (
+    username: string,
+    namespace: string,
+    oldPassword: string,
+    newPassword: string,
+): Promise<string> => {
 
     const portal: Portal = Portal.instance;
 

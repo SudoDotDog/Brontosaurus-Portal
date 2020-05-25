@@ -13,7 +13,11 @@ export type LoginResponse = {
     readonly token: string | null;
 };
 
-export const login = async (username: string, namespace: string, password: string): Promise<LoginResponse> => {
+export const login = async (
+    username: string,
+    namespace: string,
+    password: string,
+): Promise<LoginResponse> => {
 
     const portal: Portal = Portal.instance;
 
