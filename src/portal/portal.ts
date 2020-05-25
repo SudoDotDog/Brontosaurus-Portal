@@ -60,12 +60,18 @@ export class Portal {
     private _applicationKey: string | null;
     private _callbackPath: string | null;
 
+    private _platform: string | null;
+    private _userAgentOverride: string | null;
+
     private constructor(mode: PORTAL_MODE) {
 
         this._mode = mode;
 
         this._applicationKey = null;
         this._callbackPath = null;
+
+        this._platform = null;
+        this._userAgentOverride = null;
     }
 
     public get isErrored(): boolean {
@@ -123,6 +129,18 @@ export class Portal {
 
         this._applicationKey = applicationKey;
         this._callbackPath = callbackPath;
+        return this;
+    }
+
+    private setUserAgentOverride(userAgent: string): Portal {
+
+        this._userAgentOverride = userAgent;
+        return this;
+    }
+
+    private setPlatformOverride(platform: string): Portal {
+
+        this._platform = platform;
         return this;
     }
 }
