@@ -29,7 +29,7 @@
     "@sudoo/react-force-dev": "^1.7.1",
     "@sudoo/triforce": "^2.4.1",
     "@sudoo/webpack-react": "^2.7.3",
-    "ts-loader": "^7.0.4"
+    "ts-loader": "^7.0.5"
   },
   "nyc": {
     "extension": [
