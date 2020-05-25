@@ -6,7 +6,7 @@
 
 import { Portal } from "../portal/portal";
 import { joinRoute } from "../util/route";
-import { BaseAttemptBody } from "./declare";
+import { BaseAttemptBody, extendAttemptBody } from "./declare";
 
 export type TwoFABody = {
 
@@ -25,15 +25,13 @@ export const twoFARepository = async (
 ): Promise<string> => {
 
     const portal: Portal = Portal.instance;
-    const body: TwoFABody = {
+    const body: TwoFABody = extendAttemptBody(portal, {
         username,
         namespace,
         password,
         code,
         applicationKey: portal.applicationKey,
-        platform: 'WEB',
-        target: portal.callbackPath,
-    };
+    });
 
     const payload: string = JSON.stringify(body);
 

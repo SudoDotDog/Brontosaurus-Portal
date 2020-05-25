@@ -6,6 +6,16 @@
 
 import { Portal } from "../portal/portal";
 import { joinRoute } from "../util/route";
+import { BaseAttemptBody, extendAttemptBody } from "./declare";
+
+export type LimboRouteBody = {
+
+    readonly username: string;
+    readonly namespace: string;
+    readonly oldPassword: string;
+    readonly newPassword: string;
+    readonly applicationKey: string;
+} & BaseAttemptBody;
 
 export const limboRepository = async (
     username: string,
@@ -15,14 +25,15 @@ export const limboRepository = async (
 ): Promise<string> => {
 
     const portal: Portal = Portal.instance;
-
-    const payload: string = JSON.stringify({
+    const body: LimboRouteBody = extendAttemptBody(portal, {
         username,
         namespace,
         oldPassword,
         newPassword,
         applicationKey: portal.applicationKey,
     });
+
+    const payload: string = JSON.stringify(body);
 
     const response: Response = await fetch(joinRoute('/limbo'), {
         method: "POST",

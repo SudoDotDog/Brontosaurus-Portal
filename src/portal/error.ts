@@ -103,6 +103,8 @@ export const wrapMap = (message: string): ErrorInfo => {
         return instance;
     }
 
+    console.warn(message);
+
     return {
         short: PROFILE.UNKNOWN_ERROR,
         long: PROFILE.CONNECT_SERVICE,

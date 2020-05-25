@@ -143,7 +143,8 @@ export class Portal {
 
         if (this._mode === PORTAL_MODE.REDIRECT) {
 
-            window.location.href = this.callbackPath + '?token=' + token;
+            const target: string = this.callbackPath + '?token=' + token;
+            window.location.href = target;
             return;
         }
 
