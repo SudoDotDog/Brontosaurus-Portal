@@ -22,14 +22,29 @@ export class Portal {
 
         if (applicationKey && callbackPath) {
 
+            const userAgent: string | null = url.searchParams.get("useragent");
+            const platform: string | null = url.searchParams.get("platform");
+
             if (callbackPath.toUpperCase().startsWith('IFRAME')) {
-                this._instance = new Portal(PORTAL_MODE.IFRAME).setParams(applicationKey, callbackPath);
+                this._instance = new Portal(PORTAL_MODE.IFRAME)
+                    .setParams(applicationKey, callbackPath)
+                    .setPlatformIfExist(platform)
+                    .setUserAgentOverrideIfExist(userAgent);
             } else if (callbackPath.toUpperCase().startsWith('POST')) {
-                this._instance = new Portal(PORTAL_MODE.POST).setParams(applicationKey, callbackPath);
+                this._instance = new Portal(PORTAL_MODE.POST)
+                    .setParams(applicationKey, callbackPath)
+                    .setPlatformIfExist(platform)
+                    .setUserAgentOverrideIfExist(userAgent);
             } else if (callbackPath.toUpperCase().startsWith('NONE')) {
-                this._instance = new Portal(PORTAL_MODE.NONE).setParams(applicationKey, callbackPath);
+                this._instance = new Portal(PORTAL_MODE.NONE)
+                    .setParams(applicationKey, callbackPath)
+                    .setPlatformIfExist(platform)
+                    .setUserAgentOverrideIfExist(userAgent);
             } else {
-                this._instance = new Portal(PORTAL_MODE.REDIRECT).setParams(applicationKey, callbackPath);
+                this._instance = new Portal(PORTAL_MODE.REDIRECT)
+                    .setParams(applicationKey, callbackPath)
+                    .setPlatformIfExist(platform)
+                    .setUserAgentOverrideIfExist(userAgent);
             }
             window.history.replaceState({}, document.title, url.origin);
         } else {
@@ -95,6 +110,16 @@ export class Portal {
         throw new Error("[Brontosaurus-Portal] Not found");
     }
 
+    public get platform(): string | null {
+
+        return this._platform;
+    }
+
+    public get userAgentOverride(): string | null {
+
+        return this._userAgentOverride;
+    }
+
     public flush(token: string): void {
 
         if (this._mode === PORTAL_MODE.IFRAME) {
@@ -132,13 +157,31 @@ export class Portal {
         return this;
     }
 
+    private setUserAgentOverrideIfExist(userAgent: string | undefined | null): Portal {
+
+        if (typeof userAgent === 'string') {
+            return this.setUserAgentOverride(userAgent);
+        }
+
+        return this;
+    }
+
     private setUserAgentOverride(userAgent: string): Portal {
 
         this._userAgentOverride = userAgent;
         return this;
     }
 
-    private setPlatformOverride(platform: string): Portal {
+    private setPlatformIfExist(platform: string | undefined | null): Portal {
+
+        if (typeof platform === 'string') {
+            return this.setPlatform(platform);
+        }
+
+        return this;
+    }
+
+    private setPlatform(platform: string): Portal {
 
         this._platform = platform;
         return this;
