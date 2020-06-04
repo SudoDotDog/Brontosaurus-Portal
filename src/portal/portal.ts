@@ -143,12 +143,37 @@ export class Portal {
 
         if (this._mode === PORTAL_MODE.REDIRECT) {
 
-            const target: string = this.callbackPath + '?token=' + token;
+            const target: string = this.getCallback(token);
             window.location.href = target;
             return;
         }
 
         throw new Error("[Brontosaurus-Portal] Not Valid");
+    }
+
+    private getCallback(token: string): string {
+
+        const formatted: string = decodeURIComponent(this.callbackPath);
+        const url: URL = new URL(formatted);
+        const entries: Array<[string, string]> = [...url.searchParams.entries()];
+        const searchMap: Record<string, any> = {
+            ...entries.reduce((previous: Record<string, any>, current: [string, string]) => {
+                return {
+                    ...previous,
+                    [current[0]]: current[1],
+                };
+            }, {}),
+            token,
+        };
+
+        const search: string = Object.keys(searchMap).reduce((previous: string, current: string, index: number) => {
+            if (index === 0) {
+                return `?${current}=${searchMap[current]}`;
+            }
+            return `${previous}&${current}=${searchMap[current]}`;
+        }, '');
+
+        return url.origin + url.pathname + search;
     }
 
     private setParams(applicationKey: string, callbackPath: string): Portal {
