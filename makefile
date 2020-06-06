@@ -8,13 +8,18 @@ webpack := node_modules/.bin/webpack
 webpack_dev_server := node_modules/.bin/webpack-dev-server
 mocha := node_modules/.bin/mocha
 
+.IGNORE: clean-linux
+
 main: run
 
 run:
 	@echo "[INFO] Starting development"
-	@NODE_ENV=development TEST_SERVER_PATH=$(TSP) $(webpack_dev_server) --config $(webpack_dev) --open
+	@PORTAL_PATH=$(PP) \
+	TEST_SERVER_PATH=$(TSP) \
+	NODE_ENV=development \
+	$(webpack_dev_server) --config $(webpack_dev) --open
 
-build:
+build: clean-linux
 	@echo "[INFO] Starting build"
 	@NODE_ENV=production $(webpack) --config $(webpack_build)
 
@@ -31,16 +36,18 @@ install:
 	@echo "[INFO] Installing dev Dependencies"
 	@yarn install --production=false
 
+refresh-install:
+	@echo "[INFO] Removing Lockfile"
+	@rm yarn.lock
+	@echo "[INFO] Installing dev Dependencies"
+	@yarn install --production=false
+
 install-prod:
 	@echo "[INFO] Installing Dependencies"
 	@yarn install --production=true
 
-clean:
-ifeq ($(OS), Windows_NT)
-	@echo "[INFO] Skipping"
-else
+clean-linux:
 	@echo "[INFO] Cleaning dist files"
 	@rm -rf dist
 	@rm -rf .nyc_output
 	@rm -rf coverage
-endif
