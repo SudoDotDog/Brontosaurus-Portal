@@ -317,12 +317,15 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
 
         const callbackPath: string = Portal.instance.callbackPath;
 
-
-        for (const redirection of redirections) {
-            const regexp: RegExp = new RegExp(redirection.regexp);
-            if (regexp.test(callbackPath)) {
-                return false;
+        try {
+            for (const redirection of redirections) {
+                const regexp: RegExp = new RegExp(redirection.regexp);
+                if (regexp.test(callbackPath)) {
+                    return false;
+                }
             }
+        } catch (err) {
+            return true;
         }
 
         return true;
