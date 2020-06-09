@@ -92,6 +92,10 @@ const errorMap: Record<string, ErrorInfo> = {
         short: PROFILE.APPLICATION_GROUP_NOT_FULFILLED,
         long: PROFILE.APPLICATION_GROUP_NOT_FULFILLED_DESCRIPTION,
     },
+    "4122": {
+        short: PROFILE.UNTRUSTED_REDIRECTION,
+        long: PROFILE.UNTRUSTED_REDIRECTION_DESCRIPTION,
+    },
 };
 
 export const wrapMap = (message: string): ErrorInfo => {
