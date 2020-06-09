@@ -34,5 +34,6 @@ export const getDefaultInfoStore = (): IInfoStore => ({
     target: {
         timeout: false,
         name: '',
+        redirections: [],
     },
 });

@@ -7,10 +7,17 @@
 import { Action } from "@sudoo/redux";
 import { ACTIONS } from "../declare";
 
+export type ApplicationRedirection = {
+
+    name: string;
+    regexp: string;
+};
+
 export type TargetInfo = {
 
     readonly timeout: boolean;
     readonly name: string;
+    readonly redirections: ApplicationRedirection[];
     readonly avatar?: string;
     readonly background?: string;
     readonly help?: string;

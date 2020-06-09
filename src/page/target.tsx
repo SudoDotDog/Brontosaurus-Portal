@@ -80,6 +80,7 @@ export class TargetBase extends React.Component<ConnectedTargetProps> {
             this.props.setTarget({
                 timeout: true,
                 name: '',
+                redirections: [],
             });
         }
     }

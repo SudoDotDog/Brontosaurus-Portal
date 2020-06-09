@@ -25,6 +25,7 @@ export const simpleRepository = async (): Promise<TargetInfo> => {
             avatar: data.avatar,
             background: data.backgroundImage,
             name: data.name,
+            redirections: [],
             help: data.help,
             privacy: data.privacy,
             favicon: data.favicon,
