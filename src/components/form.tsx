@@ -19,7 +19,7 @@ import { PROFILE } from "../i18n/profile";
 import { Portal } from "../portal/portal";
 import { IStore } from "../state/declare";
 import { BRONTOSAURUS_NAMESPACE } from "../state/form/type";
-import { TargetInfo } from "../state/info/type";
+import { ApplicationRedirection, TargetInfo } from "../state/info/type";
 import { setPage } from "../state/page/page";
 import { PAGE } from "../state/page/type";
 import { clearError, clearSucceed } from "../state/status/status";
@@ -295,18 +295,30 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
 
     private _isInsecureRedirection(): boolean {
 
-        const portal: Portal = Portal.instance;
+        const redirections: ApplicationRedirection[] = this.props.target.redirections;
+        if (!Array.isArray(redirections)) {
+            return true;
+        }
 
+        if (redirections.length === 0) {
+            return false;
+        }
+
+        const portal: Portal = Portal.instance;
         if (!portal.hasCallbackPath()) {
             return false;
         }
 
-        const callbackPath: string = Portal.instance.callbackPath;
-        if (!Array.isArray(this.props.target.redirections)) {
-            return true;
+        if (portal.isIFrame
+            || portal.isNone
+            || portal.isPost) {
+            return false;
         }
 
-        for (const redirection of this.props.target.redirections) {
+        const callbackPath: string = Portal.instance.callbackPath;
+
+
+        for (const redirection of redirections) {
             const regexp: RegExp = new RegExp(redirection.regexp);
             if (regexp.test(callbackPath)) {
                 return false;

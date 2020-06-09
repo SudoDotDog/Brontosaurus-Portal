@@ -94,6 +94,21 @@ export class Portal {
         return this._mode === PORTAL_MODE.ERROR;
     }
 
+    public get isIFrame(): boolean {
+
+        return this._mode === PORTAL_MODE.IFRAME;
+    }
+
+    public get isNone(): boolean {
+
+        return this._mode === PORTAL_MODE.NONE;
+    }
+
+    public get isPost(): boolean {
+
+        return this._mode === PORTAL_MODE.POST;
+    }
+
     public get applicationKey(): string {
 
         if (this._applicationKey) {
