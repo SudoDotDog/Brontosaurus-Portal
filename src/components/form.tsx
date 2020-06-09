@@ -94,8 +94,6 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
 
     private _renderContents() {
 
-        console.log(this.props.target);
-
         if (this.props.target.timeout) {
             return (<React.Fragment>
                 {this._renderLogo()}

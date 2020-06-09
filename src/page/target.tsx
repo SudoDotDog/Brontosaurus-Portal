@@ -74,7 +74,6 @@ export class TargetBase extends React.Component<ConnectedTargetProps> {
             this.props.clearLoading();
         } catch (err) {
 
-            const error: string = err.message;
             this.props.clearLoading();
 
             this.props.setTarget({

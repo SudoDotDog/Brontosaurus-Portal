@@ -10,8 +10,6 @@ import * as React from "react";
 import * as StyleForm from "../../style/page/form.sass";
 import { intl } from "../i18n/intl";
 import { PROFILE } from "../i18n/profile";
-import { serverMightOfflineInfo } from "../portal/error";
-import { simpleRepository } from "../repository/simple";
 import { IStore } from "../state/declare";
 import { setTarget } from "../state/info/info";
 import { TargetInfo } from "../state/info/type";
@@ -66,8 +64,8 @@ export class InsecureRedirectionBase extends React.Component<ConnectedProps> {
 
         return (
             <div className={StyleForm.timeoutContainer}>
-                <div className={StyleForm.timeoutTitle}>123</div>
-                <div>{this.props.language.get(PROFILE.TIMEOUT_DESCRIPTION)}</div>
+                <div className={StyleForm.timeoutTitle}>{this.props.language.get(PROFILE.INSECURE_REDIRECTION_TITLE)}</div>
+                <div>{this.props.language.get(PROFILE.INSECURE_REDIRECTION_DESCRIPTION)}</div>
                 {this._renderEntryPage()}
                 {this._renderIndexPage()}
                 {this._renderHelpCenter()}

@@ -37,9 +37,13 @@ export const applicationRepository = async (): Promise<TargetInfo> => {
             name: data.name,
             help: data.help,
             privacy: data.privacy,
+            favicon: data.favicon,
 
             systemName: data.systemName,
             accountName: data.accountName,
+
+            indexPage: data.indexPage,
+            entryPage: data.entryPage,
         };
     }
 
