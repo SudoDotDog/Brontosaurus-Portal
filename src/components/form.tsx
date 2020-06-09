@@ -16,6 +16,7 @@ import { ConnectedLanguage } from "../components/language";
 import { Title } from "../components/title";
 import { intl } from "../i18n/intl";
 import { PROFILE } from "../i18n/profile";
+import { Portal } from "../portal/portal";
 import { IStore } from "../state/declare";
 import { BRONTOSAURUS_NAMESPACE } from "../state/form/type";
 import { TargetInfo } from "../state/info/type";
@@ -24,7 +25,7 @@ import { PAGE } from "../state/page/type";
 import { clearError, clearSucceed } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
 import { combineClasses } from "../util/style";
-import { Subtitle } from "./subtitle";
+import { InsecureRedirection } from "./insecure-redirection";
 import { Timeout } from "./timeout";
 
 type ConnectedFormStates = {
@@ -93,11 +94,21 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
 
     private _renderContents() {
 
+        console.log(this.props.target);
+
         if (this.props.target.timeout) {
             return (<React.Fragment>
                 {this._renderLogo()}
                 {this._renderFlag()}
                 <Timeout />
+            </React.Fragment>);
+        }
+
+        if (this._isInsecureRedirection()) {
+            return (<React.Fragment>
+                {this._renderLogo()}
+                {this._renderFlag()}
+                <InsecureRedirection />
             </React.Fragment>);
         }
 
@@ -282,6 +293,29 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
         }
 
         return null;
+    }
+
+    private _isInsecureRedirection(): boolean {
+
+        const portal: Portal = Portal.instance;
+
+        if (!portal.hasCallbackPath()) {
+            return false;
+        }
+
+        const callbackPath: string = Portal.instance.callbackPath;
+        if (!Array.isArray(this.props.target.redirections)) {
+            return true;
+        }
+
+        for (const redirection of this.props.target.redirections) {
+            const regexp: RegExp = new RegExp(redirection.regexp);
+            if (regexp.test(callbackPath)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
 

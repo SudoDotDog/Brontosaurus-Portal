@@ -120,6 +120,11 @@ export class Portal {
         return this._userAgentOverride;
     }
 
+    public hasCallbackPath(): boolean {
+
+        return Boolean(this._callbackPath);
+    }
+
     public flush(token: string): void {
 
         if (this._mode === PORTAL_MODE.IFRAME) {
