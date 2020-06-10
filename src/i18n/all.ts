@@ -531,7 +531,7 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
     [PROFILE.APPLICATION_GROUP_NOT_FULFILLED]: "权限组不足",
     [PROFILE.APPLICATION_GROUP_NOT_FULFILLED_DESCRIPTION]: "您可能需要足够的权限来使用您想要登陆的应用程序, 请联系系统管理员来获得更多帮助",
     [PROFILE.UNTRUSTED_REDIRECTION]: "不可信任的重定向",
-    [PROFILE.UNTRUSTED_REDIRECTION_DESCRIPTION]: "这个问题不是由您的账号或者设备引发的。为了安全考虑，您或者您正在使用的应用程序请求的重定向链接被我们认为是不可信任的。在这种情况下继续登录，您的账号安全可能会收到威胁。解决这个问题，请尝试回到之前的入口重新登录。",
+    [PROFILE.UNTRUSTED_REDIRECTION_DESCRIPTION]: "这个问题不是由您的账号或者设备引发的。为了安全考虑，您或者您正在使用的应用程序请求的重定向链接被我们认为是不可信任的。在这种情况下继续登录，您的账号安全可能会受到威胁。为了解决这个问题，请尝试回到之前的入口重新登录。",
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS]: "无法访问玄关",
     [PROFILE.APPLICATION_HAS_NO_PORTAL_ACCESS_DESCRIPTION]: "该应用程序没有玄关应用访问权限。通常该问题不是由于您的操作导致的。请与系统管理员联系以获取更多帮助。",
     [PROFILE.RESET_PASSWORD_SUCCEED]: "密码已重置成功",
@@ -586,7 +586,7 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
     [PROFILE.TIMEOUT_DESCRIPTION]: "糟糕，您和服務器的會話沒有創建或已經過期，這可能是因為您刷新了瀏覽器，或者替換請求重新授權。您可以重新進入剛才的頁面來嘗試重建會話。如果此問題一直重複出現， 請聯繫系統管理員來獲得更多幫助。",
 
     [PROFILE.INSECURE_REDIRECTION_TITLE]: "不可信任的重定向",
-    [PROFILE.INSECURE_REDIRECTION_DESCRIPTION]: "這個問題不是由您的賬號或者設備引發的。為了安全考慮，您或者您正在使用的應用程序請求的重定向鏈接被我們認為是不可信任的。在這種情況下繼續登錄，您的賬號安全可能會收到威脅。解決這個問題，請嘗試回到之前的入口重新登錄。",
+    [PROFILE.INSECURE_REDIRECTION_DESCRIPTION]: "這個問題不是由您的賬號或者設備引發的。為了安全考慮，您或者您正在使用的應用程序請求的重定向鏈接被我們認為是不可信任的。在這種情況下繼續登錄，您的賬號安全可能會受到威脅。為了解決這個問題，請嘗試回到之前的入口重新登錄。",
 
     [PROFILE.CONNECT_SERVICE]: "如果這個錯誤持續出現，請聯繫系統管理員來獲得更多幫助。",
     [PROFILE.UNKNOWN_ERROR]: "未知的錯誤",
