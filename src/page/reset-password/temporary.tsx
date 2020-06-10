@@ -26,6 +26,7 @@ import { clearError, clearLoading, clearSucceed, startError, startLoading } from
 import { ErrorInfo } from "../../state/status/type";
 import { FOCUS_DELAY } from "../../util/magic";
 import { combineClasses } from "../../util/style";
+import { replaceRedirectPath } from "../../util/redirect";
 
 type ConnectedResetPasswordTemporaryStates = {
 
@@ -95,9 +96,7 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps> 
                     <div className={StyleForm.help}>
                         <a
                             className={StyleForm.link}
-                            onClick={() => {
-                                window.location.href = this.props.target.help as any;
-                            }}
+                            onClick={() => replaceRedirectPath(this.props.target.help)}
                         >
                             {this.props.language.get(PROFILE.GO_TO_HELP_CENTER)}
                         </a>

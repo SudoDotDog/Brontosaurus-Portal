@@ -24,6 +24,7 @@ import { setPage } from "../state/page/page";
 import { PAGE } from "../state/page/type";
 import { clearError, clearSucceed } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
+import { replaceRedirectPath } from "../util/redirect";
 import { combineClasses } from "../util/style";
 import { InsecureRedirection } from "./insecure-redirection";
 import { Timeout } from "./timeout";
@@ -175,9 +176,7 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
         return (<div className={StyleForm.help}>
             <a
                 className={StyleForm.link}
-                onClick={() => {
-                    window.location.href = this.props.target.help as any;
-                }}
+                onClick={() => replaceRedirectPath(this.props.target.help)}
             >
                 {this.props.language.get(PROFILE.GO_TO_HELP_CENTER)}
             </a>

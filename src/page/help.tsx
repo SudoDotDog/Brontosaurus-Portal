@@ -26,6 +26,7 @@ import { PAGE } from "../state/page/type";
 import { clearError, clearLoading, clearSucceed, startError, startLoading } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
 import { combineClasses } from "../util/style";
+import { replaceRedirectPath } from "../util/redirect";
 
 type ConnectedHelpStates = {
 
@@ -94,9 +95,7 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
                     <div className={StyleForm.help}>
                         <a
                             className={StyleForm.link}
-                            onClick={() => {
-                                window.location.href = this.props.target.help as any;
-                            }}
+                            onClick={() => replaceRedirectPath(this.props.target.help)}
                         >
                             {this.props.language.get(PROFILE.GO_TO_HELP_CENTER)}
                         </a>

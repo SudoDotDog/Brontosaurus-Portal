@@ -12,8 +12,8 @@ install:
   - npm install codecov nyc -g
 
 before_script:
-  - make build
   - make lint
+  - make build
 
 script:
   - nyc mocha

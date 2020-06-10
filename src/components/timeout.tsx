@@ -17,6 +17,7 @@ import { setTarget } from "../state/info/info";
 import { TargetInfo } from "../state/info/type";
 import { clearLoading, startError, startLoading } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
+import { replaceRedirectPath } from "../util/redirect";
 
 type ConnectedTimeoutStates = {
 
@@ -91,9 +92,7 @@ export class TimeoutBase extends React.Component<ConnectedProps> {
                 {this.props.language.get(PROFILE.YOU_CAN)} -&nbsp;
                 <a
                     className={StyleForm.link}
-                    onClick={() => {
-                        window.location.href = this.props.target.entryPage as any;
-                    }}
+                    onClick={() => replaceRedirectPath(this.props.target.entryPage)}
                 >
                     {this.props.language.get(PROFILE.GO_TO_ENTRY_PAGE)}
                 </a>
@@ -112,9 +111,7 @@ export class TimeoutBase extends React.Component<ConnectedProps> {
                 {this.props.language.get(PROFILE.YOU_CAN)} -&nbsp;
                 <a
                     className={StyleForm.link}
-                    onClick={() => {
-                        window.location.href = this.props.target.indexPage as any;
-                    }}
+                    onClick={() => replaceRedirectPath(this.props.target.indexPage)}
                 >
                     {this.props.language.get(PROFILE.GO_TO_INDEX_PAGE)}
                 </a>
@@ -133,9 +130,7 @@ export class TimeoutBase extends React.Component<ConnectedProps> {
                 {this.props.language.get(PROFILE.YOU_CAN_ALSO)} -&nbsp;
                 <a
                     className={StyleForm.link}
-                    onClick={() => {
-                        window.location.href = this.props.target.help as any;
-                    }}
+                    onClick={() => replaceRedirectPath(this.props.target.help)}
                 >
                     {this.props.language.get(PROFILE.GO_TO_HELP_CENTER)}
                 </a>

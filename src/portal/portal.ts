@@ -4,6 +4,7 @@
  * @description Portal
  */
 
+import { replaceRedirectPath } from "../util/redirect";
 import { PORTAL_MODE, postCurrentMessage, postParentMessage } from "./util";
 
 export class Portal {
@@ -165,7 +166,7 @@ export class Portal {
         if (this._mode === PORTAL_MODE.REDIRECT) {
 
             const target: string = this.getCallback(token);
-            window.location.href = target;
+            replaceRedirectPath(target);
             return;
         }
 
