@@ -242,7 +242,7 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
         return (<ErrorFlag
             show={Boolean(this.props.error)}
             info={this.props.language.get(info.long as PROFILE)}
-            message={this.props.language.get(info.short as PROFILE)}
+            message={this.props.language.get(info.short)}
         />);
     }
 
@@ -255,7 +255,7 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
         return (<SucceedFlag
             show={Boolean(this.props.succeed)}
             info={this.props.language.get(info.long as PROFILE)}
-            message={this.props.language.get(info.short as PROFILE)}
+            message={this.props.language.get(info.short)}
         />);
     }
 
