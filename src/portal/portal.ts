@@ -8,6 +8,8 @@ import { PORTAL_MODE, postCurrentMessage, postParentMessage } from "./util";
 
 export class Portal {
 
+    private static _instance: Portal | undefined;
+
     public static register(): void {
 
         if (this._instance) {
@@ -68,7 +70,6 @@ export class Portal {
         return;
     }
 
-    private static _instance: Portal | undefined;
 
     private readonly _mode: PORTAL_MODE;
 
@@ -193,7 +194,7 @@ export class Portal {
             return `${previous}&${current}=${searchMap[current]}`;
         }, '');
 
-        return url.origin + url.pathname + search;
+        return `${url.origin}${url.pathname}${search}`;
     }
 
     private setParams(applicationKey: string, callbackPath: string): Portal {

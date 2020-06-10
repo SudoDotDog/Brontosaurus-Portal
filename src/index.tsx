@@ -35,7 +35,7 @@ render(Entry);
 if (module.hot) {
 
     module.hot.accept("./entry", () => {
-        // tslint:disable-next-line: no-require-imports
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
         render(require("./entry").default);
     });
 }

@@ -81,13 +81,6 @@ export class ResetPasswordResetBase extends React.Component<ConnectedProps, Rese
 
     private _passwordRef: HTMLInputElement | null = null;
 
-    public constructor(props: ConnectedProps) {
-
-        super(props);
-
-        this._resetPassword = this._resetPassword.bind(this);
-    }
-
     public componentDidMount() {
 
         this.props.clearError();
@@ -118,7 +111,7 @@ export class ResetPasswordResetBase extends React.Component<ConnectedProps, Rese
                     label={this.props.language.get(PROFILE.NEW_PASSWORD)}
                     margin={MARGIN.SMALL}
                     value={this.state.password}
-                    onEnter={this._resetPassword}
+                    onEnter={this._resetPassword.bind(this)}
                     onChange={(value: string) => this.setState({ password: value })}
                 />
                 <NeonButton
@@ -126,7 +119,7 @@ export class ResetPasswordResetBase extends React.Component<ConnectedProps, Rese
                     size={SIZE.MEDIUM}
                     width={WIDTH.FULL}
                     margin={MARGIN.SMALL}
-                    onClick={this._resetPassword}
+                    onClick={this._resetPassword.bind(this)}
                 >
                     {this.props.language.get(PROFILE.SAVE_NEW_PASSWORD_AND_CONTINUE)}
                 </NeonButton>
@@ -163,4 +156,4 @@ export class ResetPasswordResetBase extends React.Component<ConnectedProps, Rese
     }
 }
 
-export const ConnectedResetPasswordReset: React.ComponentType<{}> = connector.connect(ResetPasswordResetBase);
+export const ConnectedResetPasswordReset: React.ComponentType<unknown> = connector.connect(ResetPasswordResetBase);

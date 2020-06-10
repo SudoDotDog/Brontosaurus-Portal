@@ -68,15 +68,6 @@ export class FormBase extends React.Component<ConnectProps> {
     private _combinedRef: HTMLInputElement | null = null;
     private _passwordRef: HTMLInputElement | null = null;
 
-    public constructor(props: ConnectProps) {
-
-        super(props);
-
-        this._login = this._login.bind(this);
-        this._setCombined = this._setCombined.bind(this);
-        this._setPassword = this._setPassword.bind(this);
-    }
-
     public componentDidMount() {
 
         setTimeout(() => {
@@ -112,8 +103,8 @@ export class FormBase extends React.Component<ConnectProps> {
                     label={this.props.language.get(PROFILE.USERNAME)}
                     margin={MARGIN.SMALL}
                     value={this._getCombined()}
-                    onEnter={this._login}
-                    onChange={this._setCombined} />
+                    onEnter={this._login.bind(this)}
+                    onChange={this._setCombined.bind(this)} />
                 <NeonInput
                     autoCapitalize={false}
                     autoComplete={false}
@@ -124,8 +115,8 @@ export class FormBase extends React.Component<ConnectProps> {
                     label={this.props.language.get(PROFILE.PASSWORD)}
                     margin={MARGIN.SMALL}
                     value={this.props.password}
-                    onEnter={this._login}
-                    onChange={this._setPassword} />
+                    onEnter={this._login.bind(this)}
+                    onChange={this._setPassword.bind(this)} />
                 <NeonCheckbox
                     value={this.props.saveUsername}
                     onChange={(next: boolean) => this.props.setSaveUsername(next)}
@@ -139,7 +130,7 @@ export class FormBase extends React.Component<ConnectProps> {
                     size={SIZE.MEDIUM}
                     width={WIDTH.FULL}
                     margin={MARGIN.SMALL}
-                    onClick={this._login}>
+                    onClick={this._login.bind(this)}>
                     {this.props.language.get(PROFILE.SIGN_IN)}
                 </NeonButton>
             </React.Fragment>

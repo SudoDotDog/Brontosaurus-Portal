@@ -78,13 +78,6 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
         email: '',
     };
 
-    public constructor(props: ConnectedProps) {
-
-        super(props);
-
-        this._sendResetEmail = this._sendResetEmail.bind(this);
-    }
-
     public componentDidMount() {
 
         this.props.clearError();
@@ -128,7 +121,7 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
                     label={this.props.language.get(PROFILE.EMAIL)}
                     margin={MARGIN.SMALL}
                     value={this.state.email}
-                    onEnter={this._sendResetEmail}
+                    onEnter={this._sendResetEmail.bind(this)}
                     onChange={(value: string) => this.setState({ email: value })}
                 />
                 <NeonButton
@@ -136,7 +129,7 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
                     size={SIZE.MEDIUM}
                     width={WIDTH.FULL}
                     margin={MARGIN.SMALL}
-                    onClick={this._sendResetEmail}
+                    onClick={this._sendResetEmail.bind(this)}
                 >
                     {this.props.language.get(PROFILE.SEND_RESET_PASSWORD_EMAIL)}
                 </NeonButton>
@@ -187,4 +180,4 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
     }
 }
 
-export const ConnectedHelp: React.ComponentType<{}> = connector.connect(HelpBase);
+export const ConnectedHelp: React.ComponentType<unknown> = connector.connect(HelpBase);

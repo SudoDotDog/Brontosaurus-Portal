@@ -62,7 +62,7 @@ const connector = Connector.create<IStore, ConnectedTimeoutStates, ConnectedTime
 
 export class TimeoutBase extends React.Component<ConnectedProps> {
 
-    public async componentDidMount() {
+    public componentDidMount() {
 
         this._simple();
     }
@@ -162,7 +162,6 @@ export class TimeoutBase extends React.Component<ConnectedProps> {
             this.props.clearLoading();
         } catch (err) {
 
-            const error: string = err.message;
             this.props.clearLoading();
             this.props.startError(serverMightOfflineInfo);
         }

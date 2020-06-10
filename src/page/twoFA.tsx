@@ -141,4 +141,4 @@ export class TwoFABase extends React.Component<ConnectedProps, TwoFAStates> {
     }
 }
 
-export const ConnectedTwoFA: React.ComponentType<{}> = connector.connect(TwoFABase);
+export const ConnectedTwoFA: React.ComponentType<unknown> = connector.connect(TwoFABase);

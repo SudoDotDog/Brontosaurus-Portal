@@ -68,13 +68,6 @@ export class LoginBase extends React.Component<ConnectedProps, LoginState> {
         changeRequired: false,
     };
 
-    public constructor(props: ConnectedProps) {
-
-        super(props);
-
-        this._login = this._login.bind(this);
-    }
-
     public render(): JSX.Element {
 
         return (
@@ -90,7 +83,7 @@ export class LoginBase extends React.Component<ConnectedProps, LoginState> {
         }
 
         return (<ConnectedForm
-            login={this._login}
+            login={this._login.bind(this)}
             changeRequired={this.state.changeRequired}
             onChange={() => this.setState({ changeRequired: false })}
         />);
@@ -146,4 +139,4 @@ export class LoginBase extends React.Component<ConnectedProps, LoginState> {
     }
 }
 
-export const ConnectedLogin: React.ComponentType<{}> = connector.connect(LoginBase);
+export const ConnectedLogin: React.ComponentType<unknown> = connector.connect(LoginBase);

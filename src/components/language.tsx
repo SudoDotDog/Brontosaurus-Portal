@@ -35,6 +35,7 @@ const connector = Connector.create<IStore, ConnectedLanguageStates, ConnectedLan
 
 export const LanguageBase: React.FC<ConnectedProps> = (props: ConnectedProps) => {
 
+    // spell-checker:disable
     return (
         <select
             value={props.language}
@@ -51,6 +52,7 @@ export const LanguageBase: React.FC<ConnectedProps> = (props: ConnectedProps) =>
             <option value={LOCALE.SPANISH_SPAIN}>Español</option>
         </select>
     );
+    // spell-checker:enable
 };
 
-export const ConnectedLanguage: React.ComponentType<{}> = connector.connect(LanguageBase);
+export const ConnectedLanguage: React.ComponentType<unknown> = connector.connect(LanguageBase);

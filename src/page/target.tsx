@@ -85,4 +85,4 @@ export class TargetBase extends React.Component<ConnectedTargetProps> {
     }
 }
 
-export const ConnectedTarget: React.ComponentType<{}> = connector.connect(TargetBase);
+export const ConnectedTarget: React.ComponentType<unknown> = connector.connect(TargetBase);

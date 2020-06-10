@@ -135,4 +135,4 @@ export class LimboBase extends React.Component<ConnectedProps, LimboStates> {
     }
 }
 
-export const ConnectedLimbo: React.ComponentType<{}> = connector.connect(LimboBase);
+export const ConnectedLimbo: React.ComponentType<unknown> = connector.connect(LimboBase);

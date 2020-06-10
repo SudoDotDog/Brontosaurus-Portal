@@ -72,13 +72,6 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps> 
 
     private _passwordRef: HTMLInputElement | null = null;
 
-    public constructor(props: ConnectedProps) {
-
-        super(props);
-
-        this._verifyTemporaryPassword = this._verifyTemporaryPassword.bind(this);
-    }
-
     public componentDidMount() {
 
         this.props.clearError();
@@ -120,7 +113,7 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps> 
                     label={this.props.language.get(PROFILE.TEMPORARY_PASSWORD)}
                     margin={MARGIN.SMALL}
                     value={this.props.resetToken}
-                    onEnter={this._verifyTemporaryPassword}
+                    onEnter={this._verifyTemporaryPassword.bind(this)}
                     onChange={(value: string) => this.props.setResetToken(value)}
                 />
                 <NeonButton
@@ -128,7 +121,7 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps> 
                     size={SIZE.MEDIUM}
                     width={WIDTH.FULL}
                     margin={MARGIN.SMALL}
-                    onClick={this._verifyTemporaryPassword}
+                    onClick={this._verifyTemporaryPassword.bind(this)}
                 >
                     {this.props.language.get(PROFILE.RESET_PASSWORD_TEMPORARY_BUTTON)}
                 </NeonButton>
@@ -164,4 +157,4 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps> 
     }
 }
 
-export const ConnectedResetPasswordTemporary: React.ComponentType<{}> = connector.connect(ResetPasswordTemporaryBase);
+export const ConnectedResetPasswordTemporary: React.ComponentType<unknown> = connector.connect(ResetPasswordTemporaryBase);

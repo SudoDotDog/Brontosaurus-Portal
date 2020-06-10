@@ -4,7 +4,7 @@
  * @description Save
  */
 
-export const saveUsername = (username: string) => {
+export const saveUsername = (username: string): void => {
 
     localStorage.setItem('Brontosaurus_Saved_Username', username);
     return;
