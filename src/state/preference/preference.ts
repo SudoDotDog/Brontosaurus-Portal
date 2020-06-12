@@ -8,6 +8,7 @@ import { LOCALE } from '@sudoo/internationalization';
 import { Reducer } from '@sudoo/redux';
 import { ACTIONS, IStore } from '../declare';
 import { defaultLanguage, ISetLanguageReducerAction, ISetSaveUsernameReducerAction, PreferenceStore } from './type';
+import { logSecurityContent } from '../../i18n/log';
 
 const reduceLanguage: Reducer<IStore, ISetLanguageReducerAction> = (state: IStore | undefined, action: ISetLanguageReducerAction): IStore => {
 
@@ -17,6 +18,8 @@ const reduceLanguage: Reducer<IStore, ISetLanguageReducerAction> = (state: IStor
     };
 
     localStorage.setItem('Brontosaurus_Preference', JSON.stringify(newPreference));
+    logSecurityContent(action.language);
+
     return {
         ...state as IStore,
         preference: newPreference,
@@ -60,6 +63,8 @@ export const getDefaultPreference = (): PreferenceStore => {
     const item: string | null = localStorage.getItem('Brontosaurus_Preference');
 
     if (!item) {
+
+        logSecurityContent(defaultLanguage);
         return {
             language: defaultLanguage,
             saveUsername: false,
@@ -72,5 +77,7 @@ export const getDefaultPreference = (): PreferenceStore => {
         language: parsed.language || defaultLanguage,
         saveUsername: parsed.saveUsername || false,
     };
+    logSecurityContent(preference.language);
+
     return preference;
 };
