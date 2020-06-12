@@ -498,7 +498,7 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
     [PROFILE.TIMEOUT_DESCRIPTION]: "糟糕，您和服务器的会话没有创建或者已经过期，这可能是因为您刷新了浏览器，或者跳转请求未经授权。您可以重新进入刚才的页面来尝试重建会话。如果此问题一直重复出现，请与系统管理员联系以获取更多帮助。",
 
     [PROFILE.INSECURE_REDIRECTION_TITLE]: "不可信任的重定向",
-    [PROFILE.INSECURE_REDIRECTION_DESCRIPTION]: "这个问题不是由您的账号或者设备引发的。为了安全考虑，您或者您正在使用的应用程序请求的重定向链接被我们认为是不可信任的。在这种情况下继续登录，您的账号安全可能会收到威胁。解决这个问题，请尝试回到之前的入口重新登录。",
+    [PROFILE.INSECURE_REDIRECTION_DESCRIPTION]: "这个问题不是由您的账号或者设备引发的。为了安全考虑，您或者您正在使用的应用程序请求的重定向链接被我们认为是不可信任的。如果在这种情况下继续登录，您的账号安全可能会受到威胁。为了解决这个问题，请尝试回到之前的入口重新登录。",
 
     [PROFILE.CONNECT_SERVICE]: "如果这个错误持续出现，请联系系统管理员来获得更多帮助。",
     [PROFILE.UNKNOWN_ERROR]: "未知的错误",
@@ -586,7 +586,7 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
     [PROFILE.TIMEOUT_DESCRIPTION]: "糟糕，您和服務器的會話沒有創建或已經過期，這可能是因為您刷新了瀏覽器，或者替換請求重新授權。您可以重新進入剛才的頁面來嘗試重建會話。如果此問題一直重複出現， 請聯繫系統管理員來獲得更多幫助。",
 
     [PROFILE.INSECURE_REDIRECTION_TITLE]: "不可信任的重定向",
-    [PROFILE.INSECURE_REDIRECTION_DESCRIPTION]: "這個問題不是由您的賬號或者設備引發的。為了安全考慮，您或者您正在使用的應用程序請求的重定向鏈接被我們認為是不可信任的。在這種情況下繼續登錄，您的賬號安全可能會受到威脅。為了解決這個問題，請嘗試回到之前的入口重新登錄。",
+    [PROFILE.INSECURE_REDIRECTION_DESCRIPTION]: "這個問題不是由您的賬號或者設備引發的。為了安全考慮，您或者您正在使用的應用程序請求的重定向鏈接被我們認為是不可信任的。如果在這種情況下繼續登錄，您的賬號安全可能會受到威脅。為了解決這個問題，請嘗試回到之前的入口重新登錄。",
 
     [PROFILE.CONNECT_SERVICE]: "如果這個錯誤持續出現，請聯繫系統管理員來獲得更多幫助。",
     [PROFILE.UNKNOWN_ERROR]: "未知的錯誤",
