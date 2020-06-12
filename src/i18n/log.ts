@@ -22,8 +22,12 @@ export const getLogSecurityContent = (language: LOCALE): string => {
 
 export const logSecurityContent = (language: LOCALE): void => {
 
+    const titleStyle: string = `font-size:26px;color:red;background-color:white`;
+    const contentStyle: string = `font-size:16px`;
+
     const title: string = getLogSecurityTitle(language);
     const content: string = getLogSecurityContent(language);
-    console.log(title);
-    console.log(content);
+
+    setTimeout(console.log.bind(console, `%c> ${title} <`, titleStyle), 1);
+    setTimeout(console.log.bind(console, `%c${content}`, contentStyle), 1);
 };

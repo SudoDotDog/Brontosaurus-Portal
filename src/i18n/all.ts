@@ -556,7 +556,7 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
     [PROFILE.INTERNAL_ERROR]: "内部错误",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "发生了内部错误，这通常不是因为您，如果这个错误持续出现，请联系系统管理员来获得更多帮助。",
 
-    [PROFILE.SECURITY_LOG_TITLE]: "小心，这里会做的很有可能和您想做的不同。",
+    [PROFILE.SECURITY_LOG_TITLE]: "小心，这里实际做的很有可能和您想做的不同。",
     [PROFILE.SECURITY_LOG_CONTENT]: "这个控制台是浏览器提供给开发者的功能。如果有人让您在这里输入，或者复制粘贴任何内容，那一定是一个骗局，请直接关闭控制台。如果您照做的话您的账户信息可能会被泄露，并给予对方访问您账户的权限。",
 };
 
@@ -647,7 +647,7 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
     [PROFILE.INTERNAL_ERROR]: "內部錯誤",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "發生了內部錯誤，這通常不是因為您，如果這個錯誤持續出現，請聯繫系統管理員來獲得更多幫助。",
 
-    [PROFILE.SECURITY_LOG_TITLE]: "小心，這裡會做的很有可能和您想做的不同。",
+    [PROFILE.SECURITY_LOG_TITLE]: "小心，這裡實際做的很有可能和您想做的不同。",
     [PROFILE.SECURITY_LOG_CONTENT]: "這個控制台是瀏覽器提供給開發者的功能。如果有人讓您在這裡輸入，或者復制粘貼任何內容，那一定是一個騙局，請直接關閉控制台。如果您照做的話您的賬戶信息可能會被洩露，並給予對方訪問您賬戶的權限。",
 };
 
