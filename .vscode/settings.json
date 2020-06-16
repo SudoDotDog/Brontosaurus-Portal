@@ -9,6 +9,7 @@
         "devtool",
         "downlevel",
         "ifeq",
+        "mocharc",
         "redirections",
         "setx",
         "splited",
