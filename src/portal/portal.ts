@@ -38,6 +38,11 @@ export class Portal {
                     .setParams(applicationKey, callbackPath)
                     .setPlatformIfExist(platform)
                     .setUserAgentOverrideIfExist(userAgent);
+            } else if (callbackPath.toUpperCase().startsWith('ALERT')) {
+                this._instance = new Portal(PORTAL_MODE.ALERT)
+                    .setParams(applicationKey, callbackPath)
+                    .setPlatformIfExist(platform)
+                    .setUserAgentOverrideIfExist(userAgent);
             } else if (callbackPath.toUpperCase().startsWith('NONE')) {
                 this._instance = new Portal(PORTAL_MODE.NONE)
                     .setParams(applicationKey, callbackPath)
@@ -101,6 +106,11 @@ export class Portal {
         return this._mode === PORTAL_MODE.IFRAME;
     }
 
+    public get isAlert(): boolean {
+
+        return this._mode === PORTAL_MODE.ALERT;
+    }
+
     public get isNone(): boolean {
 
         return this._mode === PORTAL_MODE.NONE;
@@ -149,6 +159,12 @@ export class Portal {
             if (postParentMessage(token)) {
                 return;
             }
+        }
+
+        if (this._mode === PORTAL_MODE.ALERT) {
+
+            alert(token);
+            return;
         }
 
         if (this._mode === PORTAL_MODE.NONE) {

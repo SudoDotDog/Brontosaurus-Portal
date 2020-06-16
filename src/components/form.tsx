@@ -310,7 +310,8 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
 
         if (portal.isIFrame
             || portal.isNone
-            || portal.isPost) {
+            || portal.isPost
+            || portal.isAlert) {
             return false;
         }
 

@@ -7,6 +7,7 @@
 export enum PORTAL_MODE {
     REDIRECT = "REDIRECT",
     IFRAME = "IFRAME",
+    ALERT = "ALERT",
     NONE = "NONE",
     POST = "POST",
     ERROR = "ERROR",
