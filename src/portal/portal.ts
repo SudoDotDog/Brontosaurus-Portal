@@ -168,6 +168,7 @@ export class Portal {
         }
 
         if (this._mode === PORTAL_MODE.NONE) {
+
             console.log(token);
             return;
         }
