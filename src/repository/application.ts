@@ -31,13 +31,18 @@ export const applicationRepository = async (): Promise<TargetInfo> => {
     if (response.ok) {
         return {
             timeout: false,
-            redirections: data.redirections,
             avatar: data.avatar,
             background: data.background,
             name: data.name,
             help: data.help,
             privacy: data.privacy,
             favicon: data.favicon,
+
+            redirections: data.redirections,
+            iFrameProtocol: data.iFrameProtocol,
+            postProtocol: data.postProtocol,
+            alertProtocol: data.alertProtocol,
+            noneProtocol: data.noneProtocol,
 
             systemName: data.systemName,
             accountName: data.accountName,

@@ -80,6 +80,10 @@ export class TargetBase extends React.Component<ConnectedTargetProps> {
                 timeout: true,
                 name: '',
                 redirections: [],
+                iFrameProtocol: false,
+                postProtocol: false,
+                alertProtocol: false,
+                noneProtocol: false,
             });
         }
     }

@@ -223,8 +223,6 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
             return null;
         }
 
-
-
         return (<Title
             text={this._getLoginToText()}
             namespaceText={this._getNamespaceText()}
@@ -308,11 +306,17 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
             return false;
         }
 
-        if (portal.isIFrame
-            || portal.isNone
-            || portal.isPost
-            || portal.isAlert) {
-            return false;
+        if (portal.isIFrame) {
+            return !this.props.target.iFrameProtocol;
+        }
+        if (portal.isPost) {
+            return !this.props.target.postProtocol;
+        }
+        if (portal.isAlert) {
+            return !this.props.target.alertProtocol;
+        }
+        if (portal.isNone) {
+            return !this.props.target.noneProtocol;
         }
 
         const callbackPath: string = Portal.instance.callbackPath;

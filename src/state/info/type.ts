@@ -17,12 +17,17 @@ export type TargetInfo = {
 
     readonly timeout: boolean;
     readonly name: string;
-    readonly redirections: ApplicationRedirection[];
     readonly avatar?: string;
     readonly background?: string;
     readonly help?: string;
     readonly privacy?: string;
     readonly favicon?: string;
+
+    readonly redirections: ApplicationRedirection[];
+    readonly iFrameProtocol: boolean;
+    readonly postProtocol: boolean;
+    readonly alertProtocol: boolean;
+    readonly noneProtocol: boolean;
 
     readonly systemName?: string;
     readonly accountName?: string;

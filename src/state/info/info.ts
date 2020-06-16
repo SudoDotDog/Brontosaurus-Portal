@@ -35,5 +35,9 @@ export const getDefaultInfoStore = (): IInfoStore => ({
         timeout: false,
         name: '',
         redirections: [],
+        iFrameProtocol: false,
+        postProtocol: false,
+        alertProtocol: false,
+        noneProtocol: false,
     },
 });
