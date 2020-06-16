@@ -122,7 +122,7 @@ export class LimboBase extends React.Component<ConnectedProps, LimboStates> {
         try {
 
             const token: string = await limboRepository(this.props.username, this.props.namespace, this.props.password, password);
-            Portal.flush(token);
+            Portal.flush(token, this.props.language);
         } catch (err) {
 
 

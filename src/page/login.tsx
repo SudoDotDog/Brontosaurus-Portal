@@ -113,7 +113,7 @@ export class LoginBase extends React.Component<ConnectedProps, LoginState> {
                 if (this.props.saveUsername) {
                     saveUsername(username);
                 }
-                Portal.flush(action.token as string);
+                Portal.flush(action.token as string, this.props.language);
             }
             if (action.next === 'limbo') {
                 this.props.setPage(PAGE.LIMBO);

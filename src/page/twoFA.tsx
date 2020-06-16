@@ -128,7 +128,7 @@ export class TwoFABase extends React.Component<ConnectedProps, TwoFAStates> {
         try {
 
             const token: string = await twoFARepository(this.props.username, this.props.namespace, this.props.password, code);
-            Portal.flush(token);
+            Portal.flush(token, this.props.language);
         } catch (err) {
 
 

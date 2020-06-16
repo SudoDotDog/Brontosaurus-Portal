@@ -6,6 +6,8 @@
 
 import { replaceRedirectPath } from "../util/redirect";
 import { PORTAL_MODE, postCurrentMessage, postParentMessage } from "./util";
+import { SudooFormat } from "@sudoo/internationalization";
+import { PROFILE } from "../i18n/profile";
 
 export class Portal {
 
@@ -70,12 +72,11 @@ export class Portal {
         return this._instance;
     }
 
-    public static flush(token: string): void {
+    public static flush(token: string, textFormatter: SudooFormat): void {
 
-        this.instance.flush(token);
+        this.instance.flush(token, textFormatter);
         return;
     }
-
 
     private readonly _mode: PORTAL_MODE;
 
@@ -152,7 +153,7 @@ export class Portal {
         return Boolean(this._callbackPath);
     }
 
-    public flush(token: string): void {
+    public flush(token: string, textFormatter: SudooFormat): void {
 
         if (this._mode === PORTAL_MODE.IFRAME) {
 
@@ -163,13 +164,21 @@ export class Portal {
 
         if (this._mode === PORTAL_MODE.ALERT) {
 
-            alert(token);
+            alert([
+                textFormatter.get(PROFILE.DO_NOT_SHARE_CONTENT_BEFORE),
+                token,
+                textFormatter.get(PROFILE.DO_NOT_SHARE_CONTENT_AFTER),
+            ].join('\n'));
             return;
         }
 
         if (this._mode === PORTAL_MODE.NONE) {
 
-            console.log(token);
+            const style: string = `font-size:24px;color:orange;background-color:white`;
+
+            setTimeout(console.log.bind(console, `%c${textFormatter.get(PROFILE.DO_NOT_SHARE_CONTENT_BEFORE)}`, style), 1);
+            setTimeout(console.log.bind(console, token), 1);
+            setTimeout(console.log.bind(console, `%c${textFormatter.get(PROFILE.DO_NOT_SHARE_CONTENT_AFTER)}`, style), 1);
             return;
         }
 
