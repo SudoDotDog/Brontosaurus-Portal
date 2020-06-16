@@ -96,8 +96,8 @@ export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
     [PROFILE.SECURITY_LOG_TITLE]: "Careful, what you will do here is likely to be different from what you want to do.",
     [PROFILE.SECURITY_LOG_CONTENT]: "This console is a function provided by the browser to the developer. If someone asks you to type here, or copy and paste anything, it must be a scam, please close the console directly. If you do so, your account information may be leaked and give the other party access to your account.",
 
-    [PROFILE.DO_NOT_SHARE_CONTENT_BEFORE]: "PLACEHOLDER",
-    [PROFILE.DO_NOT_SHARE_CONTENT_AFTER]: "PLACEHOLDER",
+    [PROFILE.DO_NOT_SHARE_CONTENT_BEFORE]: "The following content is confidential, please do not share it with anyone. If other people get the content, your account security will be threatened.",
+    [PROFILE.DO_NOT_SHARE_CONTENT_AFTER]: "The above content is confidential, please do not share with anyone. If other people get the content, your account security will be threatened.",
 };
 
 /* spell-checker: disable */
@@ -192,8 +192,8 @@ export const RUSSIAN_RUSSIA: Record<PROFILE, string> = {
     [PROFILE.SECURITY_LOG_TITLE]: "Будьте осторожны, то, что вы будете здесь делать, скорее всего, будет отличаться от того, что вы хотите сделать.",
     [PROFILE.SECURITY_LOG_CONTENT]: "Эта консоль является функцией, предоставляемой браузером разработчику. Если кто-то просит вас напечатать здесь или скопировать и вставить что-либо, это должно быть мошенничество, пожалуйста, закройте консоль напрямую. Если вы это сделаете, информация вашей учетной записи может быть утечка и предоставить другой стороне доступ к вашей учетной записи.",
 
-    [PROFILE.DO_NOT_SHARE_CONTENT_BEFORE]: "PLACEHOLDER",
-    [PROFILE.DO_NOT_SHARE_CONTENT_AFTER]: "PLACEHOLDER",
+    [PROFILE.DO_NOT_SHARE_CONTENT_BEFORE]: "Следующее содержание является конфиденциальным, пожалуйста, не делитесь им ни с кем. Если другие люди получат контент, безопасность вашей учетной записи будет поставлена ​​под угрозу.",
+    [PROFILE.DO_NOT_SHARE_CONTENT_AFTER]: "Вышеуказанное содержание является конфиденциальным, пожалуйста, не делитесь с кем-либо. Если другие люди получат контент, безопасность вашей учетной записи будет поставлена ​​под угрозу.",
 };
 
 /* spell-checker: enable */
@@ -290,8 +290,8 @@ export const FRENCH_FRANCE: Record<PROFILE, string> = {
     [PROFILE.SECURITY_LOG_TITLE]: "Attention, ce que vous ferez ici peut être différent de ce que vous voulez faire.",
     [PROFILE.SECURITY_LOG_CONTENT]: "Cette console est une fonction fournie par le navigateur au développeur. Si quelqu'un vous demande de taper ici, ou de copier et coller quoi que ce soit, ce doit être une arnaque, veuillez fermer la console directement. Si vous le faites, les informations de votre compte peuvent être divulguées et donner à l'autre partie l'accès à votre compte.",
 
-    [PROFILE.DO_NOT_SHARE_CONTENT_BEFORE]: "PLACEHOLDER",
-    [PROFILE.DO_NOT_SHARE_CONTENT_AFTER]: "PLACEHOLDER",
+    [PROFILE.DO_NOT_SHARE_CONTENT_BEFORE]: "Le contenu suivant est confidentiel, veuillez ne le partager avec personne. Si d'autres personnes obtiennent le contenu, la sécurité de votre compte sera menacée.",
+    [PROFILE.DO_NOT_SHARE_CONTENT_AFTER]: "Le contenu ci-dessus est confidentiel, veuillez ne le partager avec personne. Si d'autres personnes obtiennent le contenu, la sécurité de votre compte sera menacée.",
 };
 
 /* spell-checker: enable */
@@ -386,8 +386,8 @@ export const JAPANESE_JAPAN: Record<PROFILE, string> = {
     [PROFILE.SECURITY_LOG_TITLE]: "注意してください。ここで行うことは、やりたいこととは異なる可能性があります。",
     [PROFILE.SECURITY_LOG_CONTENT]: "このコンソールは、ブラウザから開発者に提供される機能です。 ここに入力するか、コンテンツをコピーして貼り付けるように求められた場合、それは詐欺である必要があります。コンソールを直接閉じてください。 これを行うと、アカウント情報が漏洩し、相手があなたのアカウントにアクセスできるようになる可能性があります。",
 
-    [PROFILE.DO_NOT_SHARE_CONTENT_BEFORE]: "PLACEHOLDER",
-    [PROFILE.DO_NOT_SHARE_CONTENT_AFTER]: "PLACEHOLDER",
+    [PROFILE.DO_NOT_SHARE_CONTENT_BEFORE]: "次のコンテンツは機密情報です。誰とも共有しないでください。 他の人がコンテンツを入手すると、アカウントのセキュリティが脅かされます。",
+    [PROFILE.DO_NOT_SHARE_CONTENT_AFTER]: "上記の内容は機密情報です。誰にも教えないでください。 他の人がコンテンツを入手すると、アカウントのセキュリティが脅かされます。",
 };
 
 export const KOREAN_KOREA: Record<PROFILE, string> = {
@@ -480,8 +480,8 @@ export const KOREAN_KOREA: Record<PROFILE, string> = {
     [PROFILE.SECURITY_LOG_TITLE]: "여기서 할 일이 원하는 일과 다를 수 있으므로주의하십시오.",
     [PROFILE.SECURITY_LOG_CONTENT]: "이 콘솔은 브라우저에서 개발자에게 제공하는 기능입니다. 누군가 여기에 입력하거나 복사하여 붙여 넣기를 요청하는 경우 사기 여야합니다. 콘솔을 직접 닫으십시오. 그렇게하면 계정 정보가 유출되어 상대방에게 귀하의 계정에 대한 액세스 권한이 부여 될 수 있습니다.",
 
-    [PROFILE.DO_NOT_SHARE_CONTENT_BEFORE]: "PLACEHOLDER",
-    [PROFILE.DO_NOT_SHARE_CONTENT_AFTER]: "PLACEHOLDER",
+    [PROFILE.DO_NOT_SHARE_CONTENT_BEFORE]: "다음 내용은 기밀이므로 다른 사람과 공유하지 마십시오. 다른 사람이 이러한 내용을 입수하면 계정 보안이 위협받을 수 있습니다.",
+    [PROFILE.DO_NOT_SHARE_CONTENT_AFTER]: "위 내용은 기밀이므로 다른 사람과 공유하지 마십시오. 다른 사람이 이러한 내용을 입수하면 계정 보안이 위협받을 수 있습니다.",
 };
 
 export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
@@ -574,8 +574,8 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
     [PROFILE.SECURITY_LOG_TITLE]: "小心，这里实际做的很有可能和您想做的不同。",
     [PROFILE.SECURITY_LOG_CONTENT]: "这个控制台是浏览器提供给开发者的功能。如果有人让您在这里输入，或者复制粘贴任何内容，那一定是一个骗局，请直接关闭控制台。如果您照做的话您的账户信息可能会被泄露，并给予对方访问您账户的权限。",
 
-    [PROFILE.DO_NOT_SHARE_CONTENT_BEFORE]: "PLACEHOLDER",
-    [PROFILE.DO_NOT_SHARE_CONTENT_AFTER]: "PLACEHOLDER",
+    [PROFILE.DO_NOT_SHARE_CONTENT_BEFORE]: "以下的内容是机密的，请不要和任何人分享。如果其他人获得了这些内容，您的账户安全会收到威胁。",
+    [PROFILE.DO_NOT_SHARE_CONTENT_AFTER]: "以上的内容是机密的，请不要和任何人分享。如果其他人获得了这些内容，您的账户安全会收到威胁。",
 };
 
 export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
@@ -668,8 +668,8 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
     [PROFILE.SECURITY_LOG_TITLE]: "小心，這裡實際做的很有可能和您想做的不同。",
     [PROFILE.SECURITY_LOG_CONTENT]: "這個控制台是瀏覽器提供給開發者的功能。如果有人讓您在這裡輸入，或者復制粘貼任何內容，那一定是一個騙局，請直接關閉控制台。如果您照做的話您的賬戶信息可能會被洩露，並給予對方訪問您賬戶的權限。",
 
-    [PROFILE.DO_NOT_SHARE_CONTENT_BEFORE]: "PLACEHOLDER",
-    [PROFILE.DO_NOT_SHARE_CONTENT_AFTER]: "PLACEHOLDER",
+    [PROFILE.DO_NOT_SHARE_CONTENT_BEFORE]: "以下的內容是機密的，請不要和任何人分享。如果其他人獲得了這些內容，您的賬戶安全會收到威脅。",
+    [PROFILE.DO_NOT_SHARE_CONTENT_AFTER]: "以上的內容是機密的，請不要和任何人分享。如果其他人獲得了這些內容，您的賬戶安全會收到威脅。",
 };
 
 /* spell-checker: disable */
@@ -764,8 +764,8 @@ export const SPANISH_MEXICO: Record<PROFILE, string> = {
     [PROFILE.SECURITY_LOG_TITLE]: "Tenga cuidado, lo que hará aquí puede ser diferente de lo que quiere hacer.",
     [PROFILE.SECURITY_LOG_CONTENT]: "Esta consola es una función proporcionada por el navegador al desarrollador. Si alguien le pide que escriba aquí, o que copie y pegue algo, debe ser una estafa, cierre la consola directamente. Si lo hace, la información de su cuenta puede filtrarse y dar acceso a la otra parte a su cuenta.",
 
-    [PROFILE.DO_NOT_SHARE_CONTENT_BEFORE]: "PLACEHOLDER",
-    [PROFILE.DO_NOT_SHARE_CONTENT_AFTER]: "PLACEHOLDER",
+    [PROFILE.DO_NOT_SHARE_CONTENT_BEFORE]: "El siguiente contenido es confidencial, no lo comparta con nadie. Si otras personas obtienen estos contenidos, la seguridad de su cuenta se verá amenazada.",
+    [PROFILE.DO_NOT_SHARE_CONTENT_AFTER]: "El contenido anterior es confidencial, no lo comparta con nadie. Si otras personas obtienen estos contenidos, la seguridad de su cuenta se verá amenazada.",
 };
 
 /* spell-checker: enable */
