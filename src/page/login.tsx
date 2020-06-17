@@ -4,7 +4,7 @@
  * @description Login
  */
 
-import { SudooFormat } from "@sudoo/internationalization";
+import { LOCALE, SudooFormat } from "@sudoo/internationalization";
 import { Connector } from "@sudoo/redux";
 import * as React from "react";
 import { FormStructure } from "../components/form";
@@ -29,6 +29,7 @@ type LoginState = {
 type ConnectedLoginStates = {
 
     readonly saveUsername: boolean;
+    readonly locale: LOCALE;
     readonly language: SudooFormat;
     readonly target: TargetInfo;
 };
@@ -50,6 +51,7 @@ const connector = Connector.create<IStore, ConnectedLoginStates, ConnectedLoginA
 
         saveUsername: preference.saveUsername,
         language: intl.format(preference.language),
+        locale: preference.language,
         target: info.target,
     })).connectActions({
 
@@ -113,7 +115,7 @@ export class LoginBase extends React.Component<ConnectedProps, LoginState> {
                 if (this.props.saveUsername) {
                     saveUsername(username);
                 }
-                Portal.flush(action.token as string, this.props.language);
+                Portal.flush(action.token as string, this.props.locale);
             }
             if (action.next === 'limbo') {
                 this.props.setPage(PAGE.LIMBO);

@@ -4,7 +4,7 @@
  * @description TwoFA
  */
 
-import { SudooFormat } from "@sudoo/internationalization";
+import { LOCALE, SudooFormat } from "@sudoo/internationalization";
 import { NeonButton } from "@sudoo/neon/button";
 import { MARGIN, SIZE, WIDTH } from "@sudoo/neon/declare";
 import { INPUT_TYPE, NeonInput } from "@sudoo/neon/input";
@@ -34,6 +34,7 @@ type ConnectedTwoFAStates = {
     readonly namespace: string;
     readonly password: string;
     readonly language: SudooFormat;
+    readonly locale: LOCALE;
 };
 
 type ConnectedTwoFAActions = {
@@ -53,6 +54,7 @@ const connector = Connector.create<IStore, ConnectedTwoFAStates, ConnectedTwoFAA
         namespace: form.namespace,
         password: form.password,
         language: intl.format(preference.language),
+        locale: preference.language,
     })).connectActions({
 
         startLoading,
@@ -128,7 +130,7 @@ export class TwoFABase extends React.Component<ConnectedProps, TwoFAStates> {
         try {
 
             const token: string = await twoFARepository(this.props.username, this.props.namespace, this.props.password, code);
-            Portal.flush(token, this.props.language);
+            Portal.flush(token, this.props.locale);
         } catch (err) {
 
 

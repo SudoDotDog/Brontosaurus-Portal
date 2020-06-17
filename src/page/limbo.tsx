@@ -4,7 +4,7 @@
  * @description Limbo
  */
 
-import { SudooFormat } from "@sudoo/internationalization";
+import { LOCALE, SudooFormat } from "@sudoo/internationalization";
 import { NeonButton } from "@sudoo/neon/button";
 import { MARGIN, SIZE, WIDTH } from "@sudoo/neon/declare";
 import { INPUT_TYPE, NeonInput } from "@sudoo/neon/input";
@@ -34,6 +34,7 @@ type ConnectedLimboStates = {
     readonly namespace: string;
     readonly password: string;
     readonly language: SudooFormat;
+    readonly locale: LOCALE;
 };
 
 type ConnectedLimboActions = {
@@ -53,6 +54,7 @@ const connector = Connector.create<IStore, ConnectedLimboStates, ConnectedLimboA
         namespace: form.namespace,
         password: form.password,
         language: intl.format(preference.language),
+        locale: preference.language,
     })).connectActions({
 
         startLoading,
@@ -122,7 +124,7 @@ export class LimboBase extends React.Component<ConnectedProps, LimboStates> {
         try {
 
             const token: string = await limboRepository(this.props.username, this.props.namespace, this.props.password, password);
-            Portal.flush(token, this.props.language);
+            Portal.flush(token, this.props.locale);
         } catch (err) {
 
 
