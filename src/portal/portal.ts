@@ -4,10 +4,11 @@
  * @description Portal
  */
 
+import { LOCALE, SudooFormat } from "@sudoo/internationalization";
+import { intl } from "../i18n/intl";
+import { PROFILE } from "../i18n/profile";
 import { replaceRedirectPath } from "../util/redirect";
 import { PORTAL_MODE, postCurrentMessage, postParentMessage } from "./util";
-import { SudooFormat } from "@sudoo/internationalization";
-import { PROFILE } from "../i18n/profile";
 
 export class Portal {
 
@@ -72,9 +73,9 @@ export class Portal {
         return this._instance;
     }
 
-    public static flush(token: string, textFormatter: SudooFormat): void {
+    public static flush(token: string, locale: LOCALE): void {
 
-        this.instance.flush(token, textFormatter);
+        this.instance.flush(token, locale);
         return;
     }
 
@@ -153,7 +154,7 @@ export class Portal {
         return Boolean(this._callbackPath);
     }
 
-    public flush(token: string, textFormatter: SudooFormat): void {
+    public flush(token: string, locale: LOCALE): void {
 
         if (this._mode === PORTAL_MODE.IFRAME) {
 
@@ -163,6 +164,8 @@ export class Portal {
         }
 
         if (this._mode === PORTAL_MODE.ALERT) {
+
+            const textFormatter: SudooFormat = intl.format(locale);
 
             alert([
                 textFormatter.get(PROFILE.DO_NOT_SHARE_CONTENT_BEFORE),
@@ -174,6 +177,7 @@ export class Portal {
 
         if (this._mode === PORTAL_MODE.NONE) {
 
+            const textFormatter: SudooFormat = intl.format(locale);
             const style: string = `font-size:24px;color:orange;background-color:white`;
 
             setTimeout(console.log.bind(console, `%c${textFormatter.get(PROFILE.DO_NOT_SHARE_CONTENT_BEFORE)}`, style), 1);
