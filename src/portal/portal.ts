@@ -123,6 +123,11 @@ export class Portal {
         return this._mode === PORTAL_MODE.POST;
     }
 
+    public get isRedirect(): boolean {
+
+        return this._mode === PORTAL_MODE.REDIRECT;
+    }
+
     public get applicationKey(): string {
 
         if (this._applicationKey) {

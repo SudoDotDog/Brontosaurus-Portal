@@ -10,6 +10,7 @@ import * as React from "react";
 import * as StyleForm from "../../style/page/form.sass";
 import { intl } from "../i18n/intl";
 import { PROFILE } from "../i18n/profile";
+import { Portal } from "../portal/portal";
 import { IStore } from "../state/declare";
 import { setTarget } from "../state/info/info";
 import { TargetInfo } from "../state/info/type";
@@ -61,13 +62,31 @@ export class InsecureRedirectionBase extends React.Component<ConnectedProps> {
 
         return (
             <div className={StyleForm.timeoutContainer}>
-                <div className={StyleForm.timeoutTitle}>{this.props.language.get(PROFILE.INSECURE_REDIRECTION_TITLE)}</div>
-                <div>{this.props.language.get(PROFILE.INSECURE_REDIRECTION_DESCRIPTION)}</div>
+                <div className={StyleForm.timeoutTitle}>{this._getTitle()}</div>
+                <div>{this._getDescription()}</div>
                 {this._renderEntryPage()}
                 {this._renderIndexPage()}
                 {this._renderHelpCenter()}
             </div>
         );
+    }
+
+    private _getTitle() {
+
+        const portal: Portal = Portal.instance;
+        if (portal.isRedirect) {
+            return this.props.language.get(PROFILE.INSECURE_REDIRECTION_TITLE);
+        }
+        return this.props.language.get(PROFILE.APPLICATION_GROUP_NOT_FULFILLED);
+    }
+
+    private _getDescription() {
+
+        const portal: Portal = Portal.instance;
+        if (portal.isRedirect) {
+            return this.props.language.get(PROFILE.INSECURE_REDIRECTION_DESCRIPTION);
+        }
+        return this.props.language.get(PROFILE.APPLICATION_GROUP_NOT_FULFILLED);
     }
 
     private _renderEntryPage() {
