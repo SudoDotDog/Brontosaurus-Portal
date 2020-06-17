@@ -574,8 +574,8 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
     [PROFILE.SECURITY_LOG_TITLE]: "小心，这里实际做的很有可能和您想做的不同。",
     [PROFILE.SECURITY_LOG_CONTENT]: "这个控制台是浏览器提供给开发者的功能。如果有人让您在这里输入，或者复制粘贴任何内容，那一定是一个骗局，请直接关闭控制台。如果您照做的话您的账户信息可能会被泄露，并给予对方访问您账户的权限。",
 
-    [PROFILE.DO_NOT_SHARE_CONTENT_BEFORE]: "以下的内容是机密的，请不要和任何人分享。如果其他人获得了这些内容，您的账户安全会收到威胁。",
-    [PROFILE.DO_NOT_SHARE_CONTENT_AFTER]: "以上的内容是机密的，请不要和任何人分享。如果其他人获得了这些内容，您的账户安全会收到威胁。",
+    [PROFILE.DO_NOT_SHARE_CONTENT_BEFORE]: "以下的内容是机密的，请不要和任何人分享。如果其他人获得了这些内容，您的账户安全会受到威胁。",
+    [PROFILE.DO_NOT_SHARE_CONTENT_AFTER]: "以上的内容是机密的，请不要和任何人分享。如果其他人获得了这些内容，您的账户安全会受到威胁。",
 };
 
 export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
@@ -668,8 +668,8 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
     [PROFILE.SECURITY_LOG_TITLE]: "小心，這裡實際做的很有可能和您想做的不同。",
     [PROFILE.SECURITY_LOG_CONTENT]: "這個控制台是瀏覽器提供給開發者的功能。如果有人讓您在這裡輸入，或者復制粘貼任何內容，那一定是一個騙局，請直接關閉控制台。如果您照做的話您的賬戶信息可能會被洩露，並給予對方訪問您賬戶的權限。",
 
-    [PROFILE.DO_NOT_SHARE_CONTENT_BEFORE]: "以下的內容是機密的，請不要和任何人分享。如果其他人獲得了這些內容，您的賬戶安全會收到威脅。",
-    [PROFILE.DO_NOT_SHARE_CONTENT_AFTER]: "以上的內容是機密的，請不要和任何人分享。如果其他人獲得了這些內容，您的賬戶安全會收到威脅。",
+    [PROFILE.DO_NOT_SHARE_CONTENT_BEFORE]: "以下的內容是機密的，請不要和任何人分享。如果其他人獲得了這些內容，您的賬戶安全會受到威脅。",
+    [PROFILE.DO_NOT_SHARE_CONTENT_AFTER]: "以上的內容是機密的，請不要和任何人分享。如果其他人獲得了這些內容，您的賬戶安全會受到威脅。",
 };
 
 /* spell-checker: disable */

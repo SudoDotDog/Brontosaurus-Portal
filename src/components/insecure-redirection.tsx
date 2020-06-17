@@ -77,7 +77,7 @@ export class InsecureRedirectionBase extends React.Component<ConnectedProps> {
         if (portal.isRedirect) {
             return this.props.language.get(PROFILE.INSECURE_REDIRECTION_TITLE);
         }
-        return this.props.language.get(PROFILE.APPLICATION_GROUP_NOT_FULFILLED);
+        return this.props.language.get(PROFILE.INSECURE_PROTOCOL_TITLE);
     }
 
     private _getDescription() {
@@ -86,7 +86,7 @@ export class InsecureRedirectionBase extends React.Component<ConnectedProps> {
         if (portal.isRedirect) {
             return this.props.language.get(PROFILE.INSECURE_REDIRECTION_DESCRIPTION);
         }
-        return this.props.language.get(PROFILE.APPLICATION_GROUP_NOT_FULFILLED);
+        return this.props.language.get(PROFILE.INSECURE_PROTOCOL_CONTENT);
     }
 
     private _renderEntryPage() {
