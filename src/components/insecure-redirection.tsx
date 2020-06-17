@@ -34,14 +34,10 @@ type ConnectedInsecureRedirectionActions = {
     readonly clearLoading: () => void;
 };
 
-export type FromStructureProps = {
-
-    readonly showHelp?: boolean;
-    readonly showHelpCenter?: boolean;
-    readonly showBackToLogin?: boolean;
+export type InsecureRedirectionProps = {
 };
 
-type ConnectedProps = ConnectedInsecureRedirectionStates & ConnectedInsecureRedirectionActions & FromStructureProps;
+type ConnectedProps = ConnectedInsecureRedirectionStates & ConnectedInsecureRedirectionActions & InsecureRedirectionProps;
 
 const connector = Connector.create<IStore, ConnectedInsecureRedirectionStates, ConnectedInsecureRedirectionActions>()
     .connectStates(({ info, preference, status }: IStore) => ({
@@ -132,4 +128,4 @@ export class InsecureRedirectionBase extends React.Component<ConnectedProps> {
     }
 }
 
-export const InsecureRedirection: React.ComponentType<FromStructureProps> = connector.connect(InsecureRedirectionBase);
+export const InsecureRedirection: React.ComponentType<InsecureRedirectionProps> = connector.connect(InsecureRedirectionBase);

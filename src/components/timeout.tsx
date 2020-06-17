@@ -36,14 +36,10 @@ type ConnectedTimeoutActions = {
     readonly clearLoading: () => void;
 };
 
-export type FromStructureProps = {
-
-    readonly showHelp?: boolean;
-    readonly showHelpCenter?: boolean;
-    readonly showBackToLogin?: boolean;
+export type TimeOutProps = {
 };
 
-type ConnectedProps = ConnectedTimeoutStates & ConnectedTimeoutActions & FromStructureProps;
+type ConnectedProps = ConnectedTimeoutStates & ConnectedTimeoutActions & TimeOutProps;
 
 const connector = Connector.create<IStore, ConnectedTimeoutStates, ConnectedTimeoutActions>()
     .connectStates(({ info, preference, status }: IStore) => ({
@@ -163,4 +159,4 @@ export class TimeoutBase extends React.Component<ConnectedProps> {
     }
 }
 
-export const Timeout: React.ComponentType<FromStructureProps> = connector.connect(TimeoutBase);
+export const Timeout: React.ComponentType<TimeOutProps> = connector.connect(TimeoutBase);

@@ -107,7 +107,9 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
             return (<React.Fragment>
                 {this._renderLogo()}
                 {this._renderFlag()}
-                <InsecureRedirection />
+                <InsecureRedirection
+
+                />
             </React.Fragment>);
         }
 
