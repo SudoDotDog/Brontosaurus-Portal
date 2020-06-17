@@ -52,6 +52,9 @@ export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
     [PROFILE.INSECURE_REDIRECTION_TITLE]: "Untrusted Redirection",
     [PROFILE.INSECURE_REDIRECTION_DESCRIPTION]: "This problem is not caused by your account or device. For security reasons, the redirect link requested by you or the application you are using is considered untrustworthy by us. In this case, if you continue to log in, your account security may be threatened. To solve this problem, please try to return to the previous entrance and log in again.",
 
+    [PROFILE.INSECURE_PROTOCOL_TITLE]: "Unauthorized Protocol",
+    [PROFILE.INSECURE_PROTOCOL_CONTENT]: "This problem is not caused by your account or device. For security reasons, the protocol requested by you or the application you are using is not authorized. If you continue to log in under such circumstances, your account security may be threatened. In order to solve this problem, please try to log back in the previous entrance.",
+
     [PROFILE.CONNECT_SERVICE]: "If this error persists, please contact your system administrator for more help.",
     [PROFILE.UNKNOWN_ERROR]: "Unknown Error",
     [PROFILE.FAILED_TO_FETCH]: "Unable to connect authentication server",
@@ -147,6 +150,9 @@ export const RUSSIAN_RUSSIA: Record<PROFILE, string> = {
 
     [PROFILE.INSECURE_REDIRECTION_TITLE]: "Ненадежное перенаправление",
     [PROFILE.INSECURE_REDIRECTION_DESCRIPTION]: "Эта проблема не вызвана вашей учетной записью или устройством. Из соображений безопасности ссылка на перенаправление, запрошенная вами или используемым вами приложением, считается ненадежной для нас. В этом случае, если вы продолжите входить в систему, безопасность вашей учетной записи может оказаться под угрозой. Чтобы решить эту проблему, попробуйте вернуться к предыдущему входу и войти снова.",
+
+    [PROFILE.INSECURE_PROTOCOL_TITLE]: "Несанкционированное соглашение",
+    [PROFILE.INSECURE_PROTOCOL_CONTENT]: "Эта проблема не вызвана вашей учетной записью или устройством. По соображениям безопасности протокол, запрошенный вами или используемым вами приложением, не авторизован. Если вы продолжите входить в систему при таких обстоятельствах, безопасность вашей учетной записи может оказаться под угрозой. Чтобы решить эту проблему, пожалуйста, попробуйте войти в предыдущий вход.",
 
     [PROFILE.CONNECT_SERVICE]: "Если эта ошибка повторяется, обратитесь за помощью к системному администратору.",
     [PROFILE.UNKNOWN_ERROR]: "Неизвестная ошибка",
@@ -246,6 +252,9 @@ export const FRENCH_FRANCE: Record<PROFILE, string> = {
     [PROFILE.INSECURE_REDIRECTION_TITLE]: "Redirection non approuvée",
     [PROFILE.INSECURE_REDIRECTION_DESCRIPTION]: "Ce problème n'est pas causé par votre compte ou votre appareil. Pour des raisons de sécurité, le lien de redirection demandé par vous ou l'application que vous utilisez est considéré comme non fiable par nous. Dans ce cas, si vous continuez à vous connecter, la sécurité de votre compte peut être menacée. Pour résoudre ce problème, veuillez essayer de revenir à l'entrée précédente et reconnectez-vous.",
 
+    [PROFILE.INSECURE_PROTOCOL_TITLE]: "Non autorisé protocole",
+    [PROFILE.INSECURE_PROTOCOL_CONTENT]: "Ce problème n'est pas causé par votre compte ou votre appareil. Pour des raisons de sécurité, le protocole demandé par vous ou l'application que vous utilisez n'est pas autorisé. Si vous continuez à vous connecter dans de telles circonstances, la sécurité de votre compte peut être menacée. Afin de résoudre ce problème, essayez de revenir à l'entrée précédente et reconnectez-vous.",
+
     [PROFILE.CONNECT_SERVICE]: "Si cette erreur persiste, veuillez contacter votre administrateur système pour obtenir de l'aide.",
     [PROFILE.UNKNOWN_ERROR]: "Erreur inconnue",
     [PROFILE.FAILED_TO_FETCH]: "Impossible de se connecter au serveur d'authentification",
@@ -342,6 +351,9 @@ export const JAPANESE_JAPAN: Record<PROFILE, string> = {
     [PROFILE.INSECURE_REDIRECTION_TITLE]: "信頼できないリダイレクト",
     [PROFILE.INSECURE_REDIRECTION_DESCRIPTION]: "この問題は、アカウントまたはデバイスが原因ではありません。 セキュリティ上の理由から、お客様またはお客様が使用しているアプリケーションによって要求されたリダイレクトリンクは、弊社では信頼できないと見なされます。 この場合、引き続きログインすると、アカウントのセキュリティが脅かされる可能性があります。 この問題を解決するには、前の入り口に戻ってもう一度ログインしてみてください。",
 
+    [PROFILE.INSECURE_PROTOCOL_TITLE]: "無許可プロトコル",
+    [PROFILE.INSECURE_PROTOCOL_CONTENT]: "この問題は、アカウントまたはデバイスが原因ではありません。 セキュリティ上の理由から、ユーザーまたは使用しているアプリケーションによって要求されたプロトコルは承認されていません。 このような状況でログインを続けると、アカウントのセキュリティが脅かされる可能性があります。 この問題を解決するには、前の入り口に戻ってもう一度ログインしてみてください。",
+
     [PROFILE.CONNECT_SERVICE]: "このエラーが解決しない場合は、システム管理者に連絡してください。",
     [PROFILE.UNKNOWN_ERROR]: "不明なエラー",
     [PROFILE.FAILED_TO_FETCH]: "認証サーバーに接続できません",
@@ -435,6 +447,9 @@ export const KOREAN_KOREA: Record<PROFILE, string> = {
 
     [PROFILE.INSECURE_REDIRECTION_TITLE]: "신뢰할 수없는 리디렉션",
     [PROFILE.INSECURE_REDIRECTION_DESCRIPTION]: "이 문제는 계정이나 장치로 인한 것이 아닙니다. 보안상의 이유로 귀하 또는 귀하가 사용하는 응용 프로그램에서 요청한 리디렉션 링크는 신뢰할 수없는 것으로 간주됩니다. 이 경우 계속 로그인하면 계정 보안이 위협받을 수 있습니다. 이 문제를 해결하려면 이전 입구로 돌아가서 다시 로그인하십시오.",
+
+    [PROFILE.INSECURE_PROTOCOL_TITLE]: "무단 계약",
+    [PROFILE.INSECURE_PROTOCOL_CONTENT]: "이 문제는 계정이나 장치로 인한 것이 아닙니다. 보안상의 이유로 귀하 또는 귀하가 사용하는 응용 프로그램에서 요청한 프로토콜은 인증되지 않았습니다. 이러한 상황에서 계속 로그인하면 계정 보안이 위협받을 수 있습니다. 이 문제를 해결하려면 이전 입구로 돌아가서 다시 로그인하십시오.",
 
     [PROFILE.CONNECT_SERVICE]: "이 오류가 계속되면 시스템 관리자에게 문의하여 도움을 받으십시오.",
     [PROFILE.UNKNOWN_ERROR]: "알 수없는 오류",
@@ -530,6 +545,9 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
     [PROFILE.INSECURE_REDIRECTION_TITLE]: "不可信任的重定向",
     [PROFILE.INSECURE_REDIRECTION_DESCRIPTION]: "这个问题不是由您的账号或者设备引发的。为了安全考虑，您或者您正在使用的应用程序请求的重定向链接被我们认为是不可信任的。如果在这种情况下继续登录，您的账号安全可能会受到威胁。为了解决这个问题，请尝试回到之前的入口重新登录。",
 
+    [PROFILE.INSECURE_PROTOCOL_TITLE]: "未授权的协议",
+    [PROFILE.INSECURE_PROTOCOL_CONTENT]: "这个问题不是由您的账号或者设备引发的。为了安全考虑，您或者您正在使用的应用程序请求的协议是未被授权的。如果在这种情况下继续登录，您的账号安全可能会受到威胁。为了解决这个问题，请尝试回到之前的入口重新登录。",
+
     [PROFILE.CONNECT_SERVICE]: "如果这个错误持续出现，请联系系统管理员来获得更多帮助。",
     [PROFILE.UNKNOWN_ERROR]: "未知的错误",
     [PROFILE.FAILED_TO_FETCH]: "无法连接验证服务器",
@@ -623,6 +641,9 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
 
     [PROFILE.INSECURE_REDIRECTION_TITLE]: "不可信任的重定向",
     [PROFILE.INSECURE_REDIRECTION_DESCRIPTION]: "這個問題不是由您的賬號或者設備引發的。為了安全考慮，您或者您正在使用的應用程序請求的重定向鏈接被我們認為是不可信任的。如果在這種情況下繼續登錄，您的賬號安全可能會受到威脅。為了解決這個問題，請嘗試回到之前的入口重新登錄。",
+
+    [PROFILE.INSECURE_PROTOCOL_TITLE]: "未授權的協議",
+    [PROFILE.INSECURE_PROTOCOL_CONTENT]: "這個問題不是由您的賬號或者設備引發的。為了安全考慮，您或者您正在使用的應用程序請求的協議是未被授權的。如果在這種情況下繼續登錄，您的賬號安全可能會受到威脅。為了解決這個問題，請嘗試回到之前的入口重新登錄。",
 
     [PROFILE.CONNECT_SERVICE]: "如果這個錯誤持續出現，請聯繫系統管理員來獲得更多幫助。",
     [PROFILE.UNKNOWN_ERROR]: "未知的錯誤",
@@ -719,6 +740,9 @@ export const SPANISH_MEXICO: Record<PROFILE, string> = {
 
     [PROFILE.INSECURE_REDIRECTION_TITLE]: "Redirección no confiable",
     [PROFILE.INSECURE_REDIRECTION_DESCRIPTION]: "Este problema no es causado por su cuenta o dispositivo. Por razones de seguridad, el enlace de redireccionamiento solicitado por usted o la aplicación que está utilizando no se considera confiable. En este caso, si continúa iniciando sesión, la seguridad de su cuenta puede verse amenazada. Para resolver este problema, intente regresar a la entrada anterior e inicie sesión nuevamente.",
+
+    [PROFILE.INSECURE_PROTOCOL_TITLE]: "Protocolo no autorizado",
+    [PROFILE.INSECURE_PROTOCOL_CONTENT]: "Este problema no es causado por su cuenta o dispositivo. Por razones de seguridad, el protocolo solicitado por usted o la aplicación que está utilizando no está autorizado. Si continúa iniciando sesión en tales circunstancias, la seguridad de su cuenta puede verse amenazada. Para resolver este problema, intente regresar a la entrada anterior e inicie sesión nuevamente.",
 
     [PROFILE.CONNECT_SERVICE]: "Si este error persiste, póngase en contacto con el administrador del sistema para obtener más ayuda.",
     [PROFILE.UNKNOWN_ERROR]: "Error desconocido",
