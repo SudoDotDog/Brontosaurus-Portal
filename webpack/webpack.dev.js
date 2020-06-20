@@ -21,7 +21,8 @@ module.exports = SudooWebpack.create(
         TSCONFIG_PATH,
 
         APP_ENTRY_FILE_NAME: 'index.tsx',
-    }, {
+    },
+    {
         defines: {
             'process.env.TEST_SERVER_PATH': JSON.stringify(process.env.TEST_SERVER_PATH),
         },
