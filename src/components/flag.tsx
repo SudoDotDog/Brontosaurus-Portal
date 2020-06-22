@@ -4,7 +4,7 @@
  * @description Flag
  */
 
-import { MARGIN, SIGNAL } from "@sudoo/neon/declare";
+import { MARGIN, SIGNAL, SIZE } from "@sudoo/neon/declare";
 import { NeonFlag } from "@sudoo/neon/flag";
 import * as React from "react";
 import * as StyleForm from "../../style/page/form.sass";
@@ -24,10 +24,12 @@ export const ErrorFlag: React.FC<ErrorFlagProp> = (props: ErrorFlagProp) => {
             <NeonFlag
                 margin={MARGIN.SMALL}
                 info={props.info}
+                maxSize={SIZE.FULL}
                 className={StyleForm.marginOverride}
+                infoClassName={StyleForm.overflowHiddenOverride}
                 message={props.message}
-                type={SIGNAL.ERROR}>
-            </NeonFlag>
+                type={SIGNAL.ERROR}
+            />
         );
     }
 

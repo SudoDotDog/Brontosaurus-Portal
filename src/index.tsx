@@ -12,14 +12,11 @@ import '../style/common/global.sass';
 import Entry from "./entry";
 import { Portal } from "./portal/portal";
 import { redux } from "./state/store";
-import { getVersion } from "./util/version";
 
 declare const module: any;
 declare const require: any;
 
 Portal.register();
-
-(window as any).version = getVersion();
 
 const render: (App: any) => void = (App: any): void => {
 

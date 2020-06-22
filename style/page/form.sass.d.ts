@@ -1,4 +1,5 @@
 export const marginOverride: string;
+export const overflowHiddenOverride: string;
 export const borderOverride: string;
 export const language: string;
 export const selectOverride: string;

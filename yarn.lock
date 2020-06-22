@@ -101,14 +101,14 @@
   resolved "https://registry.yarnpkg.com/@sudoo/mocha-config/-/mocha-config-1.0.0.tgz#a10b340663b535d613d5b7e708834592d4f2679a"
   integrity sha512-SCagfgjjXyvDgr1ouTAAZhsOZfvsecY9i4RWb2/BdqKLC3PAnduGUQxnX5VsGyeqQ5QZsUhigG5lUeqgzRZE2g==
 
-"@sudoo/neon@^2.12.2":
-  version "2.12.2"
-  resolved "https://registry.yarnpkg.com/@sudoo/neon/-/neon-2.12.2.tgz#0d1be531e62bc9bdd19f0deca85acb8b657c1cf0"
-  integrity sha512-E7TY3SZ0CEcmQJah1v1dJ8EBoThwxcgfPKrsjebCbmNBfxuK1YFBuh4P7r0JecrrBnLBBhGT6y3Stlhk7+MBsw==
+"@sudoo/neon@^2.12.3":
+  version "2.12.3"
+  resolved "https://registry.yarnpkg.com/@sudoo/neon/-/neon-2.12.3.tgz#bc8a17698c055f77a38314ae27f85459bc0b2754"
+  integrity sha512-VfGSkZqczjgill1675ym9jrJPiutDcY0R6EbWDmQ6Evoh33+KobGobCbiFbHed33Mwu+gMeTlVJ86uOAMJ/8gw==
   dependencies:
     "@sudoo/bark" "^2.7.2"
-    jss "^10.2.0"
-    jss-preset-default "^10.2.0"
+    jss "^10.3.0"
+    jss-preset-default "^10.3.0"
 
 "@sudoo/react-force-dev@^1.7.2":
   version "1.7.2"
@@ -4371,7 +4371,7 @@ jss-plugin-vendor-prefixer@^10.3.0:
     css-vendor "^2.0.8"
     jss "^10.3.0"
 
-jss-preset-default@^10.2.0:
+jss-preset-default@^10.3.0:
   version "10.3.0"
   resolved "https://registry.yarnpkg.com/jss-preset-default/-/jss-preset-default-10.3.0.tgz#029d8b91a7f6f7d86ece925bfe62380921ebf9b2"
   integrity sha512-LwDj4t8jBe0S/hXuR0THmhAsbngw7134efrWvJrkXLj+/+cxRQQAnsXWS6DBEZT5nrXaWH0C9HAeR2v2ZZKPWA==
@@ -4391,7 +4391,7 @@ jss-preset-default@^10.2.0:
     jss-plugin-template "^10.3.0"
     jss-plugin-vendor-prefixer "^10.3.0"
 
-jss@^10.2.0, jss@^10.3.0:
+jss@^10.3.0:
   version "10.3.0"
   resolved "https://registry.yarnpkg.com/jss/-/jss-10.3.0.tgz#2cf7be265f72b59c1764d816fdabff1c5dd18326"
   integrity sha512-B5sTRW9B6uHaUVzSo9YiMEOEp3UX8lWevU0Fsv+xtRnsShmgCfIYX44bTH8bPJe6LQKqEXku3ulKuHLbxBS97Q==
