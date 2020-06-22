@@ -28,6 +28,7 @@ import { replaceRedirectPath } from "../util/redirect";
 import { combineClasses } from "../util/style";
 import { InsecureRedirection } from "./insecure-redirection";
 import { Timeout } from "./timeout";
+import { getVersion } from "../util/version";
 
 type ConnectedFormStates = {
 
@@ -50,6 +51,7 @@ type ConnectedFormActions = {
 export type FromStructureProps = {
 
     readonly showHelp?: boolean;
+    readonly showVersion?: boolean;
     readonly showHelpCenter?: boolean;
     readonly showBackToLogin?: boolean;
 };
@@ -117,9 +119,16 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
             {this._renderSucceed()}
             {this._renderFlag()}
             {this.props.children}
-            {this._renderHelp()}
-            {this._renderHelpCenter()}
-            {this._renderBackToLogin()}
+            <div className={StyleForm.extraLink}>
+                <div className={StyleForm.mainExtraLink}>
+                    {this._renderHelp()}
+                    {this._renderHelpCenter()}
+                    {this._renderBackToLogin()}
+                </div>
+                <div>
+                    {this._renderVersion()}
+                </div>
+            </div>
         </React.Fragment>);
     }
 
@@ -141,6 +150,17 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
         </div>);
     }
 
+    private _renderVersion(): React.ReactNode {
+
+        if (!this.props.showVersion) {
+            return null;
+        }
+
+        return (<span>
+            {getVersion()}
+        </span>);
+    }
+
     private _renderHelp(): React.ReactNode {
 
         if (!this.props.showHelp) {
@@ -151,16 +171,14 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
             return null;
         }
 
-        return (<div className={StyleForm.help}>
-            <a
-                className={StyleForm.link}
-                onClick={() => {
-                    this.props.setPage(PAGE.HELP);
-                }}
-            >
-                {this.props.language.get(PROFILE.NEED_HELP)}
-            </a>
-        </div>);
+        return (<a
+            className={StyleForm.link}
+            onClick={() => {
+                this.props.setPage(PAGE.HELP);
+            }}
+        >
+            {this.props.language.get(PROFILE.NEED_HELP)}
+        </a>);
     }
 
     private _renderHelpCenter(): React.ReactNode {
@@ -173,14 +191,12 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
             return null;
         }
 
-        return (<div className={StyleForm.help}>
-            <a
-                className={StyleForm.link}
-                onClick={() => replaceRedirectPath(this.props.target.help)}
-            >
-                {this.props.language.get(PROFILE.GO_TO_HELP_CENTER)}
-            </a>
-        </div>);
+        return (<a
+            className={StyleForm.link}
+            onClick={() => replaceRedirectPath(this.props.target.help)}
+        >
+            {this.props.language.get(PROFILE.GO_TO_HELP_CENTER)}
+        </a>);
     }
 
     private _renderBackToLogin(): React.ReactNode {
@@ -189,18 +205,16 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
             return null;
         }
 
-        return (<div className={StyleForm.help}>
-            <a
-                className={StyleForm.link}
-                onClick={() => {
-                    this.props.clearError();
-                    this.props.clearSucceed();
-                    this.props.setPage(PAGE.LOGIN);
-                }}
-            >
-                {this.props.language.get(PROFILE.BACK_TO_LOGIN)}
-            </a>
-        </div>);
+        return (<a
+            className={StyleForm.link}
+            onClick={() => {
+                this.props.clearError();
+                this.props.clearSucceed();
+                this.props.setPage(PAGE.LOGIN);
+            }}
+        >
+            {this.props.language.get(PROFILE.BACK_TO_LOGIN)}
+        </a>);
     }
 
     private _renderLogo(): React.ReactNode {

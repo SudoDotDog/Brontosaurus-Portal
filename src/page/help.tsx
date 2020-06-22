@@ -88,7 +88,10 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
     public render(): JSX.Element {
 
         return (
-            <FormStructure showBackToLogin>
+            <FormStructure
+                showBackToLogin
+                showVersion
+            >
                 <Subtitle
                     text={this.props.language.get(PROFILE.HELP_DESCRIPTION)}
                 >
