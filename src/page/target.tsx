@@ -12,6 +12,7 @@ import { setTarget } from "../state/info/info";
 import { TargetInfo } from "../state/info/type";
 import { clearLoading, startError, startLoading } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
+import { setFavicon } from "../util/favicon";
 
 type TargetProp = {
 
@@ -64,6 +65,9 @@ export class TargetBase extends React.Component<ConnectedTargetProps> {
             const info: TargetInfo = await applicationRepository();
             this.props.setTarget(info);
 
+            if (info.favicon) {
+                setFavicon(info.favicon);
+            }
             if (info.background) {
                 document.body.style.backgroundImage = `url('${info.background}')`;
             }

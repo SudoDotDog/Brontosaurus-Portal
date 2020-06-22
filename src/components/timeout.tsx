@@ -17,6 +17,7 @@ import { setTarget } from "../state/info/info";
 import { TargetInfo } from "../state/info/type";
 import { clearLoading, startError, startLoading } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
+import { setFavicon } from "../util/favicon";
 import { replaceRedirectPath } from "../util/redirect";
 
 type ConnectedTimeoutStates = {
@@ -143,6 +144,9 @@ export class TimeoutBase extends React.Component<ConnectedProps> {
             const info: TargetInfo = await simpleRepository();
             this.props.setTarget(info);
 
+            if (info.favicon) {
+                setFavicon(info.favicon);
+            }
             if (info.background) {
                 document.body.style.backgroundImage = `url('${info.background}')`;
             }
