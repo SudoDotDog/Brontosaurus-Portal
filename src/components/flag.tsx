@@ -52,6 +52,7 @@ export const SucceedFlag: React.FC<SucceedFlagProp> = (props: SucceedFlagProp) =
                 margin={MARGIN.SMALL}
                 info={props.info}
                 className={StyleForm.marginOverride}
+                infoClassName={StyleForm.overflowHiddenOverride}
                 message={props.message}
                 type={SIGNAL.SUCCEED}>
             </NeonFlag>
