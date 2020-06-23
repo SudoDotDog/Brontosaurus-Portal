@@ -5,14 +5,32 @@
  */
 
 import { joinRoute } from "../../util/route";
+import { BaseAttemptBody, extendAttemptBody } from "../declare";
+import { Portal } from "../../portal/portal";
 
-export const resetTemporaryRepository = async (username: string, namespace: string, email: string): Promise<any> => {
+export type TemporaryBody = {
 
-    const payload: string = JSON.stringify({
+    readonly username: string;
+    readonly namespace: string;
+    readonly email: string;
+    readonly applicationKey: string;
+} & BaseAttemptBody;
+
+export const resetTemporaryRepository = async (
+    username: string,
+    namespace: string,
+    email: string,
+): Promise<any> => {
+
+    const portal: Portal = Portal.instance;
+    const body: TemporaryBody = extendAttemptBody(portal, {
         username,
         namespace,
         email,
+        applicationKey: portal.applicationKey,
     });
+
+    const payload: string = JSON.stringify(body);
 
     const response: Response = await fetch(joinRoute('/reset/temporary'), {
         method: "POST",
