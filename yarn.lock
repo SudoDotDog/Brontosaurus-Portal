@@ -81,10 +81,10 @@
   resolved "https://registry.yarnpkg.com/@sudoo/eslint-config/-/eslint-config-1.2.0.tgz#f33e5f148b35dce99e99aafaaddfc92d11d118a6"
   integrity sha512-YcPs2ZRTrJPvpDSGBsmOLPIJL5NDg60Fv/avM19DGp/Ze+iBpir5JzmI8DHIlKP50xRxObHjXmwyeUJxHHjovQ==
 
-"@sudoo/internationalization@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@sudoo/internationalization/-/internationalization-1.4.0.tgz#08a22c8503fe0cfa9e9c8796bd3869827d2f8c39"
-  integrity sha512-yMNJwoyfP8/mwD9NlfV3SAJTYIqp8Gaq5sZ+eRqqwnHYpxpNKlvh+Gc9CD6Vh7/KGubsvZ849IkBDk9F9tlKQA==
+"@sudoo/internationalization@^1.4.1":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@sudoo/internationalization/-/internationalization-1.4.1.tgz#f1327214da4de8a2d8259e4a1833e93b8ef61212"
+  integrity sha512-nt4KsUaUfcxyiUIIqI5zR6hGs9AFyVX39B/i9ZTiJSzbZwH5wjY/HpQt+SyJeKSsuixZ2SNl4AJ2zelG4P/IZg==
 
 "@sudoo/magic@^1.8.0":
   version "1.8.0"
