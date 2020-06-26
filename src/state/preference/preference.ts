@@ -6,9 +6,11 @@
 
 import { LOCALE } from '@sudoo/internationalization';
 import { Reducer } from '@sudoo/redux';
+import { logSecurityContent } from '../../i18n/log';
 import { ACTIONS, IStore } from '../declare';
 import { defaultLanguage, ISetLanguageReducerAction, ISetSaveUsernameReducerAction, PreferenceStore } from './type';
-import { logSecurityContent } from '../../i18n/log';
+
+const PREFERENCE_STORAGE_KEY: string = 'Brontosaurus_Preference';
 
 const reduceLanguage: Reducer<IStore, ISetLanguageReducerAction> = (state: IStore | undefined, action: ISetLanguageReducerAction): IStore => {
 
@@ -17,7 +19,7 @@ const reduceLanguage: Reducer<IStore, ISetLanguageReducerAction> = (state: IStor
         language: action.language,
     };
 
-    localStorage.setItem('Brontosaurus_Preference', JSON.stringify(newPreference));
+    localStorage.setItem(PREFERENCE_STORAGE_KEY, JSON.stringify(newPreference));
     logSecurityContent(action.language);
 
     return {
@@ -33,7 +35,7 @@ const reduceSaveUsername: Reducer<IStore, ISetSaveUsernameReducerAction> = (stat
         saveUsername: action.saveUsername,
     };
 
-    localStorage.setItem('Brontosaurus_Preference', JSON.stringify(newPreference));
+    localStorage.setItem(PREFERENCE_STORAGE_KEY, JSON.stringify(newPreference));
     return {
         ...state as IStore,
         preference: newPreference,
@@ -60,7 +62,7 @@ export const setSaveUsername = (saveUsername: boolean): ISetSaveUsernameReducerA
 
 export const getDefaultPreference = (): PreferenceStore => {
 
-    const item: string | null = localStorage.getItem('Brontosaurus_Preference');
+    const item: string | null = localStorage.getItem(PREFERENCE_STORAGE_KEY);
 
     if (!item) {
 
