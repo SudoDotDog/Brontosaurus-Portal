@@ -4,7 +4,7 @@
  * @description Reducer
  */
 
-import { LOCALE } from '@sudoo/internationalization';
+import { LOCALE, getSystemLanguage } from '@sudoo/internationalization';
 import { Reducer } from '@sudoo/redux';
 import { logSecurityContent } from '../../i18n/log';
 import { ACTIONS, IStore } from '../declare';
@@ -63,12 +63,13 @@ export const setSaveUsername = (saveUsername: boolean): ISetSaveUsernameReducerA
 export const getDefaultPreference = (): PreferenceStore => {
 
     const item: string | null = localStorage.getItem(PREFERENCE_STORAGE_KEY);
+    const parsedLanguage: LOCALE = getSystemLanguage(defaultLanguage);
 
     if (!item) {
 
-        logSecurityContent(defaultLanguage);
+        logSecurityContent(parsedLanguage);
         return {
-            language: defaultLanguage,
+            language: parsedLanguage,
             saveUsername: false,
         };
     }
@@ -76,10 +77,10 @@ export const getDefaultPreference = (): PreferenceStore => {
     const parsed: any = JSON.parse(item);
 
     const preference: PreferenceStore = {
-        language: parsed.language || defaultLanguage,
-        saveUsername: parsed.saveUsername || false,
+        language: parsed.language ?? parsedLanguage,
+        saveUsername: parsed.saveUsername ?? false,
     };
-    logSecurityContent(preference.language);
 
+    logSecurityContent(preference.language);
     return preference;
 };
