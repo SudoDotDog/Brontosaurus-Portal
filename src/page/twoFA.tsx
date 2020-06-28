@@ -122,6 +122,7 @@ export class TwoFABase extends React.Component<ConnectedProps, TwoFAStates> {
         this.props.startLoading('Login');
 
         if (!/^[0-9]{6}$/.test(code)) {
+
             this.props.clearLoading();
             this.props.startError(wrongTwoFAInfo);
             return;
@@ -132,7 +133,6 @@ export class TwoFABase extends React.Component<ConnectedProps, TwoFAStates> {
             const token: string = await twoFARepository(this.props.username, this.props.namespace, this.props.password, code);
             Portal.flush(token, this.props.locale);
         } catch (err) {
-
 
             const error: string = err.message;
             this.props.clearLoading();

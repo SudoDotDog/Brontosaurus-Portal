@@ -127,7 +127,6 @@ export class LimboBase extends React.Component<ConnectedProps, LimboStates> {
             Portal.flush(token, this.props.locale);
         } catch (err) {
 
-
             const error: string = err.message;
             this.props.clearLoading();
 

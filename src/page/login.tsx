@@ -112,15 +112,19 @@ export class LoginBase extends React.Component<ConnectedProps, LoginState> {
 
             const action: LoginResponse = await login(username, namespace, password);
             if (action.next === 'redirect') {
+
                 if (this.props.saveUsername) {
                     saveUsername(username);
                 }
                 Portal.flush(action.token as string, this.props.locale);
+                return;
             }
             if (action.next === 'limbo') {
+
                 this.props.setPage(PAGE.LIMBO);
             }
             if (action.next === 'twoFA') {
+
                 this.props.setPage(PAGE.TWOFA);
             }
 
