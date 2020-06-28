@@ -4,35 +4,41 @@
  * @description Finish
  */
 
+import { Fetch } from "@sudoo/fetch";
 import { joinRoute } from "../../util/route";
 
-export const resetFinishRepository = async (username: string, namespace: string, resetToken: string, newPassword: string): Promise<boolean> => {
+export type ResetFinishRepositoryBody = {
 
-    const payload: string = JSON.stringify({
+    readonly username: string;
+    readonly namespace: string;
+    readonly resetToken: string;
+    readonly newPassword: string;
+};
+
+export type ResetFinishRepositoryResponse = {
+
+    readonly succeed: boolean;
+};
+
+export const resetFinishRepository = async (
+    username: string,
+    namespace: string,
+    resetToken: string,
+    newPassword: string,
+): Promise<boolean> => {
+
+    const body: ResetFinishRepositoryBody = {
         username,
         namespace,
         resetToken,
         newPassword,
-    });
+    };
 
-    const response: Response = await fetch(joinRoute('/reset/finish'), {
-        method: "POST",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-        mode: "cors",
-        body: payload,
-    });
+    const data: ResetFinishRepositoryResponse = await Fetch
+        .post
+        .json(joinRoute('/reset/finish'))
+        .migrate(body)
+        .fetch();
 
-    const data: {
-        readonly succeed: boolean;
-    } = await response.json();
-
-    if (response.ok) {
-
-        return data.succeed;
-    }
-
-    throw new Error(data as any);
+    return data.succeed;
 };

@@ -71,5 +71,5 @@ export const login = async (
         };
     }
 
-    throw new Error(JSON.stringify(data));
+    throw new Error(data as any);
 };

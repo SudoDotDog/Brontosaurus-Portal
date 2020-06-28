@@ -4,34 +4,35 @@
  * @description Reset
  */
 
+import { Fetch } from "@sudoo/fetch";
 import { joinRoute } from "../../util/route";
+
+export type ResetResetRepositoryBody = {
+
+    readonly username: string;
+    readonly namespace: string;
+    readonly resetToken: string;
+};
+
+export type ResetResetRepositoryResponse = {
+
+    readonly valid: boolean;
+    readonly username: string;
+};
 
 export const resetResetRepository = async (username: string, namespace: string, resetToken: string): Promise<string> => {
 
-    const payload: string = JSON.stringify({
+    const body: ResetResetRepositoryBody = {
         username,
         namespace,
         resetToken,
-    });
+    };
 
-    const response: Response = await fetch(joinRoute('/reset/reset'), {
-        method: "POST",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-        mode: "cors",
-        body: payload,
-    });
+    const data: ResetResetRepositoryResponse = await Fetch
+        .post
+        .json(joinRoute('/reset/reset'))
+        .migrate(body)
+        .fetch();
 
-    const data: {
-        readonly valid: boolean;
-        readonly username: string;
-    } = await response.json();
-
-    if (response.ok) {
-        return data.username;
-    }
-
-    throw new Error(data as any);
+    return data.username;
 };

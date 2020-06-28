@@ -4,9 +4,10 @@
  * @description Temporary
  */
 
+import { Fetch } from "@sudoo/fetch";
+import { Portal } from "../../portal/portal";
 import { joinRoute } from "../../util/route";
 import { BaseAttemptBody, extendAttemptBody } from "../declare";
-import { Portal } from "../../portal/portal";
 
 export type TemporaryBody = {
 
@@ -16,6 +17,9 @@ export type TemporaryBody = {
     readonly applicationKey: string;
 } & BaseAttemptBody;
 
+export type ResetTemporaryRepositoryResponse = {
+};
+
 export const resetTemporaryRepository = async (
     username: string,
     namespace: string,
@@ -23,6 +27,7 @@ export const resetTemporaryRepository = async (
 ): Promise<any> => {
 
     const portal: Portal = Portal.instance;
+
     const body: TemporaryBody = extendAttemptBody(portal, {
         username,
         namespace,
@@ -30,23 +35,11 @@ export const resetTemporaryRepository = async (
         applicationKey: portal.applicationKey,
     });
 
-    const payload: string = JSON.stringify(body);
+    const data: ResetTemporaryRepositoryResponse = await Fetch
+        .post
+        .json(joinRoute('/reset/temporary'))
+        .migrate(body)
+        .fetch();
 
-    const response: Response = await fetch(joinRoute('/reset/temporary'), {
-        method: "POST",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-        mode: "cors",
-        body: payload,
-    });
-
-    const data = await response.json();
-
-    if (response.ok) {
-        return data;
-    }
-
-    throw new Error(data);
+    return data;
 };
