@@ -4,44 +4,59 @@
  * @description Simple
  */
 
-import { TargetInfo } from "../state/info/type";
+import { Fetch } from "@sudoo/fetch";
+import { ApplicationRedirection, TargetInfo } from "../state/info/type";
 import { joinRoute } from "../util/route";
+
+export type SimpleRepositoryResponse = {
+
+    readonly avatar?: string;
+    readonly backgroundImage?: string;
+    readonly help?: string;
+    readonly privacy?: string;
+    readonly favicon?: string;
+
+    readonly name: string;
+    readonly redirections: ApplicationRedirection[];
+    readonly iFrameProtocol: boolean;
+    readonly postProtocol: boolean;
+    readonly alertProtocol: boolean;
+    readonly noneProtocol: boolean;
+
+    readonly systemName?: string;
+    readonly accountName?: string;
+
+    readonly indexPage?: string;
+    readonly entryPage?: string;
+};
 
 export const simpleRepository = async (): Promise<TargetInfo> => {
 
-    const response: Response = await fetch(joinRoute('/simple'), {
-        method: "GET",
-        headers: {
-            'Accept': 'application/json',
-        },
-        mode: "cors",
-    });
+    const data: SimpleRepositoryResponse = await Fetch
+        .get
+        .json(joinRoute('/simple'))
+        .fetch();
 
-    const data = await response.json();
+    return {
+        timeout: true,
+        name: data.name,
 
-    if (response.ok) {
-        return {
-            timeout: true,
-            avatar: data.avatar,
-            background: data.backgroundImage,
-            name: data.name,
-            help: data.help,
-            privacy: data.privacy,
-            favicon: data.favicon,
+        avatar: data.avatar,
+        background: data.backgroundImage,
+        help: data.help,
+        privacy: data.privacy,
+        favicon: data.favicon,
 
-            redirections: [],
-            iFrameProtocol: false,
-            postProtocol: false,
-            alertProtocol: false,
-            noneProtocol: false,
+        redirections: [],
+        iFrameProtocol: false,
+        postProtocol: false,
+        alertProtocol: false,
+        noneProtocol: false,
 
-            systemName: data.systemName,
-            accountName: data.accountName,
+        systemName: data.systemName,
+        accountName: data.accountName,
 
-            indexPage: data.indexPage,
-            entryPage: data.entryPage,
-        };
-    }
-
-    throw new Error(data);
+        indexPage: data.indexPage,
+        entryPage: data.entryPage,
+    };
 };

@@ -4,10 +4,10 @@
  * @description Login
  */
 
+import { Fetch } from "@sudoo/fetch";
 import { Portal } from "../portal/portal";
 import { joinRoute } from "../util/route";
 import { BaseAttemptBody, extendAttemptBody } from "./declare";
-import { Fetch } from "@sudoo/fetch";
 
 export type LoginBody = {
 

@@ -4,10 +4,10 @@
  * @description Application
  */
 
-import { Portal } from "../portal/portal";
-import { TargetInfo, ApplicationRedirection } from "../state/info/type";
-import { joinRoute } from "../util/route";
 import { Fetch } from "@sudoo/fetch";
+import { Portal } from "../portal/portal";
+import { ApplicationRedirection, TargetInfo } from "../state/info/type";
+import { joinRoute } from "../util/route";
 
 export type ApplicationRepositoryResponse = {
 
@@ -43,9 +43,10 @@ export const applicationRepository = async (): Promise<TargetInfo> => {
 
     return {
         timeout: false,
+        name: data.name,
+
         avatar: data.avatar,
         background: data.background,
-        name: data.name,
         help: data.help,
         privacy: data.privacy,
         favicon: data.favicon,
