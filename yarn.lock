@@ -71,6 +71,11 @@
   resolved "https://registry.yarnpkg.com/@sudoo/bark/-/bark-2.7.2.tgz#961c4b482dbc00d7c762607c63f7a3eaa8f8811e"
   integrity sha512-COaH8iYTyutU0bgqhklIQShops+NYHRlCb+XEXkMimlkQuiw2dUY6yATSyiq89vIy74W39FAs/FgHAG4+aJVKA==
 
+"@sudoo/duplicate@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@sudoo/duplicate/-/duplicate-1.3.0.tgz#fb96184263c51608ab2b3890435b337600ea1b89"
+  integrity sha512-rn+gyCez/VgfYsUUitvUwQFvzGcPVzWX8/IIRgr50qwohr/yQjca4w4+eKnGU0L5OWZep6wOfQETYUNxzxA3Fg==
+
 "@sudoo/eslint-config-react@1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@sudoo/eslint-config-react/-/eslint-config-react-1.2.0.tgz#a27866129ffa6dcc8b3d0af4c19cead9d3d981b1"
@@ -85,6 +90,13 @@
   version "1.22.0"
   resolved "https://registry.yarnpkg.com/@sudoo/fetch/-/fetch-1.22.0.tgz#301052c7bb14211ecca90e930698331e80083a43"
   integrity sha512-GAjm62rXZESnP/byJNn/5D5g5QasC5RAxoIuWHkAzcFTafycrQ09L6FUSocvis3z6TgJnRmVTPHsWtqbir1lRA==
+
+"@sudoo/immutable@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@sudoo/immutable/-/immutable-1.3.0.tgz#71e8f245a414440c7d36d97e2840fdc21c0226b4"
+  integrity sha512-mMdv9pMiPGU0Lyy/lXwXf1yAbPfQDbSkNyjWDiKRR3zpYRXFmbpZwK+FAb9I4hSmuwXRFxTQo0or2TgCM/ngLw==
+  dependencies:
+    "@sudoo/duplicate" "^1.3.0"
 
 "@sudoo/internationalization@^1.4.1":
   version "1.4.1"
@@ -114,6 +126,11 @@
     "@sudoo/bark" "^2.7.2"
     jss "^10.3.0"
     jss-preset-default "^10.3.0"
+
+"@sudoo/pattern@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@sudoo/pattern/-/pattern-1.2.0.tgz#bd57d9d8066a968cba057ed93a7480494085998e"
+  integrity sha512-g5C3BJB6WJRBaQe+JMyKCq7+UK4g4IAksrtp0NMCZl8yQ6Jrg87aPjdv36RmUNJyAcRBxJ1ZHAxLpn6GL+vyaA==
 
 "@sudoo/react-force-dev@^1.7.2":
   version "1.7.2"
@@ -167,6 +184,11 @@
     mocha "8.0.1"
     ts-node "8.10.2"
     typescript "3.9.5"
+
+"@sudoo/verify@^1.14.0":
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/@sudoo/verify/-/verify-1.14.0.tgz#db3341ccb283019289634c11c2ed561d280aac5c"
+  integrity sha512-83zurGVZk7WWqw58M580FX6NGg0U+OGE58KCKsu69Mp0Iga1MFknTT6p9Zs1L6L4cj/V5lk3cifyL0TJibydYg==
 
 "@sudoo/webpack-react@^2.11.0":
   version "2.11.0"
