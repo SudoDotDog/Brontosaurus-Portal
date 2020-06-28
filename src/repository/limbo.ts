@@ -7,6 +7,7 @@
 import { Portal } from "../portal/portal";
 import { joinRoute } from "../util/route";
 import { BaseAttemptBody, extendAttemptBody } from "./declare";
+import { Fetch } from "@sudoo/fetch";
 
 export type LimboRouteBody = {
 
@@ -16,6 +17,13 @@ export type LimboRouteBody = {
     readonly newPassword: string;
     readonly applicationKey: string;
 } & BaseAttemptBody;
+
+export type LimboRepositoryResponse = {
+
+    readonly limbo: boolean;
+    readonly needTwoFA: boolean;
+    readonly token: string | null;
+};
 
 export const limboRepository = async (
     username: string,
@@ -33,29 +41,14 @@ export const limboRepository = async (
         applicationKey: portal.applicationKey,
     });
 
-    const payload: string = JSON.stringify(body);
+    const data: LimboRepositoryResponse = await Fetch
+        .post
+        .json(joinRoute('/limbo'))
+        .migrate(body)
+        .fetch();
 
-    const response: Response = await fetch(joinRoute('/limbo'), {
-        method: "POST",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-        mode: "cors",
-        body: payload,
-    });
-
-    const data: {
-        readonly limbo: boolean;
-        readonly needTwoFA: boolean;
-        readonly token: string | null;
-    } = await response.json();
-
-    if (response.ok) {
-
-        if (data.token && !data.limbo) {
-            return data.token;
-        }
+    if (data.token && !data.limbo) {
+        return data.token;
     }
 
     throw new Error(data as any);
