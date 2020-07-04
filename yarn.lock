@@ -124,7 +124,7 @@
   resolved "https://registry.yarnpkg.com/@sudoo/pattern/-/pattern-1.2.0.tgz#bd57d9d8066a968cba057ed93a7480494085998e"
   integrity sha512-g5C3BJB6WJRBaQe+JMyKCq7+UK4g4IAksrtp0NMCZl8yQ6Jrg87aPjdv36RmUNJyAcRBxJ1ZHAxLpn6GL+vyaA==
 
-"@sudoo/react-force-dev@^1.7.2":
+"@sudoo/react-force-dev@^1.7.3":
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/@sudoo/react-force-dev/-/react-force-dev-1.7.3.tgz#9f09bbabc3000308b39620aa207ae9418e5f3246"
   integrity sha512-GB4xeY7fp2Ky8fDTxc3uCc6diN8a83z7O3xtzrSPYV2U+bJpZFGGWhLpRKdbyfwUewfg/qVISKtqNDM90cRNwg==
@@ -137,7 +137,7 @@
     enzyme "3.11.0"
     enzyme-adapter-react-16 "1.15.2"
 
-"@sudoo/react-force@^1.7.2":
+"@sudoo/react-force@^1.7.3":
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/@sudoo/react-force/-/react-force-1.7.3.tgz#80e63730e3e511910bba8838fa540eec6fbbfe8d"
   integrity sha512-0y6AMAowIMOUFkwl5iW1C2z+C/XdSM9gaXB5LdLDiQXouxf11gEYB9Yct0/rCnu64EUE2ClCssAfIQatv8nBmg==
