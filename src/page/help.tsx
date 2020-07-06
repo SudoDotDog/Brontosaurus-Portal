@@ -108,7 +108,10 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
                     autoCapitalize={false}
                     autoComplete={false}
                     autoCorrect={false}
-                    className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
+                    className={combineClasses(
+                        StyleForm["select-override"],
+                        StyleForm["margin-override"],
+                    )}
                     label={this.props.language.get(PROFILE.USERNAME)}
                     margin={MARGIN.SMALL}
                     value={this._getCombined()}
@@ -119,7 +122,10 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
                     autoComplete={false}
                     autoCorrect={false}
                     type={INPUT_TYPE.EMAIL}
-                    className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
+                    className={combineClasses(
+                        StyleForm["select-override"],
+                        StyleForm["margin-override"],
+                    )}
                     label={this.props.language.get(PROFILE.EMAIL)}
                     margin={MARGIN.SMALL}
                     value={this.state.email}
@@ -127,7 +133,10 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
                     onChange={(value: string) => this.setState({ email: value })}
                 />
                 <NeonButton
-                    className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
+                    className={combineClasses(
+                        StyleForm["select-override"],
+                        StyleForm["margin-override"],
+                    )}
                     size={SIZE.MEDIUM}
                     width={WIDTH.FULL}
                     margin={MARGIN.SMALL}

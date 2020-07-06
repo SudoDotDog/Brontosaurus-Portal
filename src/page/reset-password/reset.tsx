@@ -107,7 +107,10 @@ export class ResetPasswordResetBase extends React.Component<ConnectedProps, Rese
                     autoCorrect={false}
                     inputRef={(ref: HTMLInputElement) => this._passwordRef = ref}
                     type={INPUT_TYPE.PASSWORD}
-                    className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
+                    className={combineClasses(
+                        StyleForm["select-override"],
+                        StyleForm["margin-override"],
+                    )}
                     label={this.props.language.get(PROFILE.NEW_PASSWORD)}
                     margin={MARGIN.SMALL}
                     value={this.state.password}
@@ -115,7 +118,10 @@ export class ResetPasswordResetBase extends React.Component<ConnectedProps, Rese
                     onChange={(value: string) => this.setState({ password: value })}
                 />
                 <NeonButton
-                    className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
+                    className={combineClasses(
+                        StyleForm["select-override"],
+                        StyleForm["margin-override"],
+                    )}
                     size={SIZE.MEDIUM}
                     width={WIDTH.FULL}
                     margin={MARGIN.SMALL}

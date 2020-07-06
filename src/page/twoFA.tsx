@@ -98,14 +98,20 @@ export class TwoFABase extends React.Component<ConnectedProps, TwoFAStates> {
                     autoCorrect={false}
                     inputRef={(ref: HTMLInputElement) => this._twoFARef = ref}
                     type={INPUT_TYPE.NUMBER}
-                    className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
+                    className={combineClasses(
+                        StyleForm["select-override"],
+                        StyleForm["margin-override"],
+                    )}
                     label={this.props.language.get(PROFILE.AUTH_CODE)}
                     margin={MARGIN.SMALL}
                     value={this.state.code}
                     onEnter={login}
                     onChange={(value) => this.setState({ code: value })} />
                 <NeonButton
-                    className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
+                    className={combineClasses(
+                        StyleForm["select-override"],
+                        StyleForm["margin-override"],
+                    )}
                     size={SIZE.MEDIUM}
                     width={WIDTH.FULL}
                     margin={MARGIN.SMALL}

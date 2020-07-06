@@ -19,7 +19,10 @@ export const Title: React.FC<TitleProp> = (props: TitleProp) => {
 
     return (
         <div className={StyleForm.title}>
-            <div className={combineClasses(StyleForm.upper, StyleForm.selectOverride)}>
+            <div className={combineClasses(
+                StyleForm.upper,
+                StyleForm["select-override"],
+            )}>
                 <div>{props.text}</div>
                 <div>{props.namespaceText}</div>
             </div>

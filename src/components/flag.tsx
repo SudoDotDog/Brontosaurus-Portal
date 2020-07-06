@@ -25,8 +25,8 @@ export const ErrorFlag: React.FC<ErrorFlagProp> = (props: ErrorFlagProp) => {
                 margin={MARGIN.SMALL}
                 info={props.info}
                 maxSize={SIZE.FULL}
-                className={StyleForm.marginOverride}
-                infoClassName={StyleForm.overflowHiddenOverride}
+                className={StyleForm["margin-override"]}
+                infoClassName={StyleForm["overflow-hidden-override"]}
                 message={props.message}
                 type={SIGNAL.ERROR}
             />
@@ -51,8 +51,8 @@ export const SucceedFlag: React.FC<SucceedFlagProp> = (props: SucceedFlagProp) =
             <NeonFlag
                 margin={MARGIN.SMALL}
                 info={props.info}
-                className={StyleForm.marginOverride}
-                infoClassName={StyleForm.overflowHiddenOverride}
+                className={StyleForm["margin-override"]}
+                infoClassName={StyleForm["overflow-hidden-override"]}
                 message={props.message}
                 type={SIGNAL.SUCCEED}>
             </NeonFlag>

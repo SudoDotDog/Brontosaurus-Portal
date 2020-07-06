@@ -97,7 +97,10 @@ export class LimboBase extends React.Component<ConnectedProps, LimboStates> {
                     autoComplete={false}
                     autoCorrect={false}
                     inputRef={(ref: HTMLInputElement) => this._passwordRef = ref}
-                    className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
+                    className={combineClasses(
+                        StyleForm["select-override"],
+                        StyleForm["margin-override"],
+                    )}
                     type={INPUT_TYPE.PASSWORD}
                     label={this.props.language.get(PROFILE.NEW_PASSWORD)}
                     margin={MARGIN.SMALL}
@@ -105,7 +108,10 @@ export class LimboBase extends React.Component<ConnectedProps, LimboStates> {
                     onEnter={login}
                     onChange={(value) => this.setState({ newPassword: value })} />
                 <NeonButton
-                    className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
+                    className={combineClasses(
+                        StyleForm["select-override"],
+                        StyleForm["margin-override"],
+                    )}
                     size={SIZE.MEDIUM}
                     width={WIDTH.FULL}
                     margin={MARGIN.SMALL}

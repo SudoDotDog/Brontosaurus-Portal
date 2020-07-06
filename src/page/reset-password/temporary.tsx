@@ -108,7 +108,10 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps> 
                     autoCorrect={false}
                     inputRef={(ref: HTMLInputElement) => this._passwordRef = ref}
                     type={INPUT_TYPE.PASSWORD}
-                    className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
+                    className={combineClasses(
+                        StyleForm["select-override"],
+                        StyleForm["margin-override"],
+                    )}
                     label={this.props.language.get(PROFILE.TEMPORARY_PASSWORD)}
                     margin={MARGIN.SMALL}
                     value={this.props.resetToken}
@@ -116,7 +119,10 @@ export class ResetPasswordTemporaryBase extends React.Component<ConnectedProps> 
                     onChange={(value: string) => this.props.setResetToken(value)}
                 />
                 <NeonButton
-                    className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
+                    className={combineClasses(
+                        StyleForm["select-override"],
+                        StyleForm["margin-override"],
+                    )}
                     size={SIZE.MEDIUM}
                     width={WIDTH.FULL}
                     margin={MARGIN.SMALL}

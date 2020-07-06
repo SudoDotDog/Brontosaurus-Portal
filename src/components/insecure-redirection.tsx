@@ -61,9 +61,13 @@ export class InsecureRedirectionBase extends React.Component<ConnectedProps> {
     public render() {
 
         return (
-            <div className={StyleForm.timeoutContainer}>
-                <div className={StyleForm.timeoutTitle}>{this._getTitle()}</div>
-                <div>{this._getDescription()}</div>
+            <div className={StyleForm["timeout-container"]}>
+                <div className={StyleForm["timeout-title"]}>
+                    {this._getTitle()}
+                </div>
+                <div>
+                    {this._getDescription()}
+                </div>
                 {this._renderEntryPage()}
                 {this._renderIndexPage()}
                 {this._renderHelpCenter()}

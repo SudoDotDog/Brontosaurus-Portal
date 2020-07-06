@@ -83,8 +83,14 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
             <div className={StyleLogin.page}>
                 <div className={StyleLogin.wrapper}>
                     <div className={StyleLogin.inner}>
-                        <NeonPaper className={combineClasses(StyleLogin.login, StyleForm.borderOverride)}>
-                            <NeonIndicator className={StyleLogin.indicator} loading={this.props.isLoading}>
+                        <NeonPaper className={combineClasses(
+                            StyleLogin.login,
+                            StyleForm["border-override"],
+                        )}>
+                            <NeonIndicator
+                                className={StyleLogin.indicator}
+                                loading={this.props.isLoading}
+                            >
                                 {this._renderContents()}
                             </NeonIndicator>
                         </NeonPaper>
@@ -119,8 +125,8 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
             {this._renderSucceed()}
             {this._renderFlag()}
             {this.props.children}
-            <div className={StyleForm.extraLink}>
-                <div className={StyleForm.mainExtraLink}>
+            <div className={StyleForm["extra-link"]}>
+                <div className={StyleForm["main-extra-link"]}>
                     {this._renderHelp()}
                     {this._renderHelpCenter()}
                     {this._renderBackToLogin()}
@@ -135,11 +141,11 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
     private _renderFooter(): React.ReactNode {
 
         return (<div className={StyleLogin.footer}>
-            <div className={StyleLogin.languageText}>
+            <div className={StyleLogin["language-text"]}>
                 <ConnectedLanguage />
             </div>
             {this.props.target.privacy &&
-                <div className={StyleLogin.privacyText}>
+                <div className={StyleLogin["privacy-text"]}>
                     <a
                         className={StyleForm.link}
                         href={this.props.target.privacy}
@@ -227,7 +233,7 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
             style={{
                 backgroundImage: `url('${this.props.target.avatar}')`,
             }}
-            className={StyleLogin.logoImage}
+            className={StyleLogin["logo-image"]}
         />);
     }
 

@@ -99,7 +99,10 @@ export class FormBase extends React.Component<ConnectProps> {
                     autoComplete={false}
                     autoCorrect={false}
                     inputRef={(ref: HTMLInputElement) => this._combinedRef = ref}
-                    className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
+                    className={combineClasses(
+                        StyleForm["select-override"],
+                        StyleForm["margin-override"],
+                    )}
                     label={this.props.language.get(PROFILE.USERNAME)}
                     margin={MARGIN.SMALL}
                     value={this._getCombined()}
@@ -110,7 +113,10 @@ export class FormBase extends React.Component<ConnectProps> {
                     autoComplete={false}
                     autoCorrect={false}
                     inputRef={(ref: HTMLInputElement) => this._passwordRef = ref}
-                    className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
+                    className={combineClasses(
+                        StyleForm["select-override"],
+                        StyleForm["margin-override"],
+                    )}
                     type={INPUT_TYPE.PASSWORD}
                     label={this.props.language.get(PROFILE.PASSWORD)}
                     margin={MARGIN.SMALL}
@@ -124,8 +130,11 @@ export class FormBase extends React.Component<ConnectProps> {
                     {this.props.language.get(PROFILE.SAVE_USERNAME)}
                 </NeonCheckbox>
                 <NeonButton
-                    className={combineClasses(StyleForm.selectOverride, StyleForm.marginOverride)}
-                    buttonClassName={StyleForm.loginButton}
+                    className={combineClasses(
+                        StyleForm["select-override"],
+                        StyleForm["margin-override"],
+                    )}
+                    buttonClassName={StyleForm["login-button"]}
                     disabled={this.props.changeRequired}
                     size={SIZE.MEDIUM}
                     width={WIDTH.FULL}
