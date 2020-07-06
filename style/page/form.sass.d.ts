@@ -1,15 +1,24 @@
-export const marginOverride: string;
-export const overflowHiddenOverride: string;
-export const borderOverride: string;
-export const language: string;
-export const selectOverride: string;
-export const title: string;
-export const upper: string;
-export const lower: string;
-export const help: string;
-export const extraLink: string;
-export const mainExtraLink: string;
-export const link: string;
-export const timeoutContainer: string;
-export const timeoutTitle: string;
-export const loginButton: string;
+// auto-generated - @sudoo/webpack-react
+declare namespace FormSassNamespace {
+  export interface IFormSass {
+    "border-override": string;
+    "extra-link": string;
+    help: string;
+    language: string;
+    link: string;
+    "login-button": string;
+    lower: string;
+    "main-extra-link": string;
+    "margin-override": string;
+    "overflow-hidden-override": string;
+    "select-override": string;
+    "timeout-container": string;
+    "timeout-title": string;
+    title: string;
+    upper: string;
+  }
+}
+
+declare const FormSassModule: FormSassNamespace.IFormSass;
+
+export = FormSassModule;

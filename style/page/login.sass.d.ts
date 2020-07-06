@@ -1,9 +1,18 @@
-export const page: string;
-export const wrapper: string;
-export const inner: string;
-export const login: string;
-export const indicator: string;
-export const logoImage: string;
-export const footer: string;
-export const languageText: string;
-export const privacyText: string;
+// auto-generated - @sudoo/webpack-react
+declare namespace LoginSassNamespace {
+  export interface ILoginSass {
+    footer: string;
+    indicator: string;
+    inner: string;
+    "language-text": string;
+    login: string;
+    "logo-image": string;
+    page: string;
+    "privacy-text": string;
+    wrapper: string;
+  }
+}
+
+declare const LoginSassModule: LoginSassNamespace.ILoginSass;
+
+export = LoginSassModule;
