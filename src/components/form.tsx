@@ -26,9 +26,10 @@ import { clearError, clearSucceed } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
 import { replaceRedirectPath } from "../util/redirect";
 import { combineClasses } from "../util/style";
+import { getVersion } from "../util/version";
+import { ApplicationIssue } from "./application-issue";
 import { InsecureRedirection } from "./insecure-redirection";
 import { Timeout } from "./timeout";
-import { getVersion } from "../util/version";
 
 type ConnectedFormStates = {
 
@@ -103,11 +104,21 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
 
     private _renderContents() {
 
+        console.log(this.props.target);
+
         if (this.props.target.timeout) {
             return (<React.Fragment>
                 {this._renderLogo()}
                 {this._renderFlag()}
                 <Timeout />
+            </React.Fragment>);
+        }
+
+        if (this.props.target.applicationIssue) {
+            return (<React.Fragment>
+                {this._renderLogo()}
+                {this._renderFlag()}
+                <ApplicationIssue />
             </React.Fragment>);
         }
 

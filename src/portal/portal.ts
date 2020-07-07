@@ -128,6 +128,11 @@ export class Portal {
         return this._mode === PORTAL_MODE.REDIRECT;
     }
 
+    public get hasApplicationKey(): boolean {
+
+        return typeof this._applicationKey === 'string';
+    }
+
     public get applicationKey(): string {
 
         if (this._applicationKey) {

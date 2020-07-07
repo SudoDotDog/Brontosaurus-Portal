@@ -5,7 +5,6 @@
  */
 
 import { Fetch } from "@sudoo/fetch";
-import { Portal } from "../portal/portal";
 import { ApplicationRedirection, TargetInfo } from "../state/info/type";
 import { joinRoute } from "../util/route";
 
@@ -31,18 +30,17 @@ export type ApplicationRepositoryResponse = {
     readonly entryPage?: string;
 };
 
-export const applicationRepository = async (): Promise<TargetInfo> => {
-
-    const portal: Portal = Portal.instance;
+export const applicationRepository = async (key: string): Promise<TargetInfo> => {
 
     const data: ApplicationRepositoryResponse = await Fetch
         .post
         .json(joinRoute('/application'))
-        .add('applicationKey', portal.applicationKey)
+        .add('applicationKey', key)
         .fetch();
 
     return {
         timeout: false,
+        applicationIssue: false,
         name: data.name,
 
         avatar: data.avatar,

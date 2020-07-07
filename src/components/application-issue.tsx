@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
  * @namespace Component
- * @description Timeout
+ * @description Application Issue
  */
 
 import { SudooFormat } from "@sudoo/internationalization";
@@ -20,7 +20,7 @@ import { ErrorInfo } from "../state/status/type";
 import { setFavicon } from "../util/favicon";
 import { replaceRedirectPath } from "../util/redirect";
 
-type ConnectedTimeoutStates = {
+type ConnectedApplicationIssueStates = {
 
     readonly language: SudooFormat;
     readonly isLoading: boolean;
@@ -29,7 +29,7 @@ type ConnectedTimeoutStates = {
     readonly target: TargetInfo;
 };
 
-type ConnectedTimeoutActions = {
+type ConnectedApplicationIssueActions = {
 
     readonly setTarget: (target: TargetInfo) => void;
     readonly startLoading: (message: string) => void;
@@ -37,12 +37,12 @@ type ConnectedTimeoutActions = {
     readonly clearLoading: () => void;
 };
 
-export type TimeOutProps = {
+export type ApplicationIssueProps = {
 };
 
-type ConnectedProps = ConnectedTimeoutStates & ConnectedTimeoutActions & TimeOutProps;
+type ConnectedProps = ConnectedApplicationIssueStates & ConnectedApplicationIssueActions & ApplicationIssueProps;
 
-const connector = Connector.create<IStore, ConnectedTimeoutStates, ConnectedTimeoutActions>()
+const connector = Connector.create<IStore, ConnectedApplicationIssueStates, ConnectedApplicationIssueActions>()
     .connectStates(({ info, preference, status }: IStore) => ({
 
         language: intl.format(preference.language),
@@ -58,7 +58,7 @@ const connector = Connector.create<IStore, ConnectedTimeoutStates, ConnectedTime
         startError,
     });
 
-export class TimeoutBase extends React.Component<ConnectedProps> {
+export class ApplicationIssueBase extends React.Component<ConnectedProps> {
 
     public componentDidMount() {
 
@@ -67,13 +67,18 @@ export class TimeoutBase extends React.Component<ConnectedProps> {
 
     public render(): JSX.Element {
 
+        const info: ErrorInfo = this.props.error || {
+            long: PROFILE.CONNECT_SERVICE,
+            short: PROFILE.INTERNAL_ERROR,
+        };
+
         return (
             <div className={StyleForm["timeout-container"]}>
                 <div className={StyleForm["timeout-title"]}>
-                    {this.props.language.get(PROFILE.TIMEOUT_TITLE)}
+                    {this.props.language.get(info.short)}
                 </div>
                 <div>
-                    {this.props.language.get(PROFILE.TIMEOUT_DESCRIPTION)}
+                    {this.props.language.get(info.long as PROFILE)}
                 </div>
                 {this._renderEntryPage()}
                 {this._renderIndexPage()}
@@ -170,4 +175,4 @@ export class TimeoutBase extends React.Component<ConnectedProps> {
     }
 }
 
-export const Timeout: React.ComponentType<TimeOutProps> = connector.connect(TimeoutBase);
+export const ApplicationIssue: React.ComponentType<ApplicationIssueProps> = connector.connect(ApplicationIssueBase);

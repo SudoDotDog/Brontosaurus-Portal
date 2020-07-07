@@ -13,6 +13,7 @@ import { TargetInfo } from "../state/info/type";
 import { clearLoading, startError, startLoading } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
 import { setFavicon } from "../util/favicon";
+import { Portal } from "../portal/portal";
 
 type TargetProp = {
 
@@ -60,9 +61,28 @@ export class TargetBase extends React.Component<ConnectedTargetProps> {
 
         this.props.startLoading('Fetch');
 
+        const portal: Portal = Portal.instance;
+
+        if (!portal.hasApplicationKey) {
+
+            this.props.clearLoading();
+
+            this.props.setTarget({
+                timeout: true,
+                applicationIssue: false,
+                name: '',
+                redirections: [],
+                iFrameProtocol: false,
+                postProtocol: false,
+                alertProtocol: false,
+                noneProtocol: false,
+            });
+            return;
+        }
+
         try {
 
-            const info: TargetInfo = await applicationRepository();
+            const info: TargetInfo = await applicationRepository(portal.applicationKey);
             this.props.setTarget(info);
 
             if (info.favicon) {
@@ -81,7 +101,8 @@ export class TargetBase extends React.Component<ConnectedTargetProps> {
             this.props.clearLoading();
 
             this.props.setTarget({
-                timeout: true,
+                timeout: false,
+                applicationIssue: true,
                 name: '',
                 redirections: [],
                 iFrameProtocol: false,

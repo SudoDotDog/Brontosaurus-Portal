@@ -16,6 +16,7 @@ export type ApplicationRedirection = {
 export type TargetInfo = {
 
     readonly timeout: boolean;
+    readonly applicationIssue: boolean;
     readonly name: string;
     readonly avatar?: string;
     readonly background?: string;

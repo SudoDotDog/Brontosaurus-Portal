@@ -30,7 +30,10 @@ export type SimpleRepositoryResponse = {
     readonly entryPage?: string;
 };
 
-export const simpleRepository = async (): Promise<TargetInfo> => {
+export const simpleRepository = async (
+    timeout: boolean,
+    applicationIssue: boolean,
+): Promise<TargetInfo> => {
 
     const data: SimpleRepositoryResponse = await Fetch
         .get
@@ -38,7 +41,8 @@ export const simpleRepository = async (): Promise<TargetInfo> => {
         .fetch();
 
     return {
-        timeout: true,
+        timeout,
+        applicationIssue,
         name: data.name,
 
         avatar: data.avatar,

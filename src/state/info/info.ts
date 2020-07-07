@@ -33,6 +33,7 @@ export const getDefaultInfoStore = (): IInfoStore => ({
 
     target: {
         timeout: false,
+        applicationIssue: false,
         name: '',
         redirections: [],
         iFrameProtocol: false,
