@@ -6,8 +6,6 @@
 
 export const replaceRedirectPath = (path?: string | null): void => {
 
-    console.log(path);
-
     if (typeof path !== 'string') {
         return;
     }

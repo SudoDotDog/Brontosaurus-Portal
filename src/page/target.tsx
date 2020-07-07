@@ -14,6 +14,7 @@ import { clearLoading, startError, startLoading } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
 import { setFavicon } from "../util/favicon";
 import { Portal } from "../portal/portal";
+import { wrapMap } from "../portal/error";
 
 type TargetProp = {
 
@@ -98,6 +99,7 @@ export class TargetBase extends React.Component<ConnectedTargetProps> {
             this.props.clearLoading();
         } catch (err) {
 
+            const error: string = err.message;
             this.props.clearLoading();
 
             this.props.setTarget({
@@ -110,6 +112,9 @@ export class TargetBase extends React.Component<ConnectedTargetProps> {
                 alertProtocol: false,
                 noneProtocol: false,
             });
+
+            const info: ErrorInfo = wrapMap(error);
+            this.props.startError(info);
         }
     }
 }

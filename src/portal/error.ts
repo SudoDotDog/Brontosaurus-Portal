@@ -97,8 +97,8 @@ const errorMap: Record<string, ErrorInfo> = {
         long: PROFILE.UNTRUSTED_REDIRECTION_DESCRIPTION,
     },
     "4131": {
-        short: PROFILE.UNTRUSTED_REDIRECTION,
-        long: PROFILE.UNTRUSTED_REDIRECTION_DESCRIPTION,
+        short: PROFILE.APPLICATION_INACTIVE,
+        long: PROFILE.APPLICATION_INACTIVE_DESCRIPTION,
     },
 };
 
