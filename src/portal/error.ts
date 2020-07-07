@@ -96,6 +96,10 @@ const errorMap: Record<string, ErrorInfo> = {
         short: PROFILE.UNTRUSTED_REDIRECTION,
         long: PROFILE.UNTRUSTED_REDIRECTION_DESCRIPTION,
     },
+    "4131": {
+        short: PROFILE.UNTRUSTED_REDIRECTION,
+        long: PROFILE.UNTRUSTED_REDIRECTION_DESCRIPTION,
+    },
 };
 
 export const wrapMap = (message: string): ErrorInfo => {

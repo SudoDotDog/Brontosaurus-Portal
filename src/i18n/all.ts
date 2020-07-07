@@ -93,6 +93,8 @@ export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
     [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "Great! Your password has been reset successfully. Please log in with the new password you just set.",
     [PROFILE.SERVER_MIGHT_OFFLINE]: "Unresponsive Server",
     [PROFILE.SERVER_MIGHT_OFFLINE_DESCRIPTION]: "We are unable to get any response from the support server. This may be a temporary phenomenon. If this problem persists, please contact us directly.",
+    [PROFILE.APPLICATION_INACTIVE]: "Application not available",
+    [PROFILE.APPLICATION_INACTIVE_DESCRIPTION]: "The application is not available, which is usually not the reason for your account. Please contact the system administrator for more help.",
     [PROFILE.INTERNAL_ERROR]: "Internal Error",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "An internal error has occurred, usually not because of you. If this error persists, please contact your system administrator for more help.",
 
@@ -192,6 +194,8 @@ export const RUSSIAN_RUSSIA: Record<PROFILE, string> = {
     [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "Это здорово! Ваш пароль был успешно сброшен. Пожалуйста, войдите в систему с новым паролем, который вы только что установили.",
     [PROFILE.SERVER_MIGHT_OFFLINE]: "Не отвечает сервер",
     [PROFILE.SERVER_MIGHT_OFFLINE_DESCRIPTION]: "Мы не можем получить ответ от сервера поддержки. Это может быть временным явлением. Если проблема не исчезнет, свяжитесь с нами напрямую.",
+    [PROFILE.APPLICATION_INACTIVE]: "Приложение недоступно",
+    [PROFILE.APPLICATION_INACTIVE_DESCRIPTION]: "Приложение недоступно, что, как правило, не является причиной для вашей учетной записи. Пожалуйста, свяжитесь с системным администратором для получения дополнительной помощи.",
     [PROFILE.INTERNAL_ERROR]: "Внутренняя ошибка",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "Произошла внутренняя ошибка, обычно не по вашей вине. Если эта ошибка не устранена, обратитесь за помощью к системному администратору.",
 
@@ -293,6 +297,8 @@ export const FRENCH_FRANCE: Record<PROFILE, string> = {
     [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "C'est super! Votre mot de passe a bien été réinitialisé. Connectez-vous avec le nouveau mot de passe que vous venez de définir.",
     [PROFILE.SERVER_MIGHT_OFFLINE]: "Serveur qui ne répond pas",
     [PROFILE.SERVER_MIGHT_OFFLINE_DESCRIPTION]: "Nous ne pouvons pas obtenir de réponse du serveur de support, cela peut être un phénomène temporaire, si ce problème persiste, veuillez nous contacter directement",
+    [PROFILE.APPLICATION_INACTIVE]: "L'application n'est pas disponible",
+    [PROFILE.APPLICATION_INACTIVE_DESCRIPTION]: "L'application n'est pas disponible, ce qui n'est généralement pas la raison de votre compte. Veuillez contacter l'administrateur système pour obtenir de l'aide.",
     [PROFILE.INTERNAL_ERROR]: "Erreur interne",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "Une erreur interne s'est produite, généralement pas à cause de vous. Si cette erreur persiste, contactez votre administrateur système pour obtenir de l'aide.",
 
@@ -392,6 +398,8 @@ export const JAPANESE_JAPAN: Record<PROFILE, string> = {
     [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "いいね！ パスワードは正常にリセットされました。設定したばかりの新しいパスワードでログインしてください。",
     [PROFILE.SERVER_MIGHT_OFFLINE]: "応答しないサーバー",
     [PROFILE.SERVER_MIGHT_OFFLINE_DESCRIPTION]: "サポートサーバーからの応答を得ることができません。これは一時的な現象である可能性があります。この問題が解決しない場合は、直接お問い合わせください。",
+    [PROFILE.APPLICATION_INACTIVE]: "アプリケーションは利用できません",
+    [PROFILE.APPLICATION_INACTIVE_DESCRIPTION]: "アプリケーションは利用できません。これは通常、アカウントの理由ではありません。 詳細については、システム管理者にお問い合わせください。",
     [PROFILE.INTERNAL_ERROR]: "内部エラー",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "このエラーが解決しない場合には、システム管理者に連絡してください。",
 
@@ -489,6 +497,8 @@ export const KOREAN_KOREA: Record<PROFILE, string> = {
     [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "대단해! 비밀번호가 성공적으로 재설정되었습니다. 방금 설정 한 새 비밀번호로 로그인하십시오.",
     [PROFILE.SERVER_MIGHT_OFFLINE]: "응답하지 않는 서버",
     [PROFILE.SERVER_MIGHT_OFFLINE_DESCRIPTION]: "지원 서버에서 응답을받을 수 없습니다. 일시적인 현상 일 수 있습니다.이 문제가 지속되면 직접 문의 해주세요.",
+    [PROFILE.APPLICATION_INACTIVE]: "응용 프로그램을 사용할 수 없습니다",
+    [PROFILE.APPLICATION_INACTIVE_DESCRIPTION]: "응용 프로그램을 사용할 수 없습니다. 일반적으로 계정의 사유가 아닙니다. 도움이 필요하면 시스템 관리자에게 문의하십시오.",
     [PROFILE.INTERNAL_ERROR]: "내부 오류",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "일반적으로 사용자가 아닌 내부 오류가 발생했습니다.이 오류가 계속 발생하면 시스템 관리자에게 도움을 요청하십시오.",
 
@@ -586,6 +596,8 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
     [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "太好了！您的密码已经重置成功，请您使用刚刚设置的新密码登录。",
     [PROFILE.SERVER_MIGHT_OFFLINE]: "服务器未响应",
     [PROFILE.SERVER_MIGHT_OFFLINE_DESCRIPTION]: "我们无法从支持服务器获得任何响应，这可能是暂时现象，如果此问题持续出现，请联系系统管理员来获得更多帮助。",
+    [PROFILE.APPLICATION_INACTIVE]: "应用程序不可用",
+    [PROFILE.APPLICATION_INACTIVE_DESCRIPTION]: "应用程序不可用，通常来说这不是您账户的原因。请联系系统管理员来获得更多帮助。",
     [PROFILE.INTERNAL_ERROR]: "内部错误",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "发生了内部错误，这通常不是因为您，如果这个错误持续出现，请联系系统管理员来获得更多帮助。",
 
@@ -683,6 +695,8 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
     [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "太好了！您的密鑰已經重置成功，請您使用剛剛設置的新密鑰登錄。",
     [PROFILE.SERVER_MIGHT_OFFLINE]: "服務器未響應",
     [PROFILE.SERVER_MIGHT_OFFLINE_DESCRIPTION]: "我們無法從支持服務器獲得任何響應，這可能是暫時現象，如果此問題持續出現，請聯繫系統管理員來獲得更多幫助。",
+    [PROFILE.APPLICATION_INACTIVE]: "應用程序不可用",
+    [PROFILE.APPLICATION_INACTIVE_DESCRIPTION]: "應用程序不可用，通常來說這不是您賬戶的原因。請聯繫系統管理員來獲得更多幫助。",
     [PROFILE.INTERNAL_ERROR]: "內部錯誤",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "發生了內部錯誤，這通常不是因為您，如果這個錯誤持續出現，請聯繫系統管理員來獲得更多幫助。",
 
@@ -782,6 +796,8 @@ export const SPANISH_MEXICO: Record<PROFILE, string> = {
     [PROFILE.RESET_PASSWORD_SUCCEED_DESCRIPTION]: "Eso es genial! Su contraseña se ha restablecido correctamente. Inicie sesión con la nueva contraseña que acaba de establecer.",
     [PROFILE.SERVER_MIGHT_OFFLINE]: "Servidor que no responde",
     [PROFILE.SERVER_MIGHT_OFFLINE_DESCRIPTION]: "No podemos obtener ninguna respuesta del servidor de soporte. Esto puede ser un fenómeno temporal. Si este problema persiste, contáctenos directamente.",
+    [PROFILE.APPLICATION_INACTIVE]: "La aplicación no está disponible.",
+    [PROFILE.APPLICATION_INACTIVE_DESCRIPTION]: "La aplicación no está disponible, lo que generalmente no es el motivo de su cuenta. Póngase en contacto con el administrador del sistema para obtener más ayuda.",
     [PROFILE.INTERNAL_ERROR]: "Error interno",
     [PROFILE.INTERNAL_ERROR_DESCRIPTION]: "Se ha producido un error interno, generalmente no debido a usted. Si este error persiste, comuníquese con el administrador del sistema para obtener más ayuda.",
 
