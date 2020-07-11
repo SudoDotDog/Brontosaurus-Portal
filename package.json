@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/SudoDotDog/Brontosaurus-Portal#readme",
   "dependencies": {
-    "@sudoo/fetch": "^1.22.0",
+    "@sudoo/fetch": "^2.0.0",
     "@sudoo/immutable": "^1.3.0",
     "@sudoo/internationalization": "^1.4.1",
     "@sudoo/magic": "^1.8.0",
