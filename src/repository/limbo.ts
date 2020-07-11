@@ -43,9 +43,9 @@ export const limboRepository = async (
 
     const data: LimboRepositoryResponse = await Fetch
         .post
-        .json(joinRoute('/limbo'))
+        .withJson(joinRoute('/limbo'))
         .migrate(body)
-        .fetch();
+        .fetchJson();
 
     if (data.token && !data.limbo) {
         return data.token;

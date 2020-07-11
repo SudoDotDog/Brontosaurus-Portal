@@ -34,9 +34,9 @@ export const applicationRepository = async (key: string): Promise<TargetInfo> =>
 
     const data: ApplicationRepositoryResponse = await Fetch
         .post
-        .json(joinRoute('/application'))
+        .withJson(joinRoute('/application'))
         .add('applicationKey', key)
-        .fetch();
+        .fetchJson();
 
     return {
         timeout: false,

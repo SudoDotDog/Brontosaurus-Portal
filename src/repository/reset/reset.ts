@@ -30,9 +30,9 @@ export const resetResetRepository = async (username: string, namespace: string, 
 
     const data: ResetResetRepositoryResponse = await Fetch
         .post
-        .json(joinRoute('/reset/reset'))
+        .withJson(joinRoute('/reset/reset'))
         .migrate(body)
-        .fetch();
+        .fetchJson();
 
     return data.username;
 };

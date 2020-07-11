@@ -37,8 +37,8 @@ export const simpleRepository = async (
 
     const data: SimpleRepositoryResponse = await Fetch
         .get
-        .json(joinRoute('/simple'))
-        .fetch();
+        .withJson(joinRoute('/simple'))
+        .fetchJson();
 
     return {
         timeout,

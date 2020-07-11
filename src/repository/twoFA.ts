@@ -44,9 +44,9 @@ export const twoFARepository = async (
 
     const data: TwoFARepositoryResponse = await Fetch
         .post
-        .json(joinRoute('/twoFA'))
+        .withJson(joinRoute('/twoFA'))
         .migrate(body)
-        .fetch();
+        .fetchJson();
 
     if (data.token && !data.limbo) {
         return data.token;

@@ -37,9 +37,9 @@ export const resetTemporaryRepository = async (
 
     const data: ResetTemporaryRepositoryResponse = await Fetch
         .post
-        .json(joinRoute('/reset/temporary'))
+        .withJson(joinRoute('/reset/temporary'))
         .migrate(body)
-        .fetch();
+        .fetchJson();
 
     return data;
 };

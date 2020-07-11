@@ -36,9 +36,9 @@ export const resetFinishRepository = async (
 
     const data: ResetFinishRepositoryResponse = await Fetch
         .post
-        .json(joinRoute('/reset/finish'))
+        .withJson(joinRoute('/reset/finish'))
         .migrate(body)
-        .fetch();
+        .fetchJson();
 
     return data.succeed;
 };

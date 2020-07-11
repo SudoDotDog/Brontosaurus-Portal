@@ -46,9 +46,9 @@ export const login = async (
 
     const data: LoginRepositoryResponse = await Fetch
         .post
-        .json(joinRoute('/retrieve'))
+        .withJson(joinRoute('/retrieve'))
         .migrate(body)
-        .fetch();
+        .fetchJson();
 
     if (data.limbo) {
         return {
