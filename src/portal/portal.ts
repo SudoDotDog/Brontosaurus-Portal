@@ -31,29 +31,36 @@ export class Portal {
             const userAgent: string | null = url.searchParams.get("useragent");
             const platform: string | null = url.searchParams.get("platform");
 
+            const externalLink: string | null = url.searchParams.get("el");
+
             if (callbackPath.toUpperCase().startsWith('IFRAME')) {
                 this._instance = new Portal(PORTAL_MODE.IFRAME)
                     .setParams(applicationKey, callbackPath)
+                    .setExternalLinkIfExist(externalLink)
                     .setPlatformIfExist(platform)
                     .setUserAgentOverrideIfExist(userAgent);
             } else if (callbackPath.toUpperCase().startsWith('POST')) {
                 this._instance = new Portal(PORTAL_MODE.POST)
                     .setParams(applicationKey, callbackPath)
+                    .setExternalLinkIfExist(externalLink)
                     .setPlatformIfExist(platform)
                     .setUserAgentOverrideIfExist(userAgent);
             } else if (callbackPath.toUpperCase().startsWith('ALERT')) {
                 this._instance = new Portal(PORTAL_MODE.ALERT)
                     .setParams(applicationKey, callbackPath)
+                    .setExternalLinkIfExist(externalLink)
                     .setPlatformIfExist(platform)
                     .setUserAgentOverrideIfExist(userAgent);
             } else if (callbackPath.toUpperCase().startsWith('NONE')) {
                 this._instance = new Portal(PORTAL_MODE.NONE)
                     .setParams(applicationKey, callbackPath)
+                    .setExternalLinkIfExist(externalLink)
                     .setPlatformIfExist(platform)
                     .setUserAgentOverrideIfExist(userAgent);
             } else {
                 this._instance = new Portal(PORTAL_MODE.REDIRECT)
                     .setParams(applicationKey, callbackPath)
+                    .setExternalLinkIfExist(externalLink)
                     .setPlatformIfExist(platform)
                     .setUserAgentOverrideIfExist(userAgent);
             }
@@ -87,6 +94,8 @@ export class Portal {
     private _platform: string | null;
     private _userAgentOverride: string | null;
 
+    private _externalLink: boolean;
+
     private constructor(mode: PORTAL_MODE) {
 
         this._mode = mode;
@@ -96,6 +105,8 @@ export class Portal {
 
         this._platform = null;
         this._userAgentOverride = null;
+
+        this._externalLink = false;
     }
 
     public get isErrored(): boolean {
@@ -251,6 +262,25 @@ export class Portal {
             return this.setUserAgentOverride(userAgent);
         }
 
+        return this;
+    }
+
+    private setExternalLinkIfExist(externalLink: string | undefined | null): Portal {
+
+        if (typeof externalLink === 'string') {
+            if (externalLink === 'true') {
+                this.setExternalLink(true);
+                return this;
+            }
+        }
+
+        this.setExternalLink(false);
+        return this;
+    }
+
+    private setExternalLink(externalLink: boolean): Portal {
+
+        this._externalLink = externalLink;
         return this;
     }
 
