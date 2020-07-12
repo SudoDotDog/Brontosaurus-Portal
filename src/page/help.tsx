@@ -12,7 +12,7 @@ import { Connector } from "@sudoo/redux";
 import * as React from "react";
 import * as StyleForm from "../../style/page/form.sass";
 import { FormStructure } from "../components/form";
-import { Subtitle } from "../components/subtitle";
+import { HelperDescription } from "../components/helper-description";
 import { intl } from "../i18n/intl";
 import { PROFILE } from "../i18n/profile";
 import { emptyEmailInfo, emptyUsernameInfo, wrapMap } from "../portal/error";
@@ -26,7 +26,6 @@ import { PAGE } from "../state/page/type";
 import { clearError, clearLoading, clearSucceed, startError, startLoading } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
 import { combineClasses } from "../util/style";
-import { replaceRedirectPath } from "../util/redirect";
 
 type ConnectedHelpStates = {
 
@@ -92,18 +91,10 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
                 showBackToLogin
                 showVersion
             >
-                <Subtitle
-                    text={this.props.language.get(PROFILE.HELP_DESCRIPTION)}
-                >
-                    <div className={StyleForm.help}>
-                        <a
-                            className={StyleForm.link}
-                            onClick={() => replaceRedirectPath(this.props.target.help)}
-                        >
-                            {this.props.language.get(PROFILE.GO_TO_HELP_CENTER)}
-                        </a>
-                    </div>
-                </Subtitle>
+                <HelperDescription
+                    withHelpProfile={PROFILE.HELP_DESCRIPTION}
+                    noHelpProfile={PROFILE.APPLICATION_GROUP_NOT_FULFILLED}
+                />
                 <NeonInput
                     autoCapitalize={false}
                     autoComplete={false}

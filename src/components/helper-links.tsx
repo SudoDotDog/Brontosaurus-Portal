@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
  * @namespace Component
- * @description Timeout
+ * @description Helper Links
  */
 
 import { SudooFormat } from "@sudoo/internationalization";

@@ -24,7 +24,6 @@ import { setPage } from "../state/page/page";
 import { PAGE } from "../state/page/type";
 import { clearError, clearSucceed } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
-import { replaceRedirectPath } from "../util/redirect";
 import { combineClasses } from "../util/style";
 import { getVersion } from "../util/version";
 import { ApplicationIssue } from "./application-issue";
@@ -53,7 +52,6 @@ export type FromStructureProps = {
 
     readonly showHelp?: boolean;
     readonly showVersion?: boolean;
-    readonly showHelpCenter?: boolean;
     readonly showBackToLogin?: boolean;
 };
 
@@ -136,7 +134,6 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
             <div className={StyleForm["extra-link"]}>
                 <div className={StyleForm["main-extra-link"]}>
                     {this._renderHelp()}
-                    {this._renderHelpCenter()}
                     {this._renderBackToLogin()}
                 </div>
                 <div>
@@ -195,24 +192,6 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
             }}
         >
             {this.props.language.get(PROFILE.NEED_HELP)}
-        </a>);
-    }
-
-    private _renderHelpCenter(): React.ReactNode {
-
-        if (!this.props.showHelpCenter) {
-            return null;
-        }
-
-        if (!this.props.target.help) {
-            return null;
-        }
-
-        return (<a
-            className={StyleForm.link}
-            onClick={() => replaceRedirectPath(this.props.target.help)}
-        >
-            {this.props.language.get(PROFILE.GO_TO_HELP_CENTER)}
         </a>);
     }
 
