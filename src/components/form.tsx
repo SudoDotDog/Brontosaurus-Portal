@@ -146,7 +146,7 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
     private _renderFooter(): React.ReactNode {
 
         const portal: Portal = Portal.instance;
-        const showPrivacy: boolean = portal.externalLink && Boolean(this.props.target.privacy);
+        const showPrivacy: boolean = portal.documentationLink && Boolean(this.props.target.privacy);
 
         return (<div className={StyleLogin.footer}>
             <div className={StyleLogin["language-text"]}>

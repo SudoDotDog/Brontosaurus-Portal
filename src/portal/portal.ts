@@ -26,13 +26,18 @@ export class Portal {
         const applicationKey: string | null = url.searchParams.get("key");
         const callbackPath: string | null = url.searchParams.get("cb");
 
+        const externalLink: string | null = url.searchParams.get("el");
+
         if (!applicationKey || !callbackPath) {
 
-            this._instance = new Portal(PORTAL_MODE.ERROR);
+            this._instance = new Portal(PORTAL_MODE.ERROR)
+                .setDocumentationLinkIfExist(externalLink)
+                .setExternalLink(true);
+
+            window.history.replaceState({}, document.title, url.origin);
             return;
         }
 
-        const externalLink: string | null = url.searchParams.get("el");
         const userAgent: string | null = url.searchParams.get("useragent");
         const platform: string | null = url.searchParams.get("platform");
 
@@ -41,6 +46,7 @@ export class Portal {
         this._instance = new Portal(portalMode)
             .setParams(applicationKey, callbackPath)
             .setExternalLinkIfExist(externalLink)
+            .setDocumentationLinkIfExist(externalLink)
             .setPlatformIfExist(platform)
             .setUserAgentOverrideIfExist(userAgent);
 
@@ -72,6 +78,7 @@ export class Portal {
     private _userAgentOverride: string | null;
 
     private _externalLink: boolean;
+    private _documentationLink: boolean;
 
     private constructor(mode: PORTAL_MODE) {
 
@@ -84,6 +91,7 @@ export class Portal {
         this._userAgentOverride = null;
 
         this._externalLink = false;
+        this._documentationLink = false;
     }
 
     public get isErrored(): boolean {
@@ -150,6 +158,11 @@ export class Portal {
     public get externalLink(): boolean {
 
         return this._externalLink;
+    }
+
+    public get documentationLink(): boolean {
+
+        return this._documentationLink;
     }
 
     public hasCallbackPath(): boolean {
@@ -244,6 +257,25 @@ export class Portal {
             return this.setUserAgentOverride(userAgent);
         }
 
+        return this;
+    }
+
+    private setDocumentationLinkIfExist(documentationLink: string | undefined | null): Portal {
+
+        if (typeof documentationLink === 'string') {
+            if (documentationLink === 'true') {
+                this.setDocumentationLink(true);
+                return this;
+            }
+        }
+
+        this.setDocumentationLink(false);
+        return this;
+    }
+
+    private setDocumentationLink(externalLink: boolean): Portal {
+
+        this._documentationLink = externalLink;
         return this;
     }
 
