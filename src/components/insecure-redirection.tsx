@@ -16,7 +16,7 @@ import { setTarget } from "../state/info/info";
 import { TargetInfo } from "../state/info/type";
 import { clearLoading, startError, startLoading } from "../state/status/status";
 import { ErrorInfo } from "../state/status/type";
-import { replaceRedirectPath } from "../util/redirect";
+import { HelperLinks } from "./helper-links";
 
 type ConnectedInsecureRedirectionStates = {
 
@@ -68,9 +68,7 @@ export class InsecureRedirectionBase extends React.Component<ConnectedProps> {
                 <div>
                     {this._getDescription()}
                 </div>
-                {this._renderEntryPage()}
-                {this._renderIndexPage()}
-                {this._renderHelpCenter()}
+                <HelperLinks />
             </div>
         );
     }
@@ -91,63 +89,6 @@ export class InsecureRedirectionBase extends React.Component<ConnectedProps> {
             return this.props.language.get(PROFILE.INSECURE_REDIRECTION_DESCRIPTION);
         }
         return this.props.language.get(PROFILE.INSECURE_PROTOCOL_CONTENT);
-    }
-
-    private _renderEntryPage() {
-
-        if (!this.props.target.entryPage) {
-            return null;
-        }
-
-        return (<div className={StyleForm.help}>
-            <span>
-                {this.props.language.get(PROFILE.YOU_CAN)} -&nbsp;
-                <a
-                    className={StyleForm.link}
-                    onClick={() => replaceRedirectPath(this.props.target.entryPage)}
-                >
-                    {this.props.language.get(PROFILE.GO_TO_ENTRY_PAGE)}
-                </a>
-            </span>
-        </div>);
-    }
-
-    private _renderIndexPage() {
-
-        if (!this.props.target.indexPage) {
-            return null;
-        }
-
-        return (<div className={StyleForm.help}>
-            <span>
-                {this.props.language.get(PROFILE.YOU_CAN)} -&nbsp;
-                <a
-                    className={StyleForm.link}
-                    onClick={() => replaceRedirectPath(this.props.target.indexPage)}
-                >
-                    {this.props.language.get(PROFILE.GO_TO_INDEX_PAGE)}
-                </a>
-            </span>
-        </div>);
-    }
-
-    private _renderHelpCenter() {
-
-        if (!this.props.target.help) {
-            return null;
-        }
-
-        return (<div className={StyleForm.help}>
-            <span>
-                {this.props.language.get(PROFILE.YOU_CAN_ALSO)} -&nbsp;
-                <a
-                    className={StyleForm.link}
-                    onClick={() => replaceRedirectPath(this.props.target.help)}
-                >
-                    {this.props.language.get(PROFILE.GO_TO_HELP_CENTER)}
-                </a>
-            </span>
-        </div>);
     }
 }
 
