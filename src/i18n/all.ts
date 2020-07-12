@@ -35,7 +35,9 @@ export const ENGLISH_UNITED_STATES: Record<PROFILE, string> = {
 
     [PROFILE.LIMBO_DESCRIPTION]: "You are signing in with a temporary password, please enter a new password and use it the next time you log in.",
     [PROFILE.HELP_DESCRIPTION]: "We apologize for your account login is sue. You can click the link below to access our help center, or enter your username and email address to reset your password.",
+    [PROFILE.HELP_DESCRIPTION_NO_LINK]: "We apologize for your account login problem, you can contact us to help you, or you can enter your user name and email address to reset the password by yourself.",
     [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION]: "If the email address and username you entered match, you will receive an email with a temporary password. If you can't find the corresponding email, please check your spam email or click on the link below to visit our help center.",
+    [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION_NO_LINK]: "If the email address you entered matches the username, you will receive an email with a temporary password. If you cannot find the corresponding email, please check the spam mailbox, or contact us to help you.",
     [PROFILE.NEW_PASSWORD]: "New password",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "Save and SignIn",
     [PROFILE.SAVE_NEW_PASSWORD_AND_CONTINUE]: "Save and Continue",
@@ -136,7 +138,9 @@ export const RUSSIAN_RUSSIA: Record<PROFILE, string> = {
 
     [PROFILE.LIMBO_DESCRIPTION]: "Вы входите с временным паролем, введите новый пароль и используйте его при следующем входе.",
     [PROFILE.HELP_DESCRIPTION]: "Мы приносим извинения за проблемы с входом в учетную запись. Вы можете нажать на ссылку ниже, чтобы получить доступ к нашему справочному центру, или вы можете ввести свое имя пользователя и адрес электронной почты, чтобы сбросить пароль.",
+    [PROFILE.HELP_DESCRIPTION_NO_LINK]: "Мы приносим свои извинения за проблему входа в учетную запись, вы можете связаться с нами, чтобы помочь вам, или вы можете ввести свое имя пользователя и адрес электронной почты, чтобы сбросить пароль самостоятельно.",
     [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION]: "Если введенный вами адрес электронной почты и имя пользователя совпадают, вы получите электронное письмо с временным паролем. Если вы не можете найти соответствующий адрес электронной почты, проверьте почтовый ящик для спама или перейдите по ссылке ниже, чтобы посетить наш справочный центр.",
+    [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION_NO_LINK]: "Если введенный вами адрес электронной почты совпадает с именем пользователя, вы получите письмо с временным паролем. Если вы не можете найти соответствующий адрес электронной почты, проверьте почтовый ящик для спама или свяжитесь с нами, чтобы помочь вам.",
     [PROFILE.NEW_PASSWORD]: "Новый пароль",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "Сохранить и Войти",
     [PROFILE.SAVE_NEW_PASSWORD_AND_CONTINUE]: "Сохранить и Продолжить",
@@ -239,7 +243,9 @@ export const FRENCH_FRANCE: Record<PROFILE, string> = {
 
     [PROFILE.LIMBO_DESCRIPTION]: "Vous vous connectez avec un mot de passe temporaire, veuillez entrer un nouveau mot de passe et l'utiliser lors de votre prochaine connexion.",
     [PROFILE.HELP_DESCRIPTION]: "Nous vous prions de nous excuser pour les problèmes de connexion à votre compte. Vous pouvez cliquer sur le lien ci-dessous pour accéder à notre centre d'aide ou saisir votre nom d'utilisateur et votre adresse e-mail pour réinitialiser votre mot de passe.",
+    [PROFILE.HELP_DESCRIPTION_NO_LINK]: "Nous nous excusons pour votre problème de connexion à votre compte, vous pouvez nous contacter pour vous aider, ou vous pouvez entrer votre nom d'utilisateur et votre adresse e-mail pour réinitialiser le mot de passe par vous-même.",
     [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION]: "Si l'adresse e-mail et le nom d'utilisateur que vous avez saisis correspondent, vous recevrez un e-mail avec un mot de passe temporaire. Si vous ne trouvez pas l'e-mail correspondant, veuillez vérifier votre courrier indésirable ou cliquez sur le lien ci-dessous pour visiter notre centre d'aide.",
+    [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION_NO_LINK]: "Si l'adresse e-mail que vous avez saisie correspond au nom d'utilisateur, vous recevrez un e-mail avec un mot de passe temporaire. Si vous ne trouvez pas l'e-mail correspondant, veuillez vérifier la boîte aux lettres de spam ou contactez-nous pour vous aider.",
     [PROFILE.NEW_PASSWORD]: "Nouveau mot de passe",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "Enregistrer et se Connecter",
     [PROFILE.SAVE_NEW_PASSWORD_AND_CONTINUE]: "Enregistrer et Continuer",
@@ -340,7 +346,9 @@ export const JAPANESE_JAPAN: Record<PROFILE, string> = {
 
     [PROFILE.LIMBO_DESCRIPTION]: "あなたは一時的なパスワードでログインしています。新しいパスワードを入力して、次回のログイン時にそれを使用してください。",
     [PROFILE.HELP_DESCRIPTION]: "以下のリンクをクリックしてヘルプセンターにアクセスするか、ユーザー名とメールアドレスを入力してパスワードをリセットすることができます。",
+    [PROFILE.HELP_DESCRIPTION_NO_LINK]: "アカウントのログインに関する問題をお詫び申し上げます。お手数ですが、ユーザー名とメールアドレスを入力して、パスワードをリセットしてください。",
     [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION]: "入力したメールアドレスとユーザー名が一致する場合、一時的なパスワードが記載されたメールが届きます。 対応するメールが見つからない場合は、迷惑メールを確認するか、下のリンクをクリックしてヘルプセンターにアクセスしてください。",
+    [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION_NO_LINK]: "入力したメールアドレスがユーザー名と一致する場合、一時的なパスワードが記載されたメールが届きます。 対応するメールが見つからない場合は、スパムメールボックスを確認するか、お問い合わせください。",
     [PROFILE.NEW_PASSWORD]: "新しいパスワード",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "保存してサインイン",
     [PROFILE.SAVE_NEW_PASSWORD_AND_CONTINUE]: "保存して続行",
@@ -439,7 +447,9 @@ export const KOREAN_KOREA: Record<PROFILE, string> = {
 
     [PROFILE.LIMBO_DESCRIPTION]: "임시 비밀번호로 로그인하는 중입니다. 다음에 로그인 할 때 새 비밀번호를 입력하여 사용하십시오.",
     [PROFILE.HELP_DESCRIPTION]: "계정 로그인 문제에 대해 사과드립니다. 아래 링크를 클릭하여 도움말 센터에 액세스하거나 사용자 이름과 이메일 주소를 입력하여 비밀번호를 재설정 할 수 있습니다.",
+    [PROFILE.HELP_DESCRIPTION_NO_LINK]: "계정 로그인 문제로 불편을 끼쳐 드려 죄송합니다. 고객 지원을 위해 문의하거나 사용자 이름과 이메일 주소를 입력하여 비밀번호를 직접 재설정 할 수 있습니다.",
     [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION]: "입력 한 이메일 주소와 사용자 이름이 일치하면 임시 비밀번호가 포함 된 이메일을 받게됩니다. 해당 이메일을 찾을 수없는 경우 스팸 메일 함을 확인하거나 아래 링크를 클릭하여 도움말 센터를 방문하십시오.",
+    [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION_NO_LINK]: "입력 한 이메일 주소가 사용자 이름과 일치하면 임시 비밀번호가 포함 된 이메일을 받게됩니다. 해당 이메일을 찾을 수 없으면 스팸 메일 함을 확인하거나 저희에게 연락하여 도움을 받으십시오.",
     [PROFILE.NEW_PASSWORD]: "새 비밀번호",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "저장 및 로그인",
     [PROFILE.SAVE_NEW_PASSWORD_AND_CONTINUE]: "저장하고 계속",
@@ -538,7 +548,9 @@ export const CHINESE_SIMPLIFIED: Record<PROFILE, string> = {
 
     [PROFILE.LIMBO_DESCRIPTION]: "您正在使用临时密码登录，请输入新密码，并在下次登录时使用它。",
     [PROFILE.HELP_DESCRIPTION]: "我们对您遇到账户登录问题感到歉意，您可以点击下方的链接访问我们的帮助中心，也可以输入您的用户名和电子邮箱地址来自助重置密码。",
+    [PROFILE.HELP_DESCRIPTION_NO_LINK]: "我们对您遇到账户登录问题感到歉意，您可以联系我们来帮助您，也可以输入您的用户名和电子邮箱地址来自助重置密码。",
     [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION]: "如果您输入的电子邮箱地址和用户名匹配，您将会收到一封包含临时密码的邮件。如果您无法找到对应的邮件，请检查垃圾邮件信箱，或者点击下方的链接访问我们的帮助中心。",
+    [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION_NO_LINK]: "如果您输入的电子邮箱地址和用户名匹配，您将会收到一封包含临时密码的邮件。如果您无法找到对应的邮件，请检查垃圾邮件信箱，或者联系我们来帮助您。",
     [PROFILE.NEW_PASSWORD]: "新密码",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "保存并登录",
     [PROFILE.SAVE_NEW_PASSWORD_AND_CONTINUE]: "保存并继续",
@@ -637,7 +649,9 @@ export const CHINESE_TRADITIONAL: Record<PROFILE, string> = {
 
     [PROFILE.LIMBO_DESCRIPTION]: "您正在使用臨時密鑰登入，請輸入新密鑰，並在下次登入時使用它。",
     [PROFILE.HELP_DESCRIPTION]: "我們對您遇到賬戶登入問題感到歉意，您可以點擊下方的鏈接訪問我們的幫助中心，也可以輸入您的用戶名和電子郵箱地址來自助重置密鑰。",
+    [PROFILE.HELP_DESCRIPTION_NO_LINK]: "我們對您遇到賬戶登錄問題感到歉意，您可以聯繫我們來幫助您，也可以輸入您的用戶名和電子郵箱地址來自助重置密鑰。",
     [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION]: "如果您輸入的電子郵箱地址和用戶名匹配，您將會收到一封包含臨時密鑰的郵件。如果您無法找到對應的郵件，請檢查垃圾郵件信箱，或者點擊下方的鏈接訪問我們的幫助中心。",
+    [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION_NO_LINK]: "如果您輸入的電子郵箱地址和用戶名匹配，您將會收到一封包含臨時密鑰的郵件。如果您無法找到對應的郵件，請檢查垃圾郵件信箱，或者聯繫我們來幫助您",
     [PROFILE.NEW_PASSWORD]: "新密鑰",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "保存並登入",
     [PROFILE.SAVE_NEW_PASSWORD_AND_CONTINUE]: "保存並繼續",
@@ -738,7 +752,9 @@ export const SPANISH_MEXICO: Record<PROFILE, string> = {
 
     [PROFILE.LIMBO_DESCRIPTION]: "Está iniciando sesión con una contraseña temporal, ingrese una nueva contraseña y úsela la próxima vez que inicie sesión.",
     [PROFILE.HELP_DESCRIPTION]: "Le pedimos disculpas por el problema de inicio de sesión de su cuenta. Puede hacer clic en el enlace a continuación para acceder a nuestro centro de ayuda o ingresar su nombre de usuario y dirección de correo electrónico para restablecer su contraseña por su cuenta.",
+    [PROFILE.HELP_DESCRIPTION_NO_LINK]: "Nos disculpamos por el problema de inicio de sesión de su cuenta, puede contactarnos para ayudarlo, o puede ingresar su nombre de usuario y dirección de correo electrónico para restablecer la contraseña usted mismo.",
     [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION]: "Si la dirección de correo electrónico y el nombre de usuario que ingresó coinciden, recibirá un correo electrónico con una contraseña temporal. Si no puede encontrar el correo electrónico correspondiente, verifique su correo no deseado o haga clic en el enlace a continuación para visitar nuestro centro de ayuda.",
+    [PROFILE.RESET_PASSWORD_TEMPORARY_DESCRIPTION_NO_LINK]: "Si la dirección de correo electrónico que ingresó coincide con el nombre de usuario, recibirá un correo electrónico con una contraseña temporal. Si no puede encontrar el correo electrónico correspondiente, verifique el buzón de correo no deseado o contáctenos para ayudarlo.",
     [PROFILE.NEW_PASSWORD]: "Nueva contraseña",
     [PROFILE.SAVE_NEW_PASSWORD_AND_SIGN_IN]: "Salvar y Iniciar",
     [PROFILE.SAVE_NEW_PASSWORD_AND_CONTINUE]: "Guardar y Continuar",

@@ -93,7 +93,7 @@ export class HelpBase extends React.Component<ConnectedProps, HelpStates> {
             >
                 <HelperDescription
                     withHelpProfile={PROFILE.HELP_DESCRIPTION}
-                    noHelpProfile={PROFILE.APPLICATION_GROUP_NOT_FULFILLED}
+                    noHelpProfile={PROFILE.HELP_DESCRIPTION_NO_LINK}
                 />
                 <NeonInput
                     autoCapitalize={false}
