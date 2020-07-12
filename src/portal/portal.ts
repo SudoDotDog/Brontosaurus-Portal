@@ -26,24 +26,25 @@ export class Portal {
         const applicationKey: string | null = url.searchParams.get("key");
         const callbackPath: string | null = url.searchParams.get("cb");
 
-        if (applicationKey && callbackPath) {
+        if (!applicationKey || !callbackPath) {
 
-            const externalLink: string | null = url.searchParams.get("el");
-            const userAgent: string | null = url.searchParams.get("useragent");
-            const platform: string | null = url.searchParams.get("platform");
-
-            const portalMode: PORTAL_MODE = parseCallbackMode(callbackPath);
-
-            this._instance = new Portal(portalMode)
-                .setParams(applicationKey, callbackPath)
-                .setExternalLinkIfExist(externalLink)
-                .setPlatformIfExist(platform)
-                .setUserAgentOverrideIfExist(userAgent);
-
-            window.history.replaceState({}, document.title, url.origin);
-        } else {
             this._instance = new Portal(PORTAL_MODE.ERROR);
+            return;
         }
+
+        const externalLink: string | null = url.searchParams.get("el");
+        const userAgent: string | null = url.searchParams.get("useragent");
+        const platform: string | null = url.searchParams.get("platform");
+
+        const portalMode: PORTAL_MODE = parseCallbackMode(callbackPath);
+
+        this._instance = new Portal(portalMode)
+            .setParams(applicationKey, callbackPath)
+            .setExternalLinkIfExist(externalLink)
+            .setPlatformIfExist(platform)
+            .setUserAgentOverrideIfExist(userAgent);
+
+        window.history.replaceState({}, document.title, url.origin);
     }
 
     public static get instance(): Portal {
