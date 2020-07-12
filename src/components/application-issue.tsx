@@ -150,10 +150,10 @@ export class ApplicationIssueBase extends React.Component<ConnectedProps> {
 
         try {
 
-            const info: TargetInfo = await simpleRepository(
-                this.props.target.timeout,
-                this.props.target.applicationIssue,
-            );
+            const info: TargetInfo = await simpleRepository({
+                timeout: this.props.target.timeout,
+                applicationIssue: this.props.target.applicationIssue,
+            });
             this.props.setTarget(info);
 
             if (info.favicon) {

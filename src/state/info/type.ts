@@ -15,7 +15,6 @@ export type ApplicationRedirection = {
 
 export type PartialTargetInfo = {
 
-    readonly externals: boolean;
     readonly timeout: boolean;
     readonly applicationIssue: boolean;
 };
