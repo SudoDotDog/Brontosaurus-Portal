@@ -7,7 +7,7 @@
 import { LOCALE, SudooFormat } from "@sudoo/internationalization";
 import { intl } from "../i18n/intl";
 import { PROFILE } from "../i18n/profile";
-import { replaceRedirectPath } from "../util/redirect";
+import { parseCallbackMode, replaceRedirectPath } from "../util/redirect";
 import { PORTAL_MODE, postCurrentMessage, postParentMessage } from "./util";
 
 export class Portal {
@@ -28,42 +28,18 @@ export class Portal {
 
         if (applicationKey && callbackPath) {
 
+            const externalLink: string | null = url.searchParams.get("el");
             const userAgent: string | null = url.searchParams.get("useragent");
             const platform: string | null = url.searchParams.get("platform");
 
-            const externalLink: string | null = url.searchParams.get("el");
+            const portalMode: PORTAL_MODE = parseCallbackMode(callbackPath);
 
-            if (callbackPath.toUpperCase().startsWith('IFRAME')) {
-                this._instance = new Portal(PORTAL_MODE.IFRAME)
-                    .setParams(applicationKey, callbackPath)
-                    .setExternalLinkIfExist(externalLink)
-                    .setPlatformIfExist(platform)
-                    .setUserAgentOverrideIfExist(userAgent);
-            } else if (callbackPath.toUpperCase().startsWith('POST')) {
-                this._instance = new Portal(PORTAL_MODE.POST)
-                    .setParams(applicationKey, callbackPath)
-                    .setExternalLinkIfExist(externalLink)
-                    .setPlatformIfExist(platform)
-                    .setUserAgentOverrideIfExist(userAgent);
-            } else if (callbackPath.toUpperCase().startsWith('ALERT')) {
-                this._instance = new Portal(PORTAL_MODE.ALERT)
-                    .setParams(applicationKey, callbackPath)
-                    .setExternalLinkIfExist(externalLink)
-                    .setPlatformIfExist(platform)
-                    .setUserAgentOverrideIfExist(userAgent);
-            } else if (callbackPath.toUpperCase().startsWith('NONE')) {
-                this._instance = new Portal(PORTAL_MODE.NONE)
-                    .setParams(applicationKey, callbackPath)
-                    .setExternalLinkIfExist(externalLink)
-                    .setPlatformIfExist(platform)
-                    .setUserAgentOverrideIfExist(userAgent);
-            } else {
-                this._instance = new Portal(PORTAL_MODE.REDIRECT)
-                    .setParams(applicationKey, callbackPath)
-                    .setExternalLinkIfExist(externalLink)
-                    .setPlatformIfExist(platform)
-                    .setUserAgentOverrideIfExist(userAgent);
-            }
+            this._instance = new Portal(portalMode)
+                .setParams(applicationKey, callbackPath)
+                .setExternalLinkIfExist(externalLink)
+                .setPlatformIfExist(platform)
+                .setUserAgentOverrideIfExist(userAgent);
+
             window.history.replaceState({}, document.title, url.origin);
         } else {
             this._instance = new Portal(PORTAL_MODE.ERROR);
