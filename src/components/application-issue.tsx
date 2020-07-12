@@ -72,17 +72,15 @@ export class ApplicationIssueBase extends React.Component<ConnectedProps> {
             short: PROFILE.INTERNAL_ERROR,
         };
 
-        return (
-            <div className={StyleForm["timeout-container"]}>
-                <div className={StyleForm["timeout-title"]}>
-                    {this.props.language.get(info.short)}
-                </div>
-                <div>
-                    {this.props.language.get(info.long as PROFILE)}
-                </div>
-                <HelperLinks />
+        return (<div className={StyleForm["timeout-container"]}>
+            <div className={StyleForm["timeout-title"]}>
+                {this.props.language.get(info.short)}
             </div>
-        );
+            <div>
+                {this.props.language.get(info.long as PROFILE)}
+            </div>
+            <HelperLinks />
+        </div>);
     }
 
     private async _simple() {

@@ -13,6 +13,7 @@ import { PROFILE } from "../i18n/profile";
 import { IStore } from "../state/declare";
 import { TargetInfo } from "../state/info/type";
 import { replaceRedirectPath } from "../util/redirect";
+import { Portal } from "../portal/portal";
 
 type ConnectedHelperLinksStates = {
 
@@ -33,13 +34,17 @@ export class HelperLinksBase extends React.Component<ConnectedProps> {
 
     public render() {
 
-        return (
-            <div>
-                {this._renderEntryPage()}
-                {this._renderIndexPage()}
-                {this._renderHelpCenter()}
-            </div>
-        );
+        const portal: Portal = Portal.instance;
+
+        if (!portal.externalLink) {
+            return null;
+        }
+
+        return (<div>
+            {this._renderEntryPage()}
+            {this._renderIndexPage()}
+            {this._renderHelpCenter()}
+        </div>);
     }
 
     private _renderEntryPage() {

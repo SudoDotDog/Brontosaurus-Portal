@@ -67,17 +67,15 @@ export class TimeoutBase extends React.Component<ConnectedProps> {
 
     public render(): JSX.Element {
 
-        return (
-            <div className={StyleForm["timeout-container"]}>
-                <div className={StyleForm["timeout-title"]}>
-                    {this.props.language.get(PROFILE.TIMEOUT_TITLE)}
-                </div>
-                <div>
-                    {this.props.language.get(PROFILE.TIMEOUT_DESCRIPTION)}
-                </div>
-                <HelperLinks />
+        return (<div className={StyleForm["timeout-container"]}>
+            <div className={StyleForm["timeout-title"]}>
+                {this.props.language.get(PROFILE.TIMEOUT_TITLE)}
             </div>
-        );
+            <div>
+                {this.props.language.get(PROFILE.TIMEOUT_DESCRIPTION)}
+            </div>
+            <HelperLinks />
+        </div>);
     }
 
     private async _simple() {

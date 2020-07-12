@@ -80,26 +80,26 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
 
     public render(): JSX.Element {
 
-        return (
-            <div className={StyleLogin.page}>
-                <div className={StyleLogin.wrapper}>
-                    <div className={StyleLogin.inner}>
-                        <NeonPaper className={combineClasses(
+        return (<div className={StyleLogin.page}>
+            <div className={StyleLogin.wrapper}>
+                <div className={StyleLogin.inner}>
+                    <NeonPaper
+                        className={combineClasses(
                             StyleLogin.login,
                             StyleForm["border-override"],
-                        )}>
-                            <NeonIndicator
-                                className={StyleLogin.indicator}
-                                loading={this.props.isLoading}
-                            >
-                                {this._renderContents()}
-                            </NeonIndicator>
-                        </NeonPaper>
-                    </div>
+                        )}
+                    >
+                        <NeonIndicator
+                            className={StyleLogin.indicator}
+                            loading={this.props.isLoading}
+                        >
+                            {this._renderContents()}
+                        </NeonIndicator>
+                    </NeonPaper>
                 </div>
-                {this._renderFooter()}
             </div>
-        );
+            {this._renderFooter()}
+        </div>);
     }
 
     private _renderContents() {

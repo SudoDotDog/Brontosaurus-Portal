@@ -17,16 +17,16 @@ type TitleProp = {
 
 export const Title: React.FC<TitleProp> = (props: TitleProp) => {
 
-    return (
-        <div className={StyleForm.title}>
-            <div className={combineClasses(
-                StyleForm.upper,
-                StyleForm["select-override"],
-            )}>
-                <div>{props.text}</div>
-                <div>{props.namespaceText}</div>
-            </div>
-            <div className={StyleForm.lower}>{props.applicationName}</div>
+    return (<div className={StyleForm.title}>
+        <div className={combineClasses(
+            StyleForm.upper,
+            StyleForm["select-override"],
+        )}>
+            <div>{props.text}</div>
+            <div>{props.namespaceText}</div>
         </div>
-    );
+        <div className={StyleForm.lower}>
+            {props.applicationName}
+        </div>
+    </div>);
 };

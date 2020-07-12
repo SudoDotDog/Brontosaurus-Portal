@@ -15,10 +15,10 @@ type SubtitleProp = {
 
 export const Subtitle: React.FC<SubtitleProp> = (props: SubtitleProp) => {
 
-    return (
-        <div className={StyleForm.title}>
-            <div>{props.text}</div>
-            {props.children}
+    return (<div className={StyleForm.title}>
+        <div>
+            {props.text}
         </div>
-    );
+        {props.children}
+    </div>);
 };
