@@ -147,6 +147,11 @@ export class Portal {
         return this._userAgentOverride;
     }
 
+    public get externalLink(): boolean {
+
+        return this._externalLink;
+    }
+
     public hasCallbackPath(): boolean {
 
         return Boolean(this._callbackPath);
