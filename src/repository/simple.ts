@@ -5,7 +5,7 @@
  */
 
 import { Fetch } from "@sudoo/fetch";
-import { ApplicationRedirection, TargetInfo } from "../state/info/type";
+import { ApplicationRedirection, TargetInfo, PartialTargetInfo } from "../state/info/type";
 import { joinRoute } from "../util/route";
 
 export type SimpleRepositoryResponse = {
@@ -31,8 +31,7 @@ export type SimpleRepositoryResponse = {
 };
 
 export const simpleRepository = async (
-    timeout: boolean,
-    applicationIssue: boolean,
+    partialInfo: PartialTargetInfo,
 ): Promise<TargetInfo> => {
 
     const data: SimpleRepositoryResponse = await Fetch
@@ -41,8 +40,8 @@ export const simpleRepository = async (
         .fetchJson();
 
     return {
-        timeout,
-        applicationIssue,
+        ...partialInfo,
+
         name: data.name,
 
         avatar: data.avatar,

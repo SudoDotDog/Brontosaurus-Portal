@@ -13,10 +13,15 @@ export type ApplicationRedirection = {
     regexp: string;
 };
 
-export type TargetInfo = {
+export type PartialTargetInfo = {
 
+    readonly externals: boolean;
     readonly timeout: boolean;
     readonly applicationIssue: boolean;
+};
+
+export type TargetInfo = {
+
     readonly name: string;
     readonly avatar?: string;
     readonly background?: string;
@@ -35,7 +40,7 @@ export type TargetInfo = {
 
     readonly indexPage?: string;
     readonly entryPage?: string;
-};
+} & PartialTargetInfo;
 
 export interface IInfoStore {
 
