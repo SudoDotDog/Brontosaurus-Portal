@@ -302,19 +302,7 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
 
     private _isInsecureRedirection(): boolean {
 
-        const redirections: ApplicationRedirection[] = this.props.target.redirections;
-        if (!Array.isArray(redirections)) {
-            return true;
-        }
-
-        if (redirections.length === 0) {
-            return false;
-        }
-
         const portal: Portal = Portal.instance;
-        if (!portal.hasCallbackPath()) {
-            return false;
-        }
 
         if (portal.isIFrame) {
             return !this.props.target.iFrameProtocol;
@@ -327,6 +315,23 @@ export class FormStructureBase extends React.Component<ConnectedProps> {
         }
         if (portal.isNone) {
             return !this.props.target.noneProtocol;
+        }
+
+        if (!portal.isRedirect) {
+            return false;
+        }
+
+        const redirections: ApplicationRedirection[] = this.props.target.redirections;
+        if (!Array.isArray(redirections)) {
+            return true;
+        }
+
+        if (redirections.length === 0) {
+            return false;
+        }
+
+        if (!portal.hasCallbackPath()) {
+            return false;
         }
 
         const callbackPath: string = Portal.instance.callbackPath;
