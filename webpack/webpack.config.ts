@@ -12,7 +12,7 @@ const APP_DIR = path.resolve(__dirname, '..', 'src');
 const TSCONFIG_PATH = path.resolve(__dirname, '..', 'typescript', 'tsconfig.dev.json');
 const COMMON_SASS_DIR = path.resolve(__dirname, '..', 'style', 'common');
 
-module.exports = SudooWebpack.create(
+export default SudooWebpack.create(
     {
         APP_DIR,
         BUILD_DIR,
