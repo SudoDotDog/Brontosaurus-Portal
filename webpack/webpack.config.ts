@@ -4,31 +4,31 @@
  * @description Production
  */
 
-const SudooWebpack = require("@sudoo/webpack-react").SudooWebpack;
-const path = require('path');
+import { SudooWebpackReact } from "@sudoo/webpack-react";
+import * as Path from "path";
 
-const BUILD_DIR = path.resolve(__dirname, '..', 'dist');
-const APP_DIR = path.resolve(__dirname, '..', 'src');
-const TSCONFIG_PATH = path.resolve(__dirname, '..', 'typescript', 'tsconfig.dev.json');
-const COMMON_SASS_DIR = path.resolve(__dirname, '..', 'style', 'common');
+const BUILD_DIR: string = Path.resolve(__dirname, '..', 'dist');
+const APP_DIR: string = Path.resolve(__dirname, '..', 'src');
+const TSCONFIG_PATH: string = Path.resolve(__dirname, '..', 'typescript', 'tsconfig.dev.json');
+const COMMON_SASS_DIR: string = Path.resolve(__dirname, '..', 'style', 'common');
 
-export default SudooWebpack.create(
-    {
-        APP_DIR,
-        BUILD_DIR,
-        COMMON_SASS_DIR,
+export default SudooWebpackReact.create({
 
-        TSCONFIG_PATH,
+    applicationPath: APP_DIR,
+    applicationEntryFile: 'index.tsx',
 
-        APP_ENTRY_FILE_NAME: 'index.tsx',
+    buildPath: BUILD_DIR,
+    commonSassPath: COMMON_SASS_DIR,
+
+    tsconfigPath: TSCONFIG_PATH,
+}, {
+
+    defines: {
+
+        'process.env.RELEASE_VERSION': JSON.stringify(process.env.RELEASE_VERSION || 'LOCAL'),
     },
-    {
-        defines: {
-            'process.env.RELEASE_VERSION': JSON.stringify(process.env.RELEASE_VERSION || 'LOCAL'),
-        },
-        silent: true,
-        title: 'Brontosaurus',
-        mobile: true,
-        favicon: '/favicon.png',
-    },
-).production();
+    silent: true,
+    title: 'Brontosaurus',
+    mobile: true,
+    favicon: '/favicon.png',
+}).production();
