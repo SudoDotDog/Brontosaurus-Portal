@@ -23,7 +23,7 @@ export const parseCallbackMode = (callbackPath: string): PORTAL_MODE => {
     }
 
     return PORTAL_MODE.REDIRECT;
-}
+};
 
 export const replaceRedirectPath = (path?: string | null): void => {
 
@@ -38,4 +38,4 @@ export const replaceRedirectPath = (path?: string | null): void => {
 
     window.location.href = path;
     return;
-}
+};
