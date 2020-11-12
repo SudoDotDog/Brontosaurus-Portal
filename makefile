@@ -53,18 +53,22 @@ lint-fix:
 	--config ./typescript/.eslintrc.json --fix
 
 install:
-	@echo "[INFO] Installing dev Dependencies"
+	@echo "[INFO] Installing Development Dependencies"
 	@yarn install --production=false
 
 refresh-install:
 	@echo "[INFO] Removing Lockfile"
 	@rm yarn.lock
-	@echo "[INFO] Installing dev Dependencies"
+	@echo "[INFO] Installing Development Dependencies"
 	@yarn install --production=false
 
 install-prod:
-	@echo "[INFO] Installing Dependencies"
+	@echo "[INFO] Installing Production Dependencies"
 	@yarn install --production=true
+
+outdated: install
+	@echo "[INFO] Checking Outdated Dependencies"
+	@yarn outdated
 
 clean-linux:
 	@echo "[INFO] Cleaning dist files"
