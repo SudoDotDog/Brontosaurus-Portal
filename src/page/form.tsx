@@ -11,7 +11,7 @@ import { INPUT_TYPE, NeonInput } from "@sudoo/neon/input";
 import { NeonCheckbox } from "@sudoo/neon/radio";
 import { Connector } from "@sudoo/redux";
 import * as React from "react";
-import * as StyleForm from "../../style/page/form.sass";
+import StyleForm from "../../style/page/form.sass";
 import { intl } from "../i18n/intl";
 import { PROFILE } from "../i18n/profile";
 import { clearUsername, readUsername } from "../portal/save";

@@ -5,7 +5,7 @@
  */
 
 import * as React from "react";
-import * as StyleForm from "../../style/page/form.sass";
+import StyleForm from "../../style/page/form.sass";
 
 type SubtitleProp = {
 

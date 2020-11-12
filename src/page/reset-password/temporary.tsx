@@ -10,7 +10,7 @@ import { MARGIN, SIZE, WIDTH } from "@sudoo/neon/declare";
 import { INPUT_TYPE, NeonInput } from "@sudoo/neon/input";
 import { Connector } from "@sudoo/redux";
 import * as React from "react";
-import * as StyleForm from "../../../style/page/form.sass";
+import StyleForm from "../../../style/page/form.sass";
 import { FormStructure } from "../../components/form";
 import { HelperDescription } from "../../components/helper-description";
 import { intl } from "../../i18n/intl";

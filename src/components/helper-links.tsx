@@ -7,7 +7,7 @@
 import { SudooFormat } from "@sudoo/internationalization";
 import { Connector } from "@sudoo/redux";
 import * as React from "react";
-import * as StyleForm from "../../style/page/form.sass";
+import StyleForm from "../../style/page/form.sass";
 import { intl } from "../i18n/intl";
 import { PROFILE } from "../i18n/profile";
 import { IStore } from "../state/declare";

@@ -7,7 +7,7 @@
 import { MARGIN, SIGNAL, SIZE } from "@sudoo/neon/declare";
 import { NeonFlag } from "@sudoo/neon/flag";
 import * as React from "react";
-import * as StyleForm from "../../style/page/form.sass";
+import StyleForm from "../../style/page/form.sass";
 
 type ErrorFlagProp = {
 
