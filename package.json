@@ -25,13 +25,13 @@
     "@sudoo/magic": "^1.8.0",
     "@sudoo/neon": "^2.12.5",
     "@sudoo/pattern": "^1.6.1",
-    "@sudoo/react-force": "^1.8.0",
+    "@sudoo/react-force": "^1.9.0",
     "@sudoo/redux": "^1.6.0",
     "@sudoo/verify": "^1.16.0"
   },
   "devDependencies": {
     "@sudoo/react-force-dev": "^1.9.0",
-    "@sudoo/triforce": "^2.9.24",
+    "@sudoo/triforce": "^2.9.25",
     "@sudoo/webpack-react": "^4.5.3",
     "ts-loader": "^8.3.0"
   },
