@@ -21,7 +21,7 @@
   "dependencies": {
     "@sudoo/fetch": "^2.1.0",
     "@sudoo/immutable": "^1.4.0",
-    "@sudoo/internationalization": "^1.5.0",
+    "@sudoo/internationalization": "^1.7.1",
     "@sudoo/magic": "^1.8.0",
     "@sudoo/neon": "^2.12.5",
     "@sudoo/pattern": "^1.6.1",
