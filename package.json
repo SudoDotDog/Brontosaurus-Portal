@@ -1,6 +1,6 @@
 {
   "name": "@brontosaurus/portal",
-  "description": ":monkey_face: Portal",
+  "description": "Portal",
   "directories": {
     "doc": "docs"
   },
