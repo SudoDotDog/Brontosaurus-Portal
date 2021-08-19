@@ -4,3 +4,9 @@
 [![codecov](https://codecov.io/gh/SudoDotDog/Brontosaurus-Portal/branch/master/graph/badge.svg)](https://codecov.io/gh/SudoDotDog/Brontosaurus-Portal)
 
 Portal
+
+## Redirection
+
+This repository is the server implementation for `@brontosaurus/core`.
+
+Please visit [Brontosaurus Github Repository](https://github.com/SudoDotDog/Brontosaurus) for project information and install instructions.
