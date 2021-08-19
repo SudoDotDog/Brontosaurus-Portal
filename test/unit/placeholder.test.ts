@@ -7,9 +7,9 @@
 
 import { expect } from 'chai';
 
-describe('p', (): void => {
+describe('Placeholder', (): void => {
 
-    it('p', (): void => {
+    it('Placeholder', (): void => {
 
         expect(1).to.be.equal(1);
     });
